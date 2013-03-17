@@ -6,6 +6,8 @@
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
+use Symfony\Component\EventDispatcher\EventDispatcher;
+
 /**
  * Class to mock JApplicationCli.
  *
@@ -43,7 +45,7 @@ class TestMockApplicationCli
 			'Joomla\\Application\\Cli',
 			$methods,
 			// Constructor arguments.
-			array(),
+			array(new EventDispatcher),
 			// Mock class name.
 			'',
 			// Call original constructor.

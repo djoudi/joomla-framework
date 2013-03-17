@@ -6,6 +6,7 @@
 
 namespace Joomla\Application;
 
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Joomla\Filesystem\Folder;
 use Joomla\Registry\Registry;
 use Joomla\Input\Cli as InputCli;
@@ -98,17 +99,20 @@ abstract class Daemon extends Cli implements LoggerAwareInterface
 	/**
 	 * Class constructor.
 	 *
-	 * @param   InputCli  $input   An optional argument to provide dependency injection for the application's
-	 *                             input object.  If the argument is a InputCli object that object will become
-	 *                             the application's input object, otherwise a default input object is created.
-	 * @param   Registry  $config  An optional argument to provide dependency injection for the application's
-	 *                             config object.  If the argument is a Registry object that object will become
-	 *                             the application's config object, otherwise a default config object is created.
+	 * @param   EventDispatcherInterface  $dispatcher Inject the required event dispatcher.
+	 * @param   Input\Cli                 $input      An optional argument to provide dependency injection for
+	 *                                                the application's input object.  If the argument is a InputCli
+	 *                                                object that object will become the application's input object,
+	 *                                                otherwise a default input object is created.
+	 * @param   Registry                  $config     An optional argument to provide dependency injection for the
+	 *                                                application's config object.  If the argument is a Registry object
+	 *                                                that object will become the application's config object, otherwise
+	 *                                                a default config object is created.
 	 *
 	 * @since   1.0
 	 * @throws  \RuntimeException
 	 */
-	public function __construct(InputCli $input = null, Registry $config = null)
+	public function __construct(EventDispatcherInterface $dispatcher, InputCli $input = null, Registry $config = null)
 	{
 		// Verify that the process control extension for PHP is available.
 		// @codeCoverageIgnoreStart
@@ -134,7 +138,7 @@ abstract class Daemon extends Cli implements LoggerAwareInterface
 		// @codeCoverageIgnoreEnd
 
 		// Call the parent constructor.
-		parent::__construct($input, $config);
+		parent::__construct($dispatcher, $input, $config);
 
 		// Set some system limits.
 		@set_time_limit($this->config->get('max_execution_time', 0));

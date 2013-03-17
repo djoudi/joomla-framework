@@ -6,9 +6,8 @@
 
 namespace Joomla\Application\Tests;
 
+use Symfony\Component\EventDispatcher\EventDispatcher;
 use Joomla\Application\Cli;
-use Joomla\Registry\Registry;
-use Joomla\Test\Config;
 use Joomla\Test\Helper;
 
 include_once __DIR__ . '/Stubs/ConcreteCli.php';
@@ -55,7 +54,7 @@ class CliTest extends \PHPUnit_Framework_TestCase
 
 		$mockConfig = $this->getMock('Joomla\Registry\Registry', array('test'), array(null), '', true);
 
-		$instance = new ConcreteCli($mockInput, $mockConfig);
+		$instance = new ConcreteCli(new EventDispatcher, $mockInput, $mockConfig);
 
 		$input = Helper::getValue($instance, 'input');
 		$this->assertEquals('ok', $input->test());
@@ -98,6 +97,6 @@ class CliTest extends \PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		// Get a new ConcreteCli instance.
-		$this->instance = new ConcreteCli;
+		$this->instance = new ConcreteCli(new EventDispatcher);
 	}
 }

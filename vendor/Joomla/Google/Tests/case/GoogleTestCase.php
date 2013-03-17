@@ -4,6 +4,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
+use Symfony\Component\EventDispatcher\EventDispatcher;
 use Joomla\Oauth2\Client;
 use Joomla\Google\Auth\Oauth2;
 use Joomla\Registry\Registry;
@@ -62,7 +63,7 @@ class GoogleTestCase extends PHPUnit_Framework_TestCase
 		$this->options = new Registry;
 		$this->http = $this->getMock('Joomla\\Http\\Http', array('head', 'get', 'delete', 'trace', 'post', 'put', 'patch'), array($this->options));
 		$this->input = new Input;
-		$this->application = new WebInspector;
+		$this->application = new WebInspector(new EventDispatcher);
 		$this->oauth = new Client($this->options, $this->http, $this->input, $this->application);
 		$this->auth = new Oauth2($this->options, $this->oauth);
 

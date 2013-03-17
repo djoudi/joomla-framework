@@ -6,10 +6,10 @@
 
 namespace Joomla\Application\Tests;
 
+use Symfony\Component\EventDispatcher\EventDispatcher;
 use Joomla\Application\Web;
 use Joomla\Application\Web\Client as WebClient;
 use Joomla\Registry\Registry;
-use Joomla\Test\Config;
 use Joomla\Test\Helper;
 
 include_once __DIR__ . '/Stubs/ConcreteWeb.php';
@@ -168,7 +168,7 @@ class WebTest extends \PHPUnit_Framework_TestCase
 			$this->returnValue('ok')
 		);
 
-		$inspector = new ConcreteWeb($mockInput, $mockConfig, $mockClient);
+		$inspector = new ConcreteWeb(new EventDispatcher, $mockInput, $mockConfig, $mockClient);
 
 		$this->assertThat(
 			$inspector->input->test(),
@@ -1284,6 +1284,6 @@ class WebTest extends \PHPUnit_Framework_TestCase
 		$_SERVER['SCRIPT_NAME'] = '/index.php';
 
 		// Get a new ConcreteWeb instance.
-		$this->instance = new ConcreteWeb;
+		$this->instance = new ConcreteWeb(new EventDispatcher);
 	}
 }

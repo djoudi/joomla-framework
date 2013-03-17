@@ -6,8 +6,7 @@
 
 namespace Joomla\Application\Tests;
 
-use Joomla\Application\Daemon;
-use Joomla\Registry\Registry;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 use Joomla\Test\Helper;
 
 include_once __DIR__ . '/Stubs/ConcreteDaemon.php';
@@ -263,7 +262,7 @@ class DaemonTest extends \PHPUnit_Framework_TestCase
 		}
 
 		// Get a new ConcreteDaemon instance.
-		$this->inspector = new ConcreteDaemon;
+		$this->inspector = new ConcreteDaemon(new EventDispatcher);
 		Helper::setValue('Joomla\Application\Daemon', 'instance', $this->inspector);
 	}
 

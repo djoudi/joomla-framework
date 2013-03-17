@@ -6,6 +6,8 @@
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
+use Symfony\Component\EventDispatcher\EventDispatcher;
+
 /**
  * Class to mock JApplicationWeb.
  *
@@ -64,18 +66,14 @@ class TestMockApplicationWeb
 			'getLanguage',
 			'getSession',
 			'loadConfiguration',
-			'loadDispatcher',
-			'loadIdentity',
 			'loadLanguage',
 			'loadSession',
 			'prependBody',
 			'redirect',
-			'registerEvent',
 			'sendHeaders',
 			'set',
 			'setBody',
-			'setHeader',
-			'triggerEvent',
+			'setHeader'
 		);
 
 		// Create the mock.
@@ -83,7 +81,7 @@ class TestMockApplicationWeb
 			'Joomla\\Application\\Web',
 			$methods,
 			// Constructor arguments.
-			array(),
+			array(new EventDispatcher),
 			// Mock class name.
 			'',
 			// Call original constructor.

@@ -6,6 +6,8 @@
 
 namespace Joomla\Application\Tests\Mock;
 
+use Symfony\Component\EventDispatcher\EventDispatcher;
+
 /**
  * Class to mock \Joomla\Application\Base.
  *
@@ -47,7 +49,7 @@ class Base
 			'Joomla\\Application\\Base',
 			$methods,
 			// Constructor arguments.
-			array(),
+			array(new EventDispatcher),
 			// Mock class name.
 			'',
 			// Call original constructor.

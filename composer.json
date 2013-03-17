@@ -7,11 +7,13 @@
     "license": "GPL-2.0+",
     "require": {
         "php": ">=5.3.10",
-        "psr/log": "~1.0"
+        "psr/log": "~1.0",
+        "symfony/event-dispatcher": "2.2.*"
     },
     "autoload": {
         "psr-0": {
-            "Joomla": "vendor/"
+            "Joomla": "vendor/",
+            "Psr": "vendor/psr/cache"
         },
         "classmap": [
             "vendor/Joomla/Compat/JsonSerializable.php"

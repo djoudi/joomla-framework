@@ -6,6 +6,8 @@
 
 namespace Joomla\Application;
 
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Joomla\Application\Event\ApplicationEvent;
 use Joomla\Input\Input;
 use Joomla\Registry\Registry;
 
@@ -33,19 +35,31 @@ abstract class Base
 	public $input = null;
 
 	/**
+	 * The event dispatcher object.
+	 *
+	 * @var    EventDispatcherInterface
+	 * @since  1.0
+	 */
+	protected $dispatcher = null;
+
+	/**
 	 * Class constructor.
 	 *
-	 * @param   Input     $input   An optional argument to provide dependency injection for the application's
-	 *                             input object.  If the argument is a InputCli object that object will become
-	 *                             the application's input object, otherwise a default input object is created.
-	 * @param   Registry  $config  An optional argument to provide dependency injection for the application's
-	 *                             config object.  If the argument is a Registry object that object will become
-	 *                             the application's config object, otherwise a default config object is created.
+	 * @param   EventDispatcherInterface  $dispatcher Inject the required event dispatcher.
+	 * @param   Input                     $input      An optional argument to provide dependency injection for
+	 *                                                the application's input object.  If the argument is a Input
+	 *                                                object that object will become the application's input object,
+	 *                                                otherwise a default input object is created.
+	 * @param   Registry                  $config     An optional argument to provide dependency injection for the
+	 *                                                application's config object.  If the argument is a Registry object
+	 *                                                that object will become the application's config object, otherwise
+	 *                                                a default config object is created.
 	 *
 	 * @since   1.0
 	 */
-	public function __construct(Input $input = null, Registry $config = null)
+	public function __construct(EventDispatcherInterface $dispatcher, Input $input = null, Registry $config = null)
 	{
+		$this->dispatcher = $dispatcher;
 		$this->input = $input instanceof Input ? $input : new Input;
 		$this->config = $config instanceof Registry ? $config : new Registry;
 	}
@@ -84,12 +98,12 @@ abstract class Base
 	 */
 	public function execute()
 	{
-		// @event onBeforeExecute
+		$this->dispatcher->dispatch(ApplicationEvents::BEFORE_EXECUTE, new ApplicationEvent($this));
 
 		// Perform application routines.
 		$this->doExecute();
 
-		// @event onAfterExecute
+		$this->dispatcher->dispatch(ApplicationEvents::AFTER_EXECUTE, new ApplicationEvent($this));
 	}
 
 	/**

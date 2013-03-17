@@ -6,6 +6,7 @@
 
 namespace Joomla\Application\Tests;
 
+use Symfony\Component\EventDispatcher\EventDispatcher;
 use Joomla\Application\Base;
 use Joomla\Test\Helper;
 use Joomla\Registry\Registry;
@@ -67,7 +68,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 			$this->returnValue('ok')
 		);
 
-		$instance = new ConcreteBase($mockInput, $mockConfig);
+		$instance = new ConcreteBase(new EventDispatcher, $mockInput, $mockConfig);
 
 		$input = Helper::getValue($instance, 'input');
 		$this->assertEquals('ok', $input->test());
@@ -133,7 +134,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 		$mockInput = $this->getMock('Joomla\Input\Input', array('test'), array(), '', false);
 		$config = new Registry(array('foo' => 'bar'));
 
-		$instance = new ConcreteBase($mockInput, $config);
+		$instance = new ConcreteBase(new EventDispatcher, $mockInput, $config);
 
 		$this->assertEquals('bar', $instance->get('foo', 'car'), 'Checks a known configuration setting is returned.');
 		$this->assertEquals('car', $instance->get('goo', 'car'), 'Checks an unknown configuration setting returns the default.');
@@ -152,7 +153,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 		$mockInput = $this->getMock('Joomla\Input\Input', array('test'), array(), '', false);
 		$config = new Registry(array('foo' => 'bar'));
 
-		$instance = new ConcreteBase($mockInput, $config);
+		$instance = new ConcreteBase(new EventDispatcher, $mockInput, $config);
 
 		$this->assertEquals('bar', $instance->set('foo', 'car'), 'Checks set returns the previous value.');
 
@@ -185,6 +186,6 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 	protected function setUp()
 	{
 		// Create the class object to be tested.
-		$this->instance = new ConcreteBase;
+		$this->instance = new ConcreteBase(new EventDispatcher);
 	}
 }

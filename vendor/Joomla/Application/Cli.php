@@ -6,6 +6,7 @@
 
 namespace Joomla\Application;
 
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Joomla\Registry\Registry;
 use Joomla\Input;
 
@@ -25,16 +26,19 @@ abstract class Cli extends Base
 	/**
 	 * Class constructor.
 	 *
-	 * @param   Input\Cli  $input   An optional argument to provide dependency injection for the application's
-	 *                              input object.  If the argument is a InputCli object that object will become
-	 *                              the application's input object, otherwise a default input object is created.
-	 * @param   Registry   $config  An optional argument to provide dependency injection for the application's
-	 *                              config object.  If the argument is a Registry object that object will become
-	 *                              the application's config object, otherwise a default config object is created.
+	 * @param   EventDispatcherInterface  $dispatcher Inject the required event dispatcher.
+	 * @param   Input\Cli                 $input      An optional argument to provide dependency injection for
+	 *                                                the application's input object.  If the argument is a InputCli
+	 *                                                object that object will become the application's input object,
+	 *                                                otherwise a default input object is created.
+	 * @param   Registry                  $config     An optional argument to provide dependency injection for the
+	 *                                                application's config object.  If the argument is a Registry object
+	 *                                                that object will become the application's config object, otherwise
+	 *                                                a default config object is created.
 	 *
 	 * @since   1.0
 	 */
-	public function __construct(Input\Cli $input = null, Registry $config = null)
+	public function __construct(EventDispatcherInterface $dispatcher, Input\Cli $input = null, Registry $config = null)
 	{
 		// Close the application if we are not executed from the command line.
 		// @codeCoverageIgnoreStart
@@ -45,7 +49,7 @@ abstract class Cli extends Base
 
 		// @codeCoverageIgnoreEnd
 
-		parent::__construct($input instanceof Input\Input ? $input : new Input\Cli);
+		parent::__construct($dispatcher, $input instanceof Input\Input ? $input : new Input\Cli);
 
 		// Set the execution datetime and timestamp;
 		$this->set('execution.datetime', gmdate('Y-m-d H:i:s'));
