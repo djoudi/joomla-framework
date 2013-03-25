@@ -1,0 +1,365 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Session\Storage\Apc</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#method_close" title="close :: Close the SessionHandler backend."><span class="description">Close the SessionHandler backend.</span><pre>close()</pre></a></li>
+<li class="method public "><a href="#method_destroy" title="destroy :: Destroy the data for a particular session identifier in the SessionHandler backend."><span class="description">Destroy the data for a particular session identifier in the SessionHandler backend.</span><pre>destroy()</pre></a></li>
+<li class="method public inherited"><a href="#method_gc" title="gc :: Garbage collect stale sessions from the SessionHandler backend."><span class="description">Garbage collect stale sessions from the SessionHandler backend.</span><pre>gc()</pre></a></li>
+<li class="method public inherited"><a href="#method_getInstance" title="getInstance :: Returns a session storage handler object, only creating it if it doesn't already exist."><span class="description">Returns a session storage handler object, only creating it if it doesn't already exist.</span><pre>getInstance()</pre></a></li>
+<li class="method public "><a href="#method_isSupported" title="isSupported :: Test to see if the SessionHandler is available."><span class="description">Test to see if the SessionHandler is available.</span><pre>isSupported()</pre></a></li>
+<li class="method public inherited"><a href="#method_open" title="open :: Open the SessionHandler backend."><span class="description">Open the SessionHandler backend.</span><pre>open()</pre></a></li>
+<li class="method public "><a href="#method_read" title="read :: Read the data for a particular session identifier from the
+SessionHandler backend."><span class="description">Read the data for a particular session identifier from the
+SessionHandler backend.</span><pre>read()</pre></a></li>
+<li class="method public inherited"><a href="#method_register" title="register :: Register the functions of this class with PHP's session handler"><span class="description">Register the functions of this class with PHP's session handler</span><pre>register()</pre></a></li>
+<li class="method public "><a href="#method_write" title="write :: Write session data to the SessionHandler backend."><span class="description">Write session data to the SessionHandler backend.</span><pre>write()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="property protected inherited"><a href="#property_instances" title="$instances :: "><span class="description">JSessionStorage instances container.</span><pre>$instances</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Session\Storage\Apc"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Session.html">Session</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Session.Storage.html">Storage</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Session.Storage.Apc.html">Apc</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">APC session storage handler for PHP</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\Session\Storage\http://www.php.net/manual/en/function.session-set-save-handler.php</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct(array $options) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>Optional parameters</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.runtimeexception.php">\RuntimeException</a></code></th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_close"></a><div class="element clickable method public method_close" data-toggle="collapse" data-target=".method_close .collapse">
+<h2>Close the SessionHandler backend.</h2>
+<pre>close() : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Session\Storage::close()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_destroy"></a><div class="element clickable method public method_destroy" data-toggle="collapse" data-target=".method_destroy .collapse">
+<h2>Destroy the data for a particular session identifier in the SessionHandler backend.</h2>
+<pre>destroy(string $id) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>string</code><p>The session identifier.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_gc"></a><div class="element clickable method public method_gc" data-toggle="collapse" data-target=".method_gc .collapse">
+<h2>Garbage collect stale sessions from the SessionHandler backend.</h2>
+<pre>gc(integer $maxlifetime) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Session\Storage::gc()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$maxlifetime</h4>
+<code>integer</code><p>The maximum age of a session.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_getInstance"></a><div class="element clickable method public method_getInstance" data-toggle="collapse" data-target=".method_getInstance .collapse">
+<h2>Returns a session storage handler object, only creating it if it doesn't already exist.</h2>
+<pre>getInstance(string $name, array $options) : <a href="../classes/Joomla.Session.Storage.html">\Joomla\Session\Storage</a></pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Session\Storage::getInstance()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The session store to instantiate</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>Array of options</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Joomla.Session.Storage.html">\Joomla\Session\Storage</a></code></div>
+</div></div>
+</div>
+<a id="method_isSupported"></a><div class="element clickable method public method_isSupported" data-toggle="collapse" data-target=".method_isSupported .collapse">
+<h2>Test to see if the SessionHandler is available.</h2>
+<pre>isSupported() : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_open"></a><div class="element clickable method public method_open" data-toggle="collapse" data-target=".method_open .collapse">
+<h2>Open the SessionHandler backend.</h2>
+<pre>open(string $save_path, string $session_name) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Session\Storage::open()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$save_path</h4>
+<code>string</code><p>The path to the session object.</p></div>
+<div class="subelement argument">
+<h4>$session_name</h4>
+<code>string</code><p>The name of the session.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_read"></a><div class="element clickable method public method_read" data-toggle="collapse" data-target=".method_read .collapse">
+<h2>Read the data for a particular session identifier from the
+SessionHandler backend.</h2>
+<pre>read(string $id) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>string</code><p>The session identifier.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The session data.</div>
+</div></div>
+</div>
+<a id="method_register"></a><div class="element clickable method public method_register" data-toggle="collapse" data-target=".method_register .collapse">
+<h2>Register the functions of this class with PHP's session handler</h2>
+<pre>register() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Session\Storage::register()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_write"></a><div class="element clickable method public method_write" data-toggle="collapse" data-target=".method_write .collapse">
+<h2>Write session data to the SessionHandler backend.</h2>
+<pre>write(string $id, string $session_data) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>string</code><p>The session identifier.</p></div>
+<div class="subelement argument">
+<h4>$session_data</h4>
+<code>string</code><p>The session data.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success, false otherwise.</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_instances"> </a><div class="element clickable property protected property_instances" data-toggle="collapse" data-target=".property_instances .collapse">
+<h2>JSessionStorage instances container.</h2>
+<pre>$instances : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Session\Storage::$$instances</td>
+</tr>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:25-05:00.<br></footer></div>
+</div>
+</body>
+</html>

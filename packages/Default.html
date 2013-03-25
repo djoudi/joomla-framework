@@ -1,0 +1,2003 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » Default</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Packages</li>
+<li>
+<a href="../packages/Default.html" title="Default"><i class="icon-folder-open"></i>Default</a><ul class="nav nav-list nav-packages"></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-interface"></i> Interfaces</li>
+<li><a href="#ExtractableInterface" title="Archieve class interface">ExtractableInterface</a></li>
+<li><a href="#JsonSerializable" title="JsonSerializable interface.">JsonSerializable</a></li>
+<li><a href="#ControllerInterface" title="Joomla Platform Controller Interface">ControllerInterface</a></li>
+<li><a href="#CipherInterface" title="JCrypt cipher interface.">CipherInterface</a></li>
+<li><a href="#PasswordInterface" title="Joomla Platform Password Hashing Interface">PasswordInterface</a></li>
+<li><a href="#DumpableInterface" title="An interface to define if an object is dumpable.">DumpableInterface</a></li>
+<li><a href="#DatabaseInterface" title="Joomla Platform Database Interface">DatabaseInterface</a></li>
+<li><a href="#LimitableInterface" title="Joomla Database Query LimitableInterface.">LimitableInterface</a></li>
+<li><a href="#PreparableInterface" title="Joomla Database Query Preparable Interface.">PreparableInterface</a></li>
+<li><a href="#TransportInterface" title="HTTP transport class interface.">TransportInterface</a></li>
+<li><a href="#ModelInterface" title="Joomla Platform Model Interface">ModelInterface</a></li>
+<li><a href="#ProfilePointInterface" title="Interface for profile points.">ProfilePointInterface</a></li>
+<li><a href="#ProfilerInterface" title="Interface for Profilers containing a sequence of ProfilePointInterface.">ProfilerInterface</a></li>
+<li><a href="#ProfilerRendererInterface" title="Interface for profiler renderers.">ProfilerRendererInterface</a></li>
+<li><a href="#ViewInterface" title="Joomla Platform View Interface">ViewInterface</a></li>
+<li class="nav-header">
+<i class="icon-custom icon-class"></i> Classes</li>
+<li><a href="#Base" title="Joomla Platform Base Application Class">Base</a></li>
+<li><a href="#Cli" title="Base class for a Joomla! command line application.">Cli</a></li>
+<li><a href="#Daemon" title="Class to turn Cli applications into daemons.">Daemon</a></li>
+<li><a href="#Client" title="Class to model a Web Client.">Client</a></li>
+<li><a href="#Web" title="Base class for a Joomla! Web application.">Web</a></li>
+<li><a href="#Archive" title="An Archive handling class">Archive</a></li>
+<li><a href="#Bzip2" title="Bzip2 format adapter for the JArchive class">Bzip2</a></li>
+<li><a href="#Gzip" title="Gzip format adapter for the JArchive class">Gzip</a></li>
+<li><a href="#Tar" title="Tar format adapter for the JArchive class">Tar</a></li>
+<li><a href="#Zip" title="ZIP format adapter for the JArchive class">Zip</a></li>
+<li><a href="#Apc" title="APC cache driver for the Joomla Platform.">Apc</a></li>
+<li><a href="#Cache" title="Joomla! Caching Class">Cache</a></li>
+<li><a href="#File" title="Filesystem cache driver for the Joomla Platform.">File</a></li>
+<li><a href="#Item" title="Cache item instance for the Joomla Framework.">Item</a></li>
+<li><a href="#Memcached" title="Memcached cache driver for the Joomla Framework.">Memcached</a></li>
+<li><a href="#None" title="Runtime cache only driver for the Joomla Framework.">None</a></li>
+<li><a href="#Runtime" title="Runtime memory cache driver.">Runtime</a></li>
+<li><a href="#Wincache" title="WinCache cache driver for the Joomla Framework.">Wincache</a></li>
+<li><a href="#XCache" title="XCache cache driver for the Joomla Framework.">XCache</a></li>
+<li><a href="#Buffer" title="Generic Buffer stream handler">Buffer</a></li>
+<li><a href="#Ftp" title="FTP client class">Ftp</a></li>
+<li><a href="#Helper" title="Client helper class">Helper</a></li>
+<li><a href="#Ldap" title="LDAP client class">Ldap</a></li>
+<li><a href="#Base" title="Joomla Platform Base Controller Class">Base</a></li>
+<li><a href="#Cipher_3DES" title="JCrypt cipher for Triple DES encryption, decryption and key generation.">Cipher_3DES</a></li>
+<li><a href="#Cipher_Blowfish" title="JCrypt cipher for Blowfish encryption, decryption and key generation.">Cipher_Blowfish</a></li>
+<li><a href="#Cipher_Mcrypt" title="JCrypt cipher for mcrypt algorithm encryption, decryption and key generation.">Cipher_Mcrypt</a></li>
+<li><a href="#Cipher_Rijndael256" title="JCrypt cipher for Rijndael 256 encryption, decryption and key generation.">Cipher_Rijndael256</a></li>
+<li><a href="#Cipher_Simple" title="JCrypt cipher for Simple encryption, decryption and key generation.">Cipher_Simple</a></li>
+<li><a href="#Crypt" title="Crypt is a Joomla Platform class for handling basic encryption/decryption of data.">Crypt</a></li>
+<li><a href="#Key" title="Encryption key object for the Joomla Platform.">Key</a></li>
+<li><a href="#Simple" title="Joomla Platform Password Crypter">Simple</a></li>
+<li><a href="#Object" title="Data\Object is a class that is used to store data but allowing you to access the data
+by mimicking the way PHP handles class properties.">Object</a></li>
+<li><a href="#Set" title="Data\Set is a collection class that allows the developer to operate on a set of Data\Object objects as if they were in a
+typical PHP array.">Set</a></li>
+<li><a href="#DatabaseIterator" title="Joomla Platform Database Driver Class">DatabaseIterator</a></li>
+<li><a href="#Mysql" title="MySQL database driver">Mysql</a></li>
+<li><a href="#Mysqli" title="MySQLi database driver">Mysqli</a></li>
+<li><a href="#Oracle" title="Oracle database driver">Oracle</a></li>
+<li><a href="#Pdo" title="Joomla Platform PDO Database Driver Class">Pdo</a></li>
+<li><a href="#Postgresql" title="PostgreSQL database driver">Postgresql</a></li>
+<li><a href="#Sqlazure" title="SQL Server database driver">Sqlazure</a></li>
+<li><a href="#Sqlite" title="SQLite database driver">Sqlite</a></li>
+<li><a href="#Sqlsrv" title="SQL Server database driver">Sqlsrv</a></li>
+<li><a href="#Driver" title="Joomla Platform Database Driver Class">Driver</a></li>
+<li><a href="#Mysql" title="MySQL export driver.">Mysql</a></li>
+<li><a href="#Mysqli" title="MySQLi export driver.">Mysqli</a></li>
+<li><a href="#Postgresql" title="PostgreSQL export driver.">Postgresql</a></li>
+<li><a href="#Exporter" title="Joomla Platform Database Exporter Class">Exporter</a></li>
+<li><a href="#Factory" title="Joomla Platform Database Factory class">Factory</a></li>
+<li><a href="#Mysql" title="MySQL import driver.">Mysql</a></li>
+<li><a href="#Mysqli" title="MySQLi import driver.">Mysqli</a></li>
+<li><a href="#Postgresql" title="PostgreSQL import driver.">Postgresql</a></li>
+<li><a href="#Importer" title="Joomla Platform Database Importer Class">Importer</a></li>
+<li><a href="#Azure" title="SQL azure database iterator.">Azure</a></li>
+<li><a href="#Mysql" title="MySQL database iterator.">Mysql</a></li>
+<li><a href="#Mysqli" title="MySQLi database iterator.">Mysqli</a></li>
+<li><a href="#Oracle" title="Oracle database iterator.">Oracle</a></li>
+<li><a href="#Pdo" title="PDO database iterator.">Pdo</a></li>
+<li><a href="#Sqlite" title="SQLite database iterator.">Sqlite</a></li>
+<li><a href="#Sqlsrv" title="SQL server database iterator.">Sqlsrv</a></li>
+<li><a href="#Element" title="Query Element Class.">Element</a></li>
+<li><a href="#Mysql" title="Query Building Class.">Mysql</a></li>
+<li><a href="#Mysqli" title="Query Building Class.">Mysqli</a></li>
+<li><a href="#Oracle" title="Oracle Query Building Class.">Oracle</a></li>
+<li><a href="#Pdo" title="PDO Query Building Class.">Pdo</a></li>
+<li><a href="#Postgresql" title="Query Building Class.">Postgresql</a></li>
+<li><a href="#Sqlazure" title="Query Building Class.">Sqlazure</a></li>
+<li><a href="#Sqlite" title="SQLite Query Building Class.">Sqlite</a></li>
+<li><a href="#Sqlsrv" title="Query Building Class.">Sqlsrv</a></li>
+<li><a href="#Query" title="Query Building Class.">Query</a></li>
+<li><a href="#Date" title="JDate is a class that stores a date and provides logic to manipulate
+and render that date in a variety of formats.">Date</a></li>
+<li><a href="#Factory" title="Joomla Platform Factory class">Factory</a></li>
+<li><a href="#File" title="A File handling class">File</a></li>
+<li><a href="#Folder" title="A Folder handling class">Folder</a></li>
+<li><a href="#Helper" title="File system helper">Helper</a></li>
+<li><a href="#Patcher" title="A Unified Diff Format Patcher class">Patcher</a></li>
+<li><a href="#Path" title="A Path handling class">Path</a></li>
+<li><a href="#String" title="String Stream Wrapper">String</a></li>
+<li><a href="#Stream" title="Joomla! Stream Interface">Stream</a></li>
+<li><a href="#StringController" title="String Controller">StringController</a></li>
+<li><a href="#Input" title="JFilterInput is a class for filtering input from any data source">Input</a></li>
+<li><a href="#Output" title="JFilterOutput">Output</a></li>
+<li><a href="#Field_Checkbox" title="Form Field class for the Joomla Platform.">Field_Checkbox</a></li>
+<li><a href="#Field_Checkboxes" title="Form Field class for the Joomla Platform.">Field_Checkboxes</a></li>
+<li><a href="#Field_Combo" title="Form Field class for the Joomla Platform.">Field_Combo</a></li>
+<li><a href="#Field_DatabaseConnection" title="Form Field class for the Joomla Platform.">Field_DatabaseConnection</a></li>
+<li><a href="#Field_Email" title="Form Field class for the Joomla Platform.">Field_Email</a></li>
+<li><a href="#Field_File" title="Form Field class for the Joomla Platform.">Field_File</a></li>
+<li><a href="#Field_FileList" title="Supports an HTML select list of files">Field_FileList</a></li>
+<li><a href="#Field_FolderList" title="Supports an HTML select list of folder">Field_FolderList</a></li>
+<li><a href="#Field_GroupedList" title="Form Field class for the Joomla Platform.">Field_GroupedList</a></li>
+<li><a href="#Field_Hidden" title="Form Field class for the Joomla Platform.">Field_Hidden</a></li>
+<li><a href="#Field_ImageList" title="Supports an HTML select list of image">Field_ImageList</a></li>
+<li><a href="#Field_Integer" title="Form Field class for the Joomla Platform.">Field_Integer</a></li>
+<li><a href="#Field_Language" title="Form Field class for the Joomla Platform.">Field_Language</a></li>
+<li><a href="#Field_List" title="Form Field class for the Joomla Platform.">Field_List</a></li>
+<li><a href="#Field_Password" title="Form Field class for the Joomla Platform.">Field_Password</a></li>
+<li><a href="#Field_Radio" title="Form Field class for the Joomla Platform.">Field_Radio</a></li>
+<li><a href="#Field_Spacer" title="Form Field class for the Joomla Platform.">Field_Spacer</a></li>
+<li><a href="#Field_SQL" title="Supports an custom SQL select list">Field_SQL</a></li>
+<li><a href="#Field_Tel" title="Form Field class for the Joomla Platform.">Field_Tel</a></li>
+<li><a href="#Field_Text" title="Form Field class for the Joomla Platform.">Field_Text</a></li>
+<li><a href="#Field_Textarea" title="Form Field class for the Joomla Platform.">Field_Textarea</a></li>
+<li><a href="#Field_Timezone" title="Form Field class for the Joomla Platform.">Field_Timezone</a></li>
+<li><a href="#Field_Url" title="Form Field class for the Joomla Platform.">Field_Url</a></li>
+<li><a href="#Field" title="Abstract Form Field class for the Joomla Platform.">Field</a></li>
+<li><a href="#Form" title="Form Class for the Joomla Platform.">Form</a></li>
+<li><a href="#Helper" title="JForm's helper class.">Helper</a></li>
+<li><a href="#Select" title="Utility class for creating HTML select lists">Select</a></li>
+<li><a href="#Boolean" title="Form Rule class for the Joomla Platform.">Boolean</a></li>
+<li><a href="#Color" title="Form Rule class for the Joomla Platform.">Color</a></li>
+<li><a href="#Email" title="Form Rule class for the Joomla Platform.">Email</a></li>
+<li><a href="#Equals" title="Form Rule class for the Joomla Platform.">Equals</a></li>
+<li><a href="#Options" title="Form Rule class for the Joomla Platform.">Options</a></li>
+<li><a href="#Tel" title="Form Rule class for the Joomla Platform">Tel</a></li>
+<li><a href="#Url" title="Form Rule class for the Joomla Platform.">Url</a></li>
+<li><a href="#Rule" title="Form Rule class for the Joomla Platform.">Rule</a></li>
+<li><a href="#Account" title="GitHub API Account class for the Joomla Platform.">Account</a></li>
+<li><a href="#Commits" title="GitHub API Commits class for the Joomla Platform.">Commits</a></li>
+<li><a href="#Forks" title="GitHub API Forks class for the Joomla Platform.">Forks</a></li>
+<li><a href="#Gists" title="GitHub API Gists class for the Joomla Platform.">Gists</a></li>
+<li><a href="#Github" title="Joomla Platform class for interacting with a GitHub server instance.">Github</a></li>
+<li><a href="#Hooks" title="GitHub API Hooks class for the Joomla Platform.">Hooks</a></li>
+<li><a href="#Http" title="HTTP client class for connecting to a GitHub instance.">Http</a></li>
+<li><a href="#Issues" title="GitHub API Issues class for the Joomla Platform.">Issues</a></li>
+<li><a href="#Meta" title="GitHub API Meta class for the Joomla Framework.">Meta</a></li>
+<li><a href="#Milestones" title="GitHub API Milestones class for the Joomla Platform.">Milestones</a></li>
+<li><a href="#Object" title="GitHub API object class for the Joomla Platform.">Object</a></li>
+<li><a href="#Pulls" title="GitHub API Pull Requests class for the Joomla Platform.">Pulls</a></li>
+<li><a href="#Refs" title="GitHub API References class for the Joomla Platform.">Refs</a></li>
+<li><a href="#Statuses" title="GitHub API References class for the Joomla Platform.">Statuses</a></li>
+<li><a href="#OAuth2" title="Google OAuth authentication class">OAuth2</a></li>
+<li><a href="#Auth" title="Google authentication class abstract">Auth</a></li>
+<li><a href="#Adsense" title="Google Adsense data class for the Joomla Platform.">Adsense</a></li>
+<li><a href="#Calendar" title="Google Calendar data class for the Joomla Platform.">Calendar</a></li>
+<li><a href="#Album" title="Google Picasa data class for the Joomla Platform.">Album</a></li>
+<li><a href="#Photo" title="Google Picasa data class for the Joomla Platform.">Photo</a></li>
+<li><a href="#Picasa" title="Google Picasa data class for the Joomla Platform.">Picasa</a></li>
+<li><a href="#Activities" title="Google+ data class for the Joomla Platform.">Activities</a></li>
+<li><a href="#Comments" title="Google+ data class for the Joomla Platform.">Comments</a></li>
+<li><a href="#People" title="Google+ data class for the Joomla Platform.">People</a></li>
+<li><a href="#Plus" title="Google+ data class for the Joomla Platform.">Plus</a></li>
+<li><a href="#Data" title="Google API data class for the Joomla Platform.">Data</a></li>
+<li><a href="#Analytics" title="Google Analytics embed class for the Joomla Platform.">Analytics</a></li>
+<li><a href="#Maps" title="Google Maps embed class for the Joomla Platform.">Maps</a></li>
+<li><a href="#Embed" title="Google API object class for the Joomla Platform.">Embed</a></li>
+<li><a href="#Google" title="Joomla Platform class for interacting with the Google APIs.">Google</a></li>
+<li><a href="#Factory" title="HTTP factory class.">Factory</a></li>
+<li><a href="#Http" title="HTTP client class.">Http</a></li>
+<li><a href="#Response" title="HTTP response data object class.">Response</a></li>
+<li><a href="#Curl" title="HTTP transport class for using cURL.">Curl</a></li>
+<li><a href="#Socket" title="HTTP transport class for using sockets directly.">Socket</a></li>
+<li><a href="#Stream" title="HTTP transport class for using PHP streams.">Stream</a></li>
+<li><a href="#Brightness" title="Image Filter class adjust the brightness of an image.">Brightness</a></li>
+<li><a href="#Contrast" title="Image Filter class adjust the contrast of an image.">Contrast</a></li>
+<li><a href="#Edgedetect" title="Image Filter class to add an edge detect effect to an image.">Edgedetect</a></li>
+<li><a href="#Emboss" title="Image Filter class to emboss an image.">Emboss</a></li>
+<li><a href="#Grayscale" title="Image Filter class to transform an image to grayscale.">Grayscale</a></li>
+<li><a href="#Negate" title="Image Filter class to negate the colors of an image.">Negate</a></li>
+<li><a href="#Sketchy" title='Image Filter class to make an image appear "sketchy".'>Sketchy</a></li>
+<li><a href="#Smooth" title="Image Filter class adjust the smoothness of an image.">Smooth</a></li>
+<li><a href="#Filter" title="Class to manipulate an image.">Filter</a></li>
+<li><a href="#Image" title="Class to manipulate an image.">Image</a></li>
+<li><a href="#Cli" title="Joomla! Input CLI Class">Cli</a></li>
+<li><a href="#Cookie" title="Joomla! Input Cookie Class">Cookie</a></li>
+<li><a href="#Files" title="Joomla! Input Files Class">Files</a></li>
+<li><a href="#Input" title="Joomla! Input Base Class">Input</a></li>
+<li><a href="#Json" title="Joomla! Input JSON Class">Json</a></li>
+<li><a href="#Keychain" title="Keychain Class">Keychain</a></li>
+<li><a href="#Helper" title="Language helper class">Helper</a></li>
+<li><a href="#Language" title="Languages/translation handler class">Language</a></li>
+<li><a href="#Porteren" title="Porter English stemmer class.">Porteren</a></li>
+<li><a href="#Stemmer" title="Stemmer base class.">Stemmer</a></li>
+<li><a href="#Text" title="Text handling class.">Text</a></li>
+<li><a href="#Transliterate" title="Class to transliterate strings">Transliterate</a></li>
+<li><a href="#Loader" title="Static class to handle loading of libraries.">Loader</a></li>
+<li><a href="#Entry" title="Joomla! Log Entry class">Entry</a></li>
+<li><a href="#Log" title="Joomla! Log Class">Log</a></li>
+<li><a href="#Callback" title="Joomla! Callback Log class">Callback</a></li>
+<li><a href="#Database" title="Joomla! MySQL Database Log class">Database</a></li>
+<li><a href="#Echoo" title="Joomla Echo logger class.">Echoo</a></li>
+<li><a href="#Formattedtext" title="Joomla! Formatted Text File Log class">Formattedtext</a></li>
+<li><a href="#Syslog" title="Joomla! Syslog Log class">Syslog</a></li>
+<li><a href="#W3c" title="Joomla! W3c Logging class">W3c</a></li>
+<li><a href="#Logger" title="Joomla! Logger Base Class">Logger</a></li>
+<li><a href="#Base" title="Joomla Framework Base Model Class">Base</a></li>
+<li><a href="#Database" title="Joomla Platform Database Model Class">Database</a></li>
+<li><a href="#Client" title="Joomla Platform class for interacting with an OAuth 2.0 server.">Client</a></li>
+<li><a href="#ProfilePoint" title="Implementation of ProfilePointInterface.">ProfilePoint</a></li>
+<li><a href="#Profiler" title="Implementation of ProfilerInterface.">Profiler</a></li>
+<li><a href="#DefaultRenderer" title="Default profiler renderer.">DefaultRenderer</a></li>
+<li><a href="#Ini" title="INI format handler for Registry.">Ini</a></li>
+<li><a href="#Json" title="JSON format handler for Registry.">Json</a></li>
+<li><a href="#Php" title="PHP class format handler for Registry">Php</a></li>
+<li><a href="#Xml" title="XML format handler for Registry.">Xml</a></li>
+<li><a href="#Format" title="Abstract Format for Registry">Format</a></li>
+<li><a href="#Registry" title="Registry class">Registry</a></li>
+<li><a href="#Rest" title="RESTful Web application router class for the Joomla Platform.">Rest</a></li>
+<li><a href="#Router" title="A path router.">Router</a></li>
+<li><a href="#Session" title="Class for managing HTTP sessions">Session</a></li>
+<li><a href="#Apc" title="APC session storage handler for PHP">Apc</a></li>
+<li><a href="#Database" title="Database session storage handler for PHP">Database</a></li>
+<li><a href="#Memcache" title="Memcache session storage handler for PHP">Memcache</a></li>
+<li><a href="#Memcached" title="Memcached session storage handler for PHP">Memcached</a></li>
+<li><a href="#None" title="Default PHP configured session handler for Joomla!">None</a></li>
+<li><a href="#Wincache" title="WINCACHE session storage handler for PHP">Wincache</a></li>
+<li><a href="#Xcache" title="XCache session storage handler">Xcache</a></li>
+<li><a href="#Storage" title="Custom session storage handler for PHP">Storage</a></li>
+<li><a href="#Inflector" title="Joomla Platform String Inflector Class">Inflector</a></li>
+<li><a href="#Normalise" title="Joomla Platform String Normalise Class">Normalise</a></li>
+<li><a href="#String" title="String handling class for utf-8 data
+Wraps the phputf8 library
+All functions assume the validity of utf-8 strings.">String</a></li>
+<li><a href="#Uri" title="Uri Class">Uri</a></li>
+<li><a href="#ArrayHelper" title="ArrayHelper is an array utility class for doing all sorts of odds and ends with arrays.">ArrayHelper</a></li>
+<li><a href="#Base" title="Joomla Platform Base View Class">Base</a></li>
+<li><a href="#Html" title="Joomla Platform HTML View Class">Html</a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#constant_signal" title="$signal :: "><span class="description">$signal</span><pre>$signal</pre></a></li>
+<li class="constant  "><a href="#constant_CRLF" title="CRLF :: "><span class="description">CRLF</span><pre>CRLF</pre></a></li>
+<li class="constant  "><a href="#constant_FTP_ASCII" title="FTP_ASCII :: "><span class="description">FTP_ASCII</span><pre>FTP_ASCII</pre></a></li>
+<li class="constant  "><a href="#constant_FTP_AUTOASCII" title="FTP_AUTOASCII :: "><span class="description">FTP_AUTOASCII</span><pre>FTP_AUTOASCII</pre></a></li>
+<li class="constant  "><a href="#constant_FTP_BINARY" title="FTP_BINARY :: "><span class="description">FTP_BINARY</span><pre>FTP_BINARY</pre></a></li>
+<li class="constant  "><a href="#constant_FTP_NATIVE" title="FTP_NATIVE :: "><span class="description">FTP_NATIVE</span><pre>FTP_NATIVE</pre></a></li>
+<li class="constant  "><a href="#constant_JCOMPAT_UNICODE_PROPERTIES" title="JCOMPAT_UNICODE_PROPERTIES :: "><span class="description">JCOMPAT_UNICODE_PROPERTIES</span><pre>JCOMPAT_UNICODE_PROPERTIES</pre></a></li>
+<li class="constant  "><a href="#constant_JPATH_ROOT" title="JPATH_ROOT :: "><span class="description">JPATH_ROOT</span><pre>JPATH_ROOT</pre></a></li>
+<li class="constant  "><a href="#constant__QQ_" title="_QQ_ :: "><span class="description">_QQ_</span><pre>_QQ_</pre></a></li>
+</ul>
+</div>
+<div class="span8 package-contents">
+<ul class="breadcrumb"><li>
+<a href="../index.html"><i class="icon-folder-open"></i></a><span class="divider">\</span><li class="active"><a href="../packages/Default.html">Default</a></li>
+</li></ul>
+<div class="package-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="ExtractableInterface" class="element ajax clickable interface">
+<h1>ExtractableInterface<a href="../classes/Joomla.Archive.ExtractableInterface.html">¶</a>
+</h1>
+<p class="short_description">Archieve class interface</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Archive.ExtractableInterface.html" class="more">« More »</a>
+</div>
+<div id="ControllerInterface" class="element ajax clickable interface">
+<h1>ControllerInterface<a href="../classes/Joomla.Controller.ControllerInterface.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform Controller Interface</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Controller.ControllerInterface.html" class="more">« More »</a>
+</div>
+<div id="CipherInterface" class="element ajax clickable interface">
+<h1>CipherInterface<a href="../classes/Joomla.Crypt.CipherInterface.html">¶</a>
+</h1>
+<p class="short_description">JCrypt cipher interface.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Crypt.CipherInterface.html" class="more">« More »</a>
+</div>
+<div id="PasswordInterface" class="element ajax clickable interface">
+<h1>PasswordInterface<a href="../classes/Joomla.Crypt.PasswordInterface.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform Password Hashing Interface</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Crypt.PasswordInterface.html" class="more">« More »</a>
+</div>
+<div id="DumpableInterface" class="element ajax clickable interface">
+<h1>DumpableInterface<a href="../classes/Joomla.Data.DumpableInterface.html">¶</a>
+</h1>
+<p class="short_description">An interface to define if an object is dumpable.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Data.DumpableInterface.html" class="more">« More »</a>
+</div>
+<div id="DatabaseInterface" class="element ajax clickable interface">
+<h1>DatabaseInterface<a href="../classes/Joomla.Database.DatabaseInterface.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform Database Interface</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.DatabaseInterface.html" class="more">« More »</a>
+</div>
+<div id="LimitableInterface" class="element ajax clickable interface">
+<h1>LimitableInterface<a href="../classes/Joomla.Database.Query.LimitableInterface.html">¶</a>
+</h1>
+<p class="short_description">Joomla Database Query LimitableInterface.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Query.LimitableInterface.html" class="more">« More »</a>
+</div>
+<div id="PreparableInterface" class="element ajax clickable interface">
+<h1>PreparableInterface<a href="../classes/Joomla.Database.Query.PreparableInterface.html">¶</a>
+</h1>
+<p class="short_description">Joomla Database Query Preparable Interface.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Query.PreparableInterface.html" class="more">« More »</a>
+</div>
+<div id="TransportInterface" class="element ajax clickable interface">
+<h1>TransportInterface<a href="../classes/Joomla.Http.TransportInterface.html">¶</a>
+</h1>
+<p class="short_description">HTTP transport class interface.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Http.TransportInterface.html" class="more">« More »</a>
+</div>
+<div id="ModelInterface" class="element ajax clickable interface">
+<h1>ModelInterface<a href="../classes/Joomla.Model.ModelInterface.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform Model Interface</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Model.ModelInterface.html" class="more">« More »</a>
+</div>
+<div id="ProfilePointInterface" class="element ajax clickable interface">
+<h1>ProfilePointInterface<a href="../classes/Joomla.Profiler.ProfilePointInterface.html">¶</a>
+</h1>
+<p class="short_description">Interface for profile points.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Profiler.ProfilePointInterface.html" class="more">« More »</a>
+</div>
+<div id="ProfilerInterface" class="element ajax clickable interface">
+<h1>ProfilerInterface<a href="../classes/Joomla.Profiler.ProfilerInterface.html">¶</a>
+</h1>
+<p class="short_description">Interface for Profilers containing a sequence of ProfilePointInterface.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Profiler.ProfilerInterface.html" class="more">« More »</a>
+</div>
+<div id="ProfilerRendererInterface" class="element ajax clickable interface">
+<h1>ProfilerRendererInterface<a href="../classes/Joomla.Profiler.ProfilerRendererInterface.html">¶</a>
+</h1>
+<p class="short_description">Interface for profiler renderers.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Profiler.ProfilerRendererInterface.html" class="more">« More »</a>
+</div>
+<div id="ViewInterface" class="element ajax clickable interface">
+<h1>ViewInterface<a href="../classes/Joomla.View.ViewInterface.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform View Interface</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.View.ViewInterface.html" class="more">« More »</a>
+</div>
+<div id="JsonSerializable" class="element ajax clickable interface">
+<h1>JsonSerializable<a href="../classes/JsonSerializable.html">¶</a>
+</h1>
+<p class="short_description">JsonSerializable interface.</p>
+<div class="details collapse"></div>
+<a href="../classes/JsonSerializable.html" class="more">« More »</a>
+</div>
+<div id="Base" class="element ajax clickable class">
+<h1>Base<a href="../classes/Joomla.Application.Base.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform Base Application Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Application.Base.html" class="more">« More »</a>
+</div>
+<div id="Cli" class="element ajax clickable class">
+<h1>Cli<a href="../classes/Joomla.Application.Cli.html">¶</a>
+</h1>
+<p class="short_description">Base class for a Joomla! command line application.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Application.Cli.html" class="more">« More »</a>
+</div>
+<div id="Daemon" class="element ajax clickable class">
+<h1>Daemon<a href="../classes/Joomla.Application.Daemon.html">¶</a>
+</h1>
+<p class="short_description">Class to turn Cli applications into daemons.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Application.Daemon.html" class="more">« More »</a>
+</div>
+<div id="Web" class="element ajax clickable class">
+<h1>Web<a href="../classes/Joomla.Application.Web.html">¶</a>
+</h1>
+<p class="short_description">Base class for a Joomla! Web application.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Application.Web.html" class="more">« More »</a>
+</div>
+<div id="Client" class="element ajax clickable class">
+<h1>Client<a href="../classes/Joomla.Application.Web.Client.html">¶</a>
+</h1>
+<p class="short_description">Class to model a Web Client.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Application.Web.Client.html" class="more">« More »</a>
+</div>
+<div id="Archive" class="element ajax clickable class">
+<h1>Archive<a href="../classes/Joomla.Archive.Archive.html">¶</a>
+</h1>
+<p class="short_description">An Archive handling class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Archive.Archive.html" class="more">« More »</a>
+</div>
+<div id="Bzip2" class="element ajax clickable class">
+<h1>Bzip2<a href="../classes/Joomla.Archive.Bzip2.html">¶</a>
+</h1>
+<p class="short_description">Bzip2 format adapter for the JArchive class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Archive.Bzip2.html" class="more">« More »</a>
+</div>
+<div id="Gzip" class="element ajax clickable class">
+<h1>Gzip<a href="../classes/Joomla.Archive.Gzip.html">¶</a>
+</h1>
+<p class="short_description">Gzip format adapter for the JArchive class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Archive.Gzip.html" class="more">« More »</a>
+</div>
+<div id="Tar" class="element ajax clickable class">
+<h1>Tar<a href="../classes/Joomla.Archive.Tar.html">¶</a>
+</h1>
+<p class="short_description">Tar format adapter for the JArchive class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Archive.Tar.html" class="more">« More »</a>
+</div>
+<div id="Zip" class="element ajax clickable class">
+<h1>Zip<a href="../classes/Joomla.Archive.Zip.html">¶</a>
+</h1>
+<p class="short_description">ZIP format adapter for the JArchive class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Archive.Zip.html" class="more">« More »</a>
+</div>
+<div id="Apc" class="element ajax clickable class">
+<h1>Apc<a href="../classes/Joomla.Cache.Apc.html">¶</a>
+</h1>
+<p class="short_description">APC cache driver for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Cache.Apc.html" class="more">« More »</a>
+</div>
+<div id="Cache" class="element ajax clickable class">
+<h1>Cache<a href="../classes/Joomla.Cache.Cache.html">¶</a>
+</h1>
+<p class="short_description">Joomla! Caching Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Cache.Cache.html" class="more">« More »</a>
+</div>
+<div id="File" class="element ajax clickable class">
+<h1>File<a href="../classes/Joomla.Cache.File.html">¶</a>
+</h1>
+<p class="short_description">Filesystem cache driver for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Cache.File.html" class="more">« More »</a>
+</div>
+<div id="Item" class="element ajax clickable class">
+<h1>Item<a href="../classes/Joomla.Cache.Item.html">¶</a>
+</h1>
+<p class="short_description">Cache item instance for the Joomla Framework.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Cache.Item.html" class="more">« More »</a>
+</div>
+<div id="Memcached" class="element ajax clickable class">
+<h1>Memcached<a href="../classes/Joomla.Cache.Memcached.html">¶</a>
+</h1>
+<p class="short_description">Memcached cache driver for the Joomla Framework.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Cache.Memcached.html" class="more">« More »</a>
+</div>
+<div id="None" class="element ajax clickable class">
+<h1>None<a href="../classes/Joomla.Cache.None.html">¶</a>
+</h1>
+<p class="short_description">Runtime cache only driver for the Joomla Framework.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Cache.None.html" class="more">« More »</a>
+</div>
+<div id="Runtime" class="element ajax clickable class">
+<h1>Runtime<a href="../classes/Joomla.Cache.Runtime.html">¶</a>
+</h1>
+<p class="short_description">Runtime memory cache driver.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Cache.Runtime.html" class="more">« More »</a>
+</div>
+<div id="Wincache" class="element ajax clickable class">
+<h1>Wincache<a href="../classes/Joomla.Cache.Wincache.html">¶</a>
+</h1>
+<p class="short_description">WinCache cache driver for the Joomla Framework.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Cache.Wincache.html" class="more">« More »</a>
+</div>
+<div id="XCache" class="element ajax clickable class">
+<h1>XCache<a href="../classes/Joomla.Cache.XCache.html">¶</a>
+</h1>
+<p class="short_description">XCache cache driver for the Joomla Framework.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Cache.XCache.html" class="more">« More »</a>
+</div>
+<div id="Buffer" class="element ajax clickable class">
+<h1>Buffer<a href="../classes/Joomla.Client.Buffer.html">¶</a>
+</h1>
+<p class="short_description">Generic Buffer stream handler</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Client.Buffer.html" class="more">« More »</a>
+</div>
+<div id="Ftp" class="element ajax clickable class">
+<h1>Ftp<a href="../classes/Joomla.Client.Ftp.html">¶</a>
+</h1>
+<p class="short_description">FTP client class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Client.Ftp.html" class="more">« More »</a>
+</div>
+<div id="Helper" class="element ajax clickable class">
+<h1>Helper<a href="../classes/Joomla.Client.Helper.html">¶</a>
+</h1>
+<p class="short_description">Client helper class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Client.Helper.html" class="more">« More »</a>
+</div>
+<div id="Ldap" class="element ajax clickable class">
+<h1>Ldap<a href="../classes/Joomla.Client.Ldap.html">¶</a>
+</h1>
+<p class="short_description">LDAP client class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Client.Ldap.html" class="more">« More »</a>
+</div>
+<div id="Base" class="element ajax clickable class">
+<h1>Base<a href="../classes/Joomla.Controller.Base.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform Base Controller Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Controller.Base.html" class="more">« More »</a>
+</div>
+<div id="Cipher_3DES" class="element ajax clickable class">
+<h1>Cipher_3DES<a href="../classes/Joomla.Crypt.Cipher_3DES.html">¶</a>
+</h1>
+<p class="short_description">JCrypt cipher for Triple DES encryption, decryption and key generation.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Crypt.Cipher_3DES.html" class="more">« More »</a>
+</div>
+<div id="Cipher_Blowfish" class="element ajax clickable class">
+<h1>Cipher_Blowfish<a href="../classes/Joomla.Crypt.Cipher_Blowfish.html">¶</a>
+</h1>
+<p class="short_description">JCrypt cipher for Blowfish encryption, decryption and key generation.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Crypt.Cipher_Blowfish.html" class="more">« More »</a>
+</div>
+<div id="Cipher_Mcrypt" class="element ajax clickable class">
+<h1>Cipher_Mcrypt<a href="../classes/Joomla.Crypt.Cipher_Mcrypt.html">¶</a>
+</h1>
+<p class="short_description">JCrypt cipher for mcrypt algorithm encryption, decryption and key generation.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Crypt.Cipher_Mcrypt.html" class="more">« More »</a>
+</div>
+<div id="Cipher_Rijndael256" class="element ajax clickable class">
+<h1>Cipher_Rijndael256<a href="../classes/Joomla.Crypt.Cipher_Rijndael256.html">¶</a>
+</h1>
+<p class="short_description">JCrypt cipher for Rijndael 256 encryption, decryption and key generation.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Crypt.Cipher_Rijndael256.html" class="more">« More »</a>
+</div>
+<div id="Cipher_Simple" class="element ajax clickable class">
+<h1>Cipher_Simple<a href="../classes/Joomla.Crypt.Cipher_Simple.html">¶</a>
+</h1>
+<p class="short_description">JCrypt cipher for Simple encryption, decryption and key generation.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Crypt.Cipher_Simple.html" class="more">« More »</a>
+</div>
+<div id="Crypt" class="element ajax clickable class">
+<h1>Crypt<a href="../classes/Joomla.Crypt.Crypt.html">¶</a>
+</h1>
+<p class="short_description">Crypt is a Joomla Platform class for handling basic encryption/decryption of data.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Crypt.Crypt.html" class="more">« More »</a>
+</div>
+<div id="Key" class="element ajax clickable class">
+<h1>Key<a href="../classes/Joomla.Crypt.Key.html">¶</a>
+</h1>
+<p class="short_description">Encryption key object for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Crypt.Key.html" class="more">« More »</a>
+</div>
+<div id="Simple" class="element ajax clickable class">
+<h1>Simple<a href="../classes/Joomla.Crypt.Password.Simple.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform Password Crypter</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Crypt.Password.Simple.html" class="more">« More »</a>
+</div>
+<div id="Object" class="element ajax clickable class">
+<h1>Object<a href="../classes/Joomla.Data.Object.html">¶</a>
+</h1>
+<p class="short_description">Data\Object is a class that is used to store data but allowing you to access the data
+by mimicking the way PHP handles class properties.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Data.Object.html" class="more">« More »</a>
+</div>
+<div id="Set" class="element ajax clickable class">
+<h1>Set<a href="../classes/Joomla.Data.Set.html">¶</a>
+</h1>
+<p class="short_description">Data\Set is a collection class that allows the developer to operate on a set of Data\Object objects as if they were in a
+typical PHP array.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Data.Set.html" class="more">« More »</a>
+</div>
+<div id="DatabaseIterator" class="element ajax clickable class">
+<h1>DatabaseIterator<a href="../classes/Joomla.Database.DatabaseIterator.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform Database Driver Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.DatabaseIterator.html" class="more">« More »</a>
+</div>
+<div id="Driver" class="element ajax clickable class">
+<h1>Driver<a href="../classes/Joomla.Database.Driver.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform Database Driver Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Driver.html" class="more">« More »</a>
+</div>
+<div id="Mysql" class="element ajax clickable class">
+<h1>Mysql<a href="../classes/Joomla.Database.Driver.Mysql.html">¶</a>
+</h1>
+<p class="short_description">MySQL database driver</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Driver.Mysql.html" class="more">« More »</a>
+</div>
+<div id="Mysqli" class="element ajax clickable class">
+<h1>Mysqli<a href="../classes/Joomla.Database.Driver.Mysqli.html">¶</a>
+</h1>
+<p class="short_description">MySQLi database driver</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Driver.Mysqli.html" class="more">« More »</a>
+</div>
+<div id="Oracle" class="element ajax clickable class">
+<h1>Oracle<a href="../classes/Joomla.Database.Driver.Oracle.html">¶</a>
+</h1>
+<p class="short_description">Oracle database driver</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Driver.Oracle.html" class="more">« More »</a>
+</div>
+<div id="Pdo" class="element ajax clickable class">
+<h1>Pdo<a href="../classes/Joomla.Database.Driver.Pdo.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform PDO Database Driver Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Driver.Pdo.html" class="more">« More »</a>
+</div>
+<div id="Postgresql" class="element ajax clickable class">
+<h1>Postgresql<a href="../classes/Joomla.Database.Driver.Postgresql.html">¶</a>
+</h1>
+<p class="short_description">PostgreSQL database driver</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Driver.Postgresql.html" class="more">« More »</a>
+</div>
+<div id="Sqlazure" class="element ajax clickable class">
+<h1>Sqlazure<a href="../classes/Joomla.Database.Driver.Sqlazure.html">¶</a>
+</h1>
+<p class="short_description">SQL Server database driver</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Driver.Sqlazure.html" class="more">« More »</a>
+</div>
+<div id="Sqlite" class="element ajax clickable class">
+<h1>Sqlite<a href="../classes/Joomla.Database.Driver.Sqlite.html">¶</a>
+</h1>
+<p class="short_description">SQLite database driver</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Driver.Sqlite.html" class="more">« More »</a>
+</div>
+<div id="Sqlsrv" class="element ajax clickable class">
+<h1>Sqlsrv<a href="../classes/Joomla.Database.Driver.Sqlsrv.html">¶</a>
+</h1>
+<p class="short_description">SQL Server database driver</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Driver.Sqlsrv.html" class="more">« More »</a>
+</div>
+<div id="Exporter" class="element ajax clickable class">
+<h1>Exporter<a href="../classes/Joomla.Database.Exporter.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform Database Exporter Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Exporter.html" class="more">« More »</a>
+</div>
+<div id="Mysql" class="element ajax clickable class">
+<h1>Mysql<a href="../classes/Joomla.Database.Exporter.Mysql.html">¶</a>
+</h1>
+<p class="short_description">MySQL export driver.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Exporter.Mysql.html" class="more">« More »</a>
+</div>
+<div id="Mysqli" class="element ajax clickable class">
+<h1>Mysqli<a href="../classes/Joomla.Database.Exporter.Mysqli.html">¶</a>
+</h1>
+<p class="short_description">MySQLi export driver.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Exporter.Mysqli.html" class="more">« More »</a>
+</div>
+<div id="Postgresql" class="element ajax clickable class">
+<h1>Postgresql<a href="../classes/Joomla.Database.Exporter.Postgresql.html">¶</a>
+</h1>
+<p class="short_description">PostgreSQL export driver.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Exporter.Postgresql.html" class="more">« More »</a>
+</div>
+<div id="Factory" class="element ajax clickable class">
+<h1>Factory<a href="../classes/Joomla.Database.Factory.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform Database Factory class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Factory.html" class="more">« More »</a>
+</div>
+<div id="Importer" class="element ajax clickable class">
+<h1>Importer<a href="../classes/Joomla.Database.Importer.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform Database Importer Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Importer.html" class="more">« More »</a>
+</div>
+<div id="Mysql" class="element ajax clickable class">
+<h1>Mysql<a href="../classes/Joomla.Database.Importer.Mysql.html">¶</a>
+</h1>
+<p class="short_description">MySQL import driver.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Importer.Mysql.html" class="more">« More »</a>
+</div>
+<div id="Mysqli" class="element ajax clickable class">
+<h1>Mysqli<a href="../classes/Joomla.Database.Importer.Mysqli.html">¶</a>
+</h1>
+<p class="short_description">MySQLi import driver.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Importer.Mysqli.html" class="more">« More »</a>
+</div>
+<div id="Postgresql" class="element ajax clickable class">
+<h1>Postgresql<a href="../classes/Joomla.Database.Importer.Postgresql.html">¶</a>
+</h1>
+<p class="short_description">PostgreSQL import driver.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Importer.Postgresql.html" class="more">« More »</a>
+</div>
+<div id="Azure" class="element ajax clickable class">
+<h1>Azure<a href="../classes/Joomla.Database.Iterator.Azure.html">¶</a>
+</h1>
+<p class="short_description">SQL azure database iterator.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Iterator.Azure.html" class="more">« More »</a>
+</div>
+<div id="Mysql" class="element ajax clickable class">
+<h1>Mysql<a href="../classes/Joomla.Database.Iterator.Mysql.html">¶</a>
+</h1>
+<p class="short_description">MySQL database iterator.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Iterator.Mysql.html" class="more">« More »</a>
+</div>
+<div id="Mysqli" class="element ajax clickable class">
+<h1>Mysqli<a href="../classes/Joomla.Database.Iterator.Mysqli.html">¶</a>
+</h1>
+<p class="short_description">MySQLi database iterator.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Iterator.Mysqli.html" class="more">« More »</a>
+</div>
+<div id="Oracle" class="element ajax clickable class">
+<h1>Oracle<a href="../classes/Joomla.Database.Iterator.Oracle.html">¶</a>
+</h1>
+<p class="short_description">Oracle database iterator.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Iterator.Oracle.html" class="more">« More »</a>
+</div>
+<div id="Pdo" class="element ajax clickable class">
+<h1>Pdo<a href="../classes/Joomla.Database.Iterator.Pdo.html">¶</a>
+</h1>
+<p class="short_description">PDO database iterator.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Iterator.Pdo.html" class="more">« More »</a>
+</div>
+<div id="Sqlite" class="element ajax clickable class">
+<h1>Sqlite<a href="../classes/Joomla.Database.Iterator.Sqlite.html">¶</a>
+</h1>
+<p class="short_description">SQLite database iterator.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Iterator.Sqlite.html" class="more">« More »</a>
+</div>
+<div id="Sqlsrv" class="element ajax clickable class">
+<h1>Sqlsrv<a href="../classes/Joomla.Database.Iterator.Sqlsrv.html">¶</a>
+</h1>
+<p class="short_description">SQL server database iterator.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Iterator.Sqlsrv.html" class="more">« More »</a>
+</div>
+<div id="Query" class="element ajax clickable class">
+<h1>Query<a href="../classes/Joomla.Database.Query.html">¶</a>
+</h1>
+<p class="short_description">Query Building Class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Query.html" class="more">« More »</a>
+</div>
+<div id="Element" class="element ajax clickable class">
+<h1>Element<a href="../classes/Joomla.Database.Query.Element.html">¶</a>
+</h1>
+<p class="short_description">Query Element Class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Query.Element.html" class="more">« More »</a>
+</div>
+<div id="Mysql" class="element ajax clickable class">
+<h1>Mysql<a href="../classes/Joomla.Database.Query.Mysql.html">¶</a>
+</h1>
+<p class="short_description">Query Building Class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Query.Mysql.html" class="more">« More »</a>
+</div>
+<div id="Mysqli" class="element ajax clickable class">
+<h1>Mysqli<a href="../classes/Joomla.Database.Query.Mysqli.html">¶</a>
+</h1>
+<p class="short_description">Query Building Class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Query.Mysqli.html" class="more">« More »</a>
+</div>
+<div id="Oracle" class="element ajax clickable class">
+<h1>Oracle<a href="../classes/Joomla.Database.Query.Oracle.html">¶</a>
+</h1>
+<p class="short_description">Oracle Query Building Class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Query.Oracle.html" class="more">« More »</a>
+</div>
+<div id="Pdo" class="element ajax clickable class">
+<h1>Pdo<a href="../classes/Joomla.Database.Query.Pdo.html">¶</a>
+</h1>
+<p class="short_description">PDO Query Building Class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Query.Pdo.html" class="more">« More »</a>
+</div>
+<div id="Postgresql" class="element ajax clickable class">
+<h1>Postgresql<a href="../classes/Joomla.Database.Query.Postgresql.html">¶</a>
+</h1>
+<p class="short_description">Query Building Class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Query.Postgresql.html" class="more">« More »</a>
+</div>
+<div id="Sqlazure" class="element ajax clickable class">
+<h1>Sqlazure<a href="../classes/Joomla.Database.Query.Sqlazure.html">¶</a>
+</h1>
+<p class="short_description">Query Building Class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Query.Sqlazure.html" class="more">« More »</a>
+</div>
+<div id="Sqlite" class="element ajax clickable class">
+<h1>Sqlite<a href="../classes/Joomla.Database.Query.Sqlite.html">¶</a>
+</h1>
+<p class="short_description">SQLite Query Building Class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Query.Sqlite.html" class="more">« More »</a>
+</div>
+<div id="Sqlsrv" class="element ajax clickable class">
+<h1>Sqlsrv<a href="../classes/Joomla.Database.Query.Sqlsrv.html">¶</a>
+</h1>
+<p class="short_description">Query Building Class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Database.Query.Sqlsrv.html" class="more">« More »</a>
+</div>
+<div id="Date" class="element ajax clickable class">
+<h1>Date<a href="../classes/Joomla.Date.Date.html">¶</a>
+</h1>
+<p class="short_description">JDate is a class that stores a date and provides logic to manipulate
+and render that date in a variety of formats.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Date.Date.html" class="more">« More »</a>
+</div>
+<div id="Factory" class="element ajax clickable class">
+<h1>Factory<a href="../classes/Joomla.Factory.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform Factory class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Factory.html" class="more">« More »</a>
+</div>
+<div id="File" class="element ajax clickable class">
+<h1>File<a href="../classes/Joomla.Filesystem.File.html">¶</a>
+</h1>
+<p class="short_description">A File handling class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Filesystem.File.html" class="more">« More »</a>
+</div>
+<div id="Folder" class="element ajax clickable class">
+<h1>Folder<a href="../classes/Joomla.Filesystem.Folder.html">¶</a>
+</h1>
+<p class="short_description">A Folder handling class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Filesystem.Folder.html" class="more">« More »</a>
+</div>
+<div id="Helper" class="element ajax clickable class">
+<h1>Helper<a href="../classes/Joomla.Filesystem.Helper.html">¶</a>
+</h1>
+<p class="short_description">File system helper</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Filesystem.Helper.html" class="more">« More »</a>
+</div>
+<div id="Patcher" class="element ajax clickable class">
+<h1>Patcher<a href="../classes/Joomla.Filesystem.Patcher.html">¶</a>
+</h1>
+<p class="short_description">A Unified Diff Format Patcher class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Filesystem.Patcher.html" class="more">« More »</a>
+</div>
+<div id="Path" class="element ajax clickable class">
+<h1>Path<a href="../classes/Joomla.Filesystem.Path.html">¶</a>
+</h1>
+<p class="short_description">A Path handling class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Filesystem.Path.html" class="more">« More »</a>
+</div>
+<div id="Stream" class="element ajax clickable class">
+<h1>Stream<a href="../classes/Joomla.Filesystem.Stream.html">¶</a>
+</h1>
+<p class="short_description">Joomla! Stream Interface</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Filesystem.Stream.html" class="more">« More »</a>
+</div>
+<div id="String" class="element ajax clickable class">
+<h1>String<a href="../classes/Joomla.Filesystem.Stream.String.html">¶</a>
+</h1>
+<p class="short_description">String Stream Wrapper</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Filesystem.Stream.String.html" class="more">« More »</a>
+</div>
+<div id="StringController" class="element ajax clickable class">
+<h1>StringController<a href="../classes/Joomla.Filesystem.Support.StringController.html">¶</a>
+</h1>
+<p class="short_description">String Controller</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Filesystem.Support.StringController.html" class="more">« More »</a>
+</div>
+<div id="Input" class="element ajax clickable class">
+<h1>Input<a href="../classes/Joomla.Filter.Input.html">¶</a>
+</h1>
+<p class="short_description">JFilterInput is a class for filtering input from any data source</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Filter.Input.html" class="more">« More »</a>
+</div>
+<div id="Output" class="element ajax clickable class">
+<h1>Output<a href="../classes/Joomla.Filter.Output.html">¶</a>
+</h1>
+<p class="short_description">JFilterOutput</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Filter.Output.html" class="more">« More »</a>
+</div>
+<div id="Field" class="element ajax clickable class">
+<h1>Field<a href="../classes/Joomla.Form.Field.html">¶</a>
+</h1>
+<p class="short_description">Abstract Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field.html" class="more">« More »</a>
+</div>
+<div id="Field_Checkbox" class="element ajax clickable class">
+<h1>Field_Checkbox<a href="../classes/Joomla.Form.Field_Checkbox.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_Checkbox.html" class="more">« More »</a>
+</div>
+<div id="Field_Checkboxes" class="element ajax clickable class">
+<h1>Field_Checkboxes<a href="../classes/Joomla.Form.Field_Checkboxes.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_Checkboxes.html" class="more">« More »</a>
+</div>
+<div id="Field_Combo" class="element ajax clickable class">
+<h1>Field_Combo<a href="../classes/Joomla.Form.Field_Combo.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_Combo.html" class="more">« More »</a>
+</div>
+<div id="Field_DatabaseConnection" class="element ajax clickable class">
+<h1>Field_DatabaseConnection<a href="../classes/Joomla.Form.Field_DatabaseConnection.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_DatabaseConnection.html" class="more">« More »</a>
+</div>
+<div id="Field_Email" class="element ajax clickable class">
+<h1>Field_Email<a href="../classes/Joomla.Form.Field_Email.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_Email.html" class="more">« More »</a>
+</div>
+<div id="Field_File" class="element ajax clickable class">
+<h1>Field_File<a href="../classes/Joomla.Form.Field_File.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_File.html" class="more">« More »</a>
+</div>
+<div id="Field_FileList" class="element ajax clickable class">
+<h1>Field_FileList<a href="../classes/Joomla.Form.Field_FileList.html">¶</a>
+</h1>
+<p class="short_description">Supports an HTML select list of files</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_FileList.html" class="more">« More »</a>
+</div>
+<div id="Field_FolderList" class="element ajax clickable class">
+<h1>Field_FolderList<a href="../classes/Joomla.Form.Field_FolderList.html">¶</a>
+</h1>
+<p class="short_description">Supports an HTML select list of folder</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_FolderList.html" class="more">« More »</a>
+</div>
+<div id="Field_GroupedList" class="element ajax clickable class">
+<h1>Field_GroupedList<a href="../classes/Joomla.Form.Field_GroupedList.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_GroupedList.html" class="more">« More »</a>
+</div>
+<div id="Field_Hidden" class="element ajax clickable class">
+<h1>Field_Hidden<a href="../classes/Joomla.Form.Field_Hidden.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_Hidden.html" class="more">« More »</a>
+</div>
+<div id="Field_ImageList" class="element ajax clickable class">
+<h1>Field_ImageList<a href="../classes/Joomla.Form.Field_ImageList.html">¶</a>
+</h1>
+<p class="short_description">Supports an HTML select list of image</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_ImageList.html" class="more">« More »</a>
+</div>
+<div id="Field_Integer" class="element ajax clickable class">
+<h1>Field_Integer<a href="../classes/Joomla.Form.Field_Integer.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_Integer.html" class="more">« More »</a>
+</div>
+<div id="Field_Language" class="element ajax clickable class">
+<h1>Field_Language<a href="../classes/Joomla.Form.Field_Language.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_Language.html" class="more">« More »</a>
+</div>
+<div id="Field_List" class="element ajax clickable class">
+<h1>Field_List<a href="../classes/Joomla.Form.Field_List.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_List.html" class="more">« More »</a>
+</div>
+<div id="Field_Password" class="element ajax clickable class">
+<h1>Field_Password<a href="../classes/Joomla.Form.Field_Password.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_Password.html" class="more">« More »</a>
+</div>
+<div id="Field_Radio" class="element ajax clickable class">
+<h1>Field_Radio<a href="../classes/Joomla.Form.Field_Radio.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_Radio.html" class="more">« More »</a>
+</div>
+<div id="Field_SQL" class="element ajax clickable class">
+<h1>Field_SQL<a href="../classes/Joomla.Form.Field_SQL.html">¶</a>
+</h1>
+<p class="short_description">Supports an custom SQL select list</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_SQL.html" class="more">« More »</a>
+</div>
+<div id="Field_Spacer" class="element ajax clickable class">
+<h1>Field_Spacer<a href="../classes/Joomla.Form.Field_Spacer.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_Spacer.html" class="more">« More »</a>
+</div>
+<div id="Field_Tel" class="element ajax clickable class">
+<h1>Field_Tel<a href="../classes/Joomla.Form.Field_Tel.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_Tel.html" class="more">« More »</a>
+</div>
+<div id="Field_Text" class="element ajax clickable class">
+<h1>Field_Text<a href="../classes/Joomla.Form.Field_Text.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_Text.html" class="more">« More »</a>
+</div>
+<div id="Field_Textarea" class="element ajax clickable class">
+<h1>Field_Textarea<a href="../classes/Joomla.Form.Field_Textarea.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_Textarea.html" class="more">« More »</a>
+</div>
+<div id="Field_Timezone" class="element ajax clickable class">
+<h1>Field_Timezone<a href="../classes/Joomla.Form.Field_Timezone.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_Timezone.html" class="more">« More »</a>
+</div>
+<div id="Field_Url" class="element ajax clickable class">
+<h1>Field_Url<a href="../classes/Joomla.Form.Field_Url.html">¶</a>
+</h1>
+<p class="short_description">Form Field class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Field_Url.html" class="more">« More »</a>
+</div>
+<div id="Form" class="element ajax clickable class">
+<h1>Form<a href="../classes/Joomla.Form.Form.html">¶</a>
+</h1>
+<p class="short_description">Form Class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Form.html" class="more">« More »</a>
+</div>
+<div id="Helper" class="element ajax clickable class">
+<h1>Helper<a href="../classes/Joomla.Form.Helper.html">¶</a>
+</h1>
+<p class="short_description">JForm's helper class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Helper.html" class="more">« More »</a>
+</div>
+<div id="Select" class="element ajax clickable class">
+<h1>Select<a href="../classes/Joomla.Form.Html.Select.html">¶</a>
+</h1>
+<p class="short_description">Utility class for creating HTML select lists</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Html.Select.html" class="more">« More »</a>
+</div>
+<div id="Rule" class="element ajax clickable class">
+<h1>Rule<a href="../classes/Joomla.Form.Rule.html">¶</a>
+</h1>
+<p class="short_description">Form Rule class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Rule.html" class="more">« More »</a>
+</div>
+<div id="Boolean" class="element ajax clickable class">
+<h1>Boolean<a href="../classes/Joomla.Form.Rule.Boolean.html">¶</a>
+</h1>
+<p class="short_description">Form Rule class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Rule.Boolean.html" class="more">« More »</a>
+</div>
+<div id="Color" class="element ajax clickable class">
+<h1>Color<a href="../classes/Joomla.Form.Rule.Color.html">¶</a>
+</h1>
+<p class="short_description">Form Rule class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Rule.Color.html" class="more">« More »</a>
+</div>
+<div id="Email" class="element ajax clickable class">
+<h1>Email<a href="../classes/Joomla.Form.Rule.Email.html">¶</a>
+</h1>
+<p class="short_description">Form Rule class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Rule.Email.html" class="more">« More »</a>
+</div>
+<div id="Equals" class="element ajax clickable class">
+<h1>Equals<a href="../classes/Joomla.Form.Rule.Equals.html">¶</a>
+</h1>
+<p class="short_description">Form Rule class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Rule.Equals.html" class="more">« More »</a>
+</div>
+<div id="Options" class="element ajax clickable class">
+<h1>Options<a href="../classes/Joomla.Form.Rule.Options.html">¶</a>
+</h1>
+<p class="short_description">Form Rule class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Rule.Options.html" class="more">« More »</a>
+</div>
+<div id="Tel" class="element ajax clickable class">
+<h1>Tel<a href="../classes/Joomla.Form.Rule.Tel.html">¶</a>
+</h1>
+<p class="short_description">Form Rule class for the Joomla Platform</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Rule.Tel.html" class="more">« More »</a>
+</div>
+<div id="Url" class="element ajax clickable class">
+<h1>Url<a href="../classes/Joomla.Form.Rule.Url.html">¶</a>
+</h1>
+<p class="short_description">Form Rule class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Form.Rule.Url.html" class="more">« More »</a>
+</div>
+<div id="Account" class="element ajax clickable class">
+<h1>Account<a href="../classes/Joomla.Github.Account.html">¶</a>
+</h1>
+<p class="short_description">GitHub API Account class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Github.Account.html" class="more">« More »</a>
+</div>
+<div id="Commits" class="element ajax clickable class">
+<h1>Commits<a href="../classes/Joomla.Github.Commits.html">¶</a>
+</h1>
+<p class="short_description">GitHub API Commits class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Github.Commits.html" class="more">« More »</a>
+</div>
+<div id="Forks" class="element ajax clickable class">
+<h1>Forks<a href="../classes/Joomla.Github.Forks.html">¶</a>
+</h1>
+<p class="short_description">GitHub API Forks class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Github.Forks.html" class="more">« More »</a>
+</div>
+<div id="Gists" class="element ajax clickable class">
+<h1>Gists<a href="../classes/Joomla.Github.Gists.html">¶</a>
+</h1>
+<p class="short_description">GitHub API Gists class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Github.Gists.html" class="more">« More »</a>
+</div>
+<div id="Github" class="element ajax clickable class">
+<h1>Github<a href="../classes/Joomla.Github.Github.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform class for interacting with a GitHub server instance.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Github.Github.html" class="more">« More »</a>
+</div>
+<div id="Hooks" class="element ajax clickable class">
+<h1>Hooks<a href="../classes/Joomla.Github.Hooks.html">¶</a>
+</h1>
+<p class="short_description">GitHub API Hooks class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Github.Hooks.html" class="more">« More »</a>
+</div>
+<div id="Http" class="element ajax clickable class">
+<h1>Http<a href="../classes/Joomla.Github.Http.html">¶</a>
+</h1>
+<p class="short_description">HTTP client class for connecting to a GitHub instance.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Github.Http.html" class="more">« More »</a>
+</div>
+<div id="Issues" class="element ajax clickable class">
+<h1>Issues<a href="../classes/Joomla.Github.Issues.html">¶</a>
+</h1>
+<p class="short_description">GitHub API Issues class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Github.Issues.html" class="more">« More »</a>
+</div>
+<div id="Meta" class="element ajax clickable class">
+<h1>Meta<a href="../classes/Joomla.Github.Meta.html">¶</a>
+</h1>
+<p class="short_description">GitHub API Meta class for the Joomla Framework.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Github.Meta.html" class="more">« More »</a>
+</div>
+<div id="Milestones" class="element ajax clickable class">
+<h1>Milestones<a href="../classes/Joomla.Github.Milestones.html">¶</a>
+</h1>
+<p class="short_description">GitHub API Milestones class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Github.Milestones.html" class="more">« More »</a>
+</div>
+<div id="Object" class="element ajax clickable class">
+<h1>Object<a href="../classes/Joomla.Github.Object.html">¶</a>
+</h1>
+<p class="short_description">GitHub API object class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Github.Object.html" class="more">« More »</a>
+</div>
+<div id="Pulls" class="element ajax clickable class">
+<h1>Pulls<a href="../classes/Joomla.Github.Pulls.html">¶</a>
+</h1>
+<p class="short_description">GitHub API Pull Requests class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Github.Pulls.html" class="more">« More »</a>
+</div>
+<div id="Refs" class="element ajax clickable class">
+<h1>Refs<a href="../classes/Joomla.Github.Refs.html">¶</a>
+</h1>
+<p class="short_description">GitHub API References class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Github.Refs.html" class="more">« More »</a>
+</div>
+<div id="Statuses" class="element ajax clickable class">
+<h1>Statuses<a href="../classes/Joomla.Github.Statuses.html">¶</a>
+</h1>
+<p class="short_description">GitHub API References class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Github.Statuses.html" class="more">« More »</a>
+</div>
+<div id="Auth" class="element ajax clickable class">
+<h1>Auth<a href="../classes/Joomla.Google.Auth.html">¶</a>
+</h1>
+<p class="short_description">Google authentication class abstract</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Google.Auth.html" class="more">« More »</a>
+</div>
+<div id="OAuth2" class="element ajax clickable class">
+<h1>OAuth2<a href="../classes/Joomla.Google.Auth.OAuth2.html">¶</a>
+</h1>
+<p class="short_description">Google OAuth authentication class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Google.Auth.OAuth2.html" class="more">« More »</a>
+</div>
+<div id="Data" class="element ajax clickable class">
+<h1>Data<a href="../classes/Joomla.Google.Data.html">¶</a>
+</h1>
+<p class="short_description">Google API data class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Google.Data.html" class="more">« More »</a>
+</div>
+<div id="Adsense" class="element ajax clickable class">
+<h1>Adsense<a href="../classes/Joomla.Google.Data.Adsense.html">¶</a>
+</h1>
+<p class="short_description">Google Adsense data class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Google.Data.Adsense.html" class="more">« More »</a>
+</div>
+<div id="Calendar" class="element ajax clickable class">
+<h1>Calendar<a href="../classes/Joomla.Google.Data.Calendar.html">¶</a>
+</h1>
+<p class="short_description">Google Calendar data class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Google.Data.Calendar.html" class="more">« More »</a>
+</div>
+<div id="Picasa" class="element ajax clickable class">
+<h1>Picasa<a href="../classes/Joomla.Google.Data.Picasa.html">¶</a>
+</h1>
+<p class="short_description">Google Picasa data class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Google.Data.Picasa.html" class="more">« More »</a>
+</div>
+<div id="Album" class="element ajax clickable class">
+<h1>Album<a href="../classes/Joomla.Google.Data.Picasa.Album.html">¶</a>
+</h1>
+<p class="short_description">Google Picasa data class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Google.Data.Picasa.Album.html" class="more">« More »</a>
+</div>
+<div id="Photo" class="element ajax clickable class">
+<h1>Photo<a href="../classes/Joomla.Google.Data.Picasa.Photo.html">¶</a>
+</h1>
+<p class="short_description">Google Picasa data class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Google.Data.Picasa.Photo.html" class="more">« More »</a>
+</div>
+<div id="Plus" class="element ajax clickable class">
+<h1>Plus<a href="../classes/Joomla.Google.Data.Plus.html">¶</a>
+</h1>
+<p class="short_description">Google+ data class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Google.Data.Plus.html" class="more">« More »</a>
+</div>
+<div id="Activities" class="element ajax clickable class">
+<h1>Activities<a href="../classes/Joomla.Google.Data.Plus.Activities.html">¶</a>
+</h1>
+<p class="short_description">Google+ data class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Google.Data.Plus.Activities.html" class="more">« More »</a>
+</div>
+<div id="Comments" class="element ajax clickable class">
+<h1>Comments<a href="../classes/Joomla.Google.Data.Plus.Comments.html">¶</a>
+</h1>
+<p class="short_description">Google+ data class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Google.Data.Plus.Comments.html" class="more">« More »</a>
+</div>
+<div id="People" class="element ajax clickable class">
+<h1>People<a href="../classes/Joomla.Google.Data.Plus.People.html">¶</a>
+</h1>
+<p class="short_description">Google+ data class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Google.Data.Plus.People.html" class="more">« More »</a>
+</div>
+<div id="Embed" class="element ajax clickable class">
+<h1>Embed<a href="../classes/Joomla.Google.Embed.html">¶</a>
+</h1>
+<p class="short_description">Google API object class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Google.Embed.html" class="more">« More »</a>
+</div>
+<div id="Analytics" class="element ajax clickable class">
+<h1>Analytics<a href="../classes/Joomla.Google.Embed.Analytics.html">¶</a>
+</h1>
+<p class="short_description">Google Analytics embed class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Google.Embed.Analytics.html" class="more">« More »</a>
+</div>
+<div id="Maps" class="element ajax clickable class">
+<h1>Maps<a href="../classes/Joomla.Google.Embed.Maps.html">¶</a>
+</h1>
+<p class="short_description">Google Maps embed class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Google.Embed.Maps.html" class="more">« More »</a>
+</div>
+<div id="Google" class="element ajax clickable class">
+<h1>Google<a href="../classes/Joomla.Google.Google.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform class for interacting with the Google APIs.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Google.Google.html" class="more">« More »</a>
+</div>
+<div id="Factory" class="element ajax clickable class">
+<h1>Factory<a href="../classes/Joomla.Http.Factory.html">¶</a>
+</h1>
+<p class="short_description">HTTP factory class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Http.Factory.html" class="more">« More »</a>
+</div>
+<div id="Http" class="element ajax clickable class">
+<h1>Http<a href="../classes/Joomla.Http.Http.html">¶</a>
+</h1>
+<p class="short_description">HTTP client class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Http.Http.html" class="more">« More »</a>
+</div>
+<div id="Response" class="element ajax clickable class">
+<h1>Response<a href="../classes/Joomla.Http.Response.html">¶</a>
+</h1>
+<p class="short_description">HTTP response data object class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Http.Response.html" class="more">« More »</a>
+</div>
+<div id="Curl" class="element ajax clickable class">
+<h1>Curl<a href="../classes/Joomla.Http.Transport.Curl.html">¶</a>
+</h1>
+<p class="short_description">HTTP transport class for using cURL.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Http.Transport.Curl.html" class="more">« More »</a>
+</div>
+<div id="Socket" class="element ajax clickable class">
+<h1>Socket<a href="../classes/Joomla.Http.Transport.Socket.html">¶</a>
+</h1>
+<p class="short_description">HTTP transport class for using sockets directly.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Http.Transport.Socket.html" class="more">« More »</a>
+</div>
+<div id="Stream" class="element ajax clickable class">
+<h1>Stream<a href="../classes/Joomla.Http.Transport.Stream.html">¶</a>
+</h1>
+<p class="short_description">HTTP transport class for using PHP streams.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Http.Transport.Stream.html" class="more">« More »</a>
+</div>
+<div id="Filter" class="element ajax clickable class">
+<h1>Filter<a href="../classes/Joomla.Image.Filter.html">¶</a>
+</h1>
+<p class="short_description">Class to manipulate an image.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Image.Filter.html" class="more">« More »</a>
+</div>
+<div id="Brightness" class="element ajax clickable class">
+<h1>Brightness<a href="../classes/Joomla.Image.Filter.Brightness.html">¶</a>
+</h1>
+<p class="short_description">Image Filter class adjust the brightness of an image.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Image.Filter.Brightness.html" class="more">« More »</a>
+</div>
+<div id="Contrast" class="element ajax clickable class">
+<h1>Contrast<a href="../classes/Joomla.Image.Filter.Contrast.html">¶</a>
+</h1>
+<p class="short_description">Image Filter class adjust the contrast of an image.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Image.Filter.Contrast.html" class="more">« More »</a>
+</div>
+<div id="Edgedetect" class="element ajax clickable class">
+<h1>Edgedetect<a href="../classes/Joomla.Image.Filter.Edgedetect.html">¶</a>
+</h1>
+<p class="short_description">Image Filter class to add an edge detect effect to an image.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Image.Filter.Edgedetect.html" class="more">« More »</a>
+</div>
+<div id="Emboss" class="element ajax clickable class">
+<h1>Emboss<a href="../classes/Joomla.Image.Filter.Emboss.html">¶</a>
+</h1>
+<p class="short_description">Image Filter class to emboss an image.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Image.Filter.Emboss.html" class="more">« More »</a>
+</div>
+<div id="Grayscale" class="element ajax clickable class">
+<h1>Grayscale<a href="../classes/Joomla.Image.Filter.Grayscale.html">¶</a>
+</h1>
+<p class="short_description">Image Filter class to transform an image to grayscale.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Image.Filter.Grayscale.html" class="more">« More »</a>
+</div>
+<div id="Negate" class="element ajax clickable class">
+<h1>Negate<a href="../classes/Joomla.Image.Filter.Negate.html">¶</a>
+</h1>
+<p class="short_description">Image Filter class to negate the colors of an image.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Image.Filter.Negate.html" class="more">« More »</a>
+</div>
+<div id="Sketchy" class="element ajax clickable class">
+<h1>Sketchy<a href="../classes/Joomla.Image.Filter.Sketchy.html">¶</a>
+</h1>
+<p class="short_description">Image Filter class to make an image appear "sketchy".</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Image.Filter.Sketchy.html" class="more">« More »</a>
+</div>
+<div id="Smooth" class="element ajax clickable class">
+<h1>Smooth<a href="../classes/Joomla.Image.Filter.Smooth.html">¶</a>
+</h1>
+<p class="short_description">Image Filter class adjust the smoothness of an image.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Image.Filter.Smooth.html" class="more">« More »</a>
+</div>
+<div id="Image" class="element ajax clickable class">
+<h1>Image<a href="../classes/Joomla.Image.Image.html">¶</a>
+</h1>
+<p class="short_description">Class to manipulate an image.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Image.Image.html" class="more">« More »</a>
+</div>
+<div id="Cli" class="element ajax clickable class">
+<h1>Cli<a href="../classes/Joomla.Input.Cli.html">¶</a>
+</h1>
+<p class="short_description">Joomla! Input CLI Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Input.Cli.html" class="more">« More »</a>
+</div>
+<div id="Cookie" class="element ajax clickable class">
+<h1>Cookie<a href="../classes/Joomla.Input.Cookie.html">¶</a>
+</h1>
+<p class="short_description">Joomla! Input Cookie Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Input.Cookie.html" class="more">« More »</a>
+</div>
+<div id="Files" class="element ajax clickable class">
+<h1>Files<a href="../classes/Joomla.Input.Files.html">¶</a>
+</h1>
+<p class="short_description">Joomla! Input Files Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Input.Files.html" class="more">« More »</a>
+</div>
+<div id="Input" class="element ajax clickable class">
+<h1>Input<a href="../classes/Joomla.Input.Input.html">¶</a>
+</h1>
+<p class="short_description">Joomla! Input Base Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Input.Input.html" class="more">« More »</a>
+</div>
+<div id="Json" class="element ajax clickable class">
+<h1>Json<a href="../classes/Joomla.Input.Json.html">¶</a>
+</h1>
+<p class="short_description">Joomla! Input JSON Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Input.Json.html" class="more">« More »</a>
+</div>
+<div id="Keychain" class="element ajax clickable class">
+<h1>Keychain<a href="../classes/Joomla.Keychain.Keychain.html">¶</a>
+</h1>
+<p class="short_description">Keychain Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Keychain.Keychain.html" class="more">« More »</a>
+</div>
+<div id="Helper" class="element ajax clickable class">
+<h1>Helper<a href="../classes/Joomla.Language.Helper.html">¶</a>
+</h1>
+<p class="short_description">Language helper class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Language.Helper.html" class="more">« More »</a>
+</div>
+<div id="Language" class="element ajax clickable class">
+<h1>Language<a href="../classes/Joomla.Language.Language.html">¶</a>
+</h1>
+<p class="short_description">Languages/translation handler class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Language.Language.html" class="more">« More »</a>
+</div>
+<div id="Stemmer" class="element ajax clickable class">
+<h1>Stemmer<a href="../classes/Joomla.Language.Stemmer.html">¶</a>
+</h1>
+<p class="short_description">Stemmer base class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Language.Stemmer.html" class="more">« More »</a>
+</div>
+<div id="Porteren" class="element ajax clickable class">
+<h1>Porteren<a href="../classes/Joomla.Language.Stemmer.Porteren.html">¶</a>
+</h1>
+<p class="short_description">Porter English stemmer class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Language.Stemmer.Porteren.html" class="more">« More »</a>
+</div>
+<div id="Text" class="element ajax clickable class">
+<h1>Text<a href="../classes/Joomla.Language.Text.html">¶</a>
+</h1>
+<p class="short_description">Text handling class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Language.Text.html" class="more">« More »</a>
+</div>
+<div id="Transliterate" class="element ajax clickable class">
+<h1>Transliterate<a href="../classes/Joomla.Language.Transliterate.html">¶</a>
+</h1>
+<p class="short_description">Class to transliterate strings</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Language.Transliterate.html" class="more">« More »</a>
+</div>
+<div id="Loader" class="element ajax clickable class">
+<h1>Loader<a href="../classes/Joomla.Loader.html">¶</a>
+</h1>
+<p class="short_description">Static class to handle loading of libraries.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Loader.html" class="more">« More »</a>
+</div>
+<div id="Entry" class="element ajax clickable class">
+<h1>Entry<a href="../classes/Joomla.Log.Entry.html">¶</a>
+</h1>
+<p class="short_description">Joomla! Log Entry class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Log.Entry.html" class="more">« More »</a>
+</div>
+<div id="Log" class="element ajax clickable class">
+<h1>Log<a href="../classes/Joomla.Log.Log.html">¶</a>
+</h1>
+<p class="short_description">Joomla! Log Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Log.Log.html" class="more">« More »</a>
+</div>
+<div id="Logger" class="element ajax clickable class">
+<h1>Logger<a href="../classes/Joomla.Log.Logger.html">¶</a>
+</h1>
+<p class="short_description">Joomla! Logger Base Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Log.Logger.html" class="more">« More »</a>
+</div>
+<div id="Callback" class="element ajax clickable class">
+<h1>Callback<a href="../classes/Joomla.Log.Logger.Callback.html">¶</a>
+</h1>
+<p class="short_description">Joomla! Callback Log class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Log.Logger.Callback.html" class="more">« More »</a>
+</div>
+<div id="Database" class="element ajax clickable class">
+<h1>Database<a href="../classes/Joomla.Log.Logger.Database.html">¶</a>
+</h1>
+<p class="short_description">Joomla! MySQL Database Log class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Log.Logger.Database.html" class="more">« More »</a>
+</div>
+<div id="Echoo" class="element ajax clickable class">
+<h1>Echoo<a href="../classes/Joomla.Log.Logger.Echoo.html">¶</a>
+</h1>
+<p class="short_description">Joomla Echo logger class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Log.Logger.Echoo.html" class="more">« More »</a>
+</div>
+<div id="Formattedtext" class="element ajax clickable class">
+<h1>Formattedtext<a href="../classes/Joomla.Log.Logger.Formattedtext.html">¶</a>
+</h1>
+<p class="short_description">Joomla! Formatted Text File Log class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Log.Logger.Formattedtext.html" class="more">« More »</a>
+</div>
+<div id="Syslog" class="element ajax clickable class">
+<h1>Syslog<a href="../classes/Joomla.Log.Logger.Syslog.html">¶</a>
+</h1>
+<p class="short_description">Joomla! Syslog Log class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Log.Logger.Syslog.html" class="more">« More »</a>
+</div>
+<div id="W3c" class="element ajax clickable class">
+<h1>W3c<a href="../classes/Joomla.Log.Logger.W3c.html">¶</a>
+</h1>
+<p class="short_description">Joomla! W3c Logging class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Log.Logger.W3c.html" class="more">« More »</a>
+</div>
+<div id="Base" class="element ajax clickable class">
+<h1>Base<a href="../classes/Joomla.Model.Base.html">¶</a>
+</h1>
+<p class="short_description">Joomla Framework Base Model Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Model.Base.html" class="more">« More »</a>
+</div>
+<div id="Database" class="element ajax clickable class">
+<h1>Database<a href="../classes/Joomla.Model.Database.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform Database Model Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Model.Database.html" class="more">« More »</a>
+</div>
+<div id="Client" class="element ajax clickable class">
+<h1>Client<a href="../classes/Joomla.Oauth2.Client.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform class for interacting with an OAuth 2.0 server.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Oauth2.Client.html" class="more">« More »</a>
+</div>
+<div id="ProfilePoint" class="element ajax clickable class">
+<h1>ProfilePoint<a href="../classes/Joomla.Profiler.ProfilePoint.html">¶</a>
+</h1>
+<p class="short_description">Implementation of ProfilePointInterface.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Profiler.ProfilePoint.html" class="more">« More »</a>
+</div>
+<div id="Profiler" class="element ajax clickable class">
+<h1>Profiler<a href="../classes/Joomla.Profiler.Profiler.html">¶</a>
+</h1>
+<p class="short_description">Implementation of ProfilerInterface.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Profiler.Profiler.html" class="more">« More »</a>
+</div>
+<div id="DefaultRenderer" class="element ajax clickable class">
+<h1>DefaultRenderer<a href="../classes/Joomla.Profiler.Renderer.DefaultRenderer.html">¶</a>
+</h1>
+<p class="short_description">Default profiler renderer.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Profiler.Renderer.DefaultRenderer.html" class="more">« More »</a>
+</div>
+<div id="Format" class="element ajax clickable class">
+<h1>Format<a href="../classes/Joomla.Registry.Format.html">¶</a>
+</h1>
+<p class="short_description">Abstract Format for Registry</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Registry.Format.html" class="more">« More »</a>
+</div>
+<div id="Ini" class="element ajax clickable class">
+<h1>Ini<a href="../classes/Joomla.Registry.Format.Ini.html">¶</a>
+</h1>
+<p class="short_description">INI format handler for Registry.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Registry.Format.Ini.html" class="more">« More »</a>
+</div>
+<div id="Json" class="element ajax clickable class">
+<h1>Json<a href="../classes/Joomla.Registry.Format.Json.html">¶</a>
+</h1>
+<p class="short_description">JSON format handler for Registry.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Registry.Format.Json.html" class="more">« More »</a>
+</div>
+<div id="Php" class="element ajax clickable class">
+<h1>Php<a href="../classes/Joomla.Registry.Format.Php.html">¶</a>
+</h1>
+<p class="short_description">PHP class format handler for Registry</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Registry.Format.Php.html" class="more">« More »</a>
+</div>
+<div id="Xml" class="element ajax clickable class">
+<h1>Xml<a href="../classes/Joomla.Registry.Format.Xml.html">¶</a>
+</h1>
+<p class="short_description">XML format handler for Registry.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Registry.Format.Xml.html" class="more">« More »</a>
+</div>
+<div id="Registry" class="element ajax clickable class">
+<h1>Registry<a href="../classes/Joomla.Registry.Registry.html">¶</a>
+</h1>
+<p class="short_description">Registry class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Registry.Registry.html" class="more">« More »</a>
+</div>
+<div id="Rest" class="element ajax clickable class">
+<h1>Rest<a href="../classes/Joomla.Router.Rest.html">¶</a>
+</h1>
+<p class="short_description">RESTful Web application router class for the Joomla Platform.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Router.Rest.html" class="more">« More »</a>
+</div>
+<div id="Router" class="element ajax clickable class">
+<h1>Router<a href="../classes/Joomla.Router.Router.html">¶</a>
+</h1>
+<p class="short_description">A path router.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Router.Router.html" class="more">« More »</a>
+</div>
+<div id="Session" class="element ajax clickable class">
+<h1>Session<a href="../classes/Joomla.Session.Session.html">¶</a>
+</h1>
+<p class="short_description">Class for managing HTTP sessions</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Session.Session.html" class="more">« More »</a>
+</div>
+<div id="Storage" class="element ajax clickable class">
+<h1>Storage<a href="../classes/Joomla.Session.Storage.html">¶</a>
+</h1>
+<p class="short_description">Custom session storage handler for PHP</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Session.Storage.html" class="more">« More »</a>
+</div>
+<div id="Apc" class="element ajax clickable class">
+<h1>Apc<a href="../classes/Joomla.Session.Storage.Apc.html">¶</a>
+</h1>
+<p class="short_description">APC session storage handler for PHP</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Session.Storage.Apc.html" class="more">« More »</a>
+</div>
+<div id="Database" class="element ajax clickable class">
+<h1>Database<a href="../classes/Joomla.Session.Storage.Database.html">¶</a>
+</h1>
+<p class="short_description">Database session storage handler for PHP</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Session.Storage.Database.html" class="more">« More »</a>
+</div>
+<div id="Memcache" class="element ajax clickable class">
+<h1>Memcache<a href="../classes/Joomla.Session.Storage.Memcache.html">¶</a>
+</h1>
+<p class="short_description">Memcache session storage handler for PHP</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Session.Storage.Memcache.html" class="more">« More »</a>
+</div>
+<div id="Memcached" class="element ajax clickable class">
+<h1>Memcached<a href="../classes/Joomla.Session.Storage.Memcached.html">¶</a>
+</h1>
+<p class="short_description">Memcached session storage handler for PHP</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Session.Storage.Memcached.html" class="more">« More »</a>
+</div>
+<div id="None" class="element ajax clickable class">
+<h1>None<a href="../classes/Joomla.Session.Storage.None.html">¶</a>
+</h1>
+<p class="short_description">Default PHP configured session handler for Joomla!</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Session.Storage.None.html" class="more">« More »</a>
+</div>
+<div id="Wincache" class="element ajax clickable class">
+<h1>Wincache<a href="../classes/Joomla.Session.Storage.Wincache.html">¶</a>
+</h1>
+<p class="short_description">WINCACHE session storage handler for PHP</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Session.Storage.Wincache.html" class="more">« More »</a>
+</div>
+<div id="Xcache" class="element ajax clickable class">
+<h1>Xcache<a href="../classes/Joomla.Session.Storage.Xcache.html">¶</a>
+</h1>
+<p class="short_description">XCache session storage handler</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Session.Storage.Xcache.html" class="more">« More »</a>
+</div>
+<div id="Inflector" class="element ajax clickable class">
+<h1>Inflector<a href="../classes/Joomla.String.Inflector.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform String Inflector Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.String.Inflector.html" class="more">« More »</a>
+</div>
+<div id="Normalise" class="element ajax clickable class">
+<h1>Normalise<a href="../classes/Joomla.String.Normalise.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform String Normalise Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.String.Normalise.html" class="more">« More »</a>
+</div>
+<div id="String" class="element ajax clickable class">
+<h1>String<a href="../classes/Joomla.String.String.html">¶</a>
+</h1>
+<p class="short_description">String handling class for utf-8 data
+Wraps the phputf8 library
+All functions assume the validity of utf-8 strings.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.String.String.html" class="more">« More »</a>
+</div>
+<div id="Uri" class="element ajax clickable class">
+<h1>Uri<a href="../classes/Joomla.Uri.Uri.html">¶</a>
+</h1>
+<p class="short_description">Uri Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Uri.Uri.html" class="more">« More »</a>
+</div>
+<div id="ArrayHelper" class="element ajax clickable class">
+<h1>ArrayHelper<a href="../classes/Joomla.Utilities.ArrayHelper.html">¶</a>
+</h1>
+<p class="short_description">ArrayHelper is an array utility class for doing all sorts of odds and ends with arrays.</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.Utilities.ArrayHelper.html" class="more">« More »</a>
+</div>
+<div id="Base" class="element ajax clickable class">
+<h1>Base<a href="../classes/Joomla.View.Base.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform Base View Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.View.Base.html" class="more">« More »</a>
+</div>
+<div id="Html" class="element ajax clickable class">
+<h1>Html<a href="../classes/Joomla.View.Html.html">¶</a>
+</h1>
+<p class="short_description">Joomla Platform HTML View Class</p>
+<div class="details collapse"></div>
+<a href="../classes/Joomla.View.Html.html" class="more">« More »</a>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_signal"> </a><div class="element clickable constant  constant_signal" data-toggle="collapse" data-target=".constant_signal .collapse">
+<h2>$signal</h2>
+<pre>$signal </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_CRLF"> </a><div class="element clickable constant  constant_CRLF" data-toggle="collapse" data-target=".constant_CRLF .collapse">
+<h2>CRLF</h2>
+<pre>CRLF </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_FTP_ASCII"> </a><div class="element clickable constant  constant_FTP_ASCII" data-toggle="collapse" data-target=".constant_FTP_ASCII .collapse">
+<h2>FTP_ASCII</h2>
+<pre>FTP_ASCII </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_FTP_AUTOASCII"> </a><div class="element clickable constant  constant_FTP_AUTOASCII" data-toggle="collapse" data-target=".constant_FTP_AUTOASCII .collapse">
+<h2>FTP_AUTOASCII</h2>
+<pre>FTP_AUTOASCII </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_FTP_BINARY"> </a><div class="element clickable constant  constant_FTP_BINARY" data-toggle="collapse" data-target=".constant_FTP_BINARY .collapse">
+<h2>FTP_BINARY</h2>
+<pre>FTP_BINARY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_FTP_NATIVE"> </a><div class="element clickable constant  constant_FTP_NATIVE" data-toggle="collapse" data-target=".constant_FTP_NATIVE .collapse">
+<h2>FTP_NATIVE</h2>
+<pre>FTP_NATIVE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_JCOMPAT_UNICODE_PROPERTIES"> </a><div class="element clickable constant  constant_JCOMPAT_UNICODE_PROPERTIES" data-toggle="collapse" data-target=".constant_JCOMPAT_UNICODE_PROPERTIES .collapse">
+<h2>JCOMPAT_UNICODE_PROPERTIES</h2>
+<pre>JCOMPAT_UNICODE_PROPERTIES </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_JPATH_ROOT"> </a><div class="element clickable constant  constant_JPATH_ROOT" data-toggle="collapse" data-target=".constant_JPATH_ROOT .collapse">
+<h2>JPATH_ROOT</h2>
+<pre>JPATH_ROOT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant__QQ_"> </a><div class="element clickable constant  constant__QQ_" data-toggle="collapse" data-target=".constant__QQ_ .collapse">
+<h2>_QQ_</h2>
+<pre>_QQ_ </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:17-05:00.<br></footer></div>
+</div>
+</body>
+</html>

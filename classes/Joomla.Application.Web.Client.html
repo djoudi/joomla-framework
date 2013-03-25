@@ -1,0 +1,812 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Application\Web\Client</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Class constructor."><span class="description">Class constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___get" title="__get :: Magic method to get an object property's value by name."><span class="description">Magic method to get an object property's value by name.</span><pre>__get()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_detectBrowser" title="detectBrowser :: Detects the client browser and version in a user agent string."><span class="description">Detects the client browser and version in a user agent string.</span><pre>detectBrowser()</pre></a></li>
+<li class="method protected "><a href="#method_detectEncoding" title="detectEncoding :: Method to detect the accepted response encoding by the client."><span class="description">Method to detect the accepted response encoding by the client.</span><pre>detectEncoding()</pre></a></li>
+<li class="method protected "><a href="#method_detectEngine" title="detectEngine :: Detects the client rendering engine in a user agent string."><span class="description">Detects the client rendering engine in a user agent string.</span><pre>detectEngine()</pre></a></li>
+<li class="method protected "><a href="#method_detectLanguage" title="detectLanguage :: Method to detect the accepted languages by the client."><span class="description">Method to detect the accepted languages by the client.</span><pre>detectLanguage()</pre></a></li>
+<li class="method protected "><a href="#method_detectPlatform" title="detectPlatform :: Detects the client platform in a user agent string."><span class="description">Detects the client platform in a user agent string.</span><pre>detectPlatform()</pre></a></li>
+<li class="method protected "><a href="#method_detectRobot" title="detectRobot :: Determines if the browser is a robot or not."><span class="description">Determines if the browser is a robot or not.</span><pre>detectRobot()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul>
+<li class="property public "><a href="#property_acceptEncoding" title="$acceptEncoding :: The web client's accepted encoding string."><span class="description"></span><pre>$acceptEncoding</pre></a></li>
+<li class="property public "><a href="#property_acceptLanguage" title="$acceptLanguage :: The web client's accepted languages string."><span class="description"></span><pre>$acceptLanguage</pre></a></li>
+<li class="property public "><a href="#property_browser" title="$browser :: The detected browser used by the web client."><span class="description"></span><pre>$browser</pre></a></li>
+<li class="property public "><a href="#property_browserVersion" title="$browserVersion :: The detected browser version used by the web client."><span class="description"></span><pre>$browserVersion</pre></a></li>
+<li class="property public "><a href="#property_detection" title="$detection :: An array of flags determining whether or not a detection routine has been run."><span class="description"></span><pre>$detection</pre></a></li>
+<li class="property public "><a href="#property_encodings" title="$encodings :: The priority order detected accepted encodings for the client."><span class="description"></span><pre>$encodings</pre></a></li>
+<li class="property public "><a href="#property_engine" title="$engine :: The detected rendering engine used by the web client."><span class="description"></span><pre>$engine</pre></a></li>
+<li class="property public "><a href="#property_languages" title="$languages :: The priority order detected accepted languages for the client."><span class="description"></span><pre>$languages</pre></a></li>
+<li class="property public "><a href="#property_mobile" title="$mobile :: True if the web client is a mobile device."><span class="description"></span><pre>$mobile</pre></a></li>
+<li class="property public "><a href="#property_platform" title="$platform :: The detected platform on which the web client runs."><span class="description"></span><pre>$platform</pre></a></li>
+<li class="property public "><a href="#property_robot" title="$robot :: True if the web client is a robot"><span class="description"></span><pre>$robot</pre></a></li>
+<li class="property public "><a href="#property_userAgent" title="$userAgent :: The web client's user agent string."><span class="description"></span><pre>$userAgent</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_acceptEncoding" title="$acceptEncoding :: "><span class="description">The web client's accepted encoding string.</span><pre>$acceptEncoding</pre></a></li>
+<li class="property protected "><a href="#property_acceptLanguage" title="$acceptLanguage :: "><span class="description">The web client's accepted languages string.</span><pre>$acceptLanguage</pre></a></li>
+<li class="property protected "><a href="#property_browser" title="$browser :: "><span class="description">The detected browser used by the web client.</span><pre>$browser</pre></a></li>
+<li class="property protected "><a href="#property_browserVersion" title="$browserVersion :: "><span class="description">The detected browser version used by the web client.</span><pre>$browserVersion</pre></a></li>
+<li class="property protected "><a href="#property_detection" title="$detection :: "><span class="description">An array of flags determining whether or not a detection routine has been run.</span><pre>$detection</pre></a></li>
+<li class="property protected "><a href="#property_encodings" title="$encodings :: "><span class="description">The priority order detected accepted encodings for the client.</span><pre>$encodings</pre></a></li>
+<li class="property protected "><a href="#property_engine" title="$engine :: "><span class="description">The detected rendering engine used by the web client.</span><pre>$engine</pre></a></li>
+<li class="property protected "><a href="#property_languages" title="$languages :: "><span class="description">The priority order detected accepted languages for the client.</span><pre>$languages</pre></a></li>
+<li class="property protected "><a href="#property_mobile" title="$mobile :: "><span class="description">True if the web client is a mobile device.</span><pre>$mobile</pre></a></li>
+<li class="property protected "><a href="#property_platform" title="$platform :: "><span class="description">The detected platform on which the web client runs.</span><pre>$platform</pre></a></li>
+<li class="property protected "><a href="#property_robot" title="$robot :: "><span class="description">True if the web client is a robot.</span><pre>$robot</pre></a></li>
+<li class="property protected "><a href="#property_userAgent" title="$userAgent :: "><span class="description">The web client's user agent string.</span><pre>$userAgent</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_AMAYA" title="AMAYA :: "><span class="description">AMAYA</span><pre>AMAYA</pre></a></li>
+<li class="constant  "><a href="#constant_ANDROID" title="ANDROID :: "><span class="description">ANDROID</span><pre>ANDROID</pre></a></li>
+<li class="constant  "><a href="#constant_ANDROIDTABLET" title="ANDROIDTABLET :: "><span class="description">ANDROIDTABLET</span><pre>ANDROIDTABLET</pre></a></li>
+<li class="constant  "><a href="#constant_BLACKBERRY" title="BLACKBERRY :: "><span class="description">BLACKBERRY</span><pre>BLACKBERRY</pre></a></li>
+<li class="constant  "><a href="#constant_CHROME" title="CHROME :: "><span class="description">CHROME</span><pre>CHROME</pre></a></li>
+<li class="constant  "><a href="#constant_FIREFOX" title="FIREFOX :: "><span class="description">FIREFOX</span><pre>FIREFOX</pre></a></li>
+<li class="constant  "><a href="#constant_GECKO" title="GECKO :: "><span class="description">GECKO</span><pre>GECKO</pre></a></li>
+<li class="constant  "><a href="#constant_IE" title="IE :: "><span class="description">IE</span><pre>IE</pre></a></li>
+<li class="constant  "><a href="#constant_IPAD" title="IPAD :: "><span class="description">IPAD</span><pre>IPAD</pre></a></li>
+<li class="constant  "><a href="#constant_IPHONE" title="IPHONE :: "><span class="description">IPHONE</span><pre>IPHONE</pre></a></li>
+<li class="constant  "><a href="#constant_IPOD" title="IPOD :: "><span class="description">IPOD</span><pre>IPOD</pre></a></li>
+<li class="constant  "><a href="#constant_KHTML" title="KHTML :: "><span class="description">KHTML</span><pre>KHTML</pre></a></li>
+<li class="constant  "><a href="#constant_LINUX" title="LINUX :: "><span class="description">LINUX</span><pre>LINUX</pre></a></li>
+<li class="constant  "><a href="#constant_MAC" title="MAC :: "><span class="description">MAC</span><pre>MAC</pre></a></li>
+<li class="constant  "><a href="#constant_OPERA" title="OPERA :: "><span class="description">OPERA</span><pre>OPERA</pre></a></li>
+<li class="constant  "><a href="#constant_PRESTO" title="PRESTO :: "><span class="description">PRESTO</span><pre>PRESTO</pre></a></li>
+<li class="constant  "><a href="#constant_SAFARI" title="SAFARI :: "><span class="description">SAFARI</span><pre>SAFARI</pre></a></li>
+<li class="constant  "><a href="#constant_TRIDENT" title="TRIDENT :: "><span class="description">TRIDENT</span><pre>TRIDENT</pre></a></li>
+<li class="constant  "><a href="#constant_WEBKIT" title="WEBKIT :: "><span class="description">WEBKIT</span><pre>WEBKIT</pre></a></li>
+<li class="constant  "><a href="#constant_WINDOWS" title="WINDOWS :: "><span class="description">WINDOWS</span><pre>WINDOWS</pre></a></li>
+<li class="constant  "><a href="#constant_WINDOWS_CE" title="WINDOWS_CE :: "><span class="description">WINDOWS_CE</span><pre>WINDOWS_CE</pre></a></li>
+<li class="constant  "><a href="#constant_WINDOWS_PHONE" title="WINDOWS_PHONE :: "><span class="description">WINDOWS_PHONE</span><pre>WINDOWS_PHONE</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Application\Web\Client"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Application.html">Application</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Application.Web.html">Web</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Application.Web.Client.html">Client</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Class to model a Web Client.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Class constructor.</h2>
+<pre>__construct(string $userAgent, string $acceptEncoding, string $acceptLanguage) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$userAgent</h4>
+<code>string</code><p>The optional user-agent string to parse.</p>
+</div>
+<div class="subelement argument">
+<h4>$acceptEncoding</h4>
+<code>string</code><p>The optional client accept encoding string to parse.</p></div>
+<div class="subelement argument">
+<h4>$acceptLanguage</h4>
+<code>string</code><p>The optional client accept language string to parse.</p></div>
+</div></div>
+</div>
+<a id="method___get"></a><div class="element clickable method public method___get" data-toggle="collapse" data-target=".method___get .collapse">
+<h2>Magic method to get an object property's value by name.</h2>
+<pre>__get(string $name) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of the property for which to return a value.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The requested value if it exists.</div>
+</div></div>
+</div>
+<a id="method_detectBrowser"></a><div class="element clickable method protected method_detectBrowser" data-toggle="collapse" data-target=".method_detectBrowser .collapse">
+<h2>Detects the client browser and version in a user agent string.</h2>
+<pre>detectBrowser(string $userAgent) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$userAgent</h4>
+<code>string</code><p>The user-agent string to parse.</p>
+</div>
+</div></div>
+</div>
+<a id="method_detectEncoding"></a><div class="element clickable method protected method_detectEncoding" data-toggle="collapse" data-target=".method_detectEncoding .collapse">
+<h2>Method to detect the accepted response encoding by the client.</h2>
+<pre>detectEncoding(string $acceptEncoding) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$acceptEncoding</h4>
+<code>string</code><p>The client accept encoding string to parse.</p></div>
+</div></div>
+</div>
+<a id="method_detectEngine"></a><div class="element clickable method protected method_detectEngine" data-toggle="collapse" data-target=".method_detectEngine .collapse">
+<h2>Detects the client rendering engine in a user agent string.</h2>
+<pre>detectEngine(string $userAgent) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$userAgent</h4>
+<code>string</code><p>The user-agent string to parse.</p>
+</div>
+</div></div>
+</div>
+<a id="method_detectLanguage"></a><div class="element clickable method protected method_detectLanguage" data-toggle="collapse" data-target=".method_detectLanguage .collapse">
+<h2>Method to detect the accepted languages by the client.</h2>
+<pre>detectLanguage(mixed $acceptLanguage) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$acceptLanguage</h4>
+<code>mixed</code><p>The client accept language string to parse.</p></div>
+</div></div>
+</div>
+<a id="method_detectPlatform"></a><div class="element clickable method protected method_detectPlatform" data-toggle="collapse" data-target=".method_detectPlatform .collapse">
+<h2>Detects the client platform in a user agent string.</h2>
+<pre>detectPlatform(string $userAgent) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$userAgent</h4>
+<code>string</code><p>The user-agent string to parse.</p>
+</div>
+</div></div>
+</div>
+<a id="method_detectRobot"></a><div class="element clickable method protected method_detectRobot" data-toggle="collapse" data-target=".method_detectRobot .collapse">
+<h2>Determines if the browser is a robot or not.</h2>
+<pre>detectRobot(string $userAgent) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$userAgent</h4>
+<code>string</code><p>The user-agent string to parse.</p>
+</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_acceptEncoding"> </a><div class="element clickable property public property_acceptEncoding" data-toggle="collapse" data-target=".property_acceptEncoding .collapse">
+<h2></h2>
+<pre>$acceptEncoding : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>The web client's accepted encoding string.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_acceptLanguage"> </a><div class="element clickable property public property_acceptLanguage" data-toggle="collapse" data-target=".property_acceptLanguage .collapse">
+<h2></h2>
+<pre>$acceptLanguage : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>The web client's accepted languages string.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_browser"> </a><div class="element clickable property public property_browser" data-toggle="collapse" data-target=".property_browser .collapse">
+<h2></h2>
+<pre>$browser : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>The detected browser used by the web client.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_browserVersion"> </a><div class="element clickable property public property_browserVersion" data-toggle="collapse" data-target=".property_browserVersion .collapse">
+<h2></h2>
+<pre>$browserVersion : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>The detected browser version used by the web client.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_detection"> </a><div class="element clickable property public property_detection" data-toggle="collapse" data-target=".property_detection .collapse">
+<h2></h2>
+<pre>$detection : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>An array of flags determining whether or not a detection routine has been run.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_encodings"> </a><div class="element clickable property public property_encodings" data-toggle="collapse" data-target=".property_encodings .collapse">
+<h2></h2>
+<pre>$encodings : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>The priority order detected accepted encodings for the client.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_engine"> </a><div class="element clickable property public property_engine" data-toggle="collapse" data-target=".property_engine .collapse">
+<h2></h2>
+<pre>$engine : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>The detected rendering engine used by the web client.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_languages"> </a><div class="element clickable property public property_languages" data-toggle="collapse" data-target=".property_languages .collapse">
+<h2></h2>
+<pre>$languages : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>The priority order detected accepted languages for the client.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_mobile"> </a><div class="element clickable property public property_mobile" data-toggle="collapse" data-target=".property_mobile .collapse">
+<h2></h2>
+<pre>$mobile : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>True if the web client is a mobile device.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_platform"> </a><div class="element clickable property public property_platform" data-toggle="collapse" data-target=".property_platform .collapse">
+<h2></h2>
+<pre>$platform : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>The detected platform on which the web client runs.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_robot"> </a><div class="element clickable property public property_robot" data-toggle="collapse" data-target=".property_robot .collapse">
+<h2></h2>
+<pre>$robot : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>True if the web client is a robot</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_userAgent"> </a><div class="element clickable property public property_userAgent" data-toggle="collapse" data-target=".property_userAgent .collapse">
+<h2></h2>
+<pre>$userAgent : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>The web client's user agent string.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_acceptEncoding"> </a><div class="element clickable property protected property_acceptEncoding" data-toggle="collapse" data-target=".property_acceptEncoding .collapse">
+<h2>The web client's accepted encoding string.</h2>
+<pre>$acceptEncoding : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_acceptLanguage"> </a><div class="element clickable property protected property_acceptLanguage" data-toggle="collapse" data-target=".property_acceptLanguage .collapse">
+<h2>The web client's accepted languages string.</h2>
+<pre>$acceptLanguage : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_browser"> </a><div class="element clickable property protected property_browser" data-toggle="collapse" data-target=".property_browser .collapse">
+<h2>The detected browser used by the web client.</h2>
+<pre>$browser : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_browserVersion"> </a><div class="element clickable property protected property_browserVersion" data-toggle="collapse" data-target=".property_browserVersion .collapse">
+<h2>The detected browser version used by the web client.</h2>
+<pre>$browserVersion : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_detection"> </a><div class="element clickable property protected property_detection" data-toggle="collapse" data-target=".property_detection .collapse">
+<h2>An array of flags determining whether or not a detection routine has been run.</h2>
+<pre>$detection : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_encodings"> </a><div class="element clickable property protected property_encodings" data-toggle="collapse" data-target=".property_encodings .collapse">
+<h2>The priority order detected accepted encodings for the client.</h2>
+<pre>$encodings : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_engine"> </a><div class="element clickable property protected property_engine" data-toggle="collapse" data-target=".property_engine .collapse">
+<h2>The detected rendering engine used by the web client.</h2>
+<pre>$engine : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_languages"> </a><div class="element clickable property protected property_languages" data-toggle="collapse" data-target=".property_languages .collapse">
+<h2>The priority order detected accepted languages for the client.</h2>
+<pre>$languages : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_mobile"> </a><div class="element clickable property protected property_mobile" data-toggle="collapse" data-target=".property_mobile .collapse">
+<h2>True if the web client is a mobile device.</h2>
+<pre>$mobile : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_platform"> </a><div class="element clickable property protected property_platform" data-toggle="collapse" data-target=".property_platform .collapse">
+<h2>The detected platform on which the web client runs.</h2>
+<pre>$platform : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_robot"> </a><div class="element clickable property protected property_robot" data-toggle="collapse" data-target=".property_robot .collapse">
+<h2>True if the web client is a robot.</h2>
+<pre>$robot : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_userAgent"> </a><div class="element clickable property protected property_userAgent" data-toggle="collapse" data-target=".property_userAgent .collapse">
+<h2>The web client's user agent string.</h2>
+<pre>$userAgent : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_AMAYA"> </a><div class="element clickable constant  constant_AMAYA" data-toggle="collapse" data-target=".constant_AMAYA .collapse">
+<h2>AMAYA</h2>
+<pre>AMAYA </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_ANDROID"> </a><div class="element clickable constant  constant_ANDROID" data-toggle="collapse" data-target=".constant_ANDROID .collapse">
+<h2>ANDROID</h2>
+<pre>ANDROID </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_ANDROIDTABLET"> </a><div class="element clickable constant  constant_ANDROIDTABLET" data-toggle="collapse" data-target=".constant_ANDROIDTABLET .collapse">
+<h2>ANDROIDTABLET</h2>
+<pre>ANDROIDTABLET </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_BLACKBERRY"> </a><div class="element clickable constant  constant_BLACKBERRY" data-toggle="collapse" data-target=".constant_BLACKBERRY .collapse">
+<h2>BLACKBERRY</h2>
+<pre>BLACKBERRY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_CHROME"> </a><div class="element clickable constant  constant_CHROME" data-toggle="collapse" data-target=".constant_CHROME .collapse">
+<h2>CHROME</h2>
+<pre>CHROME </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_FIREFOX"> </a><div class="element clickable constant  constant_FIREFOX" data-toggle="collapse" data-target=".constant_FIREFOX .collapse">
+<h2>FIREFOX</h2>
+<pre>FIREFOX </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_GECKO"> </a><div class="element clickable constant  constant_GECKO" data-toggle="collapse" data-target=".constant_GECKO .collapse">
+<h2>GECKO</h2>
+<pre>GECKO </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_IE"> </a><div class="element clickable constant  constant_IE" data-toggle="collapse" data-target=".constant_IE .collapse">
+<h2>IE</h2>
+<pre>IE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_IPAD"> </a><div class="element clickable constant  constant_IPAD" data-toggle="collapse" data-target=".constant_IPAD .collapse">
+<h2>IPAD</h2>
+<pre>IPAD </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_IPHONE"> </a><div class="element clickable constant  constant_IPHONE" data-toggle="collapse" data-target=".constant_IPHONE .collapse">
+<h2>IPHONE</h2>
+<pre>IPHONE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_IPOD"> </a><div class="element clickable constant  constant_IPOD" data-toggle="collapse" data-target=".constant_IPOD .collapse">
+<h2>IPOD</h2>
+<pre>IPOD </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_KHTML"> </a><div class="element clickable constant  constant_KHTML" data-toggle="collapse" data-target=".constant_KHTML .collapse">
+<h2>KHTML</h2>
+<pre>KHTML </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_LINUX"> </a><div class="element clickable constant  constant_LINUX" data-toggle="collapse" data-target=".constant_LINUX .collapse">
+<h2>LINUX</h2>
+<pre>LINUX </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_MAC"> </a><div class="element clickable constant  constant_MAC" data-toggle="collapse" data-target=".constant_MAC .collapse">
+<h2>MAC</h2>
+<pre>MAC </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_OPERA"> </a><div class="element clickable constant  constant_OPERA" data-toggle="collapse" data-target=".constant_OPERA .collapse">
+<h2>OPERA</h2>
+<pre>OPERA </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_PRESTO"> </a><div class="element clickable constant  constant_PRESTO" data-toggle="collapse" data-target=".constant_PRESTO .collapse">
+<h2>PRESTO</h2>
+<pre>PRESTO </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_SAFARI"> </a><div class="element clickable constant  constant_SAFARI" data-toggle="collapse" data-target=".constant_SAFARI .collapse">
+<h2>SAFARI</h2>
+<pre>SAFARI </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_TRIDENT"> </a><div class="element clickable constant  constant_TRIDENT" data-toggle="collapse" data-target=".constant_TRIDENT .collapse">
+<h2>TRIDENT</h2>
+<pre>TRIDENT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_WEBKIT"> </a><div class="element clickable constant  constant_WEBKIT" data-toggle="collapse" data-target=".constant_WEBKIT .collapse">
+<h2>WEBKIT</h2>
+<pre>WEBKIT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_WINDOWS"> </a><div class="element clickable constant  constant_WINDOWS" data-toggle="collapse" data-target=".constant_WINDOWS .collapse">
+<h2>WINDOWS</h2>
+<pre>WINDOWS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_WINDOWS_CE"> </a><div class="element clickable constant  constant_WINDOWS_CE" data-toggle="collapse" data-target=".constant_WINDOWS_CE .collapse">
+<h2>WINDOWS_CE</h2>
+<pre>WINDOWS_CE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_WINDOWS_PHONE"> </a><div class="element clickable constant  constant_WINDOWS_PHONE" data-toggle="collapse" data-target=".constant_WINDOWS_PHONE .collapse">
+<h2>WINDOWS_PHONE</h2>
+<pre>WINDOWS_PHONE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:17-05:00.<br></footer></div>
+</div>
+</body>
+</html>

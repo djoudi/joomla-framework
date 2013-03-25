@@ -1,0 +1,436 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Filter\Input</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Constructor for inputFilter class."><span class="description">Constructor for inputFilter class.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_checkAttribute" title="checkAttribute :: Function to determine if contents of an attribute are safe"><span class="description">Function to determine if contents of an attribute are safe</span><pre>checkAttribute()</pre></a></li>
+<li class="method public "><a href="#method_clean" title="clean :: Method to be called by another php script."><span class="description">Method to be called by another php script.</span><pre>clean()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_cleanAttributes" title="cleanAttributes :: Internal method to strip a tag of certain attributes"><span class="description">Internal method to strip a tag of certain attributes</span><pre>cleanAttributes()</pre></a></li>
+<li class="method protected "><a href="#method_cleanTags" title="cleanTags :: Internal method to strip a string of certain tags"><span class="description">Internal method to strip a string of certain tags</span><pre>cleanTags()</pre></a></li>
+<li class="method protected "><a href="#method_decode" title="decode :: Try to convert to plaintext"><span class="description">Try to convert to plaintext</span><pre>decode()</pre></a></li>
+<li class="method protected "><a href="#method_escapeAttributeValues" title='escapeAttributeValues :: Escape &lt; &gt; and " inside attribute values'><span class="description">Escape &lt; &gt; and " inside attribute values</span><pre>escapeAttributeValues()</pre></a></li>
+<li class="method protected "><a href="#method_remove" title="remove :: Internal method to iteratively remove all unwanted tags and attributes"><span class="description">Internal method to iteratively remove all unwanted tags and attributes</span><pre>remove()</pre></a></li>
+<li class="method protected "><a href="#method_stripCssExpressions" title="stripCssExpressions :: Remove CSS Expressions in the form of &lt;property&gt;:expression(."><span class="description">Remove CSS Expressions in the form of &lt;property&gt;:expression(.</span><pre>stripCssExpressions()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul>
+<li class="property public "><a href="#property_attrArray" title="$attrArray :: The array of permitted tag attributes (white list)."><span class="description"></span><pre>$attrArray</pre></a></li>
+<li class="property public "><a href="#property_attrBlacklist" title="$attrBlacklist :: The list of the default blacklisted tag attributes."><span class="description"></span><pre>$attrBlacklist</pre></a></li>
+<li class="property public "><a href="#property_attrMethod" title="$attrMethod :: The method for sanitising attributes: WhiteList method = 0 (default), BlackList method = 1"><span class="description"></span><pre>$attrMethod</pre></a></li>
+<li class="property public "><a href="#property_tagBlacklist" title="$tagBlacklist :: The list of the default blacklisted tags."><span class="description"></span><pre>$tagBlacklist</pre></a></li>
+<li class="property public "><a href="#property_tagsArray" title="$tagsArray :: The array of permitted tags (white list)."><span class="description"></span><pre>$tagsArray</pre></a></li>
+<li class="property public "><a href="#property_tagsMethod" title="$tagsMethod :: The method for sanitising tags: WhiteList method = 0 (default), BlackList method = 1"><span class="description"></span><pre>$tagsMethod</pre></a></li>
+<li class="property public "><a href="#property_xssAuto" title="$xssAuto :: A flag for XSS checks."><span class="description"></span><pre>$xssAuto</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="property protected "><a href="#property_instances" title="$instances :: A container for JFilterInput instances."><span class="description"></span><pre>$instances</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Filter\Input"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Filter.html">Filter</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Filter.Input.html">Input</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">JFilterInput is a class for filtering input from any data source</p>
+<div class="details">
+<div class="long_description"><p>Forked from the php input filter library by: Daniel Morris <a href="&#x6d;&#97;&#105;l&#x74;&#x6f;&#58;&#100;&#x61;&#x6e;&#64;&#114;o&#x6f;&#116;&#99;u&#x62;&#x65;&#46;&#99;&#x6f;&#x6d;">&#100;&#x61;&#x6e;&#64;&#114;o&#x6f;&#116;&#99;u&#x62;&#x65;&#46;&#99;&#x6f;&#x6d;</a>
+Original Contributors: Gianpaolo Racca, Ghislain Picard, Marco Wandschneider, Chris Tobin and Andrew Eddie.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructor for inputFilter class.</h2>
+<pre>__construct(array $tagsArray, array $attrArray, integer $tagsMethod, integer $attrMethod, integer $xssAuto) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Only first parameter is required.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$tagsArray</h4>
+<code>array</code><p>List of user-defined tags</p>
+</div>
+<div class="subelement argument">
+<h4>$attrArray</h4>
+<code>array</code><p>List of user-defined attributes</p>
+</div>
+<div class="subelement argument">
+<h4>$tagsMethod</h4>
+<code>integer</code><p>WhiteList method = 0, BlackList method = 1</p>
+</div>
+<div class="subelement argument">
+<h4>$attrMethod</h4>
+<code>integer</code><p>WhiteList method = 0, BlackList method = 1</p>
+</div>
+<div class="subelement argument">
+<h4>$xssAuto</h4>
+<code>integer</code><p>Only auto clean essentials = 0, Allow clean blacklisted tags/attr = 1</p>
+</div>
+</div></div>
+</div>
+<a id="method_checkAttribute"></a><div class="element clickable method public method_checkAttribute" data-toggle="collapse" data-target=".method_checkAttribute .collapse">
+<h2>Function to determine if contents of an attribute are safe</h2>
+<pre>checkAttribute(array $attrSubSet) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$attrSubSet</h4>
+<code>array</code><p>A 2 element array for attribute's name, value</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if bad code is detected</div>
+</div></div>
+</div>
+<a id="method_clean"></a><div class="element clickable method public method_clean" data-toggle="collapse" data-target=".method_clean .collapse">
+<h2>Method to be called by another php script.</h2>
+<pre>clean(mixed $source, string $type) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Processes for XSS and
+specified bad code.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code>mixed</code><p>Input string/array-of-string to be 'cleaned'</p>
+</div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The return type for the variable:
+                          INT:       An integer,
+                          UINT:      An unsigned integer,
+                          FLOAT:     A floating point number,
+                          BOOLEAN:   A boolean value,
+                          WORD:      A string containing A-Z or underscores only (not case sensitive),
+                          ALNUM:     A string containing A-Z or 0-9 only (not case sensitive),
+                          CMD:       A string containing A-Z, 0-9, underscores, periods or hyphens (not case sensitive),
+                          BASE64:    A string containing A-Z, 0-9, forward slashes, plus or equals (not case sensitive),
+                          STRING:    A fully decoded and sanitised string (default),
+                          HTML:      A sanitised string,
+                          ARRAY:     An array,
+                          PATH:      A sanitised file path,
+                          USERNAME:  Do not use (use an application specific filter),
+                          NONE:      The raw string is returned with no filtering,
+                          unknown:   An unknown filter will act like STRING. If the input is an array it will return an
+                                     array of fully decoded and sanitised strings.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>'Cleaned' version of input parameter</div>
+</div></div>
+</div>
+<a id="method_cleanAttributes"></a><div class="element clickable method protected method_cleanAttributes" data-toggle="collapse" data-target=".method_cleanAttributes .collapse">
+<h2>Internal method to strip a tag of certain attributes</h2>
+<pre>cleanAttributes(array $attrSet) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$attrSet</h4>
+<code>array</code><p>Array of attribute pairs to filter</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Filtered array of attribute pairs</div>
+</div></div>
+</div>
+<a id="method_cleanTags"></a><div class="element clickable method protected method_cleanTags" data-toggle="collapse" data-target=".method_cleanTags .collapse">
+<h2>Internal method to strip a string of certain tags</h2>
+<pre>cleanTags(string $source) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code>string</code><p>Input string to be 'cleaned'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>'Cleaned' version of input parameter</div>
+</div></div>
+</div>
+<a id="method_decode"></a><div class="element clickable method protected method_decode" data-toggle="collapse" data-target=".method_decode .collapse">
+<h2>Try to convert to plaintext</h2>
+<pre>decode(string $source) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code>string</code><p>The source string.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Plaintext string</div>
+</div></div>
+</div>
+<a id="method_escapeAttributeValues"></a><div class="element clickable method protected method_escapeAttributeValues" data-toggle="collapse" data-target=".method_escapeAttributeValues .collapse">
+<h2>Escape &lt; &gt; and " inside attribute values</h2>
+<pre>escapeAttributeValues(string $source) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code>string</code><p>The source string.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Filtered string</div>
+</div></div>
+</div>
+<a id="method_remove"></a><div class="element clickable method protected method_remove" data-toggle="collapse" data-target=".method_remove .collapse">
+<h2>Internal method to iteratively remove all unwanted tags and attributes</h2>
+<pre>remove(string $source) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code>string</code><p>Input string to be 'cleaned'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>'Cleaned' version of input parameter</div>
+</div></div>
+</div>
+<a id="method_stripCssExpressions"></a><div class="element clickable method protected method_stripCssExpressions" data-toggle="collapse" data-target=".method_stripCssExpressions .collapse">
+<h2>Remove CSS Expressions in the form of &lt;property&gt;:expression(.</h2>
+<pre>stripCssExpressions(string $source) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>..)</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code>string</code><p>The source string.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Filtered string</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_attrArray"> </a><div class="element clickable property public property_attrArray" data-toggle="collapse" data-target=".property_attrArray .collapse">
+<h2></h2>
+<pre>$attrArray : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_attrBlacklist"> </a><div class="element clickable property public property_attrBlacklist" data-toggle="collapse" data-target=".property_attrBlacklist .collapse">
+<h2></h2>
+<pre>$attrBlacklist : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>All event handlers implicit.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_attrMethod"> </a><div class="element clickable property public property_attrMethod" data-toggle="collapse" data-target=".property_attrMethod .collapse">
+<h2></h2>
+<pre>$attrMethod : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_tagBlacklist"> </a><div class="element clickable property public property_tagBlacklist" data-toggle="collapse" data-target=".property_tagBlacklist .collapse">
+<h2></h2>
+<pre>$tagBlacklist : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_tagsArray"> </a><div class="element clickable property public property_tagsArray" data-toggle="collapse" data-target=".property_tagsArray .collapse">
+<h2></h2>
+<pre>$tagsArray : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_tagsMethod"> </a><div class="element clickable property public property_tagsMethod" data-toggle="collapse" data-target=".property_tagsMethod .collapse">
+<h2></h2>
+<pre>$tagsMethod : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_xssAuto"> </a><div class="element clickable property public property_xssAuto" data-toggle="collapse" data-target=".property_xssAuto .collapse">
+<h2></h2>
+<pre>$xssAuto : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Only auto clean essentials = 0, Allow clean blacklisted tags/attr = 1</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_instances"> </a><div class="element clickable property protected property_instances" data-toggle="collapse" data-target=".property_instances .collapse">
+<h2></h2>
+<pre>$instances : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:21-05:00.<br></footer></div>
+</div>
+</body>
+</html>

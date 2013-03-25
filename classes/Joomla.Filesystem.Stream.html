@@ -1,0 +1,1049 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Filesystem\Stream</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___destruct" title="__destruct :: Destructor"><span class="description">Destructor</span><pre>__destruct()</pre></a></li>
+<li class="method public "><a href="#method__buildContext" title="_buildContext :: Stream contexts
+Builds the context from the array"><span class="description">Stream contexts
+Builds the context from the array</span><pre>_buildContext()</pre></a></li>
+<li class="method public "><a href="#method__getFilename" title="_getFilename :: Determine the appropriate 'filename' of a file"><span class="description">Determine the appropriate 'filename' of a file</span><pre>_getFilename()</pre></a></li>
+<li class="method public "><a href="#method_addContextEntry" title="addContextEntry :: Adds a particular options to the context"><span class="description">Adds a particular options to the context</span><pre>addContextEntry()</pre></a></li>
+<li class="method public "><a href="#method_appendFilter" title="appendFilter :: Stream filters
+Append a filter to the chain"><span class="description">Stream filters
+Append a filter to the chain</span><pre>appendFilter()</pre></a></li>
+<li class="method public "><a href="#method_applyContextToStream" title="applyContextToStream :: Applies the current context to the stream"><span class="description">Applies the current context to the stream</span><pre>applyContextToStream()</pre></a></li>
+<li class="method public "><a href="#method_chmod" title="chmod :: Chmod wrapper"><span class="description">Chmod wrapper</span><pre>chmod()</pre></a></li>
+<li class="method public "><a href="#method_close" title="close :: Attempt to close a file handle"><span class="description">Attempt to close a file handle</span><pre>close()</pre></a></li>
+<li class="method public "><a href="#method_copy" title="copy :: Copy a file from src to dest"><span class="description">Copy a file from src to dest</span><pre>copy()</pre></a></li>
+<li class="method public "><a href="#method_delete" title="delete :: Delete a file"><span class="description">Delete a file</span><pre>delete()</pre></a></li>
+<li class="method public "><a href="#method_deleteContextEntry" title="deleteContextEntry :: Deletes a particular setting from a context"><span class="description">Deletes a particular setting from a context</span><pre>deleteContextEntry()</pre></a></li>
+<li class="method public "><a href="#method_eof" title="eof :: Work out if we're at the end of the file for a stream"><span class="description">Work out if we're at the end of the file for a stream</span><pre>eof()</pre></a></li>
+<li class="method public "><a href="#method_filesize" title="filesize :: Retrieve the file size of the path"><span class="description">Retrieve the file size of the path</span><pre>filesize()</pre></a></li>
+<li class="method public "><a href="#method_get" title="get :: Returns a property of the object or the default value if the property is not set."><span class="description">Returns a property of the object or the default value if the property is not set.</span><pre>get()</pre></a></li>
+<li class="method public "><a href="#method_getFileHandle" title="getFileHandle :: Return the internal file handle"><span class="description">Return the internal file handle</span><pre>getFileHandle()</pre></a></li>
+<li class="method public "><a href="#method_get_meta_data" title="get_meta_data :: Get the stream metadata"><span class="description">Get the stream metadata</span><pre>get_meta_data()</pre></a></li>
+<li class="method public "><a href="#method_gets" title="gets :: Get a line from the stream source."><span class="description">Get a line from the stream source.</span><pre>gets()</pre></a></li>
+<li class="method public "><a href="#method_move" title="move :: Moves a file"><span class="description">Moves a file</span><pre>move()</pre></a></li>
+<li class="method public "><a href="#method_open" title="open :: Generic File Operations"><span class="description">Generic File Operations</span><pre>open()</pre></a></li>
+<li class="method public "><a href="#method_prependFilter" title="prependFilter :: Prepend a filter to the chain"><span class="description">Prepend a filter to the chain</span><pre>prependFilter()</pre></a></li>
+<li class="method public "><a href="#method_read" title="read :: Read a file"><span class="description">Read a file</span><pre>read()</pre></a></li>
+<li class="method public "><a href="#method_removeFilter" title="removeFilter :: Remove a filter, either by resource (handed out from the append or prepend function)
+or via getting the filter list)"><span class="description">Remove a filter, either by resource (handed out from the append or prepend function)
+or via getting the filter list)</span><pre>removeFilter()</pre></a></li>
+<li class="method public "><a href="#method_seek" title="seek :: Seek the file"><span class="description">Seek the file</span><pre>seek()</pre></a></li>
+<li class="method public "><a href="#method_set" title="set :: Modifies a property of the object, creating it if it does not already exist."><span class="description">Modifies a property of the object, creating it if it does not already exist.</span><pre>set()</pre></a></li>
+<li class="method public "><a href="#method_setContextOptions" title="setContextOptions :: Updates the context to the array"><span class="description">Updates the context to the array</span><pre>setContextOptions()</pre></a></li>
+<li class="method public "><a href="#method_tell" title="tell :: Returns the current position of the file read/write pointer."><span class="description">Returns the current position of the file read/write pointer.</span><pre>tell()</pre></a></li>
+<li class="method public "><a href="#method_upload" title="upload :: Upload a file"><span class="description">Upload a file</span><pre>upload()</pre></a></li>
+<li class="method public "><a href="#method_write" title="write :: File write"><span class="description">File write</span><pre>write()</pre></a></li>
+<li class="method public "><a href="#method_writeFile" title="writeFile :: Writes a chunk of data to a file."><span class="description">Writes a chunk of data to a file.</span><pre>writeFile()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_chunksize" title="$chunksize :: Default Chunk Size"><span class="description"></span><pre>$chunksize</pre></a></li>
+<li class="property protected "><a href="#property_context" title="$context :: Context to use when opening the connection"><span class="description"></span><pre>$context</pre></a></li>
+<li class="property protected "><a href="#property_contextOptions" title="$contextOptions :: Context options; used to rebuild the context"><span class="description"></span><pre>$contextOptions</pre></a></li>
+<li class="property protected "><a href="#property_dirmode" title="$dirmode :: Directory Mode"><span class="description"></span><pre>$dirmode</pre></a></li>
+<li class="property protected "><a href="#property_fh" title="$fh :: File Handle"><span class="description"></span><pre>$fh</pre></a></li>
+<li class="property protected "><a href="#property_filemode" title="$filemode :: File Mode"><span class="description"></span><pre>$filemode</pre></a></li>
+<li class="property protected "><a href="#property_filename" title="$filename :: Filename"><span class="description"></span><pre>$filename</pre></a></li>
+<li class="property protected "><a href="#property_filesize" title="$filesize :: File size"><span class="description"></span><pre>$filesize</pre></a></li>
+<li class="property protected "><a href="#property_filters" title="$filters :: Filters applied to the current stream"><span class="description"></span><pre>$filters</pre></a></li>
+<li class="property protected "><a href="#property_openmode" title="$openmode :: The mode under which the file was opened"><span class="description"></span><pre>$openmode</pre></a></li>
+<li class="property protected "><a href="#property_processingmethod" title="$processingmethod :: Read Processing method"><span class="description"></span><pre>$processingmethod</pre></a></li>
+<li class="property protected "><a href="#property_readprefix" title="$readprefix :: Prefix of the connection for reading"><span class="description"></span><pre>$readprefix</pre></a></li>
+<li class="property protected "><a href="#property_writeprefix" title="$writeprefix :: Prefix of the connection for writing"><span class="description"></span><pre>$writeprefix</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Filesystem\Stream"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Filesystem.html">Filesystem</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Filesystem.Stream.html">Stream</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Joomla! Stream Interface</p>
+<div class="details">
+<div class="long_description"><p>The Joomla! stream interface is designed to handle files as streams
+where as the legacy JFile static class treated files in a rather
+atomic manner.</p>
+
+<p>This class adheres to the stream wrapper operations:</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\Filesystem\http://php.net/manual/en/function.stream-get-wrappers.php</a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">PHP Stream Manual</a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">Stream Wrappers</a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">Stream Filters</a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">Socket Transports (used by some options, particularly HTTP proxy)</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct(string $writeprefix, string $readprefix, array $context) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$writeprefix</h4>
+<code>string</code><p>Prefix of the stream (optional). Unlike the JPATH_*, this has a final path separator!</p>
+</div>
+<div class="subelement argument">
+<h4>$readprefix</h4>
+<code>string</code><p>The read prefix (optional).</p>
+</div>
+<div class="subelement argument">
+<h4>$context</h4>
+<code>array</code><p>The context options (optional).</p>
+</div>
+</div></div>
+</div>
+<a id="method___destruct"></a><div class="element clickable method public method___destruct" data-toggle="collapse" data-target=".method___destruct .collapse">
+<h2>Destructor</h2>
+<pre>__destruct() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method__buildContext"></a><div class="element clickable method public method__buildContext" data-toggle="collapse" data-target=".method__buildContext .collapse">
+<h2>Stream contexts
+Builds the context from the array</h2>
+<pre>_buildContext() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method__getFilename"></a><div class="element clickable method public method__getFilename" data-toggle="collapse" data-target=".method__getFilename .collapse">
+<h2>Determine the appropriate 'filename' of a file</h2>
+<pre>_getFilename(string $filename, string $mode, boolean $use_prefix, boolean $relative) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code><p>Original filename of the file</p></div>
+<div class="subelement argument">
+<h4>$mode</h4>
+<code>string</code><p>Mode string to retrieve the filename</p></div>
+<div class="subelement argument">
+<h4>$use_prefix</h4>
+<code>boolean</code><p>Controls the use of a prefix</p></div>
+<div class="subelement argument">
+<h4>$relative</h4>
+<code>boolean</code><p>Determines if the filename given is relative. Relative paths do not have JPATH_ROOT stripped.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_addContextEntry"></a><div class="element clickable method public method_addContextEntry" data-toggle="collapse" data-target=".method_addContextEntry .collapse">
+<h2>Adds a particular options to the context</h2>
+<pre>addContextEntry(string $wrapper, string $name, string $value) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">Stream Context Creation</a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">Context Options for various streams</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$wrapper</h4>
+<code>string</code><p>The wrapper to use</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The option to set</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The value of the option</p></div>
+</div></div>
+</div>
+<a id="method_appendFilter"></a><div class="element clickable method public method_appendFilter" data-toggle="collapse" data-target=".method_appendFilter .collapse">
+<h2>Stream filters
+Append a filter to the chain</h2>
+<pre>appendFilter(string $filtername, integer $read_write, array $params) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\Filesystem\http://php.net/manual/en/function.stream-filter-append.php</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filtername</h4>
+<code>string</code><p>The key name of the filter.</p></div>
+<div class="subelement argument">
+<h4>$read_write</h4>
+<code>integer</code><p>Optional. Defaults to STREAM_FILTER_READ.</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>An array of params for the stream_filter_append call.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_applyContextToStream"></a><div class="element clickable method public method_applyContextToStream" data-toggle="collapse" data-target=".method_applyContextToStream .collapse">
+<h2>Applies the current context to the stream</h2>
+<pre>applyContextToStream() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Use this to change the values of the context after you've opened a stream</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_chmod"></a><div class="element clickable method public method_chmod" data-toggle="collapse" data-target=".method_chmod .collapse">
+<h2>Chmod wrapper</h2>
+<pre>chmod(string $filename, mixed $mode) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code><p>File name.</p></div>
+<div class="subelement argument">
+<h4>$mode</h4>
+<code>mixed</code><p>Mode to use.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_close"></a><div class="element clickable method public method_close" data-toggle="collapse" data-target=".method_close .collapse">
+<h2>Attempt to close a file handle</h2>
+<pre>close() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Will return false if it failed and true on success
+If the file is not open the system will return true, this function destroys the file handle as well</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_copy"></a><div class="element clickable method public method_copy" data-toggle="collapse" data-target=".method_copy .collapse">
+<h2>Copy a file from src to dest</h2>
+<pre>copy(string $src, string $dest, resource $context, boolean $use_prefix, boolean $relative) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$src</h4>
+<code>string</code><p>The file path to copy from.</p></div>
+<div class="subelement argument">
+<h4>$dest</h4>
+<code>string</code><p>The file path to copy to.</p></div>
+<div class="subelement argument">
+<h4>$context</h4>
+<code>resource</code><p>A valid context resource (optional) created with stream_context_create.</p>
+</div>
+<div class="subelement argument">
+<h4>$use_prefix</h4>
+<code>boolean</code><p>Controls the use of a prefix (optional).</p>
+</div>
+<div class="subelement argument">
+<h4>$relative</h4>
+<code>boolean</code><p>Determines if the filename given is relative. Relative paths do not have JPATH_ROOT stripped.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_delete"></a><div class="element clickable method public method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
+<h2>Delete a file</h2>
+<pre>delete(string $filename, resource $context, boolean $use_prefix, boolean $relative) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code><p>The file path to delete.</p></div>
+<div class="subelement argument">
+<h4>$context</h4>
+<code>resource</code><p>A valid context resource (optional) created with stream_context_create.</p>
+</div>
+<div class="subelement argument">
+<h4>$use_prefix</h4>
+<code>boolean</code><p>Controls the use of a prefix (optional).</p>
+</div>
+<div class="subelement argument">
+<h4>$relative</h4>
+<code>boolean</code><p>Determines if the filename given is relative. Relative paths do not have JPATH_ROOT stripped.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_deleteContextEntry"></a><div class="element clickable method public method_deleteContextEntry" data-toggle="collapse" data-target=".method_deleteContextEntry .collapse">
+<h2>Deletes a particular setting from a context</h2>
+<pre>deleteContextEntry(string $wrapper, string $name) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\Filesystem\http://php.net/stream_context_create</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$wrapper</h4>
+<code>string</code><p>The wrapper to use</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The option to unset</p></div>
+</div></div>
+</div>
+<a id="method_eof"></a><div class="element clickable method public method_eof" data-toggle="collapse" data-target=".method_eof .collapse">
+<h2>Work out if we're at the end of the file for a stream</h2>
+<pre>eof() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_filesize"></a><div class="element clickable method public method_filesize" data-toggle="collapse" data-target=".method_filesize .collapse">
+<h2>Retrieve the file size of the path</h2>
+<pre>filesize() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_get"></a><div class="element clickable method public method_get" data-toggle="collapse" data-target=".method_get .collapse">
+<h2>Returns a property of the object or the default value if the property is not set.</h2>
+<pre>get(string $property, mixed $default) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$property</h4>
+<code>string</code><p>The name of the property.</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>mixed</code><p>The default value.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The value of the property.</div>
+</div></div>
+</div>
+<a id="method_getFileHandle"></a><div class="element clickable method public method_getFileHandle" data-toggle="collapse" data-target=".method_getFileHandle .collapse">
+<h2>Return the internal file handle</h2>
+<pre>getFileHandle() : <a href="../classes/Joomla.Filesystem.File.html">\Joomla\Filesystem\File</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Filesystem.File.html">\Joomla\Filesystem\File</a></code>handler</div>
+</div></div>
+</div>
+<a id="method_get_meta_data"></a><div class="element clickable method public method_get_meta_data" data-toggle="collapse" data-target=".method_get_meta_data .collapse">
+<h2>Get the stream metadata</h2>
+<pre>get_meta_data() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\Filesystem\http://php.net/manual/en/function.stream-get-meta-data.php</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>header/metadata</div>
+</div></div>
+</div>
+<a id="method_gets"></a><div class="element clickable method public method_gets" data-toggle="collapse" data-target=".method_gets .collapse">
+<h2>Get a line from the stream source.</h2>
+<pre>gets(integer $length) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>The number of bytes (optional) to read.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_move"></a><div class="element clickable method public method_move" data-toggle="collapse" data-target=".method_move .collapse">
+<h2>Moves a file</h2>
+<pre>move(string $src, string $dest, resource $context, boolean $use_prefix, boolean $relative) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$src</h4>
+<code>string</code><p>The file path to move from.</p></div>
+<div class="subelement argument">
+<h4>$dest</h4>
+<code>string</code><p>The file path to move to.</p></div>
+<div class="subelement argument">
+<h4>$context</h4>
+<code>resource</code><p>A valid context resource (optional) created with stream_context_create.</p>
+</div>
+<div class="subelement argument">
+<h4>$use_prefix</h4>
+<code>boolean</code><p>Controls the use of a prefix (optional).</p>
+</div>
+<div class="subelement argument">
+<h4>$relative</h4>
+<code>boolean</code><p>Determines if the filename given is relative. Relative paths do not have JPATH_ROOT stripped.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_open"></a><div class="element clickable method public method_open" data-toggle="collapse" data-target=".method_open .collapse">
+<h2>Generic File Operations</h2>
+<pre>open(string $filename, string $mode, boolean $use_include_path, resource $context, boolean $use_prefix, boolean $relative, boolean $detectprocessingmode) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Open a stream with some lazy loading smarts</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code><p>Filename</p></div>
+<div class="subelement argument">
+<h4>$mode</h4>
+<code>string</code><p>Mode string to use</p></div>
+<div class="subelement argument">
+<h4>$use_include_path</h4>
+<code>boolean</code><p>Use the PHP include path</p></div>
+<div class="subelement argument">
+<h4>$context</h4>
+<code>resource</code><p>Context to use when opening</p></div>
+<div class="subelement argument">
+<h4>$use_prefix</h4>
+<code>boolean</code><p>Use a prefix to open the file</p></div>
+<div class="subelement argument">
+<h4>$relative</h4>
+<code>boolean</code><p>Filename is a relative path (if false, strips JPATH_ROOT to make it relative)</p>
+</div>
+<div class="subelement argument">
+<h4>$detectprocessingmode</h4>
+<code>boolean</code><p>Detect the processing method for the file and use the appropriate function
+                                          to handle output automatically</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_prependFilter"></a><div class="element clickable method public method_prependFilter" data-toggle="collapse" data-target=".method_prependFilter .collapse">
+<h2>Prepend a filter to the chain</h2>
+<pre>prependFilter(string $filtername, integer $read_write, array $params) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\Filesystem\http://php.net/manual/en/function.stream-filter-prepend.php</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filtername</h4>
+<code>string</code><p>The key name of the filter.</p></div>
+<div class="subelement argument">
+<h4>$read_write</h4>
+<code>integer</code><p>Optional. Defaults to STREAM_FILTER_READ.</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>An array of params for the stream_filter_prepend call.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_read"></a><div class="element clickable method public method_read" data-toggle="collapse" data-target=".method_read .collapse">
+<h2>Read a file</h2>
+<pre>read(integer $length) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Handles user space streams appropriately otherwise any read will return 8192</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\Filesystem\http://php.net/manual/en/function.fread.php</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>Length of data to read</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_removeFilter"></a><div class="element clickable method public method_removeFilter" data-toggle="collapse" data-target=".method_removeFilter .collapse">
+<h2>Remove a filter, either by resource (handed out from the append or prepend function)
+or via getting the filter list)</h2>
+<pre>removeFilter(resource $resource, boolean $byindex) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$resource</h4>
+<code>resource</code><p>&$resource  The resource.</p>
+</div>
+<div class="subelement argument">
+<h4>$byindex</h4>
+<code>boolean</code><p>The index of the filter.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Result of operation</div>
+</div></div>
+</div>
+<a id="method_seek"></a><div class="element clickable method public method_seek" data-toggle="collapse" data-target=".method_seek .collapse">
+<h2>Seek the file</h2>
+<pre>seek(integer $offset, integer $whence) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Note: the return value is different to that of fseek</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\Filesystem\http://php.net/manual/en/function.fseek.php</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>integer</code><p>Offset to use when seeking.</p></div>
+<div class="subelement argument">
+<h4>$whence</h4>
+<code>integer</code><p>Seek mode to use.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success, false on failure</div>
+</div></div>
+</div>
+<a id="method_set"></a><div class="element clickable method public method_set" data-toggle="collapse" data-target=".method_set .collapse">
+<h2>Modifies a property of the object, creating it if it does not already exist.</h2>
+<pre>set(string $property, mixed $value) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$property</h4>
+<code>string</code><p>The name of the property.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value of the property to set.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Previous value of the property.</div>
+</div></div>
+</div>
+<a id="method_setContextOptions"></a><div class="element clickable method public method_setContextOptions" data-toggle="collapse" data-target=".method_setContextOptions .collapse">
+<h2>Updates the context to the array</h2>
+<pre>setContextOptions(array $context) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Format is the same as the options for stream_context_create</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\Filesystem\http://php.net/stream_context_create</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$context</h4>
+<code>array</code><p>Options to create the context with</p></div>
+</div></div>
+</div>
+<a id="method_tell"></a><div class="element clickable method public method_tell" data-toggle="collapse" data-target=".method_tell .collapse">
+<h2>Returns the current position of the file read/write pointer.</h2>
+<pre>tell() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_upload"></a><div class="element clickable method public method_upload" data-toggle="collapse" data-target=".method_upload .collapse">
+<h2>Upload a file</h2>
+<pre>upload(string $src, string $dest, resource $context, boolean $use_prefix, boolean $relative) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$src</h4>
+<code>string</code><p>The file path to copy from (usually a temp folder).</p>
+</div>
+<div class="subelement argument">
+<h4>$dest</h4>
+<code>string</code><p>The file path to copy to.</p></div>
+<div class="subelement argument">
+<h4>$context</h4>
+<code>resource</code><p>A valid context resource (optional) created with stream_context_create.</p>
+</div>
+<div class="subelement argument">
+<h4>$use_prefix</h4>
+<code>boolean</code><p>Controls the use of a prefix (optional).</p>
+</div>
+<div class="subelement argument">
+<h4>$relative</h4>
+<code>boolean</code><p>Determines if the filename given is relative. Relative paths do not have JPATH_ROOT stripped.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_write"></a><div class="element clickable method public method_write" data-toggle="collapse" data-target=".method_write .collapse">
+<h2>File write</h2>
+<pre>write(string $string, integer $length, integer $chunk) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Whilst this function accepts a reference, the underlying fwrite
+will do a copy! This will roughly double the memory allocation for
+any write you do. Specifying chunked will get around this by only
+writing in specific chunk sizes. This defaults to 8192 which is a
+sane number to use most of the time (change the default with
+JStream::set('chunksize', newsize);)
+Note: This doesn't support gzip/bzip2 writing like reading does</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\Filesystem\http://php.net/manual/en/function.fwrite.php</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>&$string  Reference to the string to write.</p>
+</div>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>Length of the string to write.</p></div>
+<div class="subelement argument">
+<h4>$chunk</h4>
+<code>integer</code><p>Size of chunks to write in.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_writeFile"></a><div class="element clickable method public method_writeFile" data-toggle="collapse" data-target=".method_writeFile .collapse">
+<h2>Writes a chunk of data to a file.</h2>
+<pre>writeFile(string $filename, string $buffer) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code><p>The file name.</p></div>
+<div class="subelement argument">
+<h4>$buffer</h4>
+<code>string</code><p>&$buffer   The data to write to the file.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_chunksize"> </a><div class="element clickable property protected property_chunksize" data-toggle="collapse" data-target=".property_chunksize .collapse">
+<h2></h2>
+<pre>$chunksize : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_context"> </a><div class="element clickable property protected property_context" data-toggle="collapse" data-target=".property_context .collapse">
+<h2></h2>
+<pre>$context : </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_contextOptions"> </a><div class="element clickable property protected property_contextOptions" data-toggle="collapse" data-target=".property_contextOptions .collapse">
+<h2></h2>
+<pre>$contextOptions : </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_dirmode"> </a><div class="element clickable property protected property_dirmode" data-toggle="collapse" data-target=".property_dirmode .collapse">
+<h2></h2>
+<pre>$dirmode : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_fh"> </a><div class="element clickable property protected property_fh" data-toggle="collapse" data-target=".property_fh .collapse">
+<h2></h2>
+<pre>$fh : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_filemode"> </a><div class="element clickable property protected property_filemode" data-toggle="collapse" data-target=".property_filemode .collapse">
+<h2></h2>
+<pre>$filemode : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_filename"> </a><div class="element clickable property protected property_filename" data-toggle="collapse" data-target=".property_filename .collapse">
+<h2></h2>
+<pre>$filename : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_filesize"> </a><div class="element clickable property protected property_filesize" data-toggle="collapse" data-target=".property_filesize .collapse">
+<h2></h2>
+<pre>$filesize : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_filters"> </a><div class="element clickable property protected property_filters" data-toggle="collapse" data-target=".property_filters .collapse">
+<h2></h2>
+<pre>$filters : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_openmode"> </a><div class="element clickable property protected property_openmode" data-toggle="collapse" data-target=".property_openmode .collapse">
+<h2></h2>
+<pre>$openmode : </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_processingmethod"> </a><div class="element clickable property protected property_processingmethod" data-toggle="collapse" data-target=".property_processingmethod .collapse">
+<h2></h2>
+<pre>$processingmethod : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_readprefix"> </a><div class="element clickable property protected property_readprefix" data-toggle="collapse" data-target=".property_readprefix .collapse">
+<h2></h2>
+<pre>$readprefix : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_writeprefix"> </a><div class="element clickable property protected property_writeprefix" data-toggle="collapse" data-target=".property_writeprefix .collapse">
+<h2></h2>
+<pre>$writeprefix : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:21-05:00.<br></footer></div>
+</div>
+</body>
+</html>

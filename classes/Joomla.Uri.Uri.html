@@ -1,0 +1,815 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Uri\Uri</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Constructor."><span class="description">Constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___toString" title="__toString :: Magic method to get the string representation of the URI object."><span class="description">Magic method to get the string representation of the URI object.</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_buildQuery" title="buildQuery :: Build a query from a array (reverse of the PHP parse_str())."><span class="description">Build a query from a array (reverse of the PHP parse_str()).</span><pre>buildQuery()</pre></a></li>
+<li class="method public "><a href="#method_delVar" title="delVar :: Removes an item from the query string variables if it exists."><span class="description">Removes an item from the query string variables if it exists.</span><pre>delVar()</pre></a></li>
+<li class="method public "><a href="#method_getFragment" title='getFragment :: Get the URI archor string
+Everything after the "#".'><span class="description">Get the URI archor string
+Everything after the "#".</span><pre>getFragment()</pre></a></li>
+<li class="method public "><a href="#method_getHost" title="getHost :: Get URI host
+Returns the hostname/ip or null if no hostname/ip was specified."><span class="description">Get URI host
+Returns the hostname/ip or null if no hostname/ip was specified.</span><pre>getHost()</pre></a></li>
+<li class="method public "><a href="#method_getInstance" title="getInstance :: Returns the global Uri object, only creating it
+if it doesn't already exist."><span class="description">Returns the global Uri object, only creating it
+if it doesn't already exist.</span><pre>getInstance()</pre></a></li>
+<li class="method public "><a href="#method_getPass" title="getPass :: Get URI password
+Returns the password, or null if no password was specified."><span class="description">Get URI password
+Returns the password, or null if no password was specified.</span><pre>getPass()</pre></a></li>
+<li class="method public "><a href="#method_getPath" title="getPath :: Gets the URI path string."><span class="description">Gets the URI path string.</span><pre>getPath()</pre></a></li>
+<li class="method public "><a href="#method_getPort" title="getPort :: Get URI port
+Returns the port number, or null if no port was specified."><span class="description">Get URI port
+Returns the port number, or null if no port was specified.</span><pre>getPort()</pre></a></li>
+<li class="method public "><a href="#method_getQuery" title="getQuery :: Returns flat query string."><span class="description">Returns flat query string.</span><pre>getQuery()</pre></a></li>
+<li class="method public "><a href="#method_getScheme" title="getScheme :: Get URI scheme (protocol)
+ie."><span class="description">Get URI scheme (protocol)
+ie.</span><pre>getScheme()</pre></a></li>
+<li class="method public "><a href="#method_getUser" title="getUser :: Get URI username
+Returns the username, or null if no username was specified."><span class="description">Get URI username
+Returns the username, or null if no username was specified.</span><pre>getUser()</pre></a></li>
+<li class="method public "><a href="#method_getVar" title="getVar :: Returns a query variable by name."><span class="description">Returns a query variable by name.</span><pre>getVar()</pre></a></li>
+<li class="method public "><a href="#method_hasVar" title="hasVar :: Checks if variable exists."><span class="description">Checks if variable exists.</span><pre>hasVar()</pre></a></li>
+<li class="method public "><a href="#method_isSSL" title="isSSL :: Checks whether the current URI is using HTTPS."><span class="description">Checks whether the current URI is using HTTPS.</span><pre>isSSL()</pre></a></li>
+<li class="method public "><a href="#method_parse" title="parse :: Parse a given URI and populate the class fields."><span class="description">Parse a given URI and populate the class fields.</span><pre>parse()</pre></a></li>
+<li class="method public "><a href="#method_reset" title="reset :: Method to reset class static members for testing and other various issues."><span class="description">Method to reset class static members for testing and other various issues.</span><pre>reset()</pre></a></li>
+<li class="method public "><a href="#method_setFragment" title='setFragment :: Set the URI anchor string
+everything after the "#".'><span class="description">Set the URI anchor string
+everything after the "#".</span><pre>setFragment()</pre></a></li>
+<li class="method public "><a href="#method_setHost" title="setHost :: Set URI host."><span class="description">Set URI host.</span><pre>setHost()</pre></a></li>
+<li class="method public "><a href="#method_setPass" title="setPass :: Set URI password."><span class="description">Set URI password.</span><pre>setPass()</pre></a></li>
+<li class="method public "><a href="#method_setPath" title="setPath :: Set the URI path string."><span class="description">Set the URI path string.</span><pre>setPath()</pre></a></li>
+<li class="method public "><a href="#method_setPort" title="setPort :: Set URI port."><span class="description">Set URI port.</span><pre>setPort()</pre></a></li>
+<li class="method public "><a href="#method_setQuery" title="setQuery :: Sets the query to a supplied string in format:
+foo=bar&amp;x=y"><span class="description">Sets the query to a supplied string in format:
+foo=bar&amp;x=y</span><pre>setQuery()</pre></a></li>
+<li class="method public "><a href="#method_setScheme" title="setScheme :: Set URI scheme (protocol)
+ie."><span class="description">Set URI scheme (protocol)
+ie.</span><pre>setScheme()</pre></a></li>
+<li class="method public "><a href="#method_setUser" title="setUser :: Set URI username."><span class="description">Set URI username.</span><pre>setUser()</pre></a></li>
+<li class="method public "><a href="#method_setVar" title="setVar :: Adds a query variable and value, replacing the value if it
+already exists and returning the old value."><span class="description">Adds a query variable and value, replacing the value if it
+already exists and returning the old value.</span><pre>setVar()</pre></a></li>
+<li class="method public "><a href="#method_toString" title="toString :: Returns full uri string."><span class="description">Returns full uri string.</span><pre>toString()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_cleanPath" title="cleanPath :: Resolves //, ."><span class="description">Resolves //, .</span><pre>cleanPath()</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_fragment" title="$fragment :: "><span class="description">Anchor</span><pre>$fragment</pre></a></li>
+<li class="property protected "><a href="#property_host" title="$host :: "><span class="description">Host</span><pre>$host</pre></a></li>
+<li class="property protected "><a href="#property_instances" title="$instances :: "><span class="description">An array of Uri instances.</span><pre>$instances</pre></a></li>
+<li class="property protected "><a href="#property_pass" title="$pass :: "><span class="description">Password</span><pre>$pass</pre></a></li>
+<li class="property protected "><a href="#property_path" title="$path :: "><span class="description">Path</span><pre>$path</pre></a></li>
+<li class="property protected "><a href="#property_port" title="$port :: "><span class="description">Port</span><pre>$port</pre></a></li>
+<li class="property protected "><a href="#property_query" title="$query :: "><span class="description">Query</span><pre>$query</pre></a></li>
+<li class="property protected "><a href="#property_scheme" title="$scheme :: "><span class="description">Protocol</span><pre>$scheme</pre></a></li>
+<li class="property protected "><a href="#property_uri" title="$uri :: "><span class="description">Original URI</span><pre>$uri</pre></a></li>
+<li class="property protected "><a href="#property_user" title="$user :: "><span class="description">Username</span><pre>$user</pre></a></li>
+<li class="property protected "><a href="#property_vars" title="$vars :: "><span class="description">Query variable hash</span><pre>$vars</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Uri\Uri"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Uri.html">Uri</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Uri.Uri.html">Uri</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Uri Class</p>
+<div class="details">
+<div class="long_description"><p>This class serves two purposes. First it parses a URI and provides a common interface
+for the Joomla Platform to access and manipulate a URI.  Second it obtains the URI of
+the current executing script from the server regardless of server.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructor.</h2>
+<pre>__construct(string $uri) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>You can pass a URI string to the constructor to initialise a specific URI.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uri</h4>
+<code>string</code><p>The optional URI string</p></div>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
+<h2>Magic method to get the string representation of the URI object.</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_buildQuery"></a><div class="element clickable method public method_buildQuery" data-toggle="collapse" data-target=".method_buildQuery .collapse">
+<h2>Build a query from a array (reverse of the PHP parse_str()).</h2>
+<pre>buildQuery(array $params) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\Uri\parse_str()</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>The array of key => value pairs to return as a query string.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The resulting query string.</div>
+</div></div>
+</div>
+<a id="method_delVar"></a><div class="element clickable method public method_delVar" data-toggle="collapse" data-target=".method_delVar .collapse">
+<h2>Removes an item from the query string variables if it exists.</h2>
+<pre>delVar(string $name) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of variable to remove.</p></div>
+</div></div>
+</div>
+<a id="method_getFragment"></a><div class="element clickable method public method_getFragment" data-toggle="collapse" data-target=".method_getFragment .collapse">
+<h2>Get the URI archor string
+Everything after the "#".</h2>
+<pre>getFragment() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The URI anchor string.</div>
+</div></div>
+</div>
+<a id="method_getHost"></a><div class="element clickable method public method_getHost" data-toggle="collapse" data-target=".method_getHost .collapse">
+<h2>Get URI host
+Returns the hostname/ip or null if no hostname/ip was specified.</h2>
+<pre>getHost() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The URI host.</div>
+</div></div>
+</div>
+<a id="method_getInstance"></a><div class="element clickable method public method_getInstance" data-toggle="collapse" data-target=".method_getInstance .collapse">
+<h2>Returns the global Uri object, only creating it
+if it doesn't already exist.</h2>
+<pre>getInstance(string $uri) : <a href="../classes/Joomla.Uri.Uri.html">\Joomla\Uri\Uri</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uri</h4>
+<code>string</code><p>The URI to parse.  [optional: if null uses script URI]</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Uri.Uri.html">\Joomla\Uri\Uri</a></code>The Uri object.</div>
+</div></div>
+</div>
+<a id="method_getPass"></a><div class="element clickable method public method_getPass" data-toggle="collapse" data-target=".method_getPass .collapse">
+<h2>Get URI password
+Returns the password, or null if no password was specified.</h2>
+<pre>getPass() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The URI password.</div>
+</div></div>
+</div>
+<a id="method_getPath"></a><div class="element clickable method public method_getPath" data-toggle="collapse" data-target=".method_getPath .collapse">
+<h2>Gets the URI path string.</h2>
+<pre>getPath() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The URI path string.</div>
+</div></div>
+</div>
+<a id="method_getPort"></a><div class="element clickable method public method_getPort" data-toggle="collapse" data-target=".method_getPort .collapse">
+<h2>Get URI port
+Returns the port number, or null if no port was specified.</h2>
+<pre>getPort() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The URI port number.</div>
+</div></div>
+</div>
+<a id="method_getQuery"></a><div class="element clickable method public method_getQuery" data-toggle="collapse" data-target=".method_getQuery .collapse">
+<h2>Returns flat query string.</h2>
+<pre>getQuery(boolean $toArray) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$toArray</h4>
+<code>boolean</code><p>True to return the query as a key => value pair array.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Query string.</div>
+</div></div>
+</div>
+<a id="method_getScheme"></a><div class="element clickable method public method_getScheme" data-toggle="collapse" data-target=".method_getScheme .collapse">
+<h2>Get URI scheme (protocol)
+ie.</h2>
+<pre>getScheme() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>http, https, ftp, etc...</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The URI scheme.</div>
+</div></div>
+</div>
+<a id="method_getUser"></a><div class="element clickable method public method_getUser" data-toggle="collapse" data-target=".method_getUser .collapse">
+<h2>Get URI username
+Returns the username, or null if no username was specified.</h2>
+<pre>getUser() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The URI username.</div>
+</div></div>
+</div>
+<a id="method_getVar"></a><div class="element clickable method public method_getVar" data-toggle="collapse" data-target=".method_getVar .collapse">
+<h2>Returns a query variable by name.</h2>
+<pre>getVar(string $name, string $default) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of the query variable to get.</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>string</code><p>Default value to return if the variable is not set.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Query variables.</div>
+</div></div>
+</div>
+<a id="method_hasVar"></a><div class="element clickable method public method_hasVar" data-toggle="collapse" data-target=".method_hasVar .collapse">
+<h2>Checks if variable exists.</h2>
+<pre>hasVar(string $name) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of the query variable to check.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if the variable exists.</div>
+</div></div>
+</div>
+<a id="method_isSSL"></a><div class="element clickable method public method_isSSL" data-toggle="collapse" data-target=".method_isSSL .collapse">
+<h2>Checks whether the current URI is using HTTPS.</h2>
+<pre>isSSL() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if using SSL via HTTPS.</div>
+</div></div>
+</div>
+<a id="method_parse"></a><div class="element clickable method public method_parse" data-toggle="collapse" data-target=".method_parse .collapse">
+<h2>Parse a given URI and populate the class fields.</h2>
+<pre>parse(string $uri) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uri</h4>
+<code>string</code><p>The URI string to parse.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success.</div>
+</div></div>
+</div>
+<a id="method_reset"></a><div class="element clickable method public method_reset" data-toggle="collapse" data-target=".method_reset .collapse">
+<h2>Method to reset class static members for testing and other various issues.</h2>
+<pre>reset() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_setFragment"></a><div class="element clickable method public method_setFragment" data-toggle="collapse" data-target=".method_setFragment .collapse">
+<h2>Set the URI anchor string
+everything after the "#".</h2>
+<pre>setFragment(string $anchor) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$anchor</h4>
+<code>string</code><p>The URI anchor string.</p></div>
+</div></div>
+</div>
+<a id="method_setHost"></a><div class="element clickable method public method_setHost" data-toggle="collapse" data-target=".method_setHost .collapse">
+<h2>Set URI host.</h2>
+<pre>setHost(string $host) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$host</h4>
+<code>string</code><p>The URI host.</p></div>
+</div></div>
+</div>
+<a id="method_setPass"></a><div class="element clickable method public method_setPass" data-toggle="collapse" data-target=".method_setPass .collapse">
+<h2>Set URI password.</h2>
+<pre>setPass(string $pass) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pass</h4>
+<code>string</code><p>The URI password.</p></div>
+</div></div>
+</div>
+<a id="method_setPath"></a><div class="element clickable method public method_setPath" data-toggle="collapse" data-target=".method_setPath .collapse">
+<h2>Set the URI path string.</h2>
+<pre>setPath(string $path) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The URI path string.</p></div>
+</div></div>
+</div>
+<a id="method_setPort"></a><div class="element clickable method public method_setPort" data-toggle="collapse" data-target=".method_setPort .collapse">
+<h2>Set URI port.</h2>
+<pre>setPort(integer $port) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$port</h4>
+<code>integer</code><p>The URI port number.</p></div>
+</div></div>
+</div>
+<a id="method_setQuery"></a><div class="element clickable method public method_setQuery" data-toggle="collapse" data-target=".method_setQuery .collapse">
+<h2>Sets the query to a supplied string in format:
+foo=bar&amp;x=y</h2>
+<pre>setQuery(mixed $query) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$query</h4>
+<code>mixed</code><p>The query string or array.</p></div>
+</div></div>
+</div>
+<a id="method_setScheme"></a><div class="element clickable method public method_setScheme" data-toggle="collapse" data-target=".method_setScheme .collapse">
+<h2>Set URI scheme (protocol)
+ie.</h2>
+<pre>setScheme(string $scheme) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>http, https, ftp, etc...</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$scheme</h4>
+<code>string</code><p>The URI scheme.</p></div>
+</div></div>
+</div>
+<a id="method_setUser"></a><div class="element clickable method public method_setUser" data-toggle="collapse" data-target=".method_setUser .collapse">
+<h2>Set URI username.</h2>
+<pre>setUser(string $user) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$user</h4>
+<code>string</code><p>The URI username.</p></div>
+</div></div>
+</div>
+<a id="method_setVar"></a><div class="element clickable method public method_setVar" data-toggle="collapse" data-target=".method_setVar .collapse">
+<h2>Adds a query variable and value, replacing the value if it
+already exists and returning the old value.</h2>
+<pre>setVar(string $name, string $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of the query variable to set.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>Value of the query variable.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Previous value for the query variable.</div>
+</div></div>
+</div>
+<a id="method_toString"></a><div class="element clickable method public method_toString" data-toggle="collapse" data-target=".method_toString .collapse">
+<h2>Returns full uri string.</h2>
+<pre>toString(array $parts) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parts</h4>
+<code>array</code><p>An array specifying the parts to render.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The rendered URI string.</div>
+</div></div>
+</div>
+<a id="method_cleanPath"></a><div class="element clickable method protected method_cleanPath" data-toggle="collapse" data-target=".method_cleanPath .collapse">
+<h2>Resolves //, .</h2>
+<pre>cleanPath(string $path) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>./ and ./ from a path and returns
+the result. Eg:</p>
+
+<p>/foo/bar/../boo.php => /foo/boo.php
+/foo/bar/../../boo.php => /boo.php
+/foo/bar/.././/boo.php => /foo/boo.php</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The URI path to clean.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Cleaned and resolved URI path.</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_fragment"> </a><div class="element clickable property protected property_fragment" data-toggle="collapse" data-target=".property_fragment .collapse">
+<h2>Anchor</h2>
+<pre>$fragment : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_host"> </a><div class="element clickable property protected property_host" data-toggle="collapse" data-target=".property_host .collapse">
+<h2>Host</h2>
+<pre>$host : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_instances"> </a><div class="element clickable property protected property_instances" data-toggle="collapse" data-target=".property_instances .collapse">
+<h2>An array of Uri instances.</h2>
+<pre>$instances : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_pass"> </a><div class="element clickable property protected property_pass" data-toggle="collapse" data-target=".property_pass .collapse">
+<h2>Password</h2>
+<pre>$pass : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_path"> </a><div class="element clickable property protected property_path" data-toggle="collapse" data-target=".property_path .collapse">
+<h2>Path</h2>
+<pre>$path : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_port"> </a><div class="element clickable property protected property_port" data-toggle="collapse" data-target=".property_port .collapse">
+<h2>Port</h2>
+<pre>$port : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_query"> </a><div class="element clickable property protected property_query" data-toggle="collapse" data-target=".property_query .collapse">
+<h2>Query</h2>
+<pre>$query : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_scheme"> </a><div class="element clickable property protected property_scheme" data-toggle="collapse" data-target=".property_scheme .collapse">
+<h2>Protocol</h2>
+<pre>$scheme : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_uri"> </a><div class="element clickable property protected property_uri" data-toggle="collapse" data-target=".property_uri .collapse">
+<h2>Original URI</h2>
+<pre>$uri : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_user"> </a><div class="element clickable property protected property_user" data-toggle="collapse" data-target=".property_user .collapse">
+<h2>Username</h2>
+<pre>$user : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_vars"> </a><div class="element clickable property protected property_vars" data-toggle="collapse" data-target=".property_vars .collapse">
+<h2>Query variable hash</h2>
+<pre>$vars : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:25-05:00.<br></footer></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Filesystem\Folder</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_copy" title="copy :: Copy a folder."><span class="description">Copy a folder.</span><pre>copy()</pre></a></li>
+<li class="method public "><a href="#method_create" title="create :: Create a folder -- and all necessary parent folders."><span class="description">Create a folder -- and all necessary parent folders.</span><pre>create()</pre></a></li>
+<li class="method public "><a href="#method_delete" title="delete :: Delete a folder."><span class="description">Delete a folder.</span><pre>delete()</pre></a></li>
+<li class="method public "><a href="#method_exists" title="exists :: Wrapper for the standard file_exists function"><span class="description">Wrapper for the standard file_exists function</span><pre>exists()</pre></a></li>
+<li class="method public "><a href="#method_files" title="files :: Utility function to read the files in a folder."><span class="description">Utility function to read the files in a folder.</span><pre>files()</pre></a></li>
+<li class="method public "><a href="#method_folders" title="folders :: Utility function to read the folders in a folder."><span class="description">Utility function to read the folders in a folder.</span><pre>folders()</pre></a></li>
+<li class="method public "><a href="#method_listFolderTree" title="listFolderTree :: Lists folder in format suitable for tree display."><span class="description">Lists folder in format suitable for tree display.</span><pre>listFolderTree()</pre></a></li>
+<li class="method public "><a href="#method_makeSafe" title="makeSafe :: Makes path name safe to use."><span class="description">Makes path name safe to use.</span><pre>makeSafe()</pre></a></li>
+<li class="method public "><a href="#method_move" title="move :: Moves a folder."><span class="description">Moves a folder.</span><pre>move()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method__items" title="_items :: Function to read the files/folders in a folder."><span class="description">Function to read the files/folders in a folder.</span><pre>_items()</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Filesystem\Folder"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Filesystem.html">Filesystem</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Filesystem.Folder.html">Folder</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">A Folder handling class</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_copy"></a><div class="element clickable method public method_copy" data-toggle="collapse" data-target=".method_copy .collapse">
+<h2>Copy a folder.</h2>
+<pre>copy(string $src, string $dest, string $path, string $force, boolean $use_streams) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$src</h4>
+<code>string</code><p>The path to the source folder.</p></div>
+<div class="subelement argument">
+<h4>$dest</h4>
+<code>string</code><p>The path to the destination folder.</p></div>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>An optional base path to prefix to the file names.</p></div>
+<div class="subelement argument">
+<h4>$force</h4>
+<code>string</code><p>Force copy.</p></div>
+<div class="subelement argument">
+<h4>$use_streams</h4>
+<code>boolean</code><p>Optionally force folder/file overwrites.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\Joomla\Filesystem\RuntimeException</code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success.</div>
+</div></div>
+</div>
+<a id="method_create"></a><div class="element clickable method public method_create" data-toggle="collapse" data-target=".method_create .collapse">
+<h2>Create a folder -- and all necessary parent folders.</h2>
+<pre>create(string $path, integer $mode) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>A path to create from the base path.</p></div>
+<div class="subelement argument">
+<h4>$mode</h4>
+<code>integer</code><p>Directory permissions to set for folders created. 0755 by default.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if successful.</div>
+</div></div>
+</div>
+<a id="method_delete"></a><div class="element clickable method public method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
+<h2>Delete a folder.</h2>
+<pre>delete(string $path) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to the folder to delete.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success.</div>
+</div></div>
+</div>
+<a id="method_exists"></a><div class="element clickable method public method_exists" data-toggle="collapse" data-target=".method_exists .collapse">
+<h2>Wrapper for the standard file_exists function</h2>
+<pre>exists(string $path) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>Folder name relative to installation dir</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if path is a folder</div>
+</div></div>
+</div>
+<a id="method_files"></a><div class="element clickable method public method_files" data-toggle="collapse" data-target=".method_files .collapse">
+<h2>Utility function to read the files in a folder.</h2>
+<pre>files(string $path, string $filter, mixed $recurse, boolean $full, array $exclude, array $excludefilter) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path of the folder to read.</p></div>
+<div class="subelement argument">
+<h4>$filter</h4>
+<code>string</code><p>A filter for file names.</p></div>
+<div class="subelement argument">
+<h4>$recurse</h4>
+<code>mixed</code><p>True to recursively search into sub-folders, or an integer to specify the maximum depth.</p>
+</div>
+<div class="subelement argument">
+<h4>$full</h4>
+<code>boolean</code><p>True to return the full path to the file.</p></div>
+<div class="subelement argument">
+<h4>$exclude</h4>
+<code>array</code><p>Array with names of files which should not be shown in the result.</p></div>
+<div class="subelement argument">
+<h4>$excludefilter</h4>
+<code>array</code><p>Array of filter to exclude</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Files in the given folder.</div>
+</div></div>
+</div>
+<a id="method_folders"></a><div class="element clickable method public method_folders" data-toggle="collapse" data-target=".method_folders .collapse">
+<h2>Utility function to read the folders in a folder.</h2>
+<pre>folders(string $path, string $filter, mixed $recurse, boolean $full, array $exclude, array $excludefilter) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path of the folder to read.</p></div>
+<div class="subelement argument">
+<h4>$filter</h4>
+<code>string</code><p>A filter for folder names.</p></div>
+<div class="subelement argument">
+<h4>$recurse</h4>
+<code>mixed</code><p>True to recursively search into sub-folders, or an integer to specify the maximum depth.</p>
+</div>
+<div class="subelement argument">
+<h4>$full</h4>
+<code>boolean</code><p>True to return the full path to the folders.</p></div>
+<div class="subelement argument">
+<h4>$exclude</h4>
+<code>array</code><p>Array with names of folders which should not be shown in the result.</p></div>
+<div class="subelement argument">
+<h4>$excludefilter</h4>
+<code>array</code><p>Array with regular expressions matching folders which should not be shown in the result.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Folders in the given folder.</div>
+</div></div>
+</div>
+<a id="method_listFolderTree"></a><div class="element clickable method public method_listFolderTree" data-toggle="collapse" data-target=".method_listFolderTree .collapse">
+<h2>Lists folder in format suitable for tree display.</h2>
+<pre>listFolderTree(string $path, string $filter, integer $maxLevel, integer $level, integer $parent) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path of the folder to read.</p></div>
+<div class="subelement argument">
+<h4>$filter</h4>
+<code>string</code><p>A filter for folder names.</p></div>
+<div class="subelement argument">
+<h4>$maxLevel</h4>
+<code>integer</code><p>The maximum number of levels to recursively read, defaults to three.</p></div>
+<div class="subelement argument">
+<h4>$level</h4>
+<code>integer</code><p>The current level, optional.</p></div>
+<div class="subelement argument">
+<h4>$parent</h4>
+<code>integer</code><p>Unique identifier of the parent folder, if any.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Folders in the given folder.</div>
+</div></div>
+</div>
+<a id="method_makeSafe"></a><div class="element clickable method public method_makeSafe" data-toggle="collapse" data-target=".method_makeSafe .collapse">
+<h2>Makes path name safe to use.</h2>
+<pre>makeSafe(string $path) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The full path to sanitise.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The sanitised string.</div>
+</div></div>
+</div>
+<a id="method_move"></a><div class="element clickable method public method_move" data-toggle="collapse" data-target=".method_move .collapse">
+<h2>Moves a folder.</h2>
+<pre>move(string $src, string $dest, string $path, boolean $use_streams) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$src</h4>
+<code>string</code><p>The path to the source folder.</p></div>
+<div class="subelement argument">
+<h4>$dest</h4>
+<code>string</code><p>The path to the destination folder.</p></div>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>An optional base path to prefix to the file names.</p></div>
+<div class="subelement argument">
+<h4>$use_streams</h4>
+<code>boolean</code><p>Optionally use streams.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Error message on false or boolean true on success.</div>
+</div></div>
+</div>
+<a id="method__items"></a><div class="element clickable method protected method__items" data-toggle="collapse" data-target=".method__items .collapse">
+<h2>Function to read the files/folders in a folder.</h2>
+<pre>_items(string $path, string $filter, mixed $recurse, boolean $full, array $exclude, string $excludefilter_string, boolean $findfiles) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path of the folder to read.</p></div>
+<div class="subelement argument">
+<h4>$filter</h4>
+<code>string</code><p>A filter for file names.</p></div>
+<div class="subelement argument">
+<h4>$recurse</h4>
+<code>mixed</code><p>True to recursively search into sub-folders, or an integer to specify the maximum depth.</p>
+</div>
+<div class="subelement argument">
+<h4>$full</h4>
+<code>boolean</code><p>True to return the full path to the file.</p></div>
+<div class="subelement argument">
+<h4>$exclude</h4>
+<code>array</code><p>Array with names of files which should not be shown in the result.</p></div>
+<div class="subelement argument">
+<h4>$excludefilter_string</h4>
+<code>string</code><p>Regexp of files to exclude</p></div>
+<div class="subelement argument">
+<h4>$findfiles</h4>
+<code>boolean</code><p>True to read the files, false to read the folders</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Files.</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:21-05:00.<br></footer></div>
+</div>
+</body>
+</html>

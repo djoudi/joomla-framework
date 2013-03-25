@@ -1,0 +1,636 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Github\Gists</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public inherited"><a href="#method___construct" title="__construct :: Constructor."><span class="description">Constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_create" title="create :: Method to create a gist."><span class="description">Method to create a gist.</span><pre>create()</pre></a></li>
+<li class="method public "><a href="#method_createComment" title="createComment :: Method to create a comment on a gist."><span class="description">Method to create a comment on a gist.</span><pre>createComment()</pre></a></li>
+<li class="method public "><a href="#method_delete" title="delete :: Method to delete a gist."><span class="description">Method to delete a gist.</span><pre>delete()</pre></a></li>
+<li class="method public "><a href="#method_deleteComment" title="deleteComment :: Method to delete a comment on a gist."><span class="description">Method to delete a comment on a gist.</span><pre>deleteComment()</pre></a></li>
+<li class="method public "><a href="#method_edit" title="edit :: Method to update a gist."><span class="description">Method to update a gist.</span><pre>edit()</pre></a></li>
+<li class="method public "><a href="#method_editComment" title="editComment :: Method to update a comment on a gist."><span class="description">Method to update a comment on a gist.</span><pre>editComment()</pre></a></li>
+<li class="method public "><a href="#method_fork" title="fork :: Method to fork a gist."><span class="description">Method to fork a gist.</span><pre>fork()</pre></a></li>
+<li class="method public "><a href="#method_get" title="get :: Method to get a single gist."><span class="description">Method to get a single gist.</span><pre>get()</pre></a></li>
+<li class="method public "><a href="#method_getComment" title="getComment :: Method to get a specific comment on a gist."><span class="description">Method to get a specific comment on a gist.</span><pre>getComment()</pre></a></li>
+<li class="method public "><a href="#method_getComments" title="getComments :: Method to get the list of comments on a gist."><span class="description">Method to get the list of comments on a gist.</span><pre>getComments()</pre></a></li>
+<li class="method public "><a href="#method_getList" title="getList :: Method to list gists."><span class="description">Method to list gists.</span><pre>getList()</pre></a></li>
+<li class="method public "><a href="#method_getListByUser" title="getListByUser :: Method to get a list of gists belonging to a given user."><span class="description">Method to get a list of gists belonging to a given user.</span><pre>getListByUser()</pre></a></li>
+<li class="method public "><a href="#method_getListPublic" title="getListPublic :: Method to get a list of all public gists."><span class="description">Method to get a list of all public gists.</span><pre>getListPublic()</pre></a></li>
+<li class="method public "><a href="#method_getListStarred" title="getListStarred :: Method to get a list of the authenticated users' starred gists."><span class="description">Method to get a list of the authenticated users' starred gists.</span><pre>getListStarred()</pre></a></li>
+<li class="method public "><a href="#method_isStarred" title="isStarred :: Method to check if a gist has been starred."><span class="description">Method to check if a gist has been starred.</span><pre>isStarred()</pre></a></li>
+<li class="method public "><a href="#method_star" title="star :: Method to star a gist."><span class="description">Method to star a gist.</span><pre>star()</pre></a></li>
+<li class="method public "><a href="#method_unstar" title="unstar :: Method to star a gist."><span class="description">Method to star a gist.</span><pre>unstar()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_buildFileData" title="buildFileData :: Method to fetch a data array for transmitting to the GitHub API for a list of files based on
+an input array of file paths or filename and content pairs."><span class="description">Method to fetch a data array for transmitting to the GitHub API for a list of files based on
+an input array of file paths or filename and content pairs.</span><pre>buildFileData()</pre></a></li>
+<li class="method protected inherited"><a href="#method_fetchUrl" title="fetchUrl :: Method to build and return a full request URL for the request."><span class="description">Method to build and return a full request URL for the request.</span><pre>fetchUrl()</pre></a></li>
+<li class="method protected inherited"><a href="#method_processResponse" title="processResponse :: Process the response and decode it."><span class="description">Process the response and decode it.</span><pre>processResponse()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected inherited"><a href="#property_client" title="$client :: "><span class="description">The HTTP client object to use in sending HTTP requests.</span><pre>$client</pre></a></li>
+<li class="property protected inherited"><a href="#property_options" title="$options :: "><span class="description">Options for the GitHub object.</span><pre>$options</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Github\Gists"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Github.html">Github</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Github.Gists.html">Gists</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">GitHub API Gists class for the Joomla Platform.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructor.</h2>
+<pre>__construct(\Joomla\Registry\Registry $options, \Joomla\Github\Http $client) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Github\Object::__construct()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$options</h4>
+<code><a href="../classes/Joomla.Registry.Registry.html">\Joomla\Registry\Registry</a></code><p>GitHub options object.</p></div>
+<div class="subelement argument">
+<h4>$client</h4>
+<code><a href="../classes/Joomla.Github.Http.html">\Joomla\Github\Http</a></code><p>The HTTP client object.</p></div>
+</div></div>
+</div>
+<a id="method_create"></a><div class="element clickable method public method_create" data-toggle="collapse" data-target=".method_create .collapse">
+<h2>Method to create a gist.</h2>
+<pre>create(mixed $files, boolean $public, string $description) : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$files</h4>
+<code>mixed</code><p>Either an array of file paths or a single file path as a string.</p></div>
+<div class="subelement argument">
+<h4>$public</h4>
+<code>boolean</code><p>True if the gist should be public.</p></div>
+<div class="subelement argument">
+<h4>$description</h4>
+<code>string</code><p>The optional description of the gist.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_createComment"></a><div class="element clickable method public method_createComment" data-toggle="collapse" data-target=".method_createComment .collapse">
+<h2>Method to create a comment on a gist.</h2>
+<pre>createComment(integer $gistId, string $body) : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$gistId</h4>
+<code>integer</code><p>The gist number.</p></div>
+<div class="subelement argument">
+<h4>$body</h4>
+<code>string</code><p>The comment body text.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_delete"></a><div class="element clickable method public method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
+<h2>Method to delete a gist.</h2>
+<pre>delete(integer $gistId) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$gistId</h4>
+<code>integer</code><p>The gist number.</p></div>
+</div></div>
+</div>
+<a id="method_deleteComment"></a><div class="element clickable method public method_deleteComment" data-toggle="collapse" data-target=".method_deleteComment .collapse">
+<h2>Method to delete a comment on a gist.</h2>
+<pre>deleteComment(integer $commentId) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$commentId</h4>
+<code>integer</code><p>The id of the comment to delete.</p></div>
+</div></div>
+</div>
+<a id="method_edit"></a><div class="element clickable method public method_edit" data-toggle="collapse" data-target=".method_edit .collapse">
+<h2>Method to update a gist.</h2>
+<pre>edit(integer $gistId, mixed $files, boolean $public, string $description) : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$gistId</h4>
+<code>integer</code><p>The gist number.</p></div>
+<div class="subelement argument">
+<h4>$files</h4>
+<code>mixed</code><p>Either an array of file paths or a single file path as a string.</p></div>
+<div class="subelement argument">
+<h4>$public</h4>
+<code>boolean</code><p>True if the gist should be public.</p></div>
+<div class="subelement argument">
+<h4>$description</h4>
+<code>string</code><p>The description of the gist.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_editComment"></a><div class="element clickable method public method_editComment" data-toggle="collapse" data-target=".method_editComment .collapse">
+<h2>Method to update a comment on a gist.</h2>
+<pre>editComment(integer $commentId, string $body) : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$commentId</h4>
+<code>integer</code><p>The id of the comment to update.</p></div>
+<div class="subelement argument">
+<h4>$body</h4>
+<code>string</code><p>The new body text for the comment.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_fork"></a><div class="element clickable method public method_fork" data-toggle="collapse" data-target=".method_fork .collapse">
+<h2>Method to fork a gist.</h2>
+<pre>fork(integer $gistId) : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$gistId</h4>
+<code>integer</code><p>The gist number.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_get"></a><div class="element clickable method public method_get" data-toggle="collapse" data-target=".method_get .collapse">
+<h2>Method to get a single gist.</h2>
+<pre>get(integer $gistId) : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$gistId</h4>
+<code>integer</code><p>The gist number.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_getComment"></a><div class="element clickable method public method_getComment" data-toggle="collapse" data-target=".method_getComment .collapse">
+<h2>Method to get a specific comment on a gist.</h2>
+<pre>getComment(integer $commentId) : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$commentId</h4>
+<code>integer</code><p>The comment id to get.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_getComments"></a><div class="element clickable method public method_getComments" data-toggle="collapse" data-target=".method_getComments .collapse">
+<h2>Method to get the list of comments on a gist.</h2>
+<pre>getComments(integer $gistId, integer $page, integer $limit) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$gistId</h4>
+<code>integer</code><p>The gist number.</p></div>
+<div class="subelement argument">
+<h4>$page</h4>
+<code>integer</code><p>The page number from which to get items.</p></div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>integer</code><p>The number of items on a page.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getList"></a><div class="element clickable method public method_getList" data-toggle="collapse" data-target=".method_getList .collapse">
+<h2>Method to list gists.</h2>
+<pre>getList(integer $page, integer $limit) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If a user is authenticated it will return the user's gists, otherwise
+it will return all public gists.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$page</h4>
+<code>integer</code><p>The page number from which to get items.</p></div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>integer</code><p>The number of items on a page.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getListByUser"></a><div class="element clickable method public method_getListByUser" data-toggle="collapse" data-target=".method_getListByUser .collapse">
+<h2>Method to get a list of gists belonging to a given user.</h2>
+<pre>getListByUser(string $user, integer $page, integer $limit) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$user</h4>
+<code>string</code><p>The name of the GitHub user from which to list gists.</p></div>
+<div class="subelement argument">
+<h4>$page</h4>
+<code>integer</code><p>The page number from which to get items.</p></div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>integer</code><p>The number of items on a page.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getListPublic"></a><div class="element clickable method public method_getListPublic" data-toggle="collapse" data-target=".method_getListPublic .collapse">
+<h2>Method to get a list of all public gists.</h2>
+<pre>getListPublic(integer $page, integer $limit) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$page</h4>
+<code>integer</code><p>The page number from which to get items.</p></div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>integer</code><p>The number of items on a page.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getListStarred"></a><div class="element clickable method public method_getListStarred" data-toggle="collapse" data-target=".method_getListStarred .collapse">
+<h2>Method to get a list of the authenticated users' starred gists.</h2>
+<pre>getListStarred(integer $page, integer $limit) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$page</h4>
+<code>integer</code><p>The page number from which to get items.</p></div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>integer</code><p>The number of items on a page.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_isStarred"></a><div class="element clickable method public method_isStarred" data-toggle="collapse" data-target=".method_isStarred .collapse">
+<h2>Method to check if a gist has been starred.</h2>
+<pre>isStarred(integer $gistId) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$gistId</h4>
+<code>integer</code><p>The gist number.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.domainexception.php">\DomainException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if the gist is starred.</div>
+</div></div>
+</div>
+<a id="method_star"></a><div class="element clickable method public method_star" data-toggle="collapse" data-target=".method_star .collapse">
+<h2>Method to star a gist.</h2>
+<pre>star(integer $gistId) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$gistId</h4>
+<code>integer</code><p>The gist number.</p></div>
+</div></div>
+</div>
+<a id="method_unstar"></a><div class="element clickable method public method_unstar" data-toggle="collapse" data-target=".method_unstar .collapse">
+<h2>Method to star a gist.</h2>
+<pre>unstar(integer $gistId) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$gistId</h4>
+<code>integer</code><p>The gist number.</p></div>
+</div></div>
+</div>
+<a id="method_buildFileData"></a><div class="element clickable method protected method_buildFileData" data-toggle="collapse" data-target=".method_buildFileData .collapse">
+<h2>Method to fetch a data array for transmitting to the GitHub API for a list of files based on
+an input array of file paths or filename and content pairs.</h2>
+<pre>buildFileData(array $files) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$files</h4>
+<code>array</code><p>The list of file paths or filenames and content.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.invalidargumentexception.php">\InvalidArgumentException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_fetchUrl"></a><div class="element clickable method protected method_fetchUrl" data-toggle="collapse" data-target=".method_fetchUrl .collapse">
+<h2>Method to build and return a full request URL for the request.</h2>
+<pre>fetchUrl(string $path, integer $page, integer $limit) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method will
+add appropriate pagination details if necessary and also prepend the API url
+to have a complete URL for the request.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Github\Object::fetchUrl()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>URL to inflect</p></div>
+<div class="subelement argument">
+<h4>$page</h4>
+<code>integer</code><p>Page to request</p></div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>integer</code><p>Number of results to return per page</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The request URL.</div>
+</div></div>
+</div>
+<a id="method_processResponse"></a><div class="element clickable method protected method_processResponse" data-toggle="collapse" data-target=".method_processResponse .collapse">
+<h2>Process the response and decode it.</h2>
+<pre>processResponse(\Joomla\Http\Response $response, integer $expectedCode) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Github\Object::processResponse()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$response</h4>
+<code><a href="../classes/Joomla.Http.Response.html">\Joomla\Http\Response</a></code><p>The response.</p></div>
+<div class="subelement argument">
+<h4>$expectedCode</h4>
+<code>integer</code><p>The expected "good" code.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.domainexception.php">\DomainException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_client"> </a><div class="element clickable property protected property_client" data-toggle="collapse" data-target=".property_client .collapse">
+<h2>The HTTP client object to use in sending HTTP requests.</h2>
+<pre>$client : <a href="../classes/Joomla.Github.Http.html">\Joomla\Github\Http</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Github\Object::$$client</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_options"> </a><div class="element clickable property protected property_options" data-toggle="collapse" data-target=".property_options .collapse">
+<h2>Options for the GitHub object.</h2>
+<pre>$options : <a href="../classes/Joomla.Registry.Registry.html">\Joomla\Registry\Registry</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Github\Object::$$options</td>
+</tr>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:22-05:00.<br></footer></div>
+</div>
+</body>
+</html>

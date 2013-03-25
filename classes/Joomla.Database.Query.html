@@ -1,0 +1,1595 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Database\Query</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___call" title="__call :: Magic method to provide method alias support for quote() and quoteName()."><span class="description">Magic method to provide method alias support for quote() and quoteName().</span><pre>__call()</pre></a></li>
+<li class="method public "><a href="#method___clone" title="__clone :: Method to provide deep copy support to nested objects and
+arrays when cloning."><span class="description">Method to provide deep copy support to nested objects and
+arrays when cloning.</span><pre>__clone()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct :: Class constructor."><span class="description">Class constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___get" title="__get :: Magic function to get protected variable value"><span class="description">Magic function to get protected variable value</span><pre>__get()</pre></a></li>
+<li class="method public "><a href="#method___toString" title="__toString :: Magic function to convert the query to a string."><span class="description">Magic function to convert the query to a string.</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_call" title="call :: Add a single column, or array of columns to the CALL clause of the query."><span class="description">Add a single column, or array of columns to the CALL clause of the query.</span><pre>call()</pre></a></li>
+<li class="method public "><a href="#method_castAsChar" title="castAsChar :: Casts a value to a char."><span class="description">Casts a value to a char.</span><pre>castAsChar()</pre></a></li>
+<li class="method public "><a href="#method_charLength" title="charLength :: Gets the number of characters in a string."><span class="description">Gets the number of characters in a string.</span><pre>charLength()</pre></a></li>
+<li class="method public "><a href="#method_clear" title="clear :: Clear data from the query or a specific clause of the query."><span class="description">Clear data from the query or a specific clause of the query.</span><pre>clear()</pre></a></li>
+<li class="method public "><a href="#method_columns" title="columns :: Adds a column, or array of column names that would be used for an INSERT INTO statement."><span class="description">Adds a column, or array of column names that would be used for an INSERT INTO statement.</span><pre>columns()</pre></a></li>
+<li class="method public "><a href="#method_concatenate" title="concatenate :: Concatenates an array of column names or values."><span class="description">Concatenates an array of column names or values.</span><pre>concatenate()</pre></a></li>
+<li class="method public "><a href="#method_currentTimestamp" title="currentTimestamp :: Gets the current date and time."><span class="description">Gets the current date and time.</span><pre>currentTimestamp()</pre></a></li>
+<li class="method public "><a href="#method_dateFormat" title="dateFormat :: Returns a PHP date() function compliant date format for the database driver."><span class="description">Returns a PHP date() function compliant date format for the database driver.</span><pre>dateFormat()</pre></a></li>
+<li class="method public "><a href="#method_day" title="day :: Used to get a string to extract day from date column."><span class="description">Used to get a string to extract day from date column.</span><pre>day()</pre></a></li>
+<li class="method public "><a href="#method_delete" title="delete :: Add a table name to the DELETE clause of the query."><span class="description">Add a table name to the DELETE clause of the query.</span><pre>delete()</pre></a></li>
+<li class="method public "><a href="#method_dump" title="dump :: Creates a formatted dump of the query for debugging purposes."><span class="description">Creates a formatted dump of the query for debugging purposes.</span><pre>dump()</pre></a></li>
+<li class="method public "><a href="#method_e" title="e :: Alias for escape method"><span class="description">Alias for escape method</span><pre>e()</pre></a></li>
+<li class="method public "><a href="#method_escape" title="escape :: Method to escape a string for usage in an SQL statement."><span class="description">Method to escape a string for usage in an SQL statement.</span><pre>escape()</pre></a></li>
+<li class="method public "><a href="#method_exec" title="exec :: Add a single column, or array of columns to the EXEC clause of the query."><span class="description">Add a single column, or array of columns to the EXEC clause of the query.</span><pre>exec()</pre></a></li>
+<li class="method public "><a href="#method_format" title="format :: Find and replace sprintf-like tokens in a format string."><span class="description">Find and replace sprintf-like tokens in a format string.</span><pre>format()</pre></a></li>
+<li class="method public "><a href="#method_from" title="from :: Add a table to the FROM clause of the query."><span class="description">Add a table to the FROM clause of the query.</span><pre>from()</pre></a></li>
+<li class="method public "><a href="#method_group" title="group :: Add a grouping column to the GROUP clause of the query."><span class="description">Add a grouping column to the GROUP clause of the query.</span><pre>group()</pre></a></li>
+<li class="method public "><a href="#method_having" title="having :: A conditions to the HAVING clause of the query."><span class="description">A conditions to the HAVING clause of the query.</span><pre>having()</pre></a></li>
+<li class="method public "><a href="#method_hour" title="hour :: Used to get a string to extract hour from date column."><span class="description">Used to get a string to extract hour from date column.</span><pre>hour()</pre></a></li>
+<li class="method public "><a href="#method_innerJoin" title="innerJoin :: Add an INNER JOIN clause to the query."><span class="description">Add an INNER JOIN clause to the query.</span><pre>innerJoin()</pre></a></li>
+<li class="method public "><a href="#method_insert" title="insert :: Add a table name to the INSERT clause of the query."><span class="description">Add a table name to the INSERT clause of the query.</span><pre>insert()</pre></a></li>
+<li class="method public "><a href="#method_join" title="join :: Add a JOIN clause to the query."><span class="description">Add a JOIN clause to the query.</span><pre>join()</pre></a></li>
+<li class="method public "><a href="#method_leftJoin" title="leftJoin :: Add a LEFT JOIN clause to the query."><span class="description">Add a LEFT JOIN clause to the query.</span><pre>leftJoin()</pre></a></li>
+<li class="method public "><a href="#method_length" title="length :: Get the length of a string in bytes."><span class="description">Get the length of a string in bytes.</span><pre>length()</pre></a></li>
+<li class="method public "><a href="#method_minute" title="minute :: Used to get a string to extract minute from date column."><span class="description">Used to get a string to extract minute from date column.</span><pre>minute()</pre></a></li>
+<li class="method public "><a href="#method_month" title="month :: Used to get a string to extract month from date column."><span class="description">Used to get a string to extract month from date column.</span><pre>month()</pre></a></li>
+<li class="method public "><a href="#method_nullDate" title="nullDate :: Get the null or zero representation of a timestamp for the database driver."><span class="description">Get the null or zero representation of a timestamp for the database driver.</span><pre>nullDate()</pre></a></li>
+<li class="method public "><a href="#method_order" title="order :: Add a ordering column to the ORDER clause of the query."><span class="description">Add a ordering column to the ORDER clause of the query.</span><pre>order()</pre></a></li>
+<li class="method public "><a href="#method_outerJoin" title="outerJoin :: Add an OUTER JOIN clause to the query."><span class="description">Add an OUTER JOIN clause to the query.</span><pre>outerJoin()</pre></a></li>
+<li class="method public "><a href="#method_q" title="q :: Alias for quote method"><span class="description">Alias for quote method</span><pre>q()</pre></a></li>
+<li class="method public "><a href="#method_qs" title="qs :: Alias for quoteName method"><span class="description">Alias for quoteName method</span><pre>qs()</pre></a></li>
+<li class="method public "><a href="#method_quote" title="quote :: Method to quote and optionally escape a string to database requirements for insertion into the database."><span class="description">Method to quote and optionally escape a string to database requirements for insertion into the database.</span><pre>quote()</pre></a></li>
+<li class="method public "><a href="#method_quoteName" title="quoteName :: Wrap an SQL statement identifier name such as column, table or database names in quotes to prevent injection
+risks and reserved word conflicts."><span class="description">Wrap an SQL statement identifier name such as column, table or database names in quotes to prevent injection
+risks and reserved word conflicts.</span><pre>quoteName()</pre></a></li>
+<li class="method public "><a href="#method_rightJoin" title="rightJoin :: Add a RIGHT JOIN clause to the query."><span class="description">Add a RIGHT JOIN clause to the query.</span><pre>rightJoin()</pre></a></li>
+<li class="method public "><a href="#method_second" title="second :: Used to get a string to extract seconds from date column."><span class="description">Used to get a string to extract seconds from date column.</span><pre>second()</pre></a></li>
+<li class="method public "><a href="#method_select" title="select :: Add a single column, or array of columns to the SELECT clause of the query."><span class="description">Add a single column, or array of columns to the SELECT clause of the query.</span><pre>select()</pre></a></li>
+<li class="method public "><a href="#method_set" title="set :: Add a single condition string, or an array of strings to the SET clause of the query."><span class="description">Add a single condition string, or an array of strings to the SET clause of the query.</span><pre>set()</pre></a></li>
+<li class="method public "><a href="#method_setQuery" title="setQuery :: Allows a direct query to be provided to the database
+driver's setQuery() method, but still allow queries
+to have bounded variables."><span class="description">Allows a direct query to be provided to the database
+driver's setQuery() method, but still allow queries
+to have bounded variables.</span><pre>setQuery()</pre></a></li>
+<li class="method public "><a href="#method_union" title="union :: Add a query to UNION with the current query."><span class="description">Add a query to UNION with the current query.</span><pre>union()</pre></a></li>
+<li class="method public "><a href="#method_unionDistinct" title="unionDistinct :: Add a query to UNION DISTINCT with the current query."><span class="description">Add a query to UNION DISTINCT with the current query.</span><pre>unionDistinct()</pre></a></li>
+<li class="method public "><a href="#method_update" title="update :: Add a table name to the UPDATE clause of the query."><span class="description">Add a table name to the UPDATE clause of the query.</span><pre>update()</pre></a></li>
+<li class="method public "><a href="#method_values" title="values :: Adds a tuple, or array of tuples that would be used as values for an INSERT INTO statement."><span class="description">Adds a tuple, or array of tuples that would be used as values for an INSERT INTO statement.</span><pre>values()</pre></a></li>
+<li class="method public "><a href="#method_where" title="where :: Add a single condition, or an array of conditions to the WHERE clause of the query."><span class="description">Add a single condition, or an array of conditions to the WHERE clause of the query.</span><pre>where()</pre></a></li>
+<li class="method public "><a href="#method_year" title="year :: Used to get a string to extract year from date column."><span class="description">Used to get a string to extract year from date column.</span><pre>year()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_autoIncrementField" title="$autoIncrementField :: The auto increment insert field element."><span class="description"></span><pre>$autoIncrementField</pre></a></li>
+<li class="property protected "><a href="#property_call" title="$call :: The call element."><span class="description"></span><pre>$call</pre></a></li>
+<li class="property protected "><a href="#property_columns" title="$columns :: The column list for an INSERT statement."><span class="description"></span><pre>$columns</pre></a></li>
+<li class="property protected "><a href="#property_db" title="$db :: The database driver."><span class="description"></span><pre>$db</pre></a></li>
+<li class="property protected "><a href="#property_delete" title="$delete :: The delete element."><span class="description"></span><pre>$delete</pre></a></li>
+<li class="property protected "><a href="#property_element" title="$element :: The query element for a generic query (type = null)."><span class="description"></span><pre>$element</pre></a></li>
+<li class="property protected "><a href="#property_exec" title="$exec :: The exec element."><span class="description"></span><pre>$exec</pre></a></li>
+<li class="property protected "><a href="#property_from" title="$from :: The from element."><span class="description"></span><pre>$from</pre></a></li>
+<li class="property protected "><a href="#property_group" title="$group :: The group by element."><span class="description"></span><pre>$group</pre></a></li>
+<li class="property protected "><a href="#property_having" title="$having :: The having element."><span class="description"></span><pre>$having</pre></a></li>
+<li class="property protected "><a href="#property_insert" title="$insert :: The insert element."><span class="description"></span><pre>$insert</pre></a></li>
+<li class="property protected "><a href="#property_join" title="$join :: The join element."><span class="description"></span><pre>$join</pre></a></li>
+<li class="property protected "><a href="#property_order" title="$order :: The order element."><span class="description"></span><pre>$order</pre></a></li>
+<li class="property protected "><a href="#property_select" title="$select :: The select element."><span class="description"></span><pre>$select</pre></a></li>
+<li class="property protected "><a href="#property_set" title="$set :: The set element."><span class="description"></span><pre>$set</pre></a></li>
+<li class="property protected "><a href="#property_sql" title="$sql :: The SQL query (if a direct query string was provided)."><span class="description"></span><pre>$sql</pre></a></li>
+<li class="property protected "><a href="#property_type" title="$type :: The query type."><span class="description"></span><pre>$type</pre></a></li>
+<li class="property protected "><a href="#property_union" title="$union :: The union element."><span class="description"></span><pre>$union</pre></a></li>
+<li class="property protected "><a href="#property_update" title="$update :: The update element."><span class="description"></span><pre>$update</pre></a></li>
+<li class="property protected "><a href="#property_values" title="$values :: The values list for an INSERT statement."><span class="description"></span><pre>$values</pre></a></li>
+<li class="property protected "><a href="#property_where" title="$where :: The where element."><span class="description"></span><pre>$where</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Database\Query"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Database.html">Database</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Database.Query.html">Query</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Query Building Class.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___call"></a><div class="element clickable method public method___call" data-toggle="collapse" data-target=".method___call .collapse">
+<h2>Magic method to provide method alias support for quote() and quoteName().</h2>
+<pre>__call(string $method, array $args) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The called method.</p></div>
+<div class="subelement argument">
+<h4>$args</h4>
+<code>array</code><p>The array of arguments passed to the method.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The aliased method's return value or null.</div>
+</div></div>
+</div>
+<a id="method___clone"></a><div class="element clickable method public method___clone" data-toggle="collapse" data-target=".method___clone .collapse">
+<h2>Method to provide deep copy support to nested objects and
+arrays when cloning.</h2>
+<pre>__clone() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Class constructor.</h2>
+<pre>__construct(\Joomla\Database\Driver $db) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$db</h4>
+<code><a href="../classes/Joomla.Database.Driver.html">\Joomla\Database\Driver</a></code><p>The database driver.</p></div>
+</div></div>
+</div>
+<a id="method___get"></a><div class="element clickable method public method___get" data-toggle="collapse" data-target=".method___get .collapse">
+<h2>Magic function to get protected variable value</h2>
+<pre>__get(string $name) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the variable.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
+<h2>Magic function to convert the query to a string.</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The completed query.</div>
+</div></div>
+</div>
+<a id="method_call"></a><div class="element clickable method public method_call" data-toggle="collapse" data-target=".method_call .collapse">
+<h2>Add a single column, or array of columns to the CALL clause of the query.</h2>
+<pre>call(mixed $columns) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Note that you must not mix insert, update, delete and select method calls when building a query.
+The call method can, however, be called multiple times in the same query.</p>
+
+<p>Usage:
+$query->call('a.<em>')->call('b.id');
+$query->call(array('a.</em>', 'b.id'));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$columns</h4>
+<code>mixed</code><p>A string or an array of field names.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_castAsChar"></a><div class="element clickable method public method_castAsChar" data-toggle="collapse" data-target=".method_castAsChar .collapse">
+<h2>Casts a value to a char.</h2>
+<pre>castAsChar(string $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Ensure that the value is properly quoted before passing to the method.</p>
+
+<p>Usage:
+$query->select($query->castAsChar('a'));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The value to cast as a char.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Returns the cast value.</div>
+</div></div>
+</div>
+<a id="method_charLength"></a><div class="element clickable method public method_charLength" data-toggle="collapse" data-target=".method_charLength .collapse">
+<h2>Gets the number of characters in a string.</h2>
+<pre>charLength(string $field, string $operator, string $condition) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Note, use 'length' to find the number of bytes in a string.</p>
+
+<p>Usage:
+$query->select($query->charLength('a'));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>A value.</p></div>
+<div class="subelement argument">
+<h4>$operator</h4>
+<code>string</code><p>Comparison operator between charLength integer value and $condition</p>
+</div>
+<div class="subelement argument">
+<h4>$condition</h4>
+<code>string</code><p>Integer value to compare charLength with.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The required char length call.</div>
+</div></div>
+</div>
+<a id="method_clear"></a><div class="element clickable method public method_clear" data-toggle="collapse" data-target=".method_clear .collapse">
+<h2>Clear data from the query or a specific clause of the query.</h2>
+<pre>clear(string $clause) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$clause</h4>
+<code>string</code><p>Optionally, the name of the clause to clear, or nothing to clear the whole query.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_columns"></a><div class="element clickable method public method_columns" data-toggle="collapse" data-target=".method_columns .collapse">
+<h2>Adds a column, or array of column names that would be used for an INSERT INTO statement.</h2>
+<pre>columns(mixed $columns) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$columns</h4>
+<code>mixed</code><p>A column name, or array of column names.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_concatenate"></a><div class="element clickable method public method_concatenate" data-toggle="collapse" data-target=".method_concatenate .collapse">
+<h2>Concatenates an array of column names or values.</h2>
+<pre>concatenate(array $values, string $separator) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->select($query->concatenate(array('a', 'b')));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>An array of values to concatenate.</p></div>
+<div class="subelement argument">
+<h4>$separator</h4>
+<code>string</code><p>As separator to place between each value.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The concatenated values.</div>
+</div></div>
+</div>
+<a id="method_currentTimestamp"></a><div class="element clickable method public method_currentTimestamp" data-toggle="collapse" data-target=".method_currentTimestamp .collapse">
+<h2>Gets the current date and time.</h2>
+<pre>currentTimestamp() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->where('published_up &lt; '.$query->currentTimestamp());</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_dateFormat"></a><div class="element clickable method public method_dateFormat" data-toggle="collapse" data-target=".method_dateFormat .collapse">
+<h2>Returns a PHP date() function compliant date format for the database driver.</h2>
+<pre>dateFormat() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method is provided for use where the query object is passed to a function for modification.
+If you have direct access to the database object, it is recommended you use the getDateFormat method directly.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\Joomla\Database\RuntimeException</code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The format string.</div>
+</div></div>
+</div>
+<a id="method_day"></a><div class="element clickable method public method_day" data-toggle="collapse" data-target=".method_day .collapse">
+<h2>Used to get a string to extract day from date column.</h2>
+<pre>day(string $date) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->select($query->day($query->quoteName('dateColumn')));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$date</h4>
+<code>string</code><p>Date column containing day to be extracted.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Returns string to extract day from a date.</div>
+</div></div>
+</div>
+<a id="method_delete"></a><div class="element clickable method public method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
+<h2>Add a table name to the DELETE clause of the query.</h2>
+<pre>delete(string $table) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Note that you must not mix insert, update, delete and select method calls when building a query.</p>
+
+<p>Usage:
+$query->delete('#__a')->where('id = 1');</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The name of the table to delete from.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_dump"></a><div class="element clickable method public method_dump" data-toggle="collapse" data-target=".method_dump .collapse">
+<h2>Creates a formatted dump of the query for debugging purposes.</h2>
+<pre>dump() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+echo $query->dump();</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_e"></a><div class="element clickable method public method_e" data-toggle="collapse" data-target=".method_e .collapse">
+<h2>Alias for escape method</h2>
+<pre>e( $text, $extra =) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>method</th>
+<td>Alias for escape method</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>=</h4>
+<code>$extra</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_escape"></a><div class="element clickable method public method_escape" data-toggle="collapse" data-target=".method_escape .collapse">
+<h2>Method to escape a string for usage in an SQL statement.</h2>
+<pre>escape(string $text, boolean $extra) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method is provided for use where the query object is passed to a function for modification.
+If you have direct access to the database object, it is recommended you use the escape method directly.</p>
+
+<p>Note that 'e' is an alias for this method as it is in JDatabaseDriver.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code><p>The string to be escaped.</p></div>
+<div class="subelement argument">
+<h4>$extra</h4>
+<code>boolean</code><p>Optional parameter to provide extra escaping.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\Joomla\Database\RuntimeException</code></th>
+<td>if the internal db property is not a valid object.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The escaped string.</div>
+</div></div>
+</div>
+<a id="method_exec"></a><div class="element clickable method public method_exec" data-toggle="collapse" data-target=".method_exec .collapse">
+<h2>Add a single column, or array of columns to the EXEC clause of the query.</h2>
+<pre>exec(mixed $columns) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Note that you must not mix insert, update, delete and select method calls when building a query.
+The exec method can, however, be called multiple times in the same query.</p>
+
+<p>Usage:
+$query->exec('a.<em>')->exec('b.id');
+$query->exec(array('a.</em>', 'b.id'));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$columns</h4>
+<code>mixed</code><p>A string or an array of field names.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_format"></a><div class="element clickable method public method_format" data-toggle="collapse" data-target=".method_format .collapse">
+<h2>Find and replace sprintf-like tokens in a format string.</h2>
+<pre>format(string $format) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Each token takes one of the following forms:
+    %%       - A literal percent character.
+    %[t]     - Where [t] is a type specifier.
+    %[n]$[x] - Where [n] is an argument specifier and [t] is a type specifier.</p>
+
+<p>Types:
+a - Numeric: Replacement text is coerced to a numeric type but not quoted or escaped.
+e - Escape: Replacement text is passed to $this->escape().
+E - Escape (extra): Replacement text is passed to $this->escape() with true as the second argument.
+n - Name Quote: Replacement text is passed to $this->quoteName().
+q - Quote: Replacement text is passed to $this->quote().
+Q - Quote (no escape): Replacement text is passed to $this->quote() with false as the second argument.
+r - Raw: Replacement text is used as-is. (Be careful)</p>
+
+<p>Date Types:
+- Replacement text automatically quoted (use uppercase for Name Quote).
+- Replacement text should be a string in date format or name of a date column.
+y/Y - Year
+m/M - Month
+d/D - Day
+h/H - Hour
+i/I - Minute
+s/S - Second</p>
+
+<p>Invariable Types:
+- Takes no argument.
+- Argument index not incremented.
+t - Replacement text is the result of $this->currentTimestamp().
+z - Replacement text is the result of $this->nullDate(false).
+Z - Replacement text is the result of $this->nullDate(true).</p>
+
+<p>Usage:
+$query->format('SELECT %1$n FROM %2$n WHERE %3$n = %4$a', 'foo', '#__foo', 'bar', 1);
+Returns: SELECT <code>foo</code> FROM <code>#__foo</code> WHERE <code>bar</code> = 1</p>
+
+<p>Notes:
+The argument specifier is optional but recommended for clarity.
+The argument index used for unspecified tokens is incremented only when used.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$format</h4>
+<code>string</code><p>The formatting string.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Returns a string produced according to the formatting string.</div>
+</div></div>
+</div>
+<a id="method_from"></a><div class="element clickable method public method_from" data-toggle="collapse" data-target=".method_from .collapse">
+<h2>Add a table to the FROM clause of the query.</h2>
+<pre>from(mixed $tables, string $subQueryAlias) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Note that while an array of tables can be provided, it is recommended you use explicit joins.</p>
+
+<p>Usage:
+$query->select('*')->from('#__a');</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$tables</h4>
+<code>mixed</code><p>A string or array of table names.
+                                 This can be a JDatabaseQuery object (or a child of it) when used
+                                 as a subquery in FROM clause along with a value for $subQueryAlias.</p>
+</div>
+<div class="subelement argument">
+<h4>$subQueryAlias</h4>
+<code>string</code><p>Alias used when $tables is a JDatabaseQuery.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\Joomla\Database\RuntimeException</code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_group"></a><div class="element clickable method public method_group" data-toggle="collapse" data-target=".method_group .collapse">
+<h2>Add a grouping column to the GROUP clause of the query.</h2>
+<pre>group(mixed $columns) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->group('id');</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$columns</h4>
+<code>mixed</code><p>A string or array of ordering columns.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_having"></a><div class="element clickable method public method_having" data-toggle="collapse" data-target=".method_having .collapse">
+<h2>A conditions to the HAVING clause of the query.</h2>
+<pre>having(mixed $conditions, string $glue) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->group('id')->having('COUNT(id) > 5');</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$conditions</h4>
+<code>mixed</code><p>A string or array of columns.</p></div>
+<div class="subelement argument">
+<h4>$glue</h4>
+<code>string</code><p>The glue by which to join the conditions. Defaults to AND.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_hour"></a><div class="element clickable method public method_hour" data-toggle="collapse" data-target=".method_hour .collapse">
+<h2>Used to get a string to extract hour from date column.</h2>
+<pre>hour(string $date) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->select($query->hour($query->quoteName('dateColumn')));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$date</h4>
+<code>string</code><p>Date column containing hour to be extracted.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Returns string to extract hour from a date.</div>
+</div></div>
+</div>
+<a id="method_innerJoin"></a><div class="element clickable method public method_innerJoin" data-toggle="collapse" data-target=".method_innerJoin .collapse">
+<h2>Add an INNER JOIN clause to the query.</h2>
+<pre>innerJoin(string $condition) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->innerJoin('b ON b.id = a.id')->innerJoin('c ON c.id = b.id');</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$condition</h4>
+<code>string</code><p>The join condition.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_insert"></a><div class="element clickable method public method_insert" data-toggle="collapse" data-target=".method_insert .collapse">
+<h2>Add a table name to the INSERT clause of the query.</h2>
+<pre>insert(mixed $table, boolean $incrementField) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Note that you must not mix insert, update, delete and select method calls when building a query.</p>
+
+<p>Usage:
+$query->insert('#__a')->set('id = 1');
+$query->insert('#__a')->columns('id, title')->values('1,2')->values('3,4');
+$query->insert('#__a')->columns('id, title')->values(array('1,2', '3,4'));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>mixed</code><p>The name of the table to insert data into.</p></div>
+<div class="subelement argument">
+<h4>$incrementField</h4>
+<code>boolean</code><p>The name of the field to auto increment.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_join"></a><div class="element clickable method public method_join" data-toggle="collapse" data-target=".method_join .collapse">
+<h2>Add a JOIN clause to the query.</h2>
+<pre>join(string $type, string $conditions) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->join('INNER', 'b ON b.id = a.id);</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The type of join. This string is prepended to the JOIN keyword.</p></div>
+<div class="subelement argument">
+<h4>$conditions</h4>
+<code>string</code><p>A string or array of conditions.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_leftJoin"></a><div class="element clickable method public method_leftJoin" data-toggle="collapse" data-target=".method_leftJoin .collapse">
+<h2>Add a LEFT JOIN clause to the query.</h2>
+<pre>leftJoin(string $condition) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->leftJoin('b ON b.id = a.id')->leftJoin('c ON c.id = b.id');</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$condition</h4>
+<code>string</code><p>The join condition.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_length"></a><div class="element clickable method public method_length" data-toggle="collapse" data-target=".method_length .collapse">
+<h2>Get the length of a string in bytes.</h2>
+<pre>length(string $value) : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Note, use 'charLength' to find the number of characters in a string.</p>
+
+<p>Usage:
+query->where($query->length('a').' > 3');</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The string to measure.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a id="method_minute"></a><div class="element clickable method public method_minute" data-toggle="collapse" data-target=".method_minute .collapse">
+<h2>Used to get a string to extract minute from date column.</h2>
+<pre>minute(string $date) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->select($query->minute($query->quoteName('dateColumn')));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$date</h4>
+<code>string</code><p>Date column containing minute to be extracted.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Returns string to extract minute from a date.</div>
+</div></div>
+</div>
+<a id="method_month"></a><div class="element clickable method public method_month" data-toggle="collapse" data-target=".method_month .collapse">
+<h2>Used to get a string to extract month from date column.</h2>
+<pre>month(string $date) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->select($query->month($query->quoteName('dateColumn')));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$date</h4>
+<code>string</code><p>Date column containing month to be extracted.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Returns string to extract month from a date.</div>
+</div></div>
+</div>
+<a id="method_nullDate"></a><div class="element clickable method public method_nullDate" data-toggle="collapse" data-target=".method_nullDate .collapse">
+<h2>Get the null or zero representation of a timestamp for the database driver.</h2>
+<pre>nullDate(boolean $quoted) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method is provided for use where the query object is passed to a function for modification.
+If you have direct access to the database object, it is recommended you use the nullDate method directly.</p>
+
+<p>Usage:
+$query->where('modified_date &lt;> '.$query->nullDate());</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$quoted</h4>
+<code>boolean</code><p>Optionally wraps the null date in database quotes (true by default).</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\Joomla\Database\RuntimeException</code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Null or zero representation of a timestamp.</div>
+</div></div>
+</div>
+<a id="method_order"></a><div class="element clickable method public method_order" data-toggle="collapse" data-target=".method_order .collapse">
+<h2>Add a ordering column to the ORDER clause of the query.</h2>
+<pre>order(mixed $columns) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->order('foo')->order('bar');
+$query->order(array('foo','bar'));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$columns</h4>
+<code>mixed</code><p>A string or array of ordering columns.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_outerJoin"></a><div class="element clickable method public method_outerJoin" data-toggle="collapse" data-target=".method_outerJoin .collapse">
+<h2>Add an OUTER JOIN clause to the query.</h2>
+<pre>outerJoin(string $condition) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->outerJoin('b ON b.id = a.id')->outerJoin('c ON c.id = b.id');</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$condition</h4>
+<code>string</code><p>The join condition.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_q"></a><div class="element clickable method public method_q" data-toggle="collapse" data-target=".method_q .collapse">
+<h2>Alias for quote method</h2>
+<pre>q( $text, $escape =) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>method</th>
+<td>Alias for quote method</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>=</h4>
+<code>$escape</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_qs"></a><div class="element clickable method public method_qs" data-toggle="collapse" data-target=".method_qs .collapse">
+<h2>Alias for quoteName method</h2>
+<pre>qs( $name, $as =) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>method</th>
+<td>Alias for quoteName method</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>=</h4>
+<code>$as</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_quote"></a><div class="element clickable method public method_quote" data-toggle="collapse" data-target=".method_quote .collapse">
+<h2>Method to quote and optionally escape a string to database requirements for insertion into the database.</h2>
+<pre>quote(mixed $text, boolean $escape) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method is provided for use where the query object is passed to a function for modification.
+If you have direct access to the database object, it is recommended you use the quote method directly.</p>
+
+<p>Note that 'q' is an alias for this method as it is in Driver.</p>
+
+<p>Usage:
+$query->quote('fulltext');
+$query->q('fulltext');
+$query->q(array('option', 'fulltext'));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>mixed</code><p>A string or an array of strings to quote.</p></div>
+<div class="subelement argument">
+<h4>$escape</h4>
+<code>boolean</code><p>True to escape the string, false to leave it unchanged.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\Joomla\Database\RuntimeException</code></th>
+<td>if the internal db property is not a valid object.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The quoted input string.</div>
+</div></div>
+</div>
+<a id="method_quoteName"></a><div class="element clickable method public method_quoteName" data-toggle="collapse" data-target=".method_quoteName .collapse">
+<h2>Wrap an SQL statement identifier name such as column, table or database names in quotes to prevent injection
+risks and reserved word conflicts.</h2>
+<pre>quoteName(mixed $name, mixed $as) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method is provided for use where the query object is passed to a function for modification.
+If you have direct access to the database object, it is recommended you use the quoteName method directly.</p>
+
+<p>Note that 'qn' is an alias for this method as it is in Driver.</p>
+
+<p>Usage:
+$query->quoteName('#__a');
+$query->qn('#__a');</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>mixed</code><p>The identifier name to wrap in quotes, or an array of identifier names to wrap in quotes.
+                       Each type supports dot-notation name.</p>
+</div>
+<div class="subelement argument">
+<h4>$as</h4>
+<code>mixed</code><p>The AS query part associated to $name. It can be string or array, in latter case it has to be
+                       same length of $name; if is null there will not be any AS part for string or array element.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\Joomla\Database\RuntimeException</code></th>
+<td>if the internal db property is not a valid object.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The quote wrapped name, same type of $name.</div>
+</div></div>
+</div>
+<a id="method_rightJoin"></a><div class="element clickable method public method_rightJoin" data-toggle="collapse" data-target=".method_rightJoin .collapse">
+<h2>Add a RIGHT JOIN clause to the query.</h2>
+<pre>rightJoin(string $condition) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->rightJoin('b ON b.id = a.id')->rightJoin('c ON c.id = b.id');</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$condition</h4>
+<code>string</code><p>The join condition.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_second"></a><div class="element clickable method public method_second" data-toggle="collapse" data-target=".method_second .collapse">
+<h2>Used to get a string to extract seconds from date column.</h2>
+<pre>second(string $date) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->select($query->second($query->quoteName('dateColumn')));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$date</h4>
+<code>string</code><p>Date column containing second to be extracted.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Returns string to extract second from a date.</div>
+</div></div>
+</div>
+<a id="method_select"></a><div class="element clickable method public method_select" data-toggle="collapse" data-target=".method_select .collapse">
+<h2>Add a single column, or array of columns to the SELECT clause of the query.</h2>
+<pre>select(mixed $columns) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Note that you must not mix insert, update, delete and select method calls when building a query.
+The select method can, however, be called multiple times in the same query.</p>
+
+<p>Usage:
+$query->select('a.<em>')->select('b.id');
+$query->select(array('a.</em>', 'b.id'));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$columns</h4>
+<code>mixed</code><p>A string or an array of field names.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_set"></a><div class="element clickable method public method_set" data-toggle="collapse" data-target=".method_set .collapse">
+<h2>Add a single condition string, or an array of strings to the SET clause of the query.</h2>
+<pre>set(mixed $conditions, string $glue) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->set('a = 1')->set('b = 2');
+$query->set(array('a = 1', 'b = 2');</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$conditions</h4>
+<code>mixed</code><p>A string or array of string conditions.</p></div>
+<div class="subelement argument">
+<h4>$glue</h4>
+<code>string</code><p>The glue by which to join the condition strings. Defaults to ,.
+                              Note that the glue is set on first use and cannot be changed.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_setQuery"></a><div class="element clickable method public method_setQuery" data-toggle="collapse" data-target=".method_setQuery .collapse">
+<h2>Allows a direct query to be provided to the database
+driver's setQuery() method, but still allow queries
+to have bounded variables.</h2>
+<pre>setQuery(mixed $sql) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->setQuery('select * from #__users');</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>mixed</code><p>An SQL Query</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_union"></a><div class="element clickable method public method_union" data-toggle="collapse" data-target=".method_union .collapse">
+<h2>Add a query to UNION with the current query.</h2>
+<pre>union(mixed $query, boolean $distinct, string $glue) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Multiple unions each require separate statements and create an array of unions.</p>
+
+<p>Usage:
+$query->union('SELECT name FROM  #__foo')
+$query->union('SELECT name FROM  #__foo','distinct')
+$query->union(array('SELECT name FROM  #__foo', 'SELECT name FROM  #__bar'))</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$query</h4>
+<code>mixed</code><p>The Query object or string to union.</p></div>
+<div class="subelement argument">
+<h4>$distinct</h4>
+<code>boolean</code><p>True to only return distinct rows from the union.</p></div>
+<div class="subelement argument">
+<h4>$glue</h4>
+<code>string</code><p>The glue by which to join the conditions.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The Query object on success or boolean false on failure.</div>
+</div></div>
+</div>
+<a id="method_unionDistinct"></a><div class="element clickable method public method_unionDistinct" data-toggle="collapse" data-target=".method_unionDistinct .collapse">
+<h2>Add a query to UNION DISTINCT with the current query.</h2>
+<pre>unionDistinct(mixed $query, string $glue) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Simply a proxy to Union with the Distinct clause.</p>
+
+<p>Usage:
+$query->unionDistinct('SELECT name FROM  #__foo')</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$query</h4>
+<code>mixed</code><p>The Query object or string to union.</p></div>
+<div class="subelement argument">
+<h4>$glue</h4>
+<code>string</code><p>The glue by which to join the conditions.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The Query object on success or boolean false on failure.</div>
+</div></div>
+</div>
+<a id="method_update"></a><div class="element clickable method public method_update" data-toggle="collapse" data-target=".method_update .collapse">
+<h2>Add a table name to the UPDATE clause of the query.</h2>
+<pre>update(string $table) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Note that you must not mix insert, update, delete and select method calls when building a query.</p>
+
+<p>Usage:
+$query->update('#__foo')->set(...);</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>A table to update.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_values"></a><div class="element clickable method public method_values" data-toggle="collapse" data-target=".method_values .collapse">
+<h2>Adds a tuple, or array of tuples that would be used as values for an INSERT INTO statement.</h2>
+<pre>values(string $values) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->values('1,2,3')->values('4,5,6');
+$query->values(array('1,2,3', '4,5,6'));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>string</code><p>A single tuple, or array of tuples.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_where"></a><div class="element clickable method public method_where" data-toggle="collapse" data-target=".method_where .collapse">
+<h2>Add a single condition, or an array of conditions to the WHERE clause of the query.</h2>
+<pre>where(mixed $conditions, string $glue) : <a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->where('a = 1')->where('b = 2');
+$query->where(array('a = 1', 'b = 2'));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$conditions</h4>
+<code>mixed</code><p>A string or array of where conditions.</p></div>
+<div class="subelement argument">
+<h4>$glue</h4>
+<code>string</code><p>The glue by which to join the conditions. Defaults to AND.
+                              Note that the glue is set on first use and cannot be changed.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Query.html">\Joomla\Database\Query</a></code>Returns this object to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_year"></a><div class="element clickable method public method_year" data-toggle="collapse" data-target=".method_year .collapse">
+<h2>Used to get a string to extract year from date column.</h2>
+<pre>year(string $date) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Usage:
+$query->select($query->year($query->quoteName('dateColumn')));</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$date</h4>
+<code>string</code><p>Date column containing year to be extracted.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Returns string to extract year from a date.</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_autoIncrementField"> </a><div class="element clickable property protected property_autoIncrementField" data-toggle="collapse" data-target=".property_autoIncrementField .collapse">
+<h2></h2>
+<pre>$autoIncrementField : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_call"> </a><div class="element clickable property protected property_call" data-toggle="collapse" data-target=".property_call .collapse">
+<h2></h2>
+<pre>$call : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_columns"> </a><div class="element clickable property protected property_columns" data-toggle="collapse" data-target=".property_columns .collapse">
+<h2></h2>
+<pre>$columns : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_db"> </a><div class="element clickable property protected property_db" data-toggle="collapse" data-target=".property_db .collapse">
+<h2></h2>
+<pre>$db : <a href="../classes/Joomla.Database.Driver.html">\Joomla\Database\Driver</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_delete"> </a><div class="element clickable property protected property_delete" data-toggle="collapse" data-target=".property_delete .collapse">
+<h2></h2>
+<pre>$delete : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_element"> </a><div class="element clickable property protected property_element" data-toggle="collapse" data-target=".property_element .collapse">
+<h2></h2>
+<pre>$element : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_exec"> </a><div class="element clickable property protected property_exec" data-toggle="collapse" data-target=".property_exec .collapse">
+<h2></h2>
+<pre>$exec : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_from"> </a><div class="element clickable property protected property_from" data-toggle="collapse" data-target=".property_from .collapse">
+<h2></h2>
+<pre>$from : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_group"> </a><div class="element clickable property protected property_group" data-toggle="collapse" data-target=".property_group .collapse">
+<h2></h2>
+<pre>$group : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_having"> </a><div class="element clickable property protected property_having" data-toggle="collapse" data-target=".property_having .collapse">
+<h2></h2>
+<pre>$having : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_insert"> </a><div class="element clickable property protected property_insert" data-toggle="collapse" data-target=".property_insert .collapse">
+<h2></h2>
+<pre>$insert : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_join"> </a><div class="element clickable property protected property_join" data-toggle="collapse" data-target=".property_join .collapse">
+<h2></h2>
+<pre>$join : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_order"> </a><div class="element clickable property protected property_order" data-toggle="collapse" data-target=".property_order .collapse">
+<h2></h2>
+<pre>$order : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_select"> </a><div class="element clickable property protected property_select" data-toggle="collapse" data-target=".property_select .collapse">
+<h2></h2>
+<pre>$select : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_set"> </a><div class="element clickable property protected property_set" data-toggle="collapse" data-target=".property_set .collapse">
+<h2></h2>
+<pre>$set : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_sql"> </a><div class="element clickable property protected property_sql" data-toggle="collapse" data-target=".property_sql .collapse">
+<h2></h2>
+<pre>$sql : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_type"> </a><div class="element clickable property protected property_type" data-toggle="collapse" data-target=".property_type .collapse">
+<h2></h2>
+<pre>$type : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_union"> </a><div class="element clickable property protected property_union" data-toggle="collapse" data-target=".property_union .collapse">
+<h2></h2>
+<pre>$union : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_update"> </a><div class="element clickable property protected property_update" data-toggle="collapse" data-target=".property_update .collapse">
+<h2></h2>
+<pre>$update : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_values"> </a><div class="element clickable property protected property_values" data-toggle="collapse" data-target=".property_values .collapse">
+<h2></h2>
+<pre>$values : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_where"> </a><div class="element clickable property protected property_where" data-toggle="collapse" data-target=".property_where .collapse">
+<h2></h2>
+<pre>$where : <a href="../classes/Joomla.Database.Query.Element.html">\Joomla\Database\Query\Element</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:20-05:00.<br></footer></div>
+</div>
+</body>
+</html>

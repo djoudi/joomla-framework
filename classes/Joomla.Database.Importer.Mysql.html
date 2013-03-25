@@ -1,0 +1,723 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Database\Importer\Mysql</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public inherited"><a href="#method___construct" title="__construct :: Constructor."><span class="description">Constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#method_asXml" title="asXml :: Set the output option for the exporter to XML format."><span class="description">Set the output option for the exporter to XML format.</span><pre>asXml()</pre></a></li>
+<li class="method public "><a href="#method_check" title="check :: Checks if all data and options are in order prior to exporting."><span class="description">Checks if all data and options are in order prior to exporting.</span><pre>check()</pre></a></li>
+<li class="method public inherited"><a href="#method_from" title="from :: Specifies the data source to import."><span class="description">Specifies the data source to import.</span><pre>from()</pre></a></li>
+<li class="method public inherited"><a href="#method_setDbo" title="setDbo :: Sets the database connector to use for exporting structure and/or data."><span class="description">Sets the database connector to use for exporting structure and/or data.</span><pre>setDbo()</pre></a></li>
+<li class="method public inherited"><a href="#method_withStructure" title="withStructure :: Sets an internal option to merge the structure based on the input data."><span class="description">Sets an internal option to merge the structure based on the input data.</span><pre>withStructure()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected inherited"><a href="#method_getAddColumnSQL" title="getAddColumnSQL :: Get the SQL syntax to add a column."><span class="description">Get the SQL syntax to add a column.</span><pre>getAddColumnSQL()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getAddKeySQL" title="getAddKeySQL :: Get the SQL syntax to add a key."><span class="description">Get the SQL syntax to add a key.</span><pre>getAddKeySQL()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getAlterTableSQL" title="getAlterTableSQL :: Get alters for table if there is a difference."><span class="description">Get alters for table if there is a difference.</span><pre>getAlterTableSQL()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getChangeColumnSQL" title="getChangeColumnSQL :: Get the syntax to alter a column."><span class="description">Get the syntax to alter a column.</span><pre>getChangeColumnSQL()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getColumnSQL" title="getColumnSQL :: Get the SQL syntax for a single column that would be included in a table create or alter statement."><span class="description">Get the SQL syntax for a single column that would be included in a table create or alter statement.</span><pre>getColumnSQL()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getDropColumnSQL" title="getDropColumnSQL :: Get the SQL syntax to drop a column."><span class="description">Get the SQL syntax to drop a column.</span><pre>getDropColumnSQL()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getDropKeySQL" title="getDropKeySQL :: Get the SQL syntax to drop a key."><span class="description">Get the SQL syntax to drop a key.</span><pre>getDropKeySQL()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getDropPrimaryKeySQL" title="getDropPrimaryKeySQL :: Get the SQL syntax to drop a key."><span class="description">Get the SQL syntax to drop a key.</span><pre>getDropPrimaryKeySQL()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getKeyLookup" title="getKeyLookup :: Get the details list of keys for a table."><span class="description">Get the details list of keys for a table.</span><pre>getKeyLookup()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getKeySQL" title="getKeySQL :: Get the SQL syntax for a key."><span class="description">Get the SQL syntax for a key.</span><pre>getKeySQL()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getRealTableName" title="getRealTableName :: Get the real name of the table, converting the prefix wildcard string if present."><span class="description">Get the real name of the table, converting the prefix wildcard string if present.</span><pre>getRealTableName()</pre></a></li>
+<li class="method protected inherited"><a href="#method_mergeStructure" title="mergeStructure :: Merges the incoming structure definition with the existing structure."><span class="description">Merges the incoming structure definition with the existing structure.</span><pre>mergeStructure()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected inherited"><a href="#property_asFormat" title="$asFormat :: The type of input format (XML)."><span class="description"></span><pre>$asFormat</pre></a></li>
+<li class="property protected inherited"><a href="#property_cache" title="$cache :: "><span class="description">An array of cached data.</span><pre>$cache</pre></a></li>
+<li class="property protected inherited"><a href="#property_db" title="$db :: The database connector to use for exporting structure and/or data."><span class="description"></span><pre>$db</pre></a></li>
+<li class="property protected inherited"><a href="#property_from" title="$from :: The input source."><span class="description"></span><pre>$from</pre></a></li>
+<li class="property protected inherited"><a href="#property_options" title="$options :: An array of options for the exporter."><span class="description"></span><pre>$options</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Database\Importer\Mysql"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Database.html">Database</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Database.Importer.html">Importer</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Database.Importer.Mysql.html">Mysql</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">MySQL import driver.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructor.</h2>
+<pre>__construct() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Sets up the default options for the exporter.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer::__construct()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::__construct()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_asXml"></a><div class="element clickable method public method_asXml" data-toggle="collapse" data-target=".method_asXml .collapse">
+<h2>Set the output option for the exporter to XML format.</h2>
+<pre>asXml() : <a href="../classes/Joomla.Database.Importer.html">\Joomla\Database\Importer</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer::asXml()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::asXml()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Importer.html">\Joomla\Database\Importer</a></code>Method supports chaining.</div>
+</div></div>
+</div>
+<a id="method_check"></a><div class="element clickable method public method_check" data-toggle="collapse" data-target=".method_check .collapse">
+<h2>Checks if all data and options are in order prior to exporting.</h2>
+<pre>check() : <a href="../classes/Joomla.Database.Importer.Mysql.html">\Joomla\Database\Importer\Mysql</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.exception.php">\Exception</a></code></th>
+<td>if an error is encountered.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Importer.Mysql.html">\Joomla\Database\Importer\Mysql</a></code>Method supports chaining.</div>
+</div></div>
+</div>
+<a id="method_from"></a><div class="element clickable method public method_from" data-toggle="collapse" data-target=".method_from .collapse">
+<h2>Specifies the data source to import.</h2>
+<pre>from(mixed $from) : <a href="../classes/Joomla.Database.Importer.html">\Joomla\Database\Importer</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer::from()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::from()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$from</h4>
+<code>mixed</code><p>The data source to import.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Importer.html">\Joomla\Database\Importer</a></code>Method supports chaining.</div>
+</div></div>
+</div>
+<a id="method_setDbo"></a><div class="element clickable method public method_setDbo" data-toggle="collapse" data-target=".method_setDbo .collapse">
+<h2>Sets the database connector to use for exporting structure and/or data.</h2>
+<pre>setDbo(\Joomla\Database\Driver $db) : <a href="../classes/Joomla.Database.Importer.html">\Joomla\Database\Importer</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer::setDbo()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::setDbo()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$db</h4>
+<code><a href="../classes/Joomla.Database.Driver.html">\Joomla\Database\Driver</a></code><p>The database connector.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Importer.html">\Joomla\Database\Importer</a></code>Method supports chaining.</div>
+</div></div>
+</div>
+<a id="method_withStructure"></a><div class="element clickable method public method_withStructure" data-toggle="collapse" data-target=".method_withStructure .collapse">
+<h2>Sets an internal option to merge the structure based on the input data.</h2>
+<pre>withStructure(boolean $setting) : <a href="../classes/Joomla.Database.Importer.html">\Joomla\Database\Importer</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer::withStructure()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::withStructure()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$setting</h4>
+<code>boolean</code><p>True to export the structure, false to not.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Database.Importer.html">\Joomla\Database\Importer</a></code>Method supports chaining.</div>
+</div></div>
+</div>
+<a id="method_getAddColumnSQL"></a><div class="element clickable method protected method_getAddColumnSQL" data-toggle="collapse" data-target=".method_getAddColumnSQL .collapse">
+<h2>Get the SQL syntax to add a column.</h2>
+<pre>getAddColumnSQL(string $table, \SimpleXMLElement $field) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::getAddColumnSQL()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table name.</p></div>
+<div class="subelement argument">
+<h4>$field</h4>
+<code><a href="http://php.net/manual/en/class.simplexmlelement.php">\SimpleXMLElement</a></code><p>The XML field definition.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getAddKeySQL"></a><div class="element clickable method protected method_getAddKeySQL" data-toggle="collapse" data-target=".method_getAddKeySQL .collapse">
+<h2>Get the SQL syntax to add a key.</h2>
+<pre>getAddKeySQL(string $table, array $keys) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::getAddKeySQL()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table name.</p></div>
+<div class="subelement argument">
+<h4>$keys</h4>
+<code>array</code><p>An array of the fields pertaining to this key.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getAlterTableSQL"></a><div class="element clickable method protected method_getAlterTableSQL" data-toggle="collapse" data-target=".method_getAlterTableSQL .collapse">
+<h2>Get alters for table if there is a difference.</h2>
+<pre>getAlterTableSQL(\SimpleXMLElement $structure) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::getAlterTableSQL()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$structure</h4>
+<code><a href="http://php.net/manual/en/class.simplexmlelement.php">\SimpleXMLElement</a></code><p>The XML structure pf the table.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getChangeColumnSQL"></a><div class="element clickable method protected method_getChangeColumnSQL" data-toggle="collapse" data-target=".method_getChangeColumnSQL .collapse">
+<h2>Get the syntax to alter a column.</h2>
+<pre>getChangeColumnSQL(string $table, \SimpleXMLElement $field) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::getChangeColumnSQL()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The name of the database table to alter.</p></div>
+<div class="subelement argument">
+<h4>$field</h4>
+<code><a href="http://php.net/manual/en/class.simplexmlelement.php">\SimpleXMLElement</a></code><p>The XML definition for the field.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getColumnSQL"></a><div class="element clickable method protected method_getColumnSQL" data-toggle="collapse" data-target=".method_getColumnSQL .collapse">
+<h2>Get the SQL syntax for a single column that would be included in a table create or alter statement.</h2>
+<pre>getColumnSQL(\SimpleXMLElement $field) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::getColumnSQL()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code><a href="http://php.net/manual/en/class.simplexmlelement.php">\SimpleXMLElement</a></code><p>The XML field definition.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getDropColumnSQL"></a><div class="element clickable method protected method_getDropColumnSQL" data-toggle="collapse" data-target=".method_getDropColumnSQL .collapse">
+<h2>Get the SQL syntax to drop a column.</h2>
+<pre>getDropColumnSQL(string $table, string $name) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer::getDropColumnSQL()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::getDropColumnSQL()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table name.</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the field to drop.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getDropKeySQL"></a><div class="element clickable method protected method_getDropKeySQL" data-toggle="collapse" data-target=".method_getDropKeySQL .collapse">
+<h2>Get the SQL syntax to drop a key.</h2>
+<pre>getDropKeySQL(string $table, string $name) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::getDropKeySQL()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table name.</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the key to drop.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getDropPrimaryKeySQL"></a><div class="element clickable method protected method_getDropPrimaryKeySQL" data-toggle="collapse" data-target=".method_getDropPrimaryKeySQL .collapse">
+<h2>Get the SQL syntax to drop a key.</h2>
+<pre>getDropPrimaryKeySQL(string $table) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::getDropPrimaryKeySQL()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table name.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getKeyLookup"></a><div class="element clickable method protected method_getKeyLookup" data-toggle="collapse" data-target=".method_getKeyLookup .collapse">
+<h2>Get the details list of keys for a table.</h2>
+<pre>getKeyLookup(array $keys) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::getKeyLookup()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$keys</h4>
+<code>array</code><p>An array of objects that comprise the keys for the table.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The lookup array. array({key name} => array(object, ...))</div>
+</div></div>
+</div>
+<a id="method_getKeySQL"></a><div class="element clickable method protected method_getKeySQL" data-toggle="collapse" data-target=".method_getKeySQL .collapse">
+<h2>Get the SQL syntax for a key.</h2>
+<pre>getKeySQL(array $columns) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::getKeySQL()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$columns</h4>
+<code>array</code><p>An array of SimpleXMLElement objects comprising the key.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getRealTableName"></a><div class="element clickable method protected method_getRealTableName" data-toggle="collapse" data-target=".method_getRealTableName .collapse">
+<h2>Get the real name of the table, converting the prefix wildcard string if present.</h2>
+<pre>getRealTableName(string $table) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer::getRealTableName()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::getRealTableName()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The name of the table.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The real name of the table.</div>
+</div></div>
+</div>
+<a id="method_mergeStructure"></a><div class="element clickable method protected method_mergeStructure" data-toggle="collapse" data-target=".method_mergeStructure .collapse">
+<h2>Merges the incoming structure definition with the existing structure.</h2>
+<pre>mergeStructure() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>note</th>
+<td>Currently only supports XML format.</td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer::mergeStructure()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::mergeStructure()</td>
+</tr>
+</table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\Joomla\Database\RuntimeException</code></th>
+<td>on error.</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_asFormat"> </a><div class="element clickable property protected property_asFormat" data-toggle="collapse" data-target=".property_asFormat .collapse">
+<h2></h2>
+<pre>$asFormat : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer::$$asFormat</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::$$asFormat</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_cache"> </a><div class="element clickable property protected property_cache" data-toggle="collapse" data-target=".property_cache .collapse">
+<h2>An array of cached data.</h2>
+<pre>$cache : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer::$$cache</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::$$cache</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_db"> </a><div class="element clickable property protected property_db" data-toggle="collapse" data-target=".property_db .collapse">
+<h2></h2>
+<pre>$db : <a href="../classes/Joomla.Database.Driver.html">\Joomla\Database\Driver</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer::$$db</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::$$db</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_from"> </a><div class="element clickable property protected property_from" data-toggle="collapse" data-target=".property_from .collapse">
+<h2></h2>
+<pre>$from : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer::$$from</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::$$from</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_options"> </a><div class="element clickable property protected property_options" data-toggle="collapse" data-target=".property_options .collapse">
+<h2></h2>
+<pre>$options : object</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer::$$options</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Database\Importer\Mysqli::$$options</td>
+</tr>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:19-05:00.<br></footer></div>
+</div>
+</body>
+</html>

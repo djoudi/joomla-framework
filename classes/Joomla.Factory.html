@@ -1,0 +1,481 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Factory</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_getApplication" title="getApplication :: Get a application object."><span class="description">Get a application object.</span><pre>getApplication()</pre></a></li>
+<li class="method public "><a href="#method_getConfig" title="getConfig :: Get a configuration object"><span class="description">Get a configuration object</span><pre>getConfig()</pre></a></li>
+<li class="method public "><a href="#method_getDate" title="getDate :: Return the {@link JDate} object"><span class="description">Return the {@link JDate} object</span><pre>getDate()</pre></a></li>
+<li class="method public "><a href="#method_getDbo" title="getDbo :: Get a database object."><span class="description">Get a database object.</span><pre>getDbo()</pre></a></li>
+<li class="method public "><a href="#method_getLanguage" title="getLanguage :: Get a language object."><span class="description">Get a language object.</span><pre>getLanguage()</pre></a></li>
+<li class="method public "><a href="#method_getSession" title="getSession :: Get a session object."><span class="description">Get a session object.</span><pre>getSession()</pre></a></li>
+<li class="method public "><a href="#method_getStream" title="getStream :: Creates a new stream object with appropriate prefix"><span class="description">Creates a new stream object with appropriate prefix</span><pre>getStream()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_createConfig" title="createConfig :: Create a configuration object"><span class="description">Create a configuration object</span><pre>createConfig()</pre></a></li>
+<li class="method protected "><a href="#method_createDbo" title="createDbo :: Create an database object"><span class="description">Create an database object</span><pre>createDbo()</pre></a></li>
+<li class="method protected "><a href="#method_createLanguage" title="createLanguage :: Create a language object"><span class="description">Create a language object</span><pre>createLanguage()</pre></a></li>
+<li class="method protected "><a href="#method_createSession" title="createSession :: Create a session object"><span class="description">Create a session object</span><pre>createSession()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul>
+<li class="property public "><a href="#property_application" title="$application :: Application object instance"><span class="description"></span><pre>$application</pre></a></li>
+<li class="property public "><a href="#property_config" title="$config :: Configuration object instance"><span class="description"></span><pre>$config</pre></a></li>
+<li class="property public "><a href="#property_database" title="$database :: Driver object instance"><span class="description"></span><pre>$database</pre></a></li>
+<li class="property public "><a href="#property_dates" title="$dates :: Date object array"><span class="description"></span><pre>$dates</pre></a></li>
+<li class="property public "><a href="#property_language" title="$language :: Language object instance"><span class="description"></span><pre>$language</pre></a></li>
+<li class="property public "><a href="#property_session" title="$session :: Session object instance"><span class="description"></span><pre>$session</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Factory"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Factory.html">Factory</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Joomla Platform Factory class</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_getApplication"></a><div class="element clickable method public method_getApplication" data-toggle="collapse" data-target=".method_getApplication .collapse">
+<h2>Get a application object.</h2>
+<pre>getApplication(mixed $id, array $config, string $prefix) : \JApplication</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the global <a href="JApplication">JApplication</a> object, only creating it if it doesn't already exist.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\JApplication</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>mixed</code><p>A client identifier or name.</p></div>
+<div class="subelement argument">
+<h4>$config</h4>
+<code>array</code><p>An optional associative array of configuration settings.</p></div>
+<div class="subelement argument">
+<h4>$prefix</h4>
+<code>string</code><p>Application prefix</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.exception.php">\Exception</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\JApplication</code>object</div>
+</div></div>
+</div>
+<a id="method_getConfig"></a><div class="element clickable method public method_getConfig" data-toggle="collapse" data-target=".method_getConfig .collapse">
+<h2>Get a configuration object</h2>
+<pre>getConfig(string $file, string $type, string $namespace) : <a href="../classes/Joomla.Registry.Registry.html">\Joomla\Registry\Registry</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the global <a href="Registry">Registry</a> object, only creating it if it doesn't already exist.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="Registry.Registry.html#%5CJoomla%5CRegistry%5CRegistry">\Joomla\Registry\Registry</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string</code><p>The path to the configuration file</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The type of the configuration file</p></div>
+<div class="subelement argument">
+<h4>$namespace</h4>
+<code>string</code><p>The namespace of the configuration file</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Joomla.Registry.Registry.html">\Joomla\Registry\Registry</a></code></div>
+</div></div>
+</div>
+<a id="method_getDate"></a><div class="element clickable method public method_getDate" data-toggle="collapse" data-target=".method_getDate .collapse">
+<h2>Return the {@link JDate} object</h2>
+<pre>getDate(mixed $time, mixed $tzOffset) : <a href="../classes/Joomla.Date.Date.html">\Joomla\Date\Date</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="Date.Date.html#%5CJoomla%5CDate%5CDate">\Joomla\Date\Date</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$time</h4>
+<code>mixed</code><p>The initial time for the JDate object</p></div>
+<div class="subelement argument">
+<h4>$tzOffset</h4>
+<code>mixed</code><p>The timezone offset.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Date.Date.html">\Joomla\Date\Date</a></code>object</div>
+</div></div>
+</div>
+<a id="method_getDbo"></a><div class="element clickable method public method_getDbo" data-toggle="collapse" data-target=".method_getDbo .collapse">
+<h2>Get a database object.</h2>
+<pre>getDbo() : <a href="../classes/Joomla.Database.Driver.html">\Joomla\Database\Driver</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the global <a href="JDatabaseDriver">JDatabaseDriver</a> object, only creating it if it doesn't already exist.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="Database.Driver.html#%5CJoomla%5CDatabase%5CDriver">\Joomla\Database\Driver</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Joomla.Database.Driver.html">\Joomla\Database\Driver</a></code></div>
+</div></div>
+</div>
+<a id="method_getLanguage"></a><div class="element clickable method public method_getLanguage" data-toggle="collapse" data-target=".method_getLanguage .collapse">
+<h2>Get a language object.</h2>
+<pre>getLanguage() : <a href="../classes/Joomla.Language.Language.html">\Joomla\Language\Language</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the global <a href="JLanguage">JLanguage</a> object, only creating it if it doesn't already exist.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\JLanguage</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Language.Language.html">\Joomla\Language\Language</a></code>object</div>
+</div></div>
+</div>
+<a id="method_getSession"></a><div class="element clickable method public method_getSession" data-toggle="collapse" data-target=".method_getSession .collapse">
+<h2>Get a session object.</h2>
+<pre>getSession(array $options) : <a href="../classes/Joomla.Session.Session.html">\Joomla\Session\Session</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the global <a href="JSession">JSession</a> object, only creating it if it doesn't already exist.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\JSession</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>An array containing session options</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Session.Session.html">\Joomla\Session\Session</a></code>object</div>
+</div></div>
+</div>
+<a id="method_getStream"></a><div class="element clickable method public method_getStream" data-toggle="collapse" data-target=".method_getStream .collapse">
+<h2>Creates a new stream object with appropriate prefix</h2>
+<pre>getStream(boolean $use_prefix, boolean $use_network, string $ua, boolean $uamask) : <a href="../classes/Joomla.Filesystem.Stream.html">\Joomla\Filesystem\Stream</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="Filesystem.Stream.html#%5CJoomla%5CFilesystem%5CStream">\Joomla\Filesystem\Stream</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$use_prefix</h4>
+<code>boolean</code><p>Prefix the connections for writing</p></div>
+<div class="subelement argument">
+<h4>$use_network</h4>
+<code>boolean</code><p>Use network if available for writing; use false to disable (e.g. FTP, SCP)</p>
+</div>
+<div class="subelement argument">
+<h4>$ua</h4>
+<code>string</code><p>UA User agent to use</p></div>
+<div class="subelement argument">
+<h4>$uamask</h4>
+<code>boolean</code><p>User agent masking (prefix Mozilla)</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Joomla.Filesystem.Stream.html">\Joomla\Filesystem\Stream</a></code></div>
+</div></div>
+</div>
+<a id="method_createConfig"></a><div class="element clickable method protected method_createConfig" data-toggle="collapse" data-target=".method_createConfig .collapse">
+<h2>Create a configuration object</h2>
+<pre>createConfig(string $file, string $type, string $namespace) : <a href="../classes/Joomla.Registry.Registry.html">\Joomla\Registry\Registry</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="Registry.Registry.html#%5CJoomla%5CRegistry%5CRegistry">\Joomla\Registry\Registry</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string</code><p>The path to the configuration file.</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The type of the configuration file.</p></div>
+<div class="subelement argument">
+<h4>$namespace</h4>
+<code>string</code><p>The namespace of the configuration file.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Joomla.Registry.Registry.html">\Joomla\Registry\Registry</a></code></div>
+</div></div>
+</div>
+<a id="method_createDbo"></a><div class="element clickable method protected method_createDbo" data-toggle="collapse" data-target=".method_createDbo .collapse">
+<h2>Create an database object</h2>
+<pre>createDbo() : <a href="../classes/Joomla.Database.Driver.html">\Joomla\Database\Driver</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="Database.Driver.html#%5CJoomla%5CDatabase%5CDriver">\Joomla\Database\Driver</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Joomla.Database.Driver.html">\Joomla\Database\Driver</a></code></div>
+</div></div>
+</div>
+<a id="method_createLanguage"></a><div class="element clickable method protected method_createLanguage" data-toggle="collapse" data-target=".method_createLanguage .collapse">
+<h2>Create a language object</h2>
+<pre>createLanguage() : <a href="../classes/Joomla.Language.Language.html">\Joomla\Language\Language</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="Language.Language.html#%5CJoomla%5CLanguage%5CLanguage">\Joomla\Language\Language</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Language.Language.html">\Joomla\Language\Language</a></code>object</div>
+</div></div>
+</div>
+<a id="method_createSession"></a><div class="element clickable method protected method_createSession" data-toggle="collapse" data-target=".method_createSession .collapse">
+<h2>Create a session object</h2>
+<pre>createSession(array $options) : <a href="../classes/Joomla.Session.Session.html">\Joomla\Session\Session</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>An array containing session options</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Session.Session.html">\Joomla\Session\Session</a></code>object</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_application"> </a><div class="element clickable property public property_application" data-toggle="collapse" data-target=".property_application .collapse">
+<h2></h2>
+<pre>$application : \JApplication</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_config"> </a><div class="element clickable property public property_config" data-toggle="collapse" data-target=".property_config .collapse">
+<h2></h2>
+<pre>$config : \JConfig</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_database"> </a><div class="element clickable property public property_database" data-toggle="collapse" data-target=".property_database .collapse">
+<h2></h2>
+<pre>$database : <a href="../classes/Joomla.Database.Driver.html">\Joomla\Database\Driver</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_dates"> </a><div class="element clickable property public property_dates" data-toggle="collapse" data-target=".property_dates .collapse">
+<h2></h2>
+<pre>$dates : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_language"> </a><div class="element clickable property public property_language" data-toggle="collapse" data-target=".property_language .collapse">
+<h2></h2>
+<pre>$language : <a href="../classes/Joomla.Language.Language.html">\Joomla\Language\Language</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_session"> </a><div class="element clickable property public property_session" data-toggle="collapse" data-target=".property_session .collapse">
+<h2></h2>
+<pre>$session : <a href="../classes/Joomla.Session.Session.html">\Joomla\Session\Session</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:20-05:00.<br></footer></div>
+</div>
+</body>
+</html>

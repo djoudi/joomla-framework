@@ -1,0 +1,995 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\String\String</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_compliant" title="compliant :: Tests whether a string complies as UTF-8."><span class="description">Tests whether a string complies as UTF-8.</span><pre>compliant()</pre></a></li>
+<li class="method public "><a href="#method_increment" title="increment :: Increments a trailing number in a string."><span class="description">Increments a trailing number in a string.</span><pre>increment()</pre></a></li>
+<li class="method public "><a href="#method_ltrim" title="ltrim :: UTF-8 aware replacement for ltrim()"><span class="description">UTF-8 aware replacement for ltrim()</span><pre>ltrim()</pre></a></li>
+<li class="method public "><a href="#method_parse_url" title="parse_url :: Does a UTF-8 safe version of PHP parse_url function"><span class="description">Does a UTF-8 safe version of PHP parse_url function</span><pre>parse_url()</pre></a></li>
+<li class="method public "><a href="#method_rtrim" title="rtrim :: UTF-8 aware replacement for rtrim()
+Strip whitespace (or other characters) from the end of a string
+You only need to use this if you are supplying the charlist
+optional arg and it contains UTF-8 characters."><span class="description">UTF-8 aware replacement for rtrim()
+Strip whitespace (or other characters) from the end of a string
+You only need to use this if you are supplying the charlist
+optional arg and it contains UTF-8 characters.</span><pre>rtrim()</pre></a></li>
+<li class="method public "><a href="#method_str_ireplace" title="str_ireplace :: UTF-8 aware alternative to str_ireplace
+Case-insensitive version of str_replace"><span class="description">UTF-8 aware alternative to str_ireplace
+Case-insensitive version of str_replace</span><pre>str_ireplace()</pre></a></li>
+<li class="method public "><a href="#method_str_split" title="str_split :: UTF-8 aware alternative to str_split
+Convert a string to an array"><span class="description">UTF-8 aware alternative to str_split
+Convert a string to an array</span><pre>str_split()</pre></a></li>
+<li class="method public "><a href="#method_strcasecmp" title="strcasecmp :: UTF-8/LOCALE aware alternative to strcasecmp
+A case insensitive string comparison"><span class="description">UTF-8/LOCALE aware alternative to strcasecmp
+A case insensitive string comparison</span><pre>strcasecmp()</pre></a></li>
+<li class="method public "><a href="#method_strcmp" title="strcmp :: UTF-8/LOCALE aware alternative to strcmp
+A case sensitive string comparison"><span class="description">UTF-8/LOCALE aware alternative to strcmp
+A case sensitive string comparison</span><pre>strcmp()</pre></a></li>
+<li class="method public "><a href="#method_strcspn" title="strcspn :: UTF-8 aware alternative to strcspn
+Find length of initial segment not matching mask"><span class="description">UTF-8 aware alternative to strcspn
+Find length of initial segment not matching mask</span><pre>strcspn()</pre></a></li>
+<li class="method public "><a href="#method_stristr" title="stristr :: UTF-8 aware alternative to stristr
+Returns all of haystack from the first occurrence of needle to the end."><span class="description">UTF-8 aware alternative to stristr
+Returns all of haystack from the first occurrence of needle to the end.</span><pre>stristr()</pre></a></li>
+<li class="method public "><a href="#method_strlen" title="strlen :: UTF-8 aware alternative to strlen."><span class="description">UTF-8 aware alternative to strlen.</span><pre>strlen()</pre></a></li>
+<li class="method public "><a href="#method_strpos" title="strpos :: UTF-8 aware alternative to strpos."><span class="description">UTF-8 aware alternative to strpos.</span><pre>strpos()</pre></a></li>
+<li class="method public "><a href="#method_strrev" title="strrev :: UTF-8 aware alternative to strrev
+Reverse a string"><span class="description">UTF-8 aware alternative to strrev
+Reverse a string</span><pre>strrev()</pre></a></li>
+<li class="method public "><a href="#method_strrpos" title="strrpos :: UTF-8 aware alternative to strrpos
+Finds position of last occurrence of a string"><span class="description">UTF-8 aware alternative to strrpos
+Finds position of last occurrence of a string</span><pre>strrpos()</pre></a></li>
+<li class="method public "><a href="#method_strspn" title="strspn :: UTF-8 aware alternative to strspn
+Find length of initial segment matching mask"><span class="description">UTF-8 aware alternative to strspn
+Find length of initial segment matching mask</span><pre>strspn()</pre></a></li>
+<li class="method public "><a href="#method_strtolower" title="strtolower :: UTF-8 aware alternative to strtlower"><span class="description">UTF-8 aware alternative to strtlower</span><pre>strtolower()</pre></a></li>
+<li class="method public "><a href="#method_strtoupper" title='strtoupper :: UTF-8 aware alternative to strtoupper
+Make a string uppercase
+Note: The concept of a characters "case" only exists is some alphabets
+such as Latin, Greek, Cyrillic, Armenian and archaic Georgian - it does
+not exist in the Chinese alphabet, for example.'><span class="description">UTF-8 aware alternative to strtoupper
+Make a string uppercase
+Note: The concept of a characters "case" only exists is some alphabets
+such as Latin, Greek, Cyrillic, Armenian and archaic Georgian - it does
+not exist in the Chinese alphabet, for example.</span><pre>strtoupper()</pre></a></li>
+<li class="method public "><a href="#method_substr" title="substr :: UTF-8 aware alternative to substr
+Return part of a string given character offset (and optionally length)"><span class="description">UTF-8 aware alternative to substr
+Return part of a string given character offset (and optionally length)</span><pre>substr()</pre></a></li>
+<li class="method public "><a href="#method_substr_replace" title="substr_replace :: UTF-8 aware substr_replace
+Replace text within a portion of a string"><span class="description">UTF-8 aware substr_replace
+Replace text within a portion of a string</span><pre>substr_replace()</pre></a></li>
+<li class="method public "><a href="#method_transcode" title="transcode :: Transcode a string."><span class="description">Transcode a string.</span><pre>transcode()</pre></a></li>
+<li class="method public "><a href="#method_trim" title="trim :: UTF-8 aware replacement for trim()
+Strip whitespace (or other characters) from the beginning and end of a string
+Note: you only need to use this if you are supplying the charlist
+optional arg and it contains UTF-8 characters."><span class="description">UTF-8 aware replacement for trim()
+Strip whitespace (or other characters) from the beginning and end of a string
+Note: you only need to use this if you are supplying the charlist
+optional arg and it contains UTF-8 characters.</span><pre>trim()</pre></a></li>
+<li class="method public "><a href="#method_ucfirst" title="ucfirst :: UTF-8 aware alternative to ucfirst
+Make a string's first character uppercase or all words' first character uppercase"><span class="description">UTF-8 aware alternative to ucfirst
+Make a string's first character uppercase or all words' first character uppercase</span><pre>ucfirst()</pre></a></li>
+<li class="method public "><a href="#method_ucwords" title="ucwords :: UTF-8 aware alternative to ucwords
+Uppercase the first character of each word in a string"><span class="description">UTF-8 aware alternative to ucwords
+Uppercase the first character of each word in a string</span><pre>ucwords()</pre></a></li>
+<li class="method public "><a href="#method_valid" title="valid :: Tests a string as to whether it's valid UTF-8 and supported by the Unicode standard."><span class="description">Tests a string as to whether it's valid UTF-8 and supported by the Unicode standard.</span><pre>valid()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="property protected "><a href="#property_incrementStyles" title="$incrementStyles :: Increment styles."><span class="description"></span><pre>$incrementStyles</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\String\String"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.String.html">String</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.String.String.html">String</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">String handling class for utf-8 data
+Wraps the phputf8 library
+All functions assume the validity of utf-8 strings.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_compliant"></a><div class="element clickable method public method_compliant" data-toggle="collapse" data-target=".method_compliant .collapse">
+<h2>Tests whether a string complies as UTF-8.</h2>
+<pre>compliant(string $str) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This will be much
+faster than utf8_is_valid but will pass five and six octet
+UTF-8 sequences, which are not supported by Unicode and
+so cannot be displayed correctly in a browser. In other words
+it is not as strict as utf8_is_valid but it's faster. If you use
+it to validate user input, you place yourself at the risk that
+attackers will be able to inject 5 and 6 byte sequences (which
+may or may not be a significant risk, depending on what you are
+are doing)</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\valid</a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/manual/en/reference.pcre.pattern.modifiers.php#54805</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>UTF-8 string to check</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>TRUE if string is valid UTF-8</div>
+</div></div>
+</div>
+<a id="method_increment"></a><div class="element clickable method public method_increment" data-toggle="collapse" data-target=".method_increment .collapse">
+<h2>Increments a trailing number in a string.</h2>
+<pre>increment(string $string, string $style, integer $n) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Used to easily create distinct labels when copying objects. The method has the following styles:</p>
+
+<p>default: "Label" becomes "Label (2)"
+dash:    "Label" becomes "Label-2"</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The source string.</p></div>
+<div class="subelement argument">
+<h4>$style</h4>
+<code>string</code><p>The the style (default|dash).</p>
+</div>
+<div class="subelement argument">
+<h4>$n</h4>
+<code>integer</code><p>If supplied, this number is used for the copy, otherwise it is the 'next' number.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The incremented string.</div>
+</div></div>
+</div>
+<a id="method_ltrim"></a><div class="element clickable method public method_ltrim" data-toggle="collapse" data-target=".method_ltrim .collapse">
+<h2>UTF-8 aware replacement for ltrim()</h2>
+<pre>ltrim(string $str, string $charlist) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Strip whitespace (or other characters) from the beginning of a string
+You only need to use this if you are supplying the charlist
+optional arg and it contains UTF-8 characters. Otherwise ltrim will
+work normally on a UTF-8 string</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/ltrim</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>The string to be trimmed</p></div>
+<div class="subelement argument">
+<h4>$charlist</h4>
+<code>string</code><p>The optional charlist of additional characters to trim</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The trimmed string</div>
+</div></div>
+</div>
+<a id="method_parse_url"></a><div class="element clickable method public method_parse_url" data-toggle="collapse" data-target=".method_parse_url .collapse">
+<h2>Does a UTF-8 safe version of PHP parse_url function</h2>
+<pre>parse_url(string $url) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://us3.php.net/manual/en/function.parse-url.php</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><p>URL to parse</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Associative array or false if badly formed URL.</div>
+</div></div>
+</div>
+<a id="method_rtrim"></a><div class="element clickable method public method_rtrim" data-toggle="collapse" data-target=".method_rtrim .collapse">
+<h2>UTF-8 aware replacement for rtrim()
+Strip whitespace (or other characters) from the end of a string
+You only need to use this if you are supplying the charlist
+optional arg and it contains UTF-8 characters.</h2>
+<pre>rtrim(string $str, string $charlist) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Otherwise rtrim will
+work normally on a UTF-8 string</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/rtrim</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>The string to be trimmed</p></div>
+<div class="subelement argument">
+<h4>$charlist</h4>
+<code>string</code><p>The optional charlist of additional characters to trim</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The trimmed string</div>
+</div></div>
+</div>
+<a id="method_str_ireplace"></a><div class="element clickable method public method_str_ireplace" data-toggle="collapse" data-target=".method_str_ireplace .collapse">
+<h2>UTF-8 aware alternative to str_ireplace
+Case-insensitive version of str_replace</h2>
+<pre>str_ireplace(string $search, string $replace, string $str, integer $count) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/str_ireplace</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$search</h4>
+<code>string</code><p>String to search</p></div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>string</code><p>Existing string to replace</p></div>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>New string to replace with</p></div>
+<div class="subelement argument">
+<h4>$count</h4>
+<code>integer</code><p>Optional count value to be passed by referene</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>UTF-8 String</div>
+</div></div>
+</div>
+<a id="method_str_split"></a><div class="element clickable method public method_str_split" data-toggle="collapse" data-target=".method_str_split .collapse">
+<h2>UTF-8 aware alternative to str_split
+Convert a string to an array</h2>
+<pre>str_split(string $str, integer $split_len) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/str_split</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>UTF-8 encoded string to process</p>
+</div>
+<div class="subelement argument">
+<h4>$split_len</h4>
+<code>integer</code><p>Number to characters to split string by</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_strcasecmp"></a><div class="element clickable method public method_strcasecmp" data-toggle="collapse" data-target=".method_strcasecmp .collapse">
+<h2>UTF-8/LOCALE aware alternative to strcasecmp
+A case insensitive string comparison</h2>
+<pre>strcasecmp(string $str1, string $str2, mixed $locale) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/strcasecmp</a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/strcoll</a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/setlocale</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str1</h4>
+<code>string</code><p>string 1 to compare</p></div>
+<div class="subelement argument">
+<h4>$str2</h4>
+<code>string</code><p>string 2 to compare</p></div>
+<div class="subelement argument">
+<h4>$locale</h4>
+<code>mixed</code><p>The locale used by strcoll or false to use classical comparison</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>< 0 if str1 is less than str2; > 0 if str1 is greater than str2, and 0 if they are equal.</div>
+</div></div>
+</div>
+<a id="method_strcmp"></a><div class="element clickable method public method_strcmp" data-toggle="collapse" data-target=".method_strcmp .collapse">
+<h2>UTF-8/LOCALE aware alternative to strcmp
+A case sensitive string comparison</h2>
+<pre>strcmp(string $str1, string $str2, mixed $locale) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/strcmp</a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/strcoll</a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/setlocale</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str1</h4>
+<code>string</code><p>string 1 to compare</p></div>
+<div class="subelement argument">
+<h4>$str2</h4>
+<code>string</code><p>string 2 to compare</p></div>
+<div class="subelement argument">
+<h4>$locale</h4>
+<code>mixed</code><p>The locale used by strcoll or false to use classical comparison</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>< 0 if str1 is less than str2; > 0 if str1 is greater than str2, and 0 if they are equal.</div>
+</div></div>
+</div>
+<a id="method_strcspn"></a><div class="element clickable method public method_strcspn" data-toggle="collapse" data-target=".method_strcspn .collapse">
+<h2>UTF-8 aware alternative to strcspn
+Find length of initial segment not matching mask</h2>
+<pre>strcspn(string $str, string $mask, integer $start, integer $length) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/strcspn</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>The string to process</p></div>
+<div class="subelement argument">
+<h4>$mask</h4>
+<code>string</code><p>The mask</p></div>
+<div class="subelement argument">
+<h4>$start</h4>
+<code>integer</code><p>Optional starting character position (in characters)</p>
+</div>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>Optional length</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The length of the initial segment of str1 which does not contain any of the characters in str2</div>
+</div></div>
+</div>
+<a id="method_stristr"></a><div class="element clickable method public method_stristr" data-toggle="collapse" data-target=".method_stristr .collapse">
+<h2>UTF-8 aware alternative to stristr
+Returns all of haystack from the first occurrence of needle to the end.</h2>
+<pre>stristr(string $str, string $search) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>needle and haystack are examined in a case-insensitive manner
+Find first occurrence of a string using case insensitive comparison</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/stristr</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>The haystack</p></div>
+<div class="subelement argument">
+<h4>$search</h4>
+<code>string</code><p>The needle</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>the sub string</div>
+</div></div>
+</div>
+<a id="method_strlen"></a><div class="element clickable method public method_strlen" data-toggle="collapse" data-target=".method_strlen .collapse">
+<h2>UTF-8 aware alternative to strlen.</h2>
+<pre>strlen(string $str) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the number of characters in the string (NOT THE NUMBER OF BYTES),</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/strlen</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>UTF-8 string.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>Number of UTF-8 characters in string.</div>
+</div></div>
+</div>
+<a id="method_strpos"></a><div class="element clickable method public method_strpos" data-toggle="collapse" data-target=".method_strpos .collapse">
+<h2>UTF-8 aware alternative to strpos.</h2>
+<pre>strpos(string $str, string $search, integer $offset) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Find position of first occurrence of a string.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/strpos</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>String being examined</p></div>
+<div class="subelement argument">
+<h4>$search</h4>
+<code>string</code><p>String being searched for</p></div>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>integer</code><p>Optional, specifies the position from which the search should be performed</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Number of characters before the first match or FALSE on failure</div>
+</div></div>
+</div>
+<a id="method_strrev"></a><div class="element clickable method public method_strrev" data-toggle="collapse" data-target=".method_strrev .collapse">
+<h2>UTF-8 aware alternative to strrev
+Reverse a string</h2>
+<pre>strrev(string $str) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/strrev</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>String to be reversed</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string in reverse character order</div>
+</div></div>
+</div>
+<a id="method_strrpos"></a><div class="element clickable method public method_strrpos" data-toggle="collapse" data-target=".method_strrpos .collapse">
+<h2>UTF-8 aware alternative to strrpos
+Finds position of last occurrence of a string</h2>
+<pre>strrpos(string $str, string $search, integer $offset) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/strrpos</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>String being examined.</p></div>
+<div class="subelement argument">
+<h4>$search</h4>
+<code>string</code><p>String being searched for.</p></div>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>integer</code><p>Offset from the left of the string.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Number of characters before the last match or false on failure</div>
+</div></div>
+</div>
+<a id="method_strspn"></a><div class="element clickable method public method_strspn" data-toggle="collapse" data-target=".method_strspn .collapse">
+<h2>UTF-8 aware alternative to strspn
+Find length of initial segment matching mask</h2>
+<pre>strspn(string $str, string $mask, integer $start, integer $length) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/strspn</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>The haystack</p></div>
+<div class="subelement argument">
+<h4>$mask</h4>
+<code>string</code><p>The mask</p></div>
+<div class="subelement argument">
+<h4>$start</h4>
+<code>integer</code><p>Start optional</p></div>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>Length optional</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_strtolower"></a><div class="element clickable method public method_strtolower" data-toggle="collapse" data-target=".method_strtolower .collapse">
+<h2>UTF-8 aware alternative to strtlower</h2>
+<pre>strtolower(string $str) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Make a string lowercase
+Note: The concept of a characters "case" only exists is some alphabets
+such as Latin, Greek, Cyrillic, Armenian and archaic Georgian - it does
+not exist in the Chinese alphabet, for example. See Unicode Standard
+Annex #21: Case Mappings</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/strtolower</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>String being processed</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Either string in lowercase or FALSE is UTF-8 invalid</div>
+</div></div>
+</div>
+<a id="method_strtoupper"></a><div class="element clickable method public method_strtoupper" data-toggle="collapse" data-target=".method_strtoupper .collapse">
+<h2>UTF-8 aware alternative to strtoupper
+Make a string uppercase
+Note: The concept of a characters "case" only exists is some alphabets
+such as Latin, Greek, Cyrillic, Armenian and archaic Georgian - it does
+not exist in the Chinese alphabet, for example.</h2>
+<pre>strtoupper(string $str) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>See Unicode Standard
+Annex #21: Case Mappings</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/strtoupper</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>String being processed</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Either string in uppercase or FALSE is UTF-8 invalid</div>
+</div></div>
+</div>
+<a id="method_substr"></a><div class="element clickable method public method_substr" data-toggle="collapse" data-target=".method_substr .collapse">
+<h2>UTF-8 aware alternative to substr
+Return part of a string given character offset (and optionally length)</h2>
+<pre>substr(string $str, integer $offset, integer $length) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/substr</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>String being processed</p></div>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>integer</code><p>Number of UTF-8 characters offset (from left)</p>
+</div>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>Optional length in UTF-8 characters from offset</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>string or FALSE if failure</div>
+</div></div>
+</div>
+<a id="method_substr_replace"></a><div class="element clickable method public method_substr_replace" data-toggle="collapse" data-target=".method_substr_replace .collapse">
+<h2>UTF-8 aware substr_replace
+Replace text within a portion of a string</h2>
+<pre>substr_replace(string $str, string $repl, integer $start, integer $length) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/substr_replace</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>The haystack</p></div>
+<div class="subelement argument">
+<h4>$repl</h4>
+<code>string</code><p>The replacement string</p></div>
+<div class="subelement argument">
+<h4>$start</h4>
+<code>integer</code><p>Start</p></div>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>Length (optional)</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_transcode"></a><div class="element clickable method public method_transcode" data-toggle="collapse" data-target=".method_transcode .collapse">
+<h2>Transcode a string.</h2>
+<pre>transcode(string $source, string $from_encoding, string $to_encoding) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>link</th>
+<td><a href="https://bugs.php.net/bug.php?id=48147">https://bugs.php.net/bug.php?id=48147</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code>string</code><p>The string to transcode.</p></div>
+<div class="subelement argument">
+<h4>$from_encoding</h4>
+<code>string</code><p>The source encoding.</p></div>
+<div class="subelement argument">
+<h4>$to_encoding</h4>
+<code>string</code><p>The target encoding.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The transcoded string, or null if the source was not a string.</div>
+</div></div>
+</div>
+<a id="method_trim"></a><div class="element clickable method public method_trim" data-toggle="collapse" data-target=".method_trim .collapse">
+<h2>UTF-8 aware replacement for trim()
+Strip whitespace (or other characters) from the beginning and end of a string
+Note: you only need to use this if you are supplying the charlist
+optional arg and it contains UTF-8 characters.</h2>
+<pre>trim(string $str, string $charlist) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Otherwise trim will
+work normally on a UTF-8 string</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/trim</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>The string to be trimmed</p></div>
+<div class="subelement argument">
+<h4>$charlist</h4>
+<code>string</code><p>The optional charlist of additional characters to trim</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The trimmed string</div>
+</div></div>
+</div>
+<a id="method_ucfirst"></a><div class="element clickable method public method_ucfirst" data-toggle="collapse" data-target=".method_ucfirst .collapse">
+<h2>UTF-8 aware alternative to ucfirst
+Make a string's first character uppercase or all words' first character uppercase</h2>
+<pre>ucfirst(string $str, string $delimiter, string $newDelimiter) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/ucfirst</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>String to be processed</p></div>
+<div class="subelement argument">
+<h4>$delimiter</h4>
+<code>string</code><p>The words delimiter (null means do not split the string)</p>
+</div>
+<div class="subelement argument">
+<h4>$newDelimiter</h4>
+<code>string</code><p>The new words delimiter (null means equal to $delimiter)</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>If $delimiter is null, return the string with first character as upper case (if applicable)
+                 else consider the string of words separated by the delimiter, apply the ucfirst to each words
+                 and return the string with the new delimiter</div>
+</div></div>
+</div>
+<a id="method_ucwords"></a><div class="element clickable method public method_ucwords" data-toggle="collapse" data-target=".method_ucwords .collapse">
+<h2>UTF-8 aware alternative to ucwords
+Uppercase the first character of each word in a string</h2>
+<pre>ucwords(string $str) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://www.php.net/ucwords</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>String to be processed</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>String with first char of each word uppercase</div>
+</div></div>
+</div>
+<a id="method_valid"></a><div class="element clickable method public method_valid" data-toggle="collapse" data-target=".method_valid .collapse">
+<h2>Tests a string as to whether it's valid UTF-8 and supported by the Unicode standard.</h2>
+<pre>valid(string $str) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Note: this function has been modified to simple return true or false.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="mailto:hsivonen@iki.fi">hsivonen@iki.fi</a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\http://hsivonen.iki.fi/php-utf8/</a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\String\compliant</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>UTF-8 encoded string.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>true if valid</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_incrementStyles"> </a><div class="element clickable property protected property_incrementStyles" data-toggle="collapse" data-target=".property_incrementStyles .collapse">
+<h2></h2>
+<pre>$incrementStyles : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:25-05:00.<br></footer></div>
+</div>
+</body>
+</html>

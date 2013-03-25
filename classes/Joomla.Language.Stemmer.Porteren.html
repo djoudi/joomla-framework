@@ -1,0 +1,459 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Language\Stemmer\Porteren</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public inherited"><a href="#method_getInstance" title="getInstance :: Method to get a stemmer, creating it if necessary."><span class="description">Method to get a stemmer, creating it if necessary.</span><pre>getInstance()</pre></a></li>
+<li class="method public "><a href="#method_stem" title="stem :: Method to stem a token and return the root."><span class="description">Method to stem a token and return the root.</span><pre>stem()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_cvc" title="cvc :: Checks for ending CVC sequence where second C is not W, X or Y"><span class="description">Checks for ending CVC sequence where second C is not W, X or Y</span><pre>cvc()</pre></a></li>
+<li class="method private "><a href="#method_doubleConsonant" title="doubleConsonant :: Returns true/false as to whether the given string contains two
+of the same consonant next to each other at the end of the string."><span class="description">Returns true/false as to whether the given string contains two
+of the same consonant next to each other at the end of the string.</span><pre>doubleConsonant()</pre></a></li>
+<li class="method private "><a href="#method_m" title="m :: m() measures the number of consonant sequences in $str."><span class="description">m() measures the number of consonant sequences in $str.</span><pre>m()</pre></a></li>
+<li class="method private "><a href="#method_replace" title="replace :: Replaces the first string with the second, at the end of the string."><span class="description">Replaces the first string with the second, at the end of the string.</span><pre>replace()</pre></a></li>
+<li class="method private "><a href="#method_step1ab" title="step1ab :: Step 1"><span class="description">Step 1</span><pre>step1ab()</pre></a></li>
+<li class="method private "><a href="#method_step1c" title="step1c :: Step 1c"><span class="description">Step 1c</span><pre>step1c()</pre></a></li>
+<li class="method private "><a href="#method_step2" title="step2 :: Step 2"><span class="description">Step 2</span><pre>step2()</pre></a></li>
+<li class="method private "><a href="#method_step3" title="step3 :: Step 3"><span class="description">Step 3</span><pre>step3()</pre></a></li>
+<li class="method private "><a href="#method_step4" title="step4 :: Step 4"><span class="description">Step 4</span><pre>step4()</pre></a></li>
+<li class="method private "><a href="#method_step5" title="step5 :: Step 5"><span class="description">Step 5</span><pre>step5()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected inherited"><a href="#property_cache" title="$cache :: An internal cache of stemmed tokens."><span class="description"></span><pre>$cache</pre></a></li>
+<li class="property protected inherited"><a href="#property_instances" title="$instances :: JLanguageStemmer instances."><span class="description"></span><pre>$instances</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_regex_consonant" title="$regex_consonant :: Regex for matching a consonant."><span class="description"></span><pre>$regex_consonant</pre></a></li>
+<li class="property private "><a href="#property_regex_vowel" title="$regex_vowel :: Regex for matching a vowel"><span class="description"></span><pre>$regex_vowel</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Language\Stemmer\Porteren"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Language.html">Language</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Language.Stemmer.html">Stemmer</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Language.Stemmer.Porteren.html">Porteren</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Porter English stemmer class.</p>
+<div class="details">
+<div class="long_description"><p>This class was adapted from one written by Richard Heyes.
+See copyright and link information above.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_getInstance"></a><div class="element clickable method public method_getInstance" data-toggle="collapse" data-target=".method_getInstance .collapse">
+<h2>Method to get a stemmer, creating it if necessary.</h2>
+<pre>getInstance(string $adapter) : <a href="../classes/Joomla.Language.Stemmer.html">\Joomla\Language\Stemmer</a></pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Language\Stemmer::getInstance()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$adapter</h4>
+<code>string</code><p>The type of stemmer to load.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.runtimeexception.php">\RuntimeException</a></code></th>
+<td>on invalid stemmer.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Language.Stemmer.html">\Joomla\Language\Stemmer</a></code>A JLanguageStemmer instance.</div>
+</div></div>
+</div>
+<a id="method_stem"></a><div class="element clickable method public method_stem" data-toggle="collapse" data-target=".method_stem .collapse">
+<h2>Method to stem a token and return the root.</h2>
+<pre>stem(string $token, string $lang) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$token</h4>
+<code>string</code><p>The token to stem.</p></div>
+<div class="subelement argument">
+<h4>$lang</h4>
+<code>string</code><p>The language of the token.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The root token.</div>
+</div></div>
+</div>
+<a id="method_cvc"></a><div class="element clickable method private method_cvc" data-toggle="collapse" data-target=".method_cvc .collapse">
+<h2>Checks for ending CVC sequence where second C is not W, X or Y</h2>
+<pre>cvc(string $str) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>String to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Result</div>
+</div></div>
+</div>
+<a id="method_doubleConsonant"></a><div class="element clickable method private method_doubleConsonant" data-toggle="collapse" data-target=".method_doubleConsonant .collapse">
+<h2>Returns true/false as to whether the given string contains two
+of the same consonant next to each other at the end of the string.</h2>
+<pre>doubleConsonant(string $str) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>String to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Result</div>
+</div></div>
+</div>
+<a id="method_m"></a><div class="element clickable method private method_m" data-toggle="collapse" data-target=".method_m .collapse">
+<h2>m() measures the number of consonant sequences in $str.</h2>
+<pre>m(string $str) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>if c is
+a consonant sequence and v a vowel sequence, and &lt;..> indicates arbitrary
+presence,</p>
+
+<p><c><v>       gives 0
+<c>vc<v>     gives 1
+<c>vcvc<v>   gives 2
+<c>vcvcvc<v> gives 3</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>The string to return the m count for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The m count</div>
+</div></div>
+</div>
+<a id="method_replace"></a><div class="element clickable method private method_replace" data-toggle="collapse" data-target=".method_replace .collapse">
+<h2>Replaces the first string with the second, at the end of the string.</h2>
+<pre>replace(string $str, string $check, string $repl, integer $m) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If third
+arg is given, then the preceding string must match that m count at least.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>&$str   String to check</p>
+</div>
+<div class="subelement argument">
+<h4>$check</h4>
+<code>string</code><p>Ending to check for</p></div>
+<div class="subelement argument">
+<h4>$repl</h4>
+<code>string</code><p>Replacement string</p></div>
+<div class="subelement argument">
+<h4>$m</h4>
+<code>integer</code><p>Optional minimum number of m() to meet</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Whether the $check string was at the end
+                  of the $str string. True does not necessarily mean
+                  that it was replaced.</div>
+</div></div>
+</div>
+<a id="method_step1ab"></a><div class="element clickable method private method_step1ab" data-toggle="collapse" data-target=".method_step1ab .collapse">
+<h2>Step 1</h2>
+<pre>step1ab(string $word) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$word</h4>
+<code>string</code><p>The token to stem.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_step1c"></a><div class="element clickable method private method_step1c" data-toggle="collapse" data-target=".method_step1c .collapse">
+<h2>Step 1c</h2>
+<pre>step1c(string $word) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$word</h4>
+<code>string</code><p>The token to stem.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_step2"></a><div class="element clickable method private method_step2" data-toggle="collapse" data-target=".method_step2 .collapse">
+<h2>Step 2</h2>
+<pre>step2(string $word) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$word</h4>
+<code>string</code><p>The token to stem.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_step3"></a><div class="element clickable method private method_step3" data-toggle="collapse" data-target=".method_step3 .collapse">
+<h2>Step 3</h2>
+<pre>step3(string $word) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$word</h4>
+<code>string</code><p>The token to stem.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_step4"></a><div class="element clickable method private method_step4" data-toggle="collapse" data-target=".method_step4 .collapse">
+<h2>Step 4</h2>
+<pre>step4(string $word) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$word</h4>
+<code>string</code><p>The token to stem.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_step5"></a><div class="element clickable method private method_step5" data-toggle="collapse" data-target=".method_step5 .collapse">
+<h2>Step 5</h2>
+<pre>step5(string $word) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$word</h4>
+<code>string</code><p>The token to stem.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_cache"> </a><div class="element clickable property protected property_cache" data-toggle="collapse" data-target=".property_cache .collapse">
+<h2></h2>
+<pre>$cache : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Language\Stemmer::$$cache</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_instances"> </a><div class="element clickable property protected property_instances" data-toggle="collapse" data-target=".property_instances .collapse">
+<h2></h2>
+<pre>$instances : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Language\Stemmer::$$instances</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_regex_consonant"> </a><div class="element clickable property private property_regex_consonant" data-toggle="collapse" data-target=".property_regex_consonant .collapse">
+<h2></h2>
+<pre>$regex_consonant : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_regex_vowel"> </a><div class="element clickable property private property_regex_vowel" data-toggle="collapse" data-target=".property_regex_vowel .collapse">
+<h2></h2>
+<pre>$regex_vowel : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:24-05:00.<br></footer></div>
+</div>
+</body>
+</html>

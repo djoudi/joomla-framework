@@ -1,0 +1,538 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Archive\Zip</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_checkZipData" title="checkZipData :: Checks to see if the data is a valid ZIP file."><span class="description">Checks to see if the data is a valid ZIP file.</span><pre>checkZipData()</pre></a></li>
+<li class="method public "><a href="#method_create" title="create :: Create a ZIP compressed file from an array of file data."><span class="description">Create a ZIP compressed file from an array of file data.</span><pre>create()</pre></a></li>
+<li class="method public "><a href="#method_extract" title="extract :: Extract a ZIP compressed file to a given path"><span class="description">Extract a ZIP compressed file to a given path</span><pre>extract()</pre></a></li>
+<li class="method public "><a href="#method_hasNativeSupport" title="hasNativeSupport :: Method to determine if the server has native zip support for faster handling"><span class="description">Method to determine if the server has native zip support for faster handling</span><pre>hasNativeSupport()</pre></a></li>
+<li class="method public "><a href="#method_isSupported" title="isSupported :: Tests whether this adapter can unpack files on this computer."><span class="description">Tests whether this adapter can unpack files on this computer.</span><pre>isSupported()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method__unix2DOSTime" title="_unix2DOSTime :: Converts a UNIX timestamp to a 4-byte DOS date and time format
+(date in high 2-bytes, time in low 2-bytes allowing magnitude
+comparison)."><span class="description">Converts a UNIX timestamp to a 4-byte DOS date and time format
+(date in high 2-bytes, time in low 2-bytes allowing magnitude
+comparison).</span><pre>_unix2DOSTime()</pre></a></li>
+<li class="method protected "><a href="#method_extractCustom" title="extractCustom :: Extract a ZIP compressed file to a given path using a php based algorithm that only requires zlib support"><span class="description">Extract a ZIP compressed file to a given path using a php based algorithm that only requires zlib support</span><pre>extractCustom()</pre></a></li>
+<li class="method protected "><a href="#method_extractNative" title="extractNative :: Extract a ZIP compressed file to a given path using native php api calls for speed"><span class="description">Extract a ZIP compressed file to a given path using native php api calls for speed</span><pre>extractNative()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method__addToZIPFile" title='_addToZIPFile :: Adds a "file" to the ZIP archive.'><span class="description">Adds a "file" to the ZIP archive.</span><pre>_addToZIPFile()</pre></a></li>
+<li class="method private "><a href="#method__createZIPFile" title="_createZIPFile :: Creates the ZIP file."><span class="description">Creates the ZIP file.</span><pre>_createZIPFile()</pre></a></li>
+<li class="method private "><a href="#method__getFileData" title="_getFileData :: Returns the file data for a file by offsest in the ZIP archive"><span class="description">Returns the file data for a file by offsest in the ZIP archive</span><pre>_getFileData()</pre></a></li>
+<li class="method private "><a href="#method__readZipInfo" title="_readZipInfo :: Get the list of files/data from a ZIP archive buffer."><span class="description">Get the list of files/data from a ZIP archive buffer.</span><pre>_readZipInfo()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_ctrlDirEnd" title="$ctrlDirEnd :: End of central directory record."><span class="description"></span><pre>$ctrlDirEnd</pre></a></li>
+<li class="property private "><a href="#property_ctrlDirHeader" title="$ctrlDirHeader :: Beginning of central directory record."><span class="description"></span><pre>$ctrlDirHeader</pre></a></li>
+<li class="property private "><a href="#property_data" title="$data :: ZIP file data buffer"><span class="description"></span><pre>$data</pre></a></li>
+<li class="property private "><a href="#property_fileHeader" title="$fileHeader :: Beginning of file contents."><span class="description"></span><pre>$fileHeader</pre></a></li>
+<li class="property private "><a href="#property_metadata" title="$metadata :: ZIP file metadata array"><span class="description"></span><pre>$metadata</pre></a></li>
+<li class="property private "><a href="#property_methods" title="$methods :: ZIP compression methods."><span class="description"></span><pre>$methods</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Archive\Zip"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Archive.html">Archive</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Archive.Zip.html">Zip</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">ZIP format adapter for the JArchive class</p>
+<div class="details">
+<div class="long_description"><p>The ZIP compression code is partially based on code from:
+Eric Mueller <a href="&#109;&#97;&#x69;l&#116;&#x6f;&#x3a;e&#114;&#x69;&#x63;&#64;&#116;&#x68;&#x65;&#109;&#101;&#x70;&#x61;&#114;&#107;&#x2e;&#x63;&#111;&#109;">e&#114;&#x69;&#x63;&#64;&#116;&#x68;&#x65;&#109;&#101;&#x70;&#x61;&#114;&#107;&#x2e;&#x63;&#111;&#109;</a>
+http://www.zend.com/codex.php?id=535&amp;single=1</p>
+
+<p>Deins125 <a href="&#109;&#x61;&#105;&#x6c;t&#111;&#x3a;&#119;&#x65;&#98;&#109;&#x61;&#115;&#x74;&#101;&#x72;&#x40;&#97;&#x74;&#108;&#x61;n&#116;&#x2e;&#114;&#x75;">&#119;&#x65;&#98;&#109;&#x61;&#115;&#x74;&#101;&#x72;&#x40;&#97;&#x74;&#108;&#x61;n&#116;&#x2e;&#114;&#x75;</a>
+http://www.zend.com/codex.php?id=470&amp;single=1</p>
+
+<p>The ZIP compression date code is partially based on code from
+Peter Listiak <a href="&#x6d;&#97;i&#x6c;&#116;o&#x3a;&#109;&#108;&#x61;&#100;&#121;&#x40;&#117;&#115;&#x65;&#x72;&#115;&#x2e;&#x73;&#111;&#x75;&#x72;&#99;&#x65;&#x66;&#111;r&#x67;&#101;.&#x6e;&#101;&#116;">&#109;&#108;&#x61;&#100;&#121;&#x40;&#117;&#115;&#x65;&#x72;&#115;&#x2e;&#x73;&#111;&#x75;&#x72;&#99;&#x65;&#x66;&#111;r&#x67;&#101;.&#x6e;&#101;&#116;</a></p>
+
+<p>This class is inspired from and draws heavily in code and concept from the Compress package of
+The Horde Project <a href="http://www.horde.org">http://www.horde.org</a></p></div>
+<table class="table table-bordered">
+<tr>
+<th>contributor</th>
+<td>Chuck Hagenbuch <chuck@horde.org></td>
+</tr>
+<tr>
+<th>contributor</th>
+<td>Michael Slusarz <slusarz@horde.org></td>
+</tr>
+<tr>
+<th>contributor</th>
+<td>Michael Cochrane <mike@graftonhall.co.nz></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_checkZipData"></a><div class="element clickable method public method_checkZipData" data-toggle="collapse" data-target=".method_checkZipData .collapse">
+<h2>Checks to see if the data is a valid ZIP file.</h2>
+<pre>checkZipData(string $data) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>string</code><p>&$data  ZIP archive data buffer.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if valid, false if invalid.</div>
+</div></div>
+</div>
+<a id="method_create"></a><div class="element clickable method public method_create" data-toggle="collapse" data-target=".method_create .collapse">
+<h2>Create a ZIP compressed file from an array of file data.</h2>
+<pre>create(string $archive, array $files) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>todo</th>
+<td>Finish Implementation</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$archive</h4>
+<code>string</code><p>Path to save archive.</p></div>
+<div class="subelement argument">
+<h4>$files</h4>
+<code>array</code><p>Array of files to add to archive.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if successful.</div>
+</div></div>
+</div>
+<a id="method_extract"></a><div class="element clickable method public method_extract" data-toggle="collapse" data-target=".method_extract .collapse">
+<h2>Extract a ZIP compressed file to a given path</h2>
+<pre>extract(string $archive, string $destination, array $options) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$archive</h4>
+<code>string</code><p>Path to ZIP archive to extract</p></div>
+<div class="subelement argument">
+<h4>$destination</h4>
+<code>string</code><p>Path to extract archive into</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>Extraction options [unused]</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.runtimeexception.php">\RuntimeException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if successful</div>
+</div></div>
+</div>
+<a id="method_hasNativeSupport"></a><div class="element clickable method public method_hasNativeSupport" data-toggle="collapse" data-target=".method_hasNativeSupport .collapse">
+<h2>Method to determine if the server has native zip support for faster handling</h2>
+<pre>hasNativeSupport() : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if php has native ZIP support</div>
+</div></div>
+</div>
+<a id="method_isSupported"></a><div class="element clickable method public method_isSupported" data-toggle="collapse" data-target=".method_isSupported .collapse">
+<h2>Tests whether this adapter can unpack files on this computer.</h2>
+<pre>isSupported() : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if supported</div>
+</div></div>
+</div>
+<a id="method__unix2DOSTime"></a><div class="element clickable method protected method__unix2DOSTime" data-toggle="collapse" data-target=".method__unix2DOSTime .collapse">
+<h2>Converts a UNIX timestamp to a 4-byte DOS date and time format
+(date in high 2-bytes, time in low 2-bytes allowing magnitude
+comparison).</h2>
+<pre>_unix2DOSTime(int $unixtime) : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$unixtime</h4>
+<code>int</code><p>The current UNIX timestamp.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The current date in a 4-byte DOS format.</div>
+</div></div>
+</div>
+<a id="method_extractCustom"></a><div class="element clickable method protected method_extractCustom" data-toggle="collapse" data-target=".method_extractCustom .collapse">
+<h2>Extract a ZIP compressed file to a given path using a php based algorithm that only requires zlib support</h2>
+<pre>extractCustom(string $archive, string $destination) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$archive</h4>
+<code>string</code><p>Path to ZIP archive to extract.</p></div>
+<div class="subelement argument">
+<h4>$destination</h4>
+<code>string</code><p>Path to extract archive into.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.runtimeexception.php">\RuntimeException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>True if successful</div>
+</div></div>
+</div>
+<a id="method_extractNative"></a><div class="element clickable method protected method_extractNative" data-toggle="collapse" data-target=".method_extractNative .collapse">
+<h2>Extract a ZIP compressed file to a given path using native php api calls for speed</h2>
+<pre>extractNative(string $archive, string $destination) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$archive</h4>
+<code>string</code><p>Path to ZIP archive to extract</p></div>
+<div class="subelement argument">
+<h4>$destination</h4>
+<code>string</code><p>Path to extract archive into</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\Joomla\Archive\RuntimeException</code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success</div>
+</div></div>
+</div>
+<a id="method__addToZIPFile"></a><div class="element clickable method private method__addToZIPFile" data-toggle="collapse" data-target=".method__addToZIPFile .collapse">
+<h2>Adds a "file" to the ZIP archive.</h2>
+<pre>_addToZIPFile(array $file, array $contents, array $ctrldir) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>todo</th>
+<td>Review and finish implementation</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>array</code><p>&$file      File data array to add</p>
+</div>
+<div class="subelement argument">
+<h4>$contents</h4>
+<code>array</code><p>&$contents  An array of existing zipped files.</p>
+</div>
+<div class="subelement argument">
+<h4>$ctrldir</h4>
+<code>array</code><p>&$ctrldir   An array of central directory information.</p>
+</div>
+</div></div>
+</div>
+<a id="method__createZIPFile"></a><div class="element clickable method private method__createZIPFile" data-toggle="collapse" data-target=".method__createZIPFile .collapse">
+<h2>Creates the ZIP file.</h2>
+<pre>_createZIPFile(array $contents, array $ctrlDir, string $path) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Official ZIP file format: http://www.pkware.com/appnote.txt</p></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>todo</th>
+<td>Review and finish implementation</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$contents</h4>
+<code>array</code><p>&$contents  An array of existing zipped files.</p>
+</div>
+<div class="subelement argument">
+<h4>$ctrlDir</h4>
+<code>array</code><p>&$ctrlDir   An array of central directory information.</p>
+</div>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to store the archive.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if successful</div>
+</div></div>
+</div>
+<a id="method__getFileData"></a><div class="element clickable method private method__getFileData" data-toggle="collapse" data-target=".method__getFileData .collapse">
+<h2>Returns the file data for a file by offsest in the ZIP archive</h2>
+<pre>_getFileData(integer $key) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>integer</code><p>The position of the file in the archive.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Uncompressed file data buffer.</div>
+</div></div>
+</div>
+<a id="method__readZipInfo"></a><div class="element clickable method private method__readZipInfo" data-toggle="collapse" data-target=".method__readZipInfo .collapse">
+<h2>Get the list of files/data from a ZIP archive buffer.</h2>
+<pre>_readZipInfo(string $data) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><pre>
+KEY: Position in zipfile
+VALUES: 'attr'  --  File attributes
+'crc'   --  CRC checksum
+'csize' --  Compressed file size
+'date'  --  File modification time
+'name'  --  Filename
+'method'--  Compression method
+'size'  --  Original file size
+'type'  --  File type
+</pre></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>string</code><p>&$data  The ZIP archive buffer.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\Joomla\Archive\RuntimeException</code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_ctrlDirEnd"> </a><div class="element clickable property private property_ctrlDirEnd" data-toggle="collapse" data-target=".property_ctrlDirEnd .collapse">
+<h2></h2>
+<pre>$ctrlDirEnd : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_ctrlDirHeader"> </a><div class="element clickable property private property_ctrlDirHeader" data-toggle="collapse" data-target=".property_ctrlDirHeader .collapse">
+<h2></h2>
+<pre>$ctrlDirHeader : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_data"> </a><div class="element clickable property private property_data" data-toggle="collapse" data-target=".property_data .collapse">
+<h2></h2>
+<pre>$data : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_fileHeader"> </a><div class="element clickable property private property_fileHeader" data-toggle="collapse" data-target=".property_fileHeader .collapse">
+<h2></h2>
+<pre>$fileHeader : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_metadata"> </a><div class="element clickable property private property_metadata" data-toggle="collapse" data-target=".property_metadata .collapse">
+<h2></h2>
+<pre>$metadata : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_methods"> </a><div class="element clickable property private property_methods" data-toggle="collapse" data-target=".property_methods .collapse">
+<h2></h2>
+<pre>$methods : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:17-05:00.<br></footer></div>
+</div>
+</body>
+</html>

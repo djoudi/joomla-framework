@@ -1,0 +1,437 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Profiler\Profiler</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Constructor."><span class="description">Constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___toString" title="__toString :: Cast the profiler to a string using the renderer."><span class="description">Cast the profiler to a string using the renderer.</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_count" title="count :: Count the number of points in this profiler."><span class="description">Count the number of points in this profiler.</span><pre>count()</pre></a></li>
+<li class="method public "><a href="#method_getIterator" title="getIterator :: Get an iterator on the profiler points."><span class="description">Get an iterator on the profiler points.</span><pre>getIterator()</pre></a></li>
+<li class="method public "><a href="#method_getMemoryBytesBetween" title="getMemoryBytesBetween :: Get the amount of allocated memory in bytes between the two points."><span class="description">Get the amount of allocated memory in bytes between the two points.</span><pre>getMemoryBytesBetween()</pre></a></li>
+<li class="method public "><a href="#method_getMemoryPeakBytes" title="getMemoryPeakBytes :: Get the memory peak in bytes during the profiler run."><span class="description">Get the memory peak in bytes during the profiler run.</span><pre>getMemoryPeakBytes()</pre></a></li>
+<li class="method public "><a href="#method_getName" title="getName :: Get the name of this profiler."><span class="description">Get the name of this profiler.</span><pre>getName()</pre></a></li>
+<li class="method public "><a href="#method_getPoint" title="getPoint :: Get the point identified by the given name."><span class="description">Get the point identified by the given name.</span><pre>getPoint()</pre></a></li>
+<li class="method public "><a href="#method_getPoints" title="getPoints :: Get the points in this profiler (from the first to the last)."><span class="description">Get the points in this profiler (from the first to the last).</span><pre>getPoints()</pre></a></li>
+<li class="method public "><a href="#method_getRenderer" title="getRenderer :: Get the currently used renderer in this profiler."><span class="description">Get the currently used renderer in this profiler.</span><pre>getRenderer()</pre></a></li>
+<li class="method public "><a href="#method_getTimeBetween" title="getTimeBetween :: Get the elapsed time in seconds between the two points."><span class="description">Get the elapsed time in seconds between the two points.</span><pre>getTimeBetween()</pre></a></li>
+<li class="method public "><a href="#method_hasPoint" title="hasPoint :: Check if the profiler has marked the given point."><span class="description">Check if the profiler has marked the given point.</span><pre>hasPoint()</pre></a></li>
+<li class="method public "><a href="#method_mark" title="mark :: Mark a profile point."><span class="description">Mark a profile point.</span><pre>mark()</pre></a></li>
+<li class="method public "><a href="#method_render" title="render :: Render the profiler."><span class="description">Render the profiler.</span><pre>render()</pre></a></li>
+<li class="method public "><a href="#method_setRenderer" title="setRenderer :: Set the renderer to render this profiler."><span class="description">Set the renderer to render this profiler.</span><pre>setRenderer()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_setPoints" title="setPoints :: Set the points in this profiler."><span class="description">Set the points in this profiler.</span><pre>setPoints()</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_lookup" title="$lookup :: A lookup array containing the
+names of the already marked points as keys
+and their indexes in $points as value."><span class="description"></span><pre>$lookup</pre></a></li>
+<li class="property protected "><a href="#property_memoryPeakBytes" title="$memoryPeakBytes :: The memory peak in bytes during
+the profiler run."><span class="description"></span><pre>$memoryPeakBytes</pre></a></li>
+<li class="property protected "><a href="#property_memoryRealUsage" title="$memoryRealUsage :: A flag to see if we must get
+the real memory usage, or the usage of emalloc()."><span class="description"></span><pre>$memoryRealUsage</pre></a></li>
+<li class="property protected "><a href="#property_name" title="$name :: The name of the profiler."><span class="description"></span><pre>$name</pre></a></li>
+<li class="property protected "><a href="#property_points" title="$points :: An array of profiler points (from the first to last)."><span class="description"></span><pre>$points</pre></a></li>
+<li class="property protected "><a href="#property_renderer" title="$renderer :: The profiler renderer."><span class="description"></span><pre>$renderer</pre></a></li>
+<li class="property protected "><a href="#property_startMemoryBytes" title="$startMemoryBytes :: The memory usage in bytes
+when the first point was marked."><span class="description"></span><pre>$startMemoryBytes</pre></a></li>
+<li class="property protected "><a href="#property_startTimeStamp" title="$startTimeStamp :: The timestamp with microseconds
+when the first point was marked."><span class="description"></span><pre>$startTimeStamp</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Profiler\Profiler"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Profiler.html">Profiler</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Profiler.Profiler.html">Profiler</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Implementation of ProfilerInterface.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructor.</h2>
+<pre>__construct(string $name, \Joomla\Profiler\ProfilerRendererInterface $renderer, array $points, boolean $memoryRealUsage) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The profiler name.</p></div>
+<div class="subelement argument">
+<h4>$renderer</h4>
+<code><a href="../classes/Joomla.Profiler.ProfilerRendererInterface.html">\Joomla\Profiler\ProfilerRendererInterface</a></code><p>The renderer.</p></div>
+<div class="subelement argument">
+<h4>$points</h4>
+<code><a href="Profiler.ProfilePointInterface.html#%5CJoomla%5CProfiler%5CProfilePointInterface">\Joomla\Profiler\ProfilePointInterface[]</a></code><p>An array of profile points.</p></div>
+<div class="subelement argument">
+<h4>$memoryRealUsage</h4>
+<code>boolean</code><p>True to get the real memory usage.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.invalidargumentexception.php">\InvalidArgumentException</a></code></th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
+<h2>Cast the profiler to a string using the renderer.</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The rendered profiler.</div>
+</div></div>
+</div>
+<a id="method_count"></a><div class="element clickable method public method_count" data-toggle="collapse" data-target=".method_count .collapse">
+<h2>Count the number of points in this profiler.</h2>
+<pre>count() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The number of points.</div>
+</div></div>
+</div>
+<a id="method_getIterator"></a><div class="element clickable method public method_getIterator" data-toggle="collapse" data-target=".method_getIterator .collapse">
+<h2>Get an iterator on the profiler points.</h2>
+<pre>getIterator() : <a href="http://php.net/manual/en/class.arrayiterator.php">\ArrayIterator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="http://php.net/manual/en/class.arrayiterator.php">\ArrayIterator</a></code>An iterator on the profiler points.</div>
+</div></div>
+</div>
+<a id="method_getMemoryBytesBetween"></a><div class="element clickable method public method_getMemoryBytesBetween" data-toggle="collapse" data-target=".method_getMemoryBytesBetween .collapse">
+<h2>Get the amount of allocated memory in bytes between the two points.</h2>
+<pre>getMemoryBytesBetween(string $first, string $second) : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$first</h4>
+<code>string</code><p>The name of the first point.</p></div>
+<div class="subelement argument">
+<h4>$second</h4>
+<code>string</code><p>The name of the second point.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td>If the points were not marked.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The amount of allocated memory between these points in bytes.</div>
+</div></div>
+</div>
+<a id="method_getMemoryPeakBytes"></a><div class="element clickable method public method_getMemoryPeakBytes" data-toggle="collapse" data-target=".method_getMemoryPeakBytes .collapse">
+<h2>Get the memory peak in bytes during the profiler run.</h2>
+<pre>getMemoryPeakBytes() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The memory peak in bytes.</div>
+</div></div>
+</div>
+<a id="method_getName"></a><div class="element clickable method public method_getName" data-toggle="collapse" data-target=".method_getName .collapse">
+<h2>Get the name of this profiler.</h2>
+<pre>getName() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The name of this profiler.</div>
+</div></div>
+</div>
+<a id="method_getPoint"></a><div class="element clickable method public method_getPoint" data-toggle="collapse" data-target=".method_getPoint .collapse">
+<h2>Get the point identified by the given name.</h2>
+<pre>getPoint(string $name, mixed $default) : <a href="../classes/Joomla.Profiler.ProfilePointInterface.html">\Joomla\Profiler\ProfilePointInterface</a> | mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the point.</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>mixed</code><p>The default value if the point hasn't been marked.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Profiler.ProfilePointInterface.html">\Joomla\Profiler\ProfilePointInterface</a></code><code>mixed</code>The profile point or the default value.</div>
+</div></div>
+</div>
+<a id="method_getPoints"></a><div class="element clickable method public method_getPoints" data-toggle="collapse" data-target=".method_getPoints .collapse">
+<h2>Get the points in this profiler (from the first to the last).</h2>
+<pre>getPoints() : <a href="Profiler.ProfilePointInterface.html#%5CJoomla%5CProfiler%5CProfilePointInterface">\Joomla\Profiler\ProfilePointInterface[]</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="Profiler.ProfilePointInterface.html#%5CJoomla%5CProfiler%5CProfilePointInterface">\Joomla\Profiler\ProfilePointInterface[]</a></code>An array of points in this profiler.</div>
+</div></div>
+</div>
+<a id="method_getRenderer"></a><div class="element clickable method public method_getRenderer" data-toggle="collapse" data-target=".method_getRenderer .collapse">
+<h2>Get the currently used renderer in this profiler.</h2>
+<pre>getRenderer() : <a href="../classes/Joomla.Profiler.ProfilerRendererInterface.html">\Joomla\Profiler\ProfilerRendererInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Profiler.ProfilerRendererInterface.html">\Joomla\Profiler\ProfilerRendererInterface</a></code>The renderer.</div>
+</div></div>
+</div>
+<a id="method_getTimeBetween"></a><div class="element clickable method public method_getTimeBetween" data-toggle="collapse" data-target=".method_getTimeBetween .collapse">
+<h2>Get the elapsed time in seconds between the two points.</h2>
+<pre>getTimeBetween(string $first, string $second) : float</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$first</h4>
+<code>string</code><p>The name of the first point.</p></div>
+<div class="subelement argument">
+<h4>$second</h4>
+<code>string</code><p>The name of the second point.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td>If the points were not marked.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>float</code>The elapsed time between these points in seconds.</div>
+</div></div>
+</div>
+<a id="method_hasPoint"></a><div class="element clickable method public method_hasPoint" data-toggle="collapse" data-target=".method_hasPoint .collapse">
+<h2>Check if the profiler has marked the given point.</h2>
+<pre>hasPoint(string $name) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the point.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if the profiler has marked the point, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_mark"></a><div class="element clickable method public method_mark" data-toggle="collapse" data-target=".method_mark .collapse">
+<h2>Mark a profile point.</h2>
+<pre>mark(string $name) : <a href="../classes/Joomla.Profiler.ProfilerInterface.html">\Joomla\Profiler\ProfilerInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The profile point name.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.invalidargumentexception.php">\InvalidArgumentException</a></code></th>
+<td>If the point already exists.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Profiler.ProfilerInterface.html">\Joomla\Profiler\ProfilerInterface</a></code>This method is chainable.</div>
+</div></div>
+</div>
+<a id="method_render"></a><div class="element clickable method public method_render" data-toggle="collapse" data-target=".method_render .collapse">
+<h2>Render the profiler.</h2>
+<pre>render() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The rendered profiler.</div>
+</div></div>
+</div>
+<a id="method_setRenderer"></a><div class="element clickable method public method_setRenderer" data-toggle="collapse" data-target=".method_setRenderer .collapse">
+<h2>Set the renderer to render this profiler.</h2>
+<pre>setRenderer(\Joomla\Profiler\ProfilerRendererInterface $renderer) : <a href="../classes/Joomla.Profiler.Profiler.html">\Joomla\Profiler\Profiler</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$renderer</h4>
+<code><a href="../classes/Joomla.Profiler.ProfilerRendererInterface.html">\Joomla\Profiler\ProfilerRendererInterface</a></code><p>The renderer.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Profiler.Profiler.html">\Joomla\Profiler\Profiler</a></code>This method is chainable.</div>
+</div></div>
+</div>
+<a id="method_setPoints"></a><div class="element clickable method protected method_setPoints" data-toggle="collapse" data-target=".method_setPoints .collapse">
+<h2>Set the points in this profiler.</h2>
+<pre>setPoints(array $points) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is called by the constructor when injecting an array of points
+(mostly for testing purposes).</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$points</h4>
+<code><a href="Profiler.ProfilePointInterface.html#%5CJoomla%5CProfiler%5CProfilePointInterface">\Joomla\Profiler\ProfilePointInterface[]</a></code><p>An array of profile points.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.invalidargumentexception.php">\InvalidArgumentException</a></code></th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_lookup"> </a><div class="element clickable property protected property_lookup" data-toggle="collapse" data-target=".property_lookup .collapse">
+<h2></h2>
+<pre>$lookup : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>It is used to quickly find a point
+without having to traverse $points.</p></div></div></div>
+</div>
+<a id="property_memoryPeakBytes"> </a><div class="element clickable property protected property_memoryPeakBytes" data-toggle="collapse" data-target=".property_memoryPeakBytes .collapse">
+<h2></h2>
+<pre>$memoryPeakBytes : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_memoryRealUsage"> </a><div class="element clickable property protected property_memoryRealUsage" data-toggle="collapse" data-target=".property_memoryRealUsage .collapse">
+<h2></h2>
+<pre>$memoryRealUsage : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_name"> </a><div class="element clickable property protected property_name" data-toggle="collapse" data-target=".property_name .collapse">
+<h2></h2>
+<pre>$name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_points"> </a><div class="element clickable property protected property_points" data-toggle="collapse" data-target=".property_points .collapse">
+<h2></h2>
+<pre>$points : <a href="Profiler.ProfilePointInterface.html#%5CJoomla%5CProfiler%5CProfilePointInterface">\Joomla\Profiler\ProfilePointInterface[]</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_renderer"> </a><div class="element clickable property protected property_renderer" data-toggle="collapse" data-target=".property_renderer .collapse">
+<h2></h2>
+<pre>$renderer : <a href="../classes/Joomla.Profiler.ProfilerRendererInterface.html">\Joomla\Profiler\ProfilerRendererInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_startMemoryBytes"> </a><div class="element clickable property protected property_startMemoryBytes" data-toggle="collapse" data-target=".property_startMemoryBytes .collapse">
+<h2></h2>
+<pre>$startMemoryBytes : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_startTimeStamp"> </a><div class="element clickable property protected property_startTimeStamp" data-toggle="collapse" data-target=".property_startTimeStamp .collapse">
+<h2></h2>
+<pre>$startTimeStamp : float</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:24-05:00.<br></footer></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,948 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Application\Web</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Class constructor."><span class="description">Class constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_allowCache" title="allowCache :: Set/get cachable state for the response."><span class="description">Set/get cachable state for the response.</span><pre>allowCache()</pre></a></li>
+<li class="method public "><a href="#method_appendBody" title="appendBody :: Append content to the body content"><span class="description">Append content to the body content</span><pre>appendBody()</pre></a></li>
+<li class="method public "><a href="#method_clearHeaders" title="clearHeaders :: Method to clear any set response headers."><span class="description">Method to clear any set response headers.</span><pre>clearHeaders()</pre></a></li>
+<li class="method public inherited"><a href="#method_close" title="close :: Method to close the application."><span class="description">Method to close the application.</span><pre>close()</pre></a></li>
+<li class="method public "><a href="#method_execute" title="execute :: Execute the application."><span class="description">Execute the application.</span><pre>execute()</pre></a></li>
+<li class="method public inherited"><a href="#method_get" title="get :: Returns a property of the object or the default value if the property is not set."><span class="description">Returns a property of the object or the default value if the property is not set.</span><pre>get()</pre></a></li>
+<li class="method public "><a href="#method_getBody" title="getBody :: Return the body content"><span class="description">Return the body content</span><pre>getBody()</pre></a></li>
+<li class="method public "><a href="#method_getHeaders" title="getHeaders :: Method to get the array of response headers to be sent when the response is sent
+to the client."><span class="description">Method to get the array of response headers to be sent when the response is sent
+to the client.</span><pre>getHeaders()</pre></a></li>
+<li class="method public inherited"><a href="#method_getLogger" title="getLogger :: Get the logger."><span class="description">Get the logger.</span><pre>getLogger()</pre></a></li>
+<li class="method public "><a href="#method_getSession" title="getSession :: Method to get the application session object."><span class="description">Method to get the application session object.</span><pre>getSession()</pre></a></li>
+<li class="method public inherited"><a href="#method_hasLogger" title="hasLogger :: Checks if a logger is available."><span class="description">Checks if a logger is available.</span><pre>hasLogger()</pre></a></li>
+<li class="method public "><a href="#method_isSSLConnection" title="isSSLConnection :: Determine if we are using a secure (SSL) connection."><span class="description">Determine if we are using a secure (SSL) connection.</span><pre>isSSLConnection()</pre></a></li>
+<li class="method public "><a href="#method_prependBody" title="prependBody :: Prepend content to the body content"><span class="description">Prepend content to the body content</span><pre>prependBody()</pre></a></li>
+<li class="method public "><a href="#method_redirect" title="redirect :: Redirect to another URL."><span class="description">Redirect to another URL.</span><pre>redirect()</pre></a></li>
+<li class="method public "><a href="#method_sendHeaders" title="sendHeaders :: Send the response headers."><span class="description">Send the response headers.</span><pre>sendHeaders()</pre></a></li>
+<li class="method public inherited"><a href="#method_set" title="set :: Modifies a property of the object, creating it if it does not already exist."><span class="description">Modifies a property of the object, creating it if it does not already exist.</span><pre>set()</pre></a></li>
+<li class="method public "><a href="#method_setBody" title="setBody :: Set body content."><span class="description">Set body content.</span><pre>setBody()</pre></a></li>
+<li class="method public inherited"><a href="#method_setConfiguration" title="setConfiguration :: Sets the configuration for the application."><span class="description">Sets the configuration for the application.</span><pre>setConfiguration()</pre></a></li>
+<li class="method public "><a href="#method_setHeader" title="setHeader :: Method to set a response header."><span class="description">Method to set a response header.</span><pre>setHeader()</pre></a></li>
+<li class="method public inherited"><a href="#method_setLogger" title="setLogger :: Set the logger."><span class="description">Set the logger.</span><pre>setLogger()</pre></a></li>
+<li class="method public "><a href="#method_setSession" title="setSession :: Sets the session for the application to use, if required."><span class="description">Sets the session for the application to use, if required.</span><pre>setSession()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_checkConnectionAlive" title="checkConnectionAlive :: Method to check the current client connnection status to ensure that it is alive."><span class="description">Method to check the current client connnection status to ensure that it is alive.</span><pre>checkConnectionAlive()</pre></a></li>
+<li class="method protected "><a href="#method_checkHeadersSent" title="checkHeadersSent :: Method to check to see if headers have already been sent."><span class="description">Method to check to see if headers have already been sent.</span><pre>checkHeadersSent()</pre></a></li>
+<li class="method protected "><a href="#method_compress" title="compress :: Checks the accept encoding of the browser and compresses the data before
+sending it to the client if possible."><span class="description">Checks the accept encoding of the browser and compresses the data before
+sending it to the client if possible.</span><pre>compress()</pre></a></li>
+<li class="method protected "><a href="#method_detectRequestUri" title="detectRequestUri :: Method to detect the requested URI from server environment variables."><span class="description">Method to detect the requested URI from server environment variables.</span><pre>detectRequestUri()</pre></a></li>
+<li class="method protected inherited"><a href="#method_doExecute" title="doExecute :: Method to run the application routines."><span class="description">Method to run the application routines.</span><pre>doExecute()</pre></a></li>
+<li class="method protected "><a href="#method_header" title="header :: Method to send a header to the client."><span class="description">Method to send a header to the client.</span><pre>header()</pre></a></li>
+<li class="method protected inherited"><a href="#method_initialise" title="initialise :: Custom initialisation method."><span class="description">Custom initialisation method.</span><pre>initialise()</pre></a></li>
+<li class="method protected "><a href="#method_loadSystemUris" title="loadSystemUris :: Method to load the system URI strings for the application."><span class="description">Method to load the system URI strings for the application.</span><pre>loadSystemUris()</pre></a></li>
+<li class="method protected "><a href="#method_respond" title="respond :: Method to send the application response to the client."><span class="description">Method to send the application response to the client.</span><pre>respond()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul>
+<li class="property public "><a href="#property_charSet" title="$charSet :: Character encoding string."><span class="description"></span><pre>$charSet</pre></a></li>
+<li class="property public "><a href="#property_client" title="$client :: The application client object."><span class="description"></span><pre>$client</pre></a></li>
+<li class="property public inherited"><a href="#property_input" title="$input :: The application input object."><span class="description"></span><pre>$input</pre></a></li>
+<li class="property public "><a href="#property_mimeType" title="$mimeType :: Response mime type."><span class="description"></span><pre>$mimeType</pre></a></li>
+<li class="property public "><a href="#property_modifiedDate" title="$modifiedDate :: The body modified date for response headers."><span class="description"></span><pre>$modifiedDate</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected inherited"><a href="#property_config" title="$config :: The application configuration object."><span class="description"></span><pre>$config</pre></a></li>
+<li class="property protected "><a href="#property_response" title="$response :: The application response object."><span class="description"></span><pre>$response</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_instance" title="$instance :: The application instance."><span class="description"></span><pre>$instance</pre></a></li>
+<li class="property private inherited"><a href="#property_logger" title="$logger :: A logger."><span class="description"></span><pre>$logger</pre></a></li>
+<li class="property private "><a href="#property_session" title="$session :: The application session object."><span class="description"></span><pre>$session</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Application\Web"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Application.html">Application</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Application.Web.html">Web</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Base class for a Joomla! Web application.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Class constructor.</h2>
+<pre>__construct(\Joomla\Input\Input $input, \Joomla\Registry\Registry $config, \Joomla\Application\Web\Client $client) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$input</h4>
+<code><a href="../classes/Joomla.Input.Input.html">\Joomla\Input\Input</a></code><p>An optional argument to provide dependency injection for the application's
+                              input object.  If the argument is a Input object that object will become
+                              the application's input object, otherwise a default input object is created.</p>
+</div>
+<div class="subelement argument">
+<h4>$config</h4>
+<code><a href="../classes/Joomla.Registry.Registry.html">\Joomla\Registry\Registry</a></code><p>An optional argument to provide dependency injection for the application's
+                              config object.  If the argument is a Registry object that object will become
+                              the application's config object, otherwise a default config object is created.</p>
+</div>
+<div class="subelement argument">
+<h4>$client</h4>
+<code><a href="../classes/Joomla.Application.Web.Client.html">\Joomla\Application\Web\Client</a></code><p>An optional argument to provide dependency injection for the application's
+                              client object.  If the argument is a Web\Client object that object will become
+                              the application's client object, otherwise a default client object is created.</p>
+</div>
+</div></div>
+</div>
+<a id="method_allowCache"></a><div class="element clickable method public method_allowCache" data-toggle="collapse" data-target=".method_allowCache .collapse">
+<h2>Set/get cachable state for the response.</h2>
+<pre>allowCache(boolean $allow) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If $allow is set, sets the cachable state of the
+response.  Always returns the current state.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$allow</h4>
+<code>boolean</code><p>True to allow browser caching.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_appendBody"></a><div class="element clickable method public method_appendBody" data-toggle="collapse" data-target=".method_appendBody .collapse">
+<h2>Append content to the body content</h2>
+<pre>appendBody(string $content) : <a href="../classes/Joomla.Application.Web.html">\Joomla\Application\Web</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>The content to append to the response body.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Application.Web.html">\Joomla\Application\Web</a></code>Instance of $this to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_clearHeaders"></a><div class="element clickable method public method_clearHeaders" data-toggle="collapse" data-target=".method_clearHeaders .collapse">
+<h2>Method to clear any set response headers.</h2>
+<pre>clearHeaders() : <a href="../classes/Joomla.Application.Web.html">\Joomla\Application\Web</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Application.Web.html">\Joomla\Application\Web</a></code>Instance of $this to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_close"></a><div class="element clickable method public method_close" data-toggle="collapse" data-target=".method_close .collapse">
+<h2>Method to close the application.</h2>
+<pre>close(integer $code) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>codeCoverageIgnore</th>
+<td></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Application\Base::close()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$code</h4>
+<code>integer</code><p>The exit code (optional; default is 0).</p>
+</div>
+</div></div>
+</div>
+<a id="method_execute"></a><div class="element clickable method public method_execute" data-toggle="collapse" data-target=".method_execute .collapse">
+<h2>Execute the application.</h2>
+<pre>execute() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_get"></a><div class="element clickable method public method_get" data-toggle="collapse" data-target=".method_get .collapse">
+<h2>Returns a property of the object or the default value if the property is not set.</h2>
+<pre>get(string $key, mixed $default) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Application\Base::get()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The name of the property.</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>mixed</code><p>The default value (optional) if none is set.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The value of the configuration.</div>
+</div></div>
+</div>
+<a id="method_getBody"></a><div class="element clickable method public method_getBody" data-toggle="collapse" data-target=".method_getBody .collapse">
+<h2>Return the body content</h2>
+<pre>getBody(boolean $asArray) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$asArray</h4>
+<code>boolean</code><p>True to return the body as an array of strings.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The response body either as an array or concatenated string.</div>
+</div></div>
+</div>
+<a id="method_getHeaders"></a><div class="element clickable method public method_getHeaders" data-toggle="collapse" data-target=".method_getHeaders .collapse">
+<h2>Method to get the array of response headers to be sent when the response is sent
+to the client.</h2>
+<pre>getHeaders() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getLogger"></a><div class="element clickable method public method_getLogger" data-toggle="collapse" data-target=".method_getLogger .collapse">
+<h2>Get the logger.</h2>
+<pre>getLogger() : \Psr\Log\LoggerInterface</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Application\Base::getLogger()</td>
+</tr>
+</table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.unexpectedvalueexception.php">\UnexpectedValueException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Psr\Log\LoggerInterface</code></div>
+</div></div>
+</div>
+<a id="method_getSession"></a><div class="element clickable method public method_getSession" data-toggle="collapse" data-target=".method_getSession .collapse">
+<h2>Method to get the application session object.</h2>
+<pre>getSession() : <a href="../classes/Joomla.Session.Session.html">\Joomla\Session\Session</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Session.Session.html">\Joomla\Session\Session</a></code>The session object</div>
+</div></div>
+</div>
+<a id="method_hasLogger"></a><div class="element clickable method public method_hasLogger" data-toggle="collapse" data-target=".method_hasLogger .collapse">
+<h2>Checks if a logger is available.</h2>
+<pre>hasLogger() : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Application\Base::hasLogger()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_isSSLConnection"></a><div class="element clickable method public method_isSSLConnection" data-toggle="collapse" data-target=".method_isSSLConnection .collapse">
+<h2>Determine if we are using a secure (SSL) connection.</h2>
+<pre>isSSLConnection() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if using SSL, false if not.</div>
+</div></div>
+</div>
+<a id="method_prependBody"></a><div class="element clickable method public method_prependBody" data-toggle="collapse" data-target=".method_prependBody .collapse">
+<h2>Prepend content to the body content</h2>
+<pre>prependBody(string $content) : <a href="../classes/Joomla.Application.Web.html">\Joomla\Application\Web</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>The content to prepend to the response body.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Application.Web.html">\Joomla\Application\Web</a></code>Instance of $this to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_redirect"></a><div class="element clickable method public method_redirect" data-toggle="collapse" data-target=".method_redirect .collapse">
+<h2>Redirect to another URL.</h2>
+<pre>redirect(string $url, boolean $moved) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the headers have not been sent the redirect will be accomplished using a "301 Moved Permanently"
+or "303 See Other" code in the header pointing to the new location. If the headers have already been
+sent this will be accomplished using a JavaScript statement.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><p>The URL to redirect to. Can only be http/https URL</p>
+</div>
+<div class="subelement argument">
+<h4>$moved</h4>
+<code>boolean</code><p>True if the page is 301 Permanently Moved, otherwise 303 See Other is assumed.</p></div>
+</div></div>
+</div>
+<a id="method_sendHeaders"></a><div class="element clickable method public method_sendHeaders" data-toggle="collapse" data-target=".method_sendHeaders .collapse">
+<h2>Send the response headers.</h2>
+<pre>sendHeaders() : <a href="../classes/Joomla.Application.Web.html">\Joomla\Application\Web</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Application.Web.html">\Joomla\Application\Web</a></code>Instance of $this to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_set"></a><div class="element clickable method public method_set" data-toggle="collapse" data-target=".method_set .collapse">
+<h2>Modifies a property of the object, creating it if it does not already exist.</h2>
+<pre>set(string $key, mixed $value) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Application\Base::set()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The name of the property.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value of the property to set (optional).</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Previous value of the property</div>
+</div></div>
+</div>
+<a id="method_setBody"></a><div class="element clickable method public method_setBody" data-toggle="collapse" data-target=".method_setBody .collapse">
+<h2>Set body content.</h2>
+<pre>setBody(string $content) : <a href="../classes/Joomla.Application.Web.html">\Joomla\Application\Web</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If body content already defined, this will replace it.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>The content to set as the response body.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Application.Web.html">\Joomla\Application\Web</a></code>Instance of $this to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_setConfiguration"></a><div class="element clickable method public method_setConfiguration" data-toggle="collapse" data-target=".method_setConfiguration .collapse">
+<h2>Sets the configuration for the application.</h2>
+<pre>setConfiguration(\Joomla\Registry\Registry $config) : <a href="../classes/Joomla.Application.Base.html">\Joomla\Application\Base</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Application\Base::setConfiguration()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$config</h4>
+<code><a href="../classes/Joomla.Registry.Registry.html">\Joomla\Registry\Registry</a></code><p>A registry object holding the configuration.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Application.Base.html">\Joomla\Application\Base</a></code>Returns itself to support chaining.</div>
+</div></div>
+</div>
+<a id="method_setHeader"></a><div class="element clickable method public method_setHeader" data-toggle="collapse" data-target=".method_setHeader .collapse">
+<h2>Method to set a response header.</h2>
+<pre>setHeader(string $name, string $value, boolean $replace) : <a href="../classes/Joomla.Application.Web.html">\Joomla\Application\Web</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the replace flag is set then all headers
+with the given name will be replaced by the new one.  The headers are stored
+in an internal array to be sent when the site is sent to the browser.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the header to set.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The value of the header to set.</p></div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>boolean</code><p>True to replace any headers with the same name.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Application.Web.html">\Joomla\Application\Web</a></code>Instance of $this to allow chaining.</div>
+</div></div>
+</div>
+<a id="method_setLogger"></a><div class="element clickable method public method_setLogger" data-toggle="collapse" data-target=".method_setLogger .collapse">
+<h2>Set the logger.</h2>
+<pre>setLogger(\Psr\Log\LoggerInterface $logger) : <a href="../classes/Joomla.Application.Base.html">\Joomla\Application\Base</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Application\Base::setLogger()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$logger</h4>
+<code>\Psr\Log\LoggerInterface</code><p>The logger.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Application.Base.html">\Joomla\Application\Base</a></code>Returns itself to support chaining.</div>
+</div></div>
+</div>
+<a id="method_setSession"></a><div class="element clickable method public method_setSession" data-toggle="collapse" data-target=".method_setSession .collapse">
+<h2>Sets the session for the application to use, if required.</h2>
+<pre>setSession(\Joomla\Session\Session $session) : <a href="../classes/Joomla.Application.Web.html">\Joomla\Application\Web</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$session</h4>
+<code><a href="../classes/Joomla.Session.Session.html">\Joomla\Session\Session</a></code><p>A session object.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Application.Web.html">\Joomla\Application\Web</a></code>Returns itself to support chaining.</div>
+</div></div>
+</div>
+<a id="method_checkConnectionAlive"></a><div class="element clickable method protected method_checkConnectionAlive" data-toggle="collapse" data-target=".method_checkConnectionAlive .collapse">
+<h2>Method to check the current client connnection status to ensure that it is alive.</h2>
+<pre>checkConnectionAlive() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>We are
+wrapping this to isolate the connection_status() function from our code base for testing reasons.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>codeCoverageIgnore</th>
+<td></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\Application\connection_status()</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if the connection is valid and normal.</div>
+</div></div>
+</div>
+<a id="method_checkHeadersSent"></a><div class="element clickable method protected method_checkHeadersSent" data-toggle="collapse" data-target=".method_checkHeadersSent .collapse">
+<h2>Method to check to see if headers have already been sent.</h2>
+<pre>checkHeadersSent() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>We are wrapping this to isolate the
+headers_sent() function from our code base for testing reasons.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>codeCoverageIgnore</th>
+<td></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\Application\headers_sent()</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if the headers have already been sent.</div>
+</div></div>
+</div>
+<a id="method_compress"></a><div class="element clickable method protected method_compress" data-toggle="collapse" data-target=".method_compress .collapse">
+<h2>Checks the accept encoding of the browser and compresses the data before
+sending it to the client if possible.</h2>
+<pre>compress() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_detectRequestUri"></a><div class="element clickable method protected method_detectRequestUri" data-toggle="collapse" data-target=".method_detectRequestUri .collapse">
+<h2>Method to detect the requested URI from server environment variables.</h2>
+<pre>detectRequestUri() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The requested URI</div>
+</div></div>
+</div>
+<a id="method_doExecute"></a><div class="element clickable method protected method_doExecute" data-toggle="collapse" data-target=".method_doExecute .collapse">
+<h2>Method to run the application routines.</h2>
+<pre>doExecute() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Most likely you will want to instantiate a controller
+and execute it, or perform some sort of task directly.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Application\Base::doExecute()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_header"></a><div class="element clickable method protected method_header" data-toggle="collapse" data-target=".method_header .collapse">
+<h2>Method to send a header to the client.</h2>
+<pre>header(string $string, boolean $replace, integer $code) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>We are wrapping this to isolate the header() function
+from our code base for testing reasons.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>codeCoverageIgnore</th>
+<td></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\Application\header()</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The header string.</p></div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>boolean</code><p>The optional replace parameter indicates whether the header should
+                            replace a previous similar header, or add a second header of the same type.</p></div>
+<div class="subelement argument">
+<h4>$code</h4>
+<code>integer</code><p>Forces the HTTP response code to the specified value. Note that
+                            this parameter only has an effect if the string is not empty.</p></div>
+</div></div>
+</div>
+<a id="method_initialise"></a><div class="element clickable method protected method_initialise" data-toggle="collapse" data-target=".method_initialise .collapse">
+<h2>Custom initialisation method.</h2>
+<pre>initialise() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Called at the end of the Base::__construct method. This is for developers to inject initialisation code for their application classes.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>codeCoverageIgnore</th>
+<td></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Application\Base::initialise()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_loadSystemUris"></a><div class="element clickable method protected method_loadSystemUris" data-toggle="collapse" data-target=".method_loadSystemUris .collapse">
+<h2>Method to load the system URI strings for the application.</h2>
+<pre>loadSystemUris(string $requestUri) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$requestUri</h4>
+<code>string</code><p>An optional request URI to use instead of detecting one from the
+                              server environment variables.</p></div>
+</div></div>
+</div>
+<a id="method_respond"></a><div class="element clickable method protected method_respond" data-toggle="collapse" data-target=".method_respond .collapse">
+<h2>Method to send the application response to the client.</h2>
+<pre>respond() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>All headers will be sent prior to the main
+application output data.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_charSet"> </a><div class="element clickable property public property_charSet" data-toggle="collapse" data-target=".property_charSet .collapse">
+<h2></h2>
+<pre>$charSet : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_client"> </a><div class="element clickable property public property_client" data-toggle="collapse" data-target=".property_client .collapse">
+<h2></h2>
+<pre>$client : <a href="../classes/Joomla.Application.Web.Client.html">\Joomla\Application\Web\Client</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_input"> </a><div class="element clickable property public property_input" data-toggle="collapse" data-target=".property_input .collapse">
+<h2></h2>
+<pre>$input : <a href="../classes/Joomla.Input.Input.html">\Joomla\Input\Input</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Application\Base::$$input</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_mimeType"> </a><div class="element clickable property public property_mimeType" data-toggle="collapse" data-target=".property_mimeType .collapse">
+<h2></h2>
+<pre>$mimeType : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_modifiedDate"> </a><div class="element clickable property public property_modifiedDate" data-toggle="collapse" data-target=".property_modifiedDate .collapse">
+<h2></h2>
+<pre>$modifiedDate : <a href="../classes/Joomla.Date.Date.html">\Joomla\Date\Date</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_config"> </a><div class="element clickable property protected property_config" data-toggle="collapse" data-target=".property_config .collapse">
+<h2></h2>
+<pre>$config : <a href="../classes/Joomla.Registry.Registry.html">\Joomla\Registry\Registry</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Application\Base::$$config</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_response"> </a><div class="element clickable property protected property_response" data-toggle="collapse" data-target=".property_response .collapse">
+<h2></h2>
+<pre>$response : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_instance"> </a><div class="element clickable property private property_instance" data-toggle="collapse" data-target=".property_instance .collapse">
+<h2></h2>
+<pre>$instance : <a href="../classes/Joomla.Application.Web.html">\Joomla\Application\Web</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_logger"> </a><div class="element clickable property private property_logger" data-toggle="collapse" data-target=".property_logger .collapse">
+<h2></h2>
+<pre>$logger : \Psr\Log\LoggerInterface</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Joomla\Application\Base::$$logger</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_session"> </a><div class="element clickable property private property_session" data-toggle="collapse" data-target=".property_session .collapse">
+<h2></h2>
+<pre>$session : <a href="../classes/Joomla.Session.Session.html">\Joomla\Session\Session</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:17-05:00.<br></footer></div>
+</div>
+</body>
+</html>

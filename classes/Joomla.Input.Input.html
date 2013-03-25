@@ -1,0 +1,900 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Input\Input</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___call" title="__call :: Magic method to get filtered input data."><span class="description">Magic method to get filtered input data.</span><pre>__call()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct :: Constructor."><span class="description">Constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___get" title="__get :: Magic method to get an input object"><span class="description">Magic method to get an input object</span><pre>__get()</pre></a></li>
+<li class="method public "><a href="#method_count" title="count :: Get the number of variables."><span class="description">Get the number of variables.</span><pre>count()</pre></a></li>
+<li class="method public "><a href="#method_def" title="def :: Define a value."><span class="description">Define a value.</span><pre>def()</pre></a></li>
+<li class="method public "><a href="#method_get" title="get :: Gets a value from the input data."><span class="description">Gets a value from the input data.</span><pre>get()</pre></a></li>
+<li class="method public "><a href="#method_getAlnum" title="getAlnum :: "><span class="description">getAlnum()
+        </span><pre>getAlnum()</pre></a></li>
+<li class="method public "><a href="#method_getArray" title="getArray :: Gets an array of values from the request."><span class="description">Gets an array of values from the request.</span><pre>getArray()</pre></a></li>
+<li class="method public "><a href="#method_getBase64" title="getBase64 :: "><span class="description">getBase64()
+        </span><pre>getBase64()</pre></a></li>
+<li class="method public "><a href="#method_getBool" title="getBool :: Get a boolean."><span class="description">Get a boolean.</span><pre>getBool()</pre></a></li>
+<li class="method public "><a href="#method_getCmd" title="getCmd :: "><span class="description">getCmd()
+        </span><pre>getCmd()</pre></a></li>
+<li class="method public "><a href="#method_getFloat" title="getFloat :: Get a floating-point number."><span class="description">Get a floating-point number.</span><pre>getFloat()</pre></a></li>
+<li class="method public "><a href="#method_getHtml" title="getHtml :: "><span class="description">getHtml()
+        </span><pre>getHtml()</pre></a></li>
+<li class="method public "><a href="#method_getInt" title="getInt :: Get a signed integer."><span class="description">Get a signed integer.</span><pre>getInt()</pre></a></li>
+<li class="method public "><a href="#method_getMethod" title="getMethod :: Gets the request method."><span class="description">Gets the request method.</span><pre>getMethod()</pre></a></li>
+<li class="method public "><a href="#method_getPath" title="getPath :: "><span class="description">getPath()
+        </span><pre>getPath()</pre></a></li>
+<li class="method public "><a href="#method_getString" title="getString :: "><span class="description">getString()
+        </span><pre>getString()</pre></a></li>
+<li class="method public "><a href="#method_getUint" title="getUint :: Get an unsigned integer."><span class="description">Get an unsigned integer.</span><pre>getUint()</pre></a></li>
+<li class="method public "><a href="#method_getUsername" title="getUsername :: "><span class="description">getUsername()
+        </span><pre>getUsername()</pre></a></li>
+<li class="method public "><a href="#method_getWord" title="getWord :: "><span class="description">getWord()
+        </span><pre>getWord()</pre></a></li>
+<li class="method public "><a href="#method_serialize" title="serialize :: Method to serialize the input."><span class="description">Method to serialize the input.</span><pre>serialize()</pre></a></li>
+<li class="method public "><a href="#method_set" title="set :: Sets a value"><span class="description">Sets a value</span><pre>set()</pre></a></li>
+<li class="method public "><a href="#method_unserialize" title="unserialize :: Method to unserialize the input."><span class="description">Method to unserialize the input.</span><pre>unserialize()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_loadAllInputs" title="loadAllInputs :: Method to load all of the global inputs."><span class="description">Method to load all of the global inputs.</span><pre>loadAllInputs()</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul>
+<li class="property public "><a href="#property_cookie" title="$cookie :: "><span class="description"></span><pre>$cookie</pre></a></li>
+<li class="property public "><a href="#property_files" title="$files :: "><span class="description"></span><pre>$files</pre></a></li>
+<li class="property public "><a href="#property_get" title="$get :: "><span class="description"></span><pre>$get</pre></a></li>
+<li class="property public "><a href="#property_post" title="$post :: "><span class="description"></span><pre>$post</pre></a></li>
+<li class="property public "><a href="#property_request" title="$request :: "><span class="description"></span><pre>$request</pre></a></li>
+<li class="property public "><a href="#property_server" title="$server :: "><span class="description"></span><pre>$server</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_data" title="$data :: Input data."><span class="description"></span><pre>$data</pre></a></li>
+<li class="property protected "><a href="#property_filter" title="$filter :: Filter object to use."><span class="description"></span><pre>$filter</pre></a></li>
+<li class="property protected "><a href="#property_inputs" title="$inputs :: Input objects"><span class="description"></span><pre>$inputs</pre></a></li>
+<li class="property protected "><a href="#property_options" title="$options :: Options array for the JInput instance."><span class="description"></span><pre>$options</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Input\Input"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Input.html">Input</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Input.Input.html">Input</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Joomla! Input Base Class</p>
+<div class="details">
+<div class="long_description"><p>This is an abstracted input class used to manage retrieving data from the application environment.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___call"></a><div class="element clickable method public method___call" data-toggle="collapse" data-target=".method___call .collapse">
+<h2>Magic method to get filtered input data.</h2>
+<pre>__call(string $name, array $arguments) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of the filter type prefixed with 'get'.</p>
+</div>
+<div class="subelement argument">
+<h4>$arguments</h4>
+<code>array</code><p>[0] The name of the variable [1] The default value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The filtered input value.</div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructor.</h2>
+<pre>__construct(array $source, array $options) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code>array</code><p>Optional source data. If omitted, a copy of the server variable '_REQUEST' is used.</p>
+</div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>An optional associative array of configuration parameters:
+                          filter: An instance of Filter\Input. If omitted, a default filter is initialised.</p>
+</div>
+</div></div>
+</div>
+<a id="method___get"></a><div class="element clickable method public method___get" data-toggle="collapse" data-target=".method___get .collapse">
+<h2>Magic method to get an input object</h2>
+<pre>__get(mixed $name) : <a href="../classes/Joomla.Input.Input.html">\Joomla\Input\Input</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>mixed</code><p>Name of the input object to retrieve.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Input.Input.html">\Joomla\Input\Input</a></code>The request input object</div>
+</div></div>
+</div>
+<a id="method_count"></a><div class="element clickable method public method_count" data-toggle="collapse" data-target=".method_count .collapse">
+<h2>Get the number of variables.</h2>
+<pre>count() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\Input\Countable::count()</a></td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The number of variables in the input.</div>
+</div></div>
+</div>
+<a id="method_def"></a><div class="element clickable method public method_def" data-toggle="collapse" data-target=".method_def .collapse">
+<h2>Define a value.</h2>
+<pre>def(string $name, mixed $value) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The value will only be set if there's no value for the name or if it is null.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of the value to define.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>Value to assign to the input.</p></div>
+</div></div>
+</div>
+<a id="method_get"></a><div class="element clickable method public method_get" data-toggle="collapse" data-target=".method_get .collapse">
+<h2>Gets a value from the input data.</h2>
+<pre>get(string $name, mixed $default, string $filter) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of the value to get.</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>mixed</code><p>Default value to return if variable does not exist.</p></div>
+<div class="subelement argument">
+<h4>$filter</h4>
+<code>string</code><p>Filter to apply to the value.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The filtered input value.</div>
+</div></div>
+</div>
+<a id="method_getAlnum"></a><div class="element clickable method public method_getAlnum" data-toggle="collapse" data-target=".method_getAlnum .collapse">
+<h2>getAlnum()
+        </h2>
+<pre>getAlnum( $name, $default =) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>method</th>
+<td></td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>=</h4>
+<code>$default</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getArray"></a><div class="element clickable method public method_getArray" data-toggle="collapse" data-target=".method_getArray .collapse">
+<h2>Gets an array of values from the request.</h2>
+<pre>getArray(array $vars, mixed $datasource) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$vars</h4>
+<code>array</code><p>Associative array of keys and filter types to apply.
+                             If empty and datasource is null, all the input data will be returned
+                             but filtered using the default case in JFilterInput::clean.</p></div>
+<div class="subelement argument">
+<h4>$datasource</h4>
+<code>mixed</code><p>Array to retrieve data from, or null</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The filtered input data.</div>
+</div></div>
+</div>
+<a id="method_getBase64"></a><div class="element clickable method public method_getBase64" data-toggle="collapse" data-target=".method_getBase64 .collapse">
+<h2>getBase64()
+        </h2>
+<pre>getBase64( $name, $default =) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>method</th>
+<td></td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>=</h4>
+<code>$default</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getBool"></a><div class="element clickable method public method_getBool" data-toggle="collapse" data-target=".method_getBool .collapse">
+<h2>Get a boolean.</h2>
+<pre>getBool( $name, $default =) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>method</th>
+<td>Get a boolean.</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>=</h4>
+<code>$default</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_getCmd"></a><div class="element clickable method public method_getCmd" data-toggle="collapse" data-target=".method_getCmd .collapse">
+<h2>getCmd()
+        </h2>
+<pre>getCmd( $name, $default =) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>method</th>
+<td></td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>=</h4>
+<code>$default</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getFloat"></a><div class="element clickable method public method_getFloat" data-toggle="collapse" data-target=".method_getFloat .collapse">
+<h2>Get a floating-point number.</h2>
+<pre>getFloat( $name, $default =) : float</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>method</th>
+<td>Get a floating-point number.</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>=</h4>
+<code>$default</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>float</code></div>
+</div></div>
+</div>
+<a id="method_getHtml"></a><div class="element clickable method public method_getHtml" data-toggle="collapse" data-target=".method_getHtml .collapse">
+<h2>getHtml()
+        </h2>
+<pre>getHtml( $name, $default =) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>method</th>
+<td></td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>=</h4>
+<code>$default</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getInt"></a><div class="element clickable method public method_getInt" data-toggle="collapse" data-target=".method_getInt .collapse">
+<h2>Get a signed integer.</h2>
+<pre>getInt( $name, $default =) : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>method</th>
+<td>Get a signed integer.</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>=</h4>
+<code>$default</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_getMethod"></a><div class="element clickable method public method_getMethod" data-toggle="collapse" data-target=".method_getMethod .collapse">
+<h2>Gets the request method.</h2>
+<pre>getMethod() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The request method.</div>
+</div></div>
+</div>
+<a id="method_getPath"></a><div class="element clickable method public method_getPath" data-toggle="collapse" data-target=".method_getPath .collapse">
+<h2>getPath()
+        </h2>
+<pre>getPath( $name, $default =) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>method</th>
+<td></td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>=</h4>
+<code>$default</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getString"></a><div class="element clickable method public method_getString" data-toggle="collapse" data-target=".method_getString .collapse">
+<h2>getString()
+        </h2>
+<pre>getString( $name, $default =) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>method</th>
+<td></td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>=</h4>
+<code>$default</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getUint"></a><div class="element clickable method public method_getUint" data-toggle="collapse" data-target=".method_getUint .collapse">
+<h2>Get an unsigned integer.</h2>
+<pre>getUint( $name, $default =) : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>method</th>
+<td>Get an unsigned integer.</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>=</h4>
+<code>$default</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_getUsername"></a><div class="element clickable method public method_getUsername" data-toggle="collapse" data-target=".method_getUsername .collapse">
+<h2>getUsername()
+        </h2>
+<pre>getUsername( $name, $default =) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>method</th>
+<td></td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>=</h4>
+<code>$default</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getWord"></a><div class="element clickable method public method_getWord" data-toggle="collapse" data-target=".method_getWord .collapse">
+<h2>getWord()
+        </h2>
+<pre>getWord( $name, $default =) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>method</th>
+<td></td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>=</h4>
+<code>$default</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_serialize"></a><div class="element clickable method public method_serialize" data-toggle="collapse" data-target=".method_serialize .collapse">
+<h2>Method to serialize the input.</h2>
+<pre>serialize() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The serialized input.</div>
+</div></div>
+</div>
+<a id="method_set"></a><div class="element clickable method public method_set" data-toggle="collapse" data-target=".method_set .collapse">
+<h2>Sets a value</h2>
+<pre>set(string $name, mixed $value) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of the value to set.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>Value to assign to the input.</p></div>
+</div></div>
+</div>
+<a id="method_unserialize"></a><div class="element clickable method public method_unserialize" data-toggle="collapse" data-target=".method_unserialize .collapse">
+<h2>Method to unserialize the input.</h2>
+<pre>unserialize(string $input) : <a href="../classes/Joomla.Input.Input.html">\Joomla\Input\Input</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$input</h4>
+<code>string</code><p>The serialized input.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.Input.Input.html">\Joomla\Input\Input</a></code>The input object.</div>
+</div></div>
+</div>
+<a id="method_loadAllInputs"></a><div class="element clickable method protected method_loadAllInputs" data-toggle="collapse" data-target=".method_loadAllInputs .collapse">
+<h2>Method to load all of the global inputs.</h2>
+<pre>loadAllInputs() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_cookie"> </a><div class="element clickable property public property_cookie" data-toggle="collapse" data-target=".property_cookie .collapse">
+<h2></h2>
+<pre>$cookie : <a href="../classes/Joomla.Input.Cookie.html">\Joomla\Input\Cookie</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_files"> </a><div class="element clickable property public property_files" data-toggle="collapse" data-target=".property_files .collapse">
+<h2></h2>
+<pre>$files : <a href="../classes/Joomla.Input.Files.html">\Joomla\Input\Files</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_get"> </a><div class="element clickable property public property_get" data-toggle="collapse" data-target=".property_get .collapse">
+<h2></h2>
+<pre>$get : <a href="../classes/Joomla.Input.Input.html">\Joomla\Input\Input</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_post"> </a><div class="element clickable property public property_post" data-toggle="collapse" data-target=".property_post .collapse">
+<h2></h2>
+<pre>$post : <a href="../classes/Joomla.Input.Input.html">\Joomla\Input\Input</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_request"> </a><div class="element clickable property public property_request" data-toggle="collapse" data-target=".property_request .collapse">
+<h2></h2>
+<pre>$request : <a href="../classes/Joomla.Input.Input.html">\Joomla\Input\Input</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_server"> </a><div class="element clickable property public property_server" data-toggle="collapse" data-target=".property_server .collapse">
+<h2></h2>
+<pre>$server : <a href="../classes/Joomla.Input.Input.html">\Joomla\Input\Input</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_data"> </a><div class="element clickable property protected property_data" data-toggle="collapse" data-target=".property_data .collapse">
+<h2></h2>
+<pre>$data : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_filter"> </a><div class="element clickable property protected property_filter" data-toggle="collapse" data-target=".property_filter .collapse">
+<h2></h2>
+<pre>$filter : \Joomla\Input\FilterInput</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_inputs"> </a><div class="element clickable property protected property_inputs" data-toggle="collapse" data-target=".property_inputs .collapse">
+<h2></h2>
+<pre>$inputs : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_options"> </a><div class="element clickable property protected property_options" data-toggle="collapse" data-target=".property_options .collapse">
+<h2></h2>
+<pre>$options : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:24-05:00.<br></footer></div>
+</div>
+</body>
+</html>

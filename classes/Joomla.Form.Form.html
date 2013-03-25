@@ -1,0 +1,1284 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Form\Form</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Method to instantiate the form object."><span class="description">Method to instantiate the form object.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_addFieldPath" title="addFieldPath :: Proxy for {@link Helper::addFieldPath()}."><span class="description">Proxy for {@link Helper::addFieldPath()}.</span><pre>addFieldPath()</pre></a></li>
+<li class="method public "><a href="#method_addFormPath" title="addFormPath :: Proxy for Helper::addFormPath()."><span class="description">Proxy for Helper::addFormPath().</span><pre>addFormPath()</pre></a></li>
+<li class="method public "><a href="#method_addRulePath" title="addRulePath :: Proxy for Helper::addRulePath()."><span class="description">Proxy for Helper::addRulePath().</span><pre>addRulePath()</pre></a></li>
+<li class="method public "><a href="#method_bind" title="bind :: Method to bind data to the form."><span class="description">Method to bind data to the form.</span><pre>bind()</pre></a></li>
+<li class="method public "><a href="#method_filter" title="filter :: Method to filter the form data."><span class="description">Method to filter the form data.</span><pre>filter()</pre></a></li>
+<li class="method public "><a href="#method_getErrors" title="getErrors :: Return all errors, if any."><span class="description">Return all errors, if any.</span><pre>getErrors()</pre></a></li>
+<li class="method public "><a href="#method_getField" title="getField :: Method to get a form field represented as a JFormField object."><span class="description">Method to get a form field represented as a JFormField object.</span><pre>getField()</pre></a></li>
+<li class="method public "><a href="#method_getFieldAttribute" title="getFieldAttribute :: Method to get an attribute value from a field XML element."><span class="description">Method to get an attribute value from a field XML element.</span><pre>getFieldAttribute()</pre></a></li>
+<li class="method public "><a href="#method_getFieldset" title="getFieldset :: Method to get an array of JFormField objects in a given fieldset by name."><span class="description">Method to get an array of JFormField objects in a given fieldset by name.</span><pre>getFieldset()</pre></a></li>
+<li class="method public "><a href="#method_getFieldsets" title="getFieldsets :: Method to get an array of fieldset objects optionally filtered over a given field group."><span class="description">Method to get an array of fieldset objects optionally filtered over a given field group.</span><pre>getFieldsets()</pre></a></li>
+<li class="method public "><a href="#method_getFormControl" title="getFormControl :: Method to get the form control."><span class="description">Method to get the form control.</span><pre>getFormControl()</pre></a></li>
+<li class="method public "><a href="#method_getGroup" title="getGroup :: Method to get an array of JFormField objects in a given field group by name."><span class="description">Method to get an array of JFormField objects in a given field group by name.</span><pre>getGroup()</pre></a></li>
+<li class="method public "><a href="#method_getInput" title="getInput :: Method to get a form field markup for the field input."><span class="description">Method to get a form field markup for the field input.</span><pre>getInput()</pre></a></li>
+<li class="method public "><a href="#method_getInstance" title="getInstance :: Method to get an instance of a form."><span class="description">Method to get an instance of a form.</span><pre>getInstance()</pre></a></li>
+<li class="method public "><a href="#method_getLabel" title="getLabel :: Method to get the label for a field input."><span class="description">Method to get the label for a field input.</span><pre>getLabel()</pre></a></li>
+<li class="method public "><a href="#method_getName" title="getName :: Method to get the form name."><span class="description">Method to get the form name.</span><pre>getName()</pre></a></li>
+<li class="method public "><a href="#method_getValue" title="getValue :: Method to get the value of a field."><span class="description">Method to get the value of a field.</span><pre>getValue()</pre></a></li>
+<li class="method public "><a href="#method_load" title="load :: Method to load the form description from an XML string or object."><span class="description">Method to load the form description from an XML string or object.</span><pre>load()</pre></a></li>
+<li class="method public "><a href="#method_loadFile" title="loadFile :: Method to load the form description from an XML file."><span class="description">Method to load the form description from an XML file.</span><pre>loadFile()</pre></a></li>
+<li class="method public "><a href="#method_removeField" title="removeField :: Method to remove a field from the form definition."><span class="description">Method to remove a field from the form definition.</span><pre>removeField()</pre></a></li>
+<li class="method public "><a href="#method_removeGroup" title="removeGroup :: Method to remove a group from the form definition."><span class="description">Method to remove a group from the form definition.</span><pre>removeGroup()</pre></a></li>
+<li class="method public "><a href="#method_reset" title="reset :: Method to reset the form data store and optionally the form XML definition."><span class="description">Method to reset the form data store and optionally the form XML definition.</span><pre>reset()</pre></a></li>
+<li class="method public "><a href="#method_setField" title="setField :: Method to set a field XML element to the form definition."><span class="description">Method to set a field XML element to the form definition.</span><pre>setField()</pre></a></li>
+<li class="method public "><a href="#method_setFieldAttribute" title="setFieldAttribute :: Method to set an attribute value for a field XML element."><span class="description">Method to set an attribute value for a field XML element.</span><pre>setFieldAttribute()</pre></a></li>
+<li class="method public "><a href="#method_setFields" title="setFields :: Method to set some field XML elements to the form definition."><span class="description">Method to set some field XML elements to the form definition.</span><pre>setFields()</pre></a></li>
+<li class="method public "><a href="#method_setValue" title="setValue :: Method to set the value of a field."><span class="description">Method to set the value of a field.</span><pre>setValue()</pre></a></li>
+<li class="method public "><a href="#method_validate" title="validate :: Method to validate form data."><span class="description">Method to validate form data.</span><pre>validate()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_addNode" title="addNode :: Adds a new child SimpleXMLElement node to the source."><span class="description">Adds a new child SimpleXMLElement node to the source.</span><pre>addNode()</pre></a></li>
+<li class="method protected "><a href="#method_bindLevel" title="bindLevel :: Method to bind data to the form for the group level."><span class="description">Method to bind data to the form for the group level.</span><pre>bindLevel()</pre></a></li>
+<li class="method protected "><a href="#method_filterField" title="filterField :: Method to apply an input filter to a value based on field data."><span class="description">Method to apply an input filter to a value based on field data.</span><pre>filterField()</pre></a></li>
+<li class="method protected "><a href="#method_findField" title="findField :: Method to get a form field represented as an XML element object."><span class="description">Method to get a form field represented as an XML element object.</span><pre>findField()</pre></a></li>
+<li class="method protected "><a href="#method_findFieldsByFieldset" title="findFieldsByFieldset :: Method to get an array of &lt;field /&gt; elements from the form XML document which are
+in a specified fieldset by name."><span class="description">Method to get an array of &lt;field /&gt; elements from the form XML document which are
+in a specified fieldset by name.</span><pre>findFieldsByFieldset()</pre></a></li>
+<li class="method protected "><a href="#method_findFieldsByGroup" title="findFieldsByGroup :: Method to get an array of &lt;field /&gt; elements from the form XML document which are
+in a control group by name."><span class="description">Method to get an array of &lt;field /&gt; elements from the form XML document which are
+in a control group by name.</span><pre>findFieldsByGroup()</pre></a></li>
+<li class="method protected "><a href="#method_findGroup" title="findGroup :: Method to get a form field group represented as an XML element object."><span class="description">Method to get a form field group represented as an XML element object.</span><pre>findGroup()</pre></a></li>
+<li class="method protected "><a href="#method_loadField" title="loadField :: Method to load, setup and return a JFormField object based on field data."><span class="description">Method to load, setup and return a JFormField object based on field data.</span><pre>loadField()</pre></a></li>
+<li class="method protected "><a href="#method_loadFieldType" title="loadFieldType :: Proxy for {@link Helper::loadFieldType()}."><span class="description">Proxy for {@link Helper::loadFieldType()}.</span><pre>loadFieldType()</pre></a></li>
+<li class="method protected "><a href="#method_loadRuleType" title="loadRuleType :: Proxy for Helper::loadRuleType()."><span class="description">Proxy for Helper::loadRuleType().</span><pre>loadRuleType()</pre></a></li>
+<li class="method protected "><a href="#method_mergeNode" title="mergeNode :: Update the attributes of a child node"><span class="description">Update the attributes of a child node</span><pre>mergeNode()</pre></a></li>
+<li class="method protected "><a href="#method_mergeNodes" title="mergeNodes :: Merges new elements into a source &lt;fields&gt; element."><span class="description">Merges new elements into a source &lt;fields&gt; element.</span><pre>mergeNodes()</pre></a></li>
+<li class="method protected "><a href="#method_syncPaths" title="syncPaths :: Method to synchronize any field, form or rule paths contained in the XML document."><span class="description">Method to synchronize any field, form or rule paths contained in the XML document.</span><pre>syncPaths()</pre></a></li>
+<li class="method protected "><a href="#method_validateField" title="validateField :: Method to validate a JFormField object based on field data."><span class="description">Method to validate a JFormField object based on field data.</span><pre>validateField()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_data" title="$data :: The Registry data store for form fields during display."><span class="description"></span><pre>$data</pre></a></li>
+<li class="property protected "><a href="#property_errors" title="$errors :: The form object errors array."><span class="description"></span><pre>$errors</pre></a></li>
+<li class="property protected "><a href="#property_forms" title="$forms :: Form instances."><span class="description"></span><pre>$forms</pre></a></li>
+<li class="property protected "><a href="#property_name" title="$name :: The name of the form instance."><span class="description"></span><pre>$name</pre></a></li>
+<li class="property protected "><a href="#property_options" title="$options :: The form object options for use in rendering and validation."><span class="description"></span><pre>$options</pre></a></li>
+<li class="property protected "><a href="#property_xml" title="$xml :: The form XML definition."><span class="description"></span><pre>$xml</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Form\Form"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Form.html">Form</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Form.Form.html">Form</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Form Class for the Joomla Platform.</p>
+<div class="details">
+<div class="long_description"><p>This class implements a robust API for constructing, populating, filtering, and validating forms.
+It uses XML definitions to construct form fields and a variety of field and rule classes to
+render and validate the form.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>link</th>
+<td><a href="http://www.w3.org/TR/html4/interact/forms.html">http://www.w3.org/TR/html4/interact/forms.html</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://www.w3.org/TR/html5/forms.html">http://www.w3.org/TR/html5/forms.html</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Method to instantiate the form object.</h2>
+<pre>__construct(string $name, array $options) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the form.</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>An array of form options.</p></div>
+</div></div>
+</div>
+<a id="method_addFieldPath"></a><div class="element clickable method public method_addFieldPath" data-toggle="collapse" data-target=".method_addFieldPath .collapse">
+<h2>Proxy for {@link Helper::addFieldPath()}.</h2>
+<pre>addFieldPath(mixed $new) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new</h4>
+<code>mixed</code><p>A path or array of paths to add.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The list of paths that have been added.</div>
+</div></div>
+</div>
+<a id="method_addFormPath"></a><div class="element clickable method public method_addFormPath" data-toggle="collapse" data-target=".method_addFormPath .collapse">
+<h2>Proxy for Helper::addFormPath().</h2>
+<pre>addFormPath(mixed $new) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="Form.Helper.html#%5CJoomla%5CForm%5CHelper::addFormPath()">\Joomla\Form\Helper::addFormPath()</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new</h4>
+<code>mixed</code><p>A path or array of paths to add.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The list of paths that have been added.</div>
+</div></div>
+</div>
+<a id="method_addRulePath"></a><div class="element clickable method public method_addRulePath" data-toggle="collapse" data-target=".method_addRulePath .collapse">
+<h2>Proxy for Helper::addRulePath().</h2>
+<pre>addRulePath(mixed $new) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="Form.Helper.html#%5CJoomla%5CForm%5CHelper::addRulePath()">\Joomla\Form\Helper::addRulePath()</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new</h4>
+<code>mixed</code><p>A path or array of paths to add.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The list of paths that have been added.</div>
+</div></div>
+</div>
+<a id="method_bind"></a><div class="element clickable method public method_bind" data-toggle="collapse" data-target=".method_bind .collapse">
+<h2>Method to bind data to the form.</h2>
+<pre>bind(mixed $data) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>An array or object of data to bind to the form.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success.</div>
+</div></div>
+</div>
+<a id="method_filter"></a><div class="element clickable method public method_filter" data-toggle="collapse" data-target=".method_filter .collapse">
+<h2>Method to filter the form data.</h2>
+<pre>filter(array $data, string $group) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>An array of field values to filter.</p></div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The dot-separated form group path on which to filter the fields.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Array or false.</div>
+</div></div>
+</div>
+<a id="method_getErrors"></a><div class="element clickable method public method_getErrors" data-toggle="collapse" data-target=".method_getErrors .collapse">
+<h2>Return all errors, if any.</h2>
+<pre>getErrors() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of error messages or RuntimeException objects.</div>
+</div></div>
+</div>
+<a id="method_getField"></a><div class="element clickable method public method_getField" data-toggle="collapse" data-target=".method_getField .collapse">
+<h2>Method to get a form field represented as a JFormField object.</h2>
+<pre>getField(string $name, string $group, mixed $value) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the form field.</p></div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The optional dot-separated form group path on which to find the field.</p>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The optional value to use as the default for the field.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The JFormField object for the field or boolean false on error.</div>
+</div></div>
+</div>
+<a id="method_getFieldAttribute"></a><div class="element clickable method public method_getFieldAttribute" data-toggle="collapse" data-target=".method_getFieldAttribute .collapse">
+<h2>Method to get an attribute value from a field XML element.</h2>
+<pre>getFieldAttribute(string $name, string $attribute, mixed $default, string $group) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the attribute doesn't exist or
+is null then the optional default value will be used.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the form field for which to get the attribute value.</p></div>
+<div class="subelement argument">
+<h4>$attribute</h4>
+<code>string</code><p>The name of the attribute for which to get a value.</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>mixed</code><p>The optional default value to use if no attribute value exists.</p></div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The optional dot-separated form group path on which to find the field.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.unexpectedvalueexception.php">\UnexpectedValueException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The attribute value for the field.</div>
+</div></div>
+</div>
+<a id="method_getFieldset"></a><div class="element clickable method public method_getFieldset" data-toggle="collapse" data-target=".method_getFieldset .collapse">
+<h2>Method to get an array of JFormField objects in a given fieldset by name.</h2>
+<pre>getFieldset(string $set) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If no name is
+given then all fields are returned.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$set</h4>
+<code>string</code><p>The optional name of the fieldset.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The array of JFormField objects in the fieldset.</div>
+</div></div>
+</div>
+<a id="method_getFieldsets"></a><div class="element clickable method public method_getFieldsets" data-toggle="collapse" data-target=".method_getFieldsets .collapse">
+<h2>Method to get an array of fieldset objects optionally filtered over a given field group.</h2>
+<pre>getFieldsets(string $group) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The dot-separated form group path on which to filter the fieldsets.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The array of fieldset objects.</div>
+</div></div>
+</div>
+<a id="method_getFormControl"></a><div class="element clickable method public method_getFormControl" data-toggle="collapse" data-target=".method_getFormControl .collapse">
+<h2>Method to get the form control.</h2>
+<pre>getFormControl() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This string serves as a container for all form fields. For
+example, if there is a field named 'foo' and a field named 'bar' and the form control is
+empty the fields will be rendered like: <input name="foo" /> and <input name="bar" />.  If
+the form control is set to 'joomla' however, the fields would be rendered like:
+<input name="joomla[foo]" /> and <input name="joomla[bar]" />.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The form control string.</div>
+</div></div>
+</div>
+<a id="method_getGroup"></a><div class="element clickable method public method_getGroup" data-toggle="collapse" data-target=".method_getGroup .collapse">
+<h2>Method to get an array of JFormField objects in a given field group by name.</h2>
+<pre>getGroup(string $group, boolean $nested) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The dot-separated form group path for which to get the form fields.</p>
+</div>
+<div class="subelement argument">
+<h4>$nested</h4>
+<code>boolean</code><p>True to also include fields in nested groups that are inside of the
+                           group for which to find fields.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The array of JFormField objects in the field group.</div>
+</div></div>
+</div>
+<a id="method_getInput"></a><div class="element clickable method public method_getInput" data-toggle="collapse" data-target=".method_getInput .collapse">
+<h2>Method to get a form field markup for the field input.</h2>
+<pre>getInput(string $name, string $group, mixed $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the form field.</p></div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The optional dot-separated form group path on which to find the field.</p>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The optional value to use as the default for the field.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The form field markup.</div>
+</div></div>
+</div>
+<a id="method_getInstance"></a><div class="element clickable method public method_getInstance" data-toggle="collapse" data-target=".method_getInstance .collapse">
+<h2>Method to get an instance of a form.</h2>
+<pre>getInstance(string $name, string $data, array $options, string $replace, string $xpath) : \Joomla\Form\JForm</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the form.</p></div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>string</code><p>The name of an XML file or string to load as the form definition.</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>An array of form options.</p></div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>string</code><p>Flag to toggle whether form fields should be replaced if a field
+                           already exists with the same group/name.</p>
+</div>
+<div class="subelement argument">
+<h4>$xpath</h4>
+<code>string</code><p>An optional xpath to search for the fields.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code>\Joomla\Form\InvalidArgumentException</code></th>
+<td>if no data provided.</td>
+</tr>
+<tr>
+<th><code><a href="http://php.net/manual/en/class.runtimeexception.php">\RuntimeException</a></code></th>
+<td>if the form could not be loaded.</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\Joomla\Form\JForm</code>Instance of this class.</div>
+</div></div>
+</div>
+<a id="method_getLabel"></a><div class="element clickable method public method_getLabel" data-toggle="collapse" data-target=".method_getLabel .collapse">
+<h2>Method to get the label for a field input.</h2>
+<pre>getLabel(string $name, string $group) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the form field.</p></div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The optional dot-separated form group path on which to find the field.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The form field label.</div>
+</div></div>
+</div>
+<a id="method_getName"></a><div class="element clickable method public method_getName" data-toggle="collapse" data-target=".method_getName .collapse">
+<h2>Method to get the form name.</h2>
+<pre>getName() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The name of the form.</div>
+</div></div>
+</div>
+<a id="method_getValue"></a><div class="element clickable method public method_getValue" data-toggle="collapse" data-target=".method_getValue .collapse">
+<h2>Method to get the value of a field.</h2>
+<pre>getValue(string $name, string $group, mixed $default) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the field for which to get the value.</p></div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The optional dot-separated form group path on which to get the value.</p>
+</div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>mixed</code><p>The optional default value of the field value is empty.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The value of the field or the default value if empty.</div>
+</div></div>
+</div>
+<a id="method_load"></a><div class="element clickable method public method_load" data-toggle="collapse" data-target=".method_load .collapse">
+<h2>Method to load the form description from an XML string or object.</h2>
+<pre>load(string $data, string $replace, string $xpath) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The replace option works per field.  If a field being loaded already exists in the current
+form definition then the behavior or load will vary depending upon the replace flag.  If it
+is set to true, then the existing field will be replaced in its exact location by the new
+field being loaded.  If it is false, then the new field being loaded will be ignored and the
+method will move on to the next field to load.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>string</code><p>The name of an XML string or object.</p></div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>string</code><p>Flag to toggle whether form fields should be replaced if a field
+                           already exists with the same group/name.</p>
+</div>
+<div class="subelement argument">
+<h4>$xpath</h4>
+<code>string</code><p>An optional xpath to search for the fields.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_loadFile"></a><div class="element clickable method public method_loadFile" data-toggle="collapse" data-target=".method_loadFile .collapse">
+<h2>Method to load the form description from an XML file.</h2>
+<pre>loadFile(string $file, string $reset, string $xpath) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The reset option works on a group basis. If the XML file references
+groups that have already been created they will be replaced with the
+fields in the new XML file unless the $reset parameter has been set
+to false.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string</code><p>The filesystem path of an XML file.</p></div>
+<div class="subelement argument">
+<h4>$reset</h4>
+<code>string</code><p>Flag to toggle whether form fields should be replaced if a field
+                         already exists with the same group/name.</p>
+</div>
+<div class="subelement argument">
+<h4>$xpath</h4>
+<code>string</code><p>An optional xpath to search for the fields.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_removeField"></a><div class="element clickable method public method_removeField" data-toggle="collapse" data-target=".method_removeField .collapse">
+<h2>Method to remove a field from the form definition.</h2>
+<pre>removeField(string $name, string $group) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the form field for which remove.</p></div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The optional dot-separated form group path on which to find the field.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.unexpectedvalueexception.php">\UnexpectedValueException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success.</div>
+</div></div>
+</div>
+<a id="method_removeGroup"></a><div class="element clickable method public method_removeGroup" data-toggle="collapse" data-target=".method_removeGroup .collapse">
+<h2>Method to remove a group from the form definition.</h2>
+<pre>removeGroup(string $group) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The dot-separated form group path for the group to remove.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.unexpectedvalueexception.php">\UnexpectedValueException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success.</div>
+</div></div>
+</div>
+<a id="method_reset"></a><div class="element clickable method public method_reset" data-toggle="collapse" data-target=".method_reset .collapse">
+<h2>Method to reset the form data store and optionally the form XML definition.</h2>
+<pre>reset(boolean $xml) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$xml</h4>
+<code>boolean</code><p>True to also reset the XML form definition.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success.</div>
+</div></div>
+</div>
+<a id="method_setField"></a><div class="element clickable method public method_setField" data-toggle="collapse" data-target=".method_setField .collapse">
+<h2>Method to set a field XML element to the form definition.</h2>
+<pre>setField(\SimpleXMLElement $element, string $group, boolean $replace) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the replace flag is set then
+the field will be set whether it already exists or not.  If it isn't set, then the field
+will not be replaced if it already exists.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$element</h4>
+<code><a href="http://php.net/manual/en/class.simplexmlelement.php">\SimpleXMLElement</a></code><p>The XML element object representation of the form field.</p></div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The optional dot-separated form group path on which to set the field.</p>
+</div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>boolean</code><p>True to replace an existing field if one already exists.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.unexpectedvalueexception.php">\UnexpectedValueException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success.</div>
+</div></div>
+</div>
+<a id="method_setFieldAttribute"></a><div class="element clickable method public method_setFieldAttribute" data-toggle="collapse" data-target=".method_setFieldAttribute .collapse">
+<h2>Method to set an attribute value for a field XML element.</h2>
+<pre>setFieldAttribute(string $name, string $attribute, mixed $value, string $group) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the form field for which to set the attribute value.</p></div>
+<div class="subelement argument">
+<h4>$attribute</h4>
+<code>string</code><p>The name of the attribute for which to set a value.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to set for the attribute.</p></div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The optional dot-separated form group path on which to find the field.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.unexpectedvalueexception.php">\UnexpectedValueException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success.</div>
+</div></div>
+</div>
+<a id="method_setFields"></a><div class="element clickable method public method_setFields" data-toggle="collapse" data-target=".method_setFields .collapse">
+<h2>Method to set some field XML elements to the form definition.</h2>
+<pre>setFields(array $elements, string $group, boolean $replace) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the replace flag is set then
+the fields will be set whether they already exists or not.  If it isn't set, then the fields
+will not be replaced if they already exist.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$elements</h4>
+<code>array</code><p>&$elements  The array of XML element object representations of the form fields.</p>
+</div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The optional dot-separated form group path on which to set the fields.</p>
+</div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>boolean</code><p>True to replace existing fields if they already exist.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.unexpectedvalueexception.php">\UnexpectedValueException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success.</div>
+</div></div>
+</div>
+<a id="method_setValue"></a><div class="element clickable method public method_setValue" data-toggle="collapse" data-target=".method_setValue .collapse">
+<h2>Method to set the value of a field.</h2>
+<pre>setValue(string $name, string $group, mixed $value) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the field does not exist in the form then the method
+will return false.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the field for which to set the value.</p></div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The optional dot-separated form group path on which to find the field.</p>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to set for the field.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success.</div>
+</div></div>
+</div>
+<a id="method_validate"></a><div class="element clickable method public method_validate" data-toggle="collapse" data-target=".method_validate .collapse">
+<h2>Method to validate form data.</h2>
+<pre>validate(array $data, string $group) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Validation warnings will be pushed into JForm::errors and should be
+retrieved with JForm::getErrors() when validate returns boolean false.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>An array of field values to validate.</p></div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The optional dot-separated form group path on which to filter the
+                         fields to be validated.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>True on sucess.</div>
+</div></div>
+</div>
+<a id="method_addNode"></a><div class="element clickable method protected method_addNode" data-toggle="collapse" data-target=".method_addNode .collapse">
+<h2>Adds a new child SimpleXMLElement node to the source.</h2>
+<pre>addNode(\SimpleXMLElement $source, \SimpleXMLElement $new) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code><a href="http://php.net/manual/en/class.simplexmlelement.php">\SimpleXMLElement</a></code><p>The source element on which to append.</p></div>
+<div class="subelement argument">
+<h4>$new</h4>
+<code><a href="http://php.net/manual/en/class.simplexmlelement.php">\SimpleXMLElement</a></code><p>The new element to append.</p></div>
+</div></div>
+</div>
+<a id="method_bindLevel"></a><div class="element clickable method protected method_bindLevel" data-toggle="collapse" data-target=".method_bindLevel .collapse">
+<h2>Method to bind data to the form for the group level.</h2>
+<pre>bindLevel(string $group, mixed $data) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The dot-separated form group path on which to bind the data.</p>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>An array or object of data to bind to the form for the group level.</p></div>
+</div></div>
+</div>
+<a id="method_filterField"></a><div class="element clickable method protected method_filterField" data-toggle="collapse" data-target=".method_filterField .collapse">
+<h2>Method to apply an input filter to a value based on field data.</h2>
+<pre>filterField(string $element, mixed $value) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>The XML element object representation of the form field.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to filter for the field.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The filtered value.</div>
+</div></div>
+</div>
+<a id="method_findField"></a><div class="element clickable method protected method_findField" data-toggle="collapse" data-target=".method_findField .collapse">
+<h2>Method to get a form field represented as an XML element object.</h2>
+<pre>findField(string $name, string $group) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the form field.</p></div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The optional dot-separated form group path on which to find the field.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The XML element object for the field or boolean false on error.</div>
+</div></div>
+</div>
+<a id="method_findFieldsByFieldset"></a><div class="element clickable method protected method_findFieldsByFieldset" data-toggle="collapse" data-target=".method_findFieldsByFieldset .collapse">
+<h2>Method to get an array of &lt;field /&gt; elements from the form XML document which are
+in a specified fieldset by name.</h2>
+<pre>findFieldsByFieldset(string $name) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the fieldset.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Boolean false on error or array of SimpleXMLElement objects.</div>
+</div></div>
+</div>
+<a id="method_findFieldsByGroup"></a><div class="element clickable method protected method_findFieldsByGroup" data-toggle="collapse" data-target=".method_findFieldsByGroup .collapse">
+<h2>Method to get an array of &lt;field /&gt; elements from the form XML document which are
+in a control group by name.</h2>
+<pre>findFieldsByGroup(mixed $group, boolean $nested) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>mixed</code><p>The optional dot-separated form group path on which to find the fields.
+                           Null will return all fields. False will return fields not in a group.</p>
+</div>
+<div class="subelement argument">
+<h4>$nested</h4>
+<code>boolean</code><p>True to also include fields in nested groups that are inside of the
+                           group for which to find fields.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Boolean false on error or array of SimpleXMLElement objects.</div>
+</div></div>
+</div>
+<a id="method_findGroup"></a><div class="element clickable method protected method_findGroup" data-toggle="collapse" data-target=".method_findGroup .collapse">
+<h2>Method to get a form field group represented as an XML element object.</h2>
+<pre>findGroup(string $group) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The dot-separated form group path on which to find the group.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>An array of XML element objects for the group or boolean false on error.</div>
+</div></div>
+</div>
+<a id="method_loadField"></a><div class="element clickable method protected method_loadField" data-toggle="collapse" data-target=".method_loadField .collapse">
+<h2>Method to load, setup and return a JFormField object based on field data.</h2>
+<pre>loadField(string $element, string $group, mixed $value) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>The XML element object representation of the form field.</p></div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The optional dot-separated form group path on which to find the field.</p>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The optional value to use as the default for the field.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The JFormField object for the field or boolean false on error.</div>
+</div></div>
+</div>
+<a id="method_loadFieldType"></a><div class="element clickable method protected method_loadFieldType" data-toggle="collapse" data-target=".method_loadFieldType .collapse">
+<h2>Proxy for {@link Helper::loadFieldType()}.</h2>
+<pre>loadFieldType(string $type, boolean $new) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The field type.</p></div>
+<div class="subelement argument">
+<h4>$new</h4>
+<code>boolean</code><p>Flag to toggle whether we should get a new instance of the object.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>JFormField object on success, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_loadRuleType"></a><div class="element clickable method protected method_loadRuleType" data-toggle="collapse" data-target=".method_loadRuleType .collapse">
+<h2>Proxy for Helper::loadRuleType().</h2>
+<pre>loadRuleType(string $type, boolean $new) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="Form.Helper.html#%5CJoomla%5CForm%5CHelper::loadRuleType()">\Joomla\Form\Helper::loadRuleType()</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The rule type.</p></div>
+<div class="subelement argument">
+<h4>$new</h4>
+<code>boolean</code><p>Flag to toggle whether we should get a new instance of the object.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>JFormRule object on success, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_mergeNode"></a><div class="element clickable method protected method_mergeNode" data-toggle="collapse" data-target=".method_mergeNode .collapse">
+<h2>Update the attributes of a child node</h2>
+<pre>mergeNode(\SimpleXMLElement $source, \SimpleXMLElement $new) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code><a href="http://php.net/manual/en/class.simplexmlelement.php">\SimpleXMLElement</a></code><p>The source element on which to append the attributes</p></div>
+<div class="subelement argument">
+<h4>$new</h4>
+<code><a href="http://php.net/manual/en/class.simplexmlelement.php">\SimpleXMLElement</a></code><p>The new element to append</p></div>
+</div></div>
+</div>
+<a id="method_mergeNodes"></a><div class="element clickable method protected method_mergeNodes" data-toggle="collapse" data-target=".method_mergeNodes .collapse">
+<h2>Merges new elements into a source &lt;fields&gt; element.</h2>
+<pre>mergeNodes(\SimpleXMLElement $source, \SimpleXMLElement $new) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code><a href="http://php.net/manual/en/class.simplexmlelement.php">\SimpleXMLElement</a></code><p>The source element.</p></div>
+<div class="subelement argument">
+<h4>$new</h4>
+<code><a href="http://php.net/manual/en/class.simplexmlelement.php">\SimpleXMLElement</a></code><p>The new element to merge.</p></div>
+</div></div>
+</div>
+<a id="method_syncPaths"></a><div class="element clickable method protected method_syncPaths" data-toggle="collapse" data-target=".method_syncPaths .collapse">
+<h2>Method to synchronize any field, form or rule paths contained in the XML document.</h2>
+<pre>syncPaths() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>todo</th>
+<td>Maybe we should receive all addXXXpaths attributes at once?</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success.</div>
+</div></div>
+</div>
+<a id="method_validateField"></a><div class="element clickable method protected method_validateField" data-toggle="collapse" data-target=".method_validateField .collapse">
+<h2>Method to validate a JFormField object based on field data.</h2>
+<pre>validateField(\SimpleXMLElement $element, string $group, mixed $value, \Joomla\Registry\Registry $input) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$element</h4>
+<code><a href="http://php.net/manual/en/class.simplexmlelement.php">\SimpleXMLElement</a></code><p>The XML element object representation of the form field.</p></div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The optional dot-separated form group path on which to find the field.</p>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The optional value to use as the default for the field.</p></div>
+<div class="subelement argument">
+<h4>$input</h4>
+<code><a href="../classes/Joomla.Registry.Registry.html">\Joomla\Registry\Registry</a></code><p>An optional Registry object with the entire data set to validate
+                                     against the entire form.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code>\Joomla\Form\InvalidArgumentException</code></th>
+<td></td>
+</tr>
+<tr>
+<th><code><a href="http://php.net/manual/en/class.unexpectedvalueexception.php">\UnexpectedValueException</a></code></th>
+<td></td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Boolean true if field value is valid, Exception on failure.</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_data"> </a><div class="element clickable property protected property_data" data-toggle="collapse" data-target=".property_data .collapse">
+<h2></h2>
+<pre>$data : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_errors"> </a><div class="element clickable property protected property_errors" data-toggle="collapse" data-target=".property_errors .collapse">
+<h2></h2>
+<pre>$errors : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_forms"> </a><div class="element clickable property protected property_forms" data-toggle="collapse" data-target=".property_forms .collapse">
+<h2></h2>
+<pre>$forms : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_name"> </a><div class="element clickable property protected property_name" data-toggle="collapse" data-target=".property_name .collapse">
+<h2></h2>
+<pre>$name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_options"> </a><div class="element clickable property protected property_options" data-toggle="collapse" data-target=".property_options .collapse">
+<h2></h2>
+<pre>$options : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_xml"> </a><div class="element clickable property protected property_xml" data-toggle="collapse" data-target=".property_xml .collapse">
+<h2></h2>
+<pre>$xml : <a href="http://php.net/manual/en/class.simplexmlelement.php">\SimpleXMLElement</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:22-05:00.<br></footer></div>
+</div>
+</body>
+</html>

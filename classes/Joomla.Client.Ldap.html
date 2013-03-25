@@ -1,0 +1,762 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Client\Ldap</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_LDAPNetAddr" title="LDAPNetAddr :: Extract readable network address from the LDAP encoded networkAddress attribute."><span class="description">Extract readable network address from the LDAP encoded networkAddress attribute.</span><pre>LDAPNetAddr()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_add" title="add :: Add an attribute to the given DN
+Note: DN has to exist already"><span class="description">Add an attribute to the given DN
+Note: DN has to exist already</span><pre>add()</pre></a></li>
+<li class="method public "><a href="#method_anonymous_bind" title="anonymous_bind :: Anonymously binds to LDAP directory"><span class="description">Anonymously binds to LDAP directory</span><pre>anonymous_bind()</pre></a></li>
+<li class="method public "><a href="#method_bind" title="bind :: Binds to the LDAP directory"><span class="description">Binds to the LDAP directory</span><pre>bind()</pre></a></li>
+<li class="method public "><a href="#method_close" title="close :: Close the connection"><span class="description">Close the connection</span><pre>close()</pre></a></li>
+<li class="method public "><a href="#method_compare" title="compare :: Compare an entry and return a true or false result"><span class="description">Compare an entry and return a true or false result</span><pre>compare()</pre></a></li>
+<li class="method public "><a href="#method_connect" title="connect :: Connect to server"><span class="description">Connect to server</span><pre>connect()</pre></a></li>
+<li class="method public "><a href="#method_create" title="create :: Create a new DN"><span class="description">Create a new DN</span><pre>create()</pre></a></li>
+<li class="method public "><a href="#method_delete" title="delete :: Deletes a given DN from the tree"><span class="description">Deletes a given DN from the tree</span><pre>delete()</pre></a></li>
+<li class="method public "><a href="#method_generatePassword" title="generatePassword :: Generates a LDAP compatible password"><span class="description">Generates a LDAP compatible password</span><pre>generatePassword()</pre></a></li>
+<li class="method public "><a href="#method_getDN" title="getDN :: Get the DN"><span class="description">Get the DN</span><pre>getDN()</pre></a></li>
+<li class="method public "><a href="#method_getErrorMsg" title="getErrorMsg :: Returns the error message"><span class="description">Returns the error message</span><pre>getErrorMsg()</pre></a></li>
+<li class="method public "><a href="#method_ipToNetAddress" title="ipToNetAddress :: Converts a dot notation IP address to net address (e.g."><span class="description">Converts a dot notation IP address to net address (e.g.</span><pre>ipToNetAddress()</pre></a></li>
+<li class="method public "><a href="#method_modify" title="modify :: Modifies an entry and return a true or false result"><span class="description">Modifies an entry and return a true or false result</span><pre>modify()</pre></a></li>
+<li class="method public "><a href="#method_read" title="read :: Read all or specified attributes of given dn"><span class="description">Read all or specified attributes of given dn</span><pre>read()</pre></a></li>
+<li class="method public "><a href="#method_remove" title="remove :: Removes attribute value from given dn and return a true or false result"><span class="description">Removes attribute value from given dn and return a true or false result</span><pre>remove()</pre></a></li>
+<li class="method public "><a href="#method_rename" title="rename :: Rename the entry"><span class="description">Rename the entry</span><pre>rename()</pre></a></li>
+<li class="method public "><a href="#method_replace" title="replace :: Replace an entry and return a true or false result"><span class="description">Replace an entry and return a true or false result</span><pre>replace()</pre></a></li>
+<li class="method public "><a href="#method_search" title="search :: Performs an LDAP search"><span class="description">Performs an LDAP search</span><pre>search()</pre></a></li>
+<li class="method public "><a href="#method_setDN" title="setDN :: Sets the DN with some template replacements"><span class="description">Sets the DN with some template replacements</span><pre>setDN()</pre></a></li>
+<li class="method public "><a href="#method_simple_search" title="simple_search :: Perform an LDAP search using comma separated search strings"><span class="description">Perform an LDAP search using comma separated search strings</span><pre>simple_search()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul>
+<li class="property public "><a href="#property_auth_method" title="$auth_method :: "><span class="description">Authorization Method to use</span><pre>$auth_method</pre></a></li>
+<li class="property public "><a href="#property_base_dn" title="$base_dn :: "><span class="description">Base DN (e.g. o=MyDir)</span><pre>$base_dn</pre></a></li>
+<li class="property public "><a href="#property_host" title="$host :: "><span class="description">Hostname of LDAP server</span><pre>$host</pre></a></li>
+<li class="property public "><a href="#property_negotiate_tls" title="$negotiate_tls :: "><span class="description">Negotiate TLS (encrypted communications)</span><pre>$negotiate_tls</pre></a></li>
+<li class="property public "><a href="#property_no_referrals" title="$no_referrals :: "><span class="description">No referrals (server transfers)</span><pre>$no_referrals</pre></a></li>
+<li class="property public "><a href="#property_password" title="$password :: "><span class="description">Password to connect to server</span><pre>$password</pre></a></li>
+<li class="property public "><a href="#property_port" title="$port :: "><span class="description">Port of LDAP server</span><pre>$port</pre></a></li>
+<li class="property public "><a href="#property_search_string" title="$search_string :: "><span class="description">Search String</span><pre>$search_string</pre></a></li>
+<li class="property public "><a href="#property_use_ldapV3" title="$use_ldapV3 :: "><span class="description">Use LDAP Version 3</span><pre>$use_ldapV3</pre></a></li>
+<li class="property public "><a href="#property_username" title="$username :: "><span class="description">Username to connect to server</span><pre>$username</pre></a></li>
+<li class="property public "><a href="#property_users_dn" title="$users_dn :: "><span class="description">User DN (e.g. cn=Users,o=MyDir)</span><pre>$users_dn</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_dn" title="$dn :: "><span class="description">Current DN</span><pre>$dn</pre></a></li>
+<li class="property private "><a href="#property_resource" title="$resource :: "><span class="description">LDAP Resource Identifier</span><pre>$resource</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Client\Ldap"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Client.html">Client</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Client.Ldap.html">Ldap</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">LDAP client class</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_LDAPNetAddr"></a><div class="element clickable method public method_LDAPNetAddr" data-toggle="collapse" data-target=".method_LDAPNetAddr .collapse">
+<h2>Extract readable network address from the LDAP encoded networkAddress attribute.</h2>
+<pre>LDAPNetAddr(string $networkaddress) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Please keep this document block and author attribution in place.</p>
+
+<p>Novell Docs, see: http://developer.novell.com/ndk/doc/ndslib/schm_enu/data/sdk5624.html#sdk5624
+for Address types: http://developer.novell.com/ndk/doc/ndslib/index.html?page=/ndk/doc/ndslib/schm_enu/data/sdk4170.html
+LDAP Format, String:
+taggedData = uint32String "#" octetstring
+byte 0 = uint32String = Address Type: 0= IPX Address; 1 = IP Address
+byte 1 = char = "#" - separator
+byte 2+ = octetstring - the ordinal value of the address
+Note: with eDirectory 8.6.2, the IP address (type 1) returns
+correctly, however, an IPX address does not seem to.  eDir 8.7 may correct this.
+Enhancement made by Merijn van de Schoot:
+If addresstype is 8 (UDP) or 9 (TCP) do some additional parsing like still returning the IP address</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Jay Burrell, Systems &amp; Networks, Mississippi State University</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$networkaddress</h4>
+<code>string</code><p>The network address</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct(object $configObj) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$configObj</h4>
+<code>object</code><p>An object of configuration variables</p></div>
+</div></div>
+</div>
+<a id="method_add"></a><div class="element clickable method public method_add" data-toggle="collapse" data-target=".method_add .collapse">
+<h2>Add an attribute to the given DN
+Note: DN has to exist already</h2>
+<pre>add(string $dn, array $entry) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dn</h4>
+<code>string</code><p>The DN of the entry to add the attribute</p></div>
+<div class="subelement argument">
+<h4>$entry</h4>
+<code>array</code><p>An array of arrays with attributes to add</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Result of operation</div>
+</div></div>
+</div>
+<a id="method_anonymous_bind"></a><div class="element clickable method public method_anonymous_bind" data-toggle="collapse" data-target=".method_anonymous_bind .collapse">
+<h2>Anonymously binds to LDAP directory</h2>
+<pre>anonymous_bind() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_bind"></a><div class="element clickable method public method_bind" data-toggle="collapse" data-target=".method_bind .collapse">
+<h2>Binds to the LDAP directory</h2>
+<pre>bind(string $username, string $password, string $nosub) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>The username</p></div>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>string</code><p>The password</p></div>
+<div class="subelement argument">
+<h4>$nosub</h4>
+<code>string</code><p>...</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_close"></a><div class="element clickable method public method_close" data-toggle="collapse" data-target=".method_close .collapse">
+<h2>Close the connection</h2>
+<pre>close() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_compare"></a><div class="element clickable method public method_compare" data-toggle="collapse" data-target=".method_compare .collapse">
+<h2>Compare an entry and return a true or false result</h2>
+<pre>compare(string $dn, string $attribute, string $value) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dn</h4>
+<code>string</code><p>The DN which contains the attribute you want to compare</p></div>
+<div class="subelement argument">
+<h4>$attribute</h4>
+<code>string</code><p>The attribute whose value you want to compare</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The value you want to check against the LDAP attribute</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>result of comparison (true, false, -1 on error)</div>
+</div></div>
+</div>
+<a id="method_connect"></a><div class="element clickable method public method_connect" data-toggle="collapse" data-target=".method_connect .collapse">
+<h2>Connect to server</h2>
+<pre>connect() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if successful</div>
+</div></div>
+</div>
+<a id="method_create"></a><div class="element clickable method public method_create" data-toggle="collapse" data-target=".method_create .collapse">
+<h2>Create a new DN</h2>
+<pre>create(string $dn, array $entries) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dn</h4>
+<code>string</code><p>The DN where you want to put the object</p></div>
+<div class="subelement argument">
+<h4>$entries</h4>
+<code>array</code><p>An array of arrays describing the object to add</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Result of operation</div>
+</div></div>
+</div>
+<a id="method_delete"></a><div class="element clickable method public method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
+<h2>Deletes a given DN from the tree</h2>
+<pre>delete(string $dn) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dn</h4>
+<code>string</code><p>The DN of the object you want to delete</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Result of operation</div>
+</div></div>
+</div>
+<a id="method_generatePassword"></a><div class="element clickable method public method_generatePassword" data-toggle="collapse" data-target=".method_generatePassword .collapse">
+<h2>Generates a LDAP compatible password</h2>
+<pre>generatePassword(string $password, string $type) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>string</code><p>Clear text password to encrypt</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>Type of password hash, either md5 or SHA</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Encrypted password</div>
+</div></div>
+</div>
+<a id="method_getDN"></a><div class="element clickable method public method_getDN" data-toggle="collapse" data-target=".method_getDN .collapse">
+<h2>Get the DN</h2>
+<pre>getDN() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The current dn</div>
+</div></div>
+</div>
+<a id="method_getErrorMsg"></a><div class="element clickable method public method_getErrorMsg" data-toggle="collapse" data-target=".method_getErrorMsg .collapse">
+<h2>Returns the error message</h2>
+<pre>getErrorMsg() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>error message</div>
+</div></div>
+</div>
+<a id="method_ipToNetAddress"></a><div class="element clickable method public method_ipToNetAddress" data-toggle="collapse" data-target=".method_ipToNetAddress .collapse">
+<h2>Converts a dot notation IP address to net address (e.g.</h2>
+<pre>ipToNetAddress(string $ip) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>for Netware, etc)</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$ip</h4>
+<code>string</code><p>IP Address (e.g. xxx.xxx.xxx.xxx)</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Net address</div>
+</div></div>
+</div>
+<a id="method_modify"></a><div class="element clickable method public method_modify" data-toggle="collapse" data-target=".method_modify .collapse">
+<h2>Modifies an entry and return a true or false result</h2>
+<pre>modify(string $dn, string $attribute) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dn</h4>
+<code>string</code><p>The DN which contains the attribute you want to modify</p></div>
+<div class="subelement argument">
+<h4>$attribute</h4>
+<code>string</code><p>The attribute values you want to modify</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>result of comparison (true, false, -1 on error)</div>
+</div></div>
+</div>
+<a id="method_read"></a><div class="element clickable method public method_read" data-toggle="collapse" data-target=".method_read .collapse">
+<h2>Read all or specified attributes of given dn</h2>
+<pre>read(string $dn) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dn</h4>
+<code>string</code><p>The DN of the object you want to read</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>array of attributes or -1 on error</div>
+</div></div>
+</div>
+<a id="method_remove"></a><div class="element clickable method public method_remove" data-toggle="collapse" data-target=".method_remove .collapse">
+<h2>Removes attribute value from given dn and return a true or false result</h2>
+<pre>remove(string $dn, string $attribute) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dn</h4>
+<code>string</code><p>The DN which contains the attribute you want to remove</p></div>
+<div class="subelement argument">
+<h4>$attribute</h4>
+<code>string</code><p>The attribute values you want to remove</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>result of comparison (true, false, -1 on error)</div>
+</div></div>
+</div>
+<a id="method_rename"></a><div class="element clickable method public method_rename" data-toggle="collapse" data-target=".method_rename .collapse">
+<h2>Rename the entry</h2>
+<pre>rename(string $dn, string $newdn, string $newparent, boolean $deleteolddn) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dn</h4>
+<code>string</code><p>The DN of the entry at the moment</p></div>
+<div class="subelement argument">
+<h4>$newdn</h4>
+<code>string</code><p>The DN of the entry should be (only cn=newvalue)</p>
+</div>
+<div class="subelement argument">
+<h4>$newparent</h4>
+<code>string</code><p>The full DN of the parent (null by default)</p>
+</div>
+<div class="subelement argument">
+<h4>$deleteolddn</h4>
+<code>boolean</code><p>Delete the old values (default)</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Result of operation</div>
+</div></div>
+</div>
+<a id="method_replace"></a><div class="element clickable method public method_replace" data-toggle="collapse" data-target=".method_replace .collapse">
+<h2>Replace an entry and return a true or false result</h2>
+<pre>replace(string $dn, string $attribute) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dn</h4>
+<code>string</code><p>The DN which contains the attribute you want to replace</p></div>
+<div class="subelement argument">
+<h4>$attribute</h4>
+<code>string</code><p>The attribute values you want to replace</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>result of comparison (true, false, -1 on error)</div>
+</div></div>
+</div>
+<a id="method_search"></a><div class="element clickable method public method_search" data-toggle="collapse" data-target=".method_search .collapse">
+<h2>Performs an LDAP search</h2>
+<pre>search(array $filters, string $dnoverride, array $attributes) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filters</h4>
+<code>array</code><p>Search Filters (array of strings)</p>
+</div>
+<div class="subelement argument">
+<h4>$dnoverride</h4>
+<code>string</code><p>DN Override</p></div>
+<div class="subelement argument">
+<h4>$attributes</h4>
+<code>array</code><p>An array of attributes to return (if empty, all fields are returned).</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Multidimensional array of results</div>
+</div></div>
+</div>
+<a id="method_setDN"></a><div class="element clickable method public method_setDN" data-toggle="collapse" data-target=".method_setDN .collapse">
+<h2>Sets the DN with some template replacements</h2>
+<pre>setDN(string $username, string $nosub) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>The username</p></div>
+<div class="subelement argument">
+<h4>$nosub</h4>
+<code>string</code><p>...</p></div>
+</div></div>
+</div>
+<a id="method_simple_search"></a><div class="element clickable method public method_simple_search" data-toggle="collapse" data-target=".method_simple_search .collapse">
+<h2>Perform an LDAP search using comma separated search strings</h2>
+<pre>simple_search(string $search) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$search</h4>
+<code>string</code><p>search string of search values</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Search results</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_auth_method"> </a><div class="element clickable property public property_auth_method" data-toggle="collapse" data-target=".property_auth_method .collapse">
+<h2>Authorization Method to use</h2>
+<pre>$auth_method : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_base_dn"> </a><div class="element clickable property public property_base_dn" data-toggle="collapse" data-target=".property_base_dn .collapse">
+<h2>Base DN (e.g. o=MyDir)</h2>
+<pre>$base_dn : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_host"> </a><div class="element clickable property public property_host" data-toggle="collapse" data-target=".property_host .collapse">
+<h2>Hostname of LDAP server</h2>
+<pre>$host : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_negotiate_tls"> </a><div class="element clickable property public property_negotiate_tls" data-toggle="collapse" data-target=".property_negotiate_tls .collapse">
+<h2>Negotiate TLS (encrypted communications)</h2>
+<pre>$negotiate_tls : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_no_referrals"> </a><div class="element clickable property public property_no_referrals" data-toggle="collapse" data-target=".property_no_referrals .collapse">
+<h2>No referrals (server transfers)</h2>
+<pre>$no_referrals : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_password"> </a><div class="element clickable property public property_password" data-toggle="collapse" data-target=".property_password .collapse">
+<h2>Password to connect to server</h2>
+<pre>$password : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_port"> </a><div class="element clickable property public property_port" data-toggle="collapse" data-target=".property_port .collapse">
+<h2>Port of LDAP server</h2>
+<pre>$port : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_search_string"> </a><div class="element clickable property public property_search_string" data-toggle="collapse" data-target=".property_search_string .collapse">
+<h2>Search String</h2>
+<pre>$search_string : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_use_ldapV3"> </a><div class="element clickable property public property_use_ldapV3" data-toggle="collapse" data-target=".property_use_ldapV3 .collapse">
+<h2>Use LDAP Version 3</h2>
+<pre>$use_ldapV3 : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_username"> </a><div class="element clickable property public property_username" data-toggle="collapse" data-target=".property_username .collapse">
+<h2>Username to connect to server</h2>
+<pre>$username : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_users_dn"> </a><div class="element clickable property public property_users_dn" data-toggle="collapse" data-target=".property_users_dn .collapse">
+<h2>User DN (e.g. cn=Users,o=MyDir)</h2>
+<pre>$users_dn : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_dn"> </a><div class="element clickable property private property_dn" data-toggle="collapse" data-target=".property_dn .collapse">
+<h2>Current DN</h2>
+<pre>$dn : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_resource"> </a><div class="element clickable property private property_resource" data-toggle="collapse" data-target=".property_resource .collapse">
+<h2>LDAP Resource Identifier</h2>
+<pre>$resource : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:17-05:00.<br></footer></div>
+</div>
+</body>
+</html>

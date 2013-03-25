@@ -1,0 +1,481 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\String\Inflector</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_addCountableRule" title="addCountableRule :: Adds a countable word."><span class="description">Adds a countable word.</span><pre>addCountableRule()</pre></a></li>
+<li class="method public "><a href="#method_addPluraliseRule" title="addPluraliseRule :: Adds a pluralisation rule."><span class="description">Adds a pluralisation rule.</span><pre>addPluraliseRule()</pre></a></li>
+<li class="method public "><a href="#method_addSingulariseRule" title="addSingulariseRule :: Adds a singularisation rule."><span class="description">Adds a singularisation rule.</span><pre>addSingulariseRule()</pre></a></li>
+<li class="method public "><a href="#method_addWord" title="addWord :: Adds a specific singular-plural pair for a word."><span class="description">Adds a specific singular-plural pair for a word.</span><pre>addWord()</pre></a></li>
+<li class="method public "><a href="#method_getInstance" title="getInstance :: Gets an instance of the JStringInflector singleton."><span class="description">Gets an instance of the JStringInflector singleton.</span><pre>getInstance()</pre></a></li>
+<li class="method public "><a href="#method_isCountable" title="isCountable :: Checks if a word is countable."><span class="description">Checks if a word is countable.</span><pre>isCountable()</pre></a></li>
+<li class="method public "><a href="#method_isPlural" title="isPlural :: Checks if a word is in a plural form."><span class="description">Checks if a word is in a plural form.</span><pre>isPlural()</pre></a></li>
+<li class="method public "><a href="#method_isSingular" title="isSingular :: Checks if a word is in a singular form."><span class="description">Checks if a word is in a singular form.</span><pre>isSingular()</pre></a></li>
+<li class="method public "><a href="#method_toPlural" title="toPlural :: Converts a word into its plural form."><span class="description">Converts a word into its plural form.</span><pre>toPlural()</pre></a></li>
+<li class="method public "><a href="#method_toSingular" title="toSingular :: Converts a word into its singular form."><span class="description">Converts a word into its singular form.</span><pre>toSingular()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method___construct" title="__construct :: Protected constructor."><span class="description">Protected constructor.</span><pre>__construct()</pre></a></li></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_addRule" title="addRule :: Adds inflection regex rules to the inflector."><span class="description">Adds inflection regex rules to the inflector.</span><pre>addRule()</pre></a></li>
+<li class="method private "><a href="#method_getCachedPlural" title="getCachedPlural :: Gets an inflected word from the cache where the singular form is supplied."><span class="description">Gets an inflected word from the cache where the singular form is supplied.</span><pre>getCachedPlural()</pre></a></li>
+<li class="method private "><a href="#method_getCachedSingular" title="getCachedSingular :: Gets an inflected word from the cache where the plural form is supplied."><span class="description">Gets an inflected word from the cache where the plural form is supplied.</span><pre>getCachedSingular()</pre></a></li>
+<li class="method private "><a href="#method_matchRegexRule" title="matchRegexRule :: Execute a regex from rules."><span class="description">Execute a regex from rules.</span><pre>matchRegexRule()</pre></a></li>
+<li class="method private "><a href="#method_setCache" title="setCache :: Sets an inflected word in the cache."><span class="description">Sets an inflected word in the cache.</span><pre>setCache()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_cache" title="$cache :: Cached inflections."><span class="description"></span><pre>$cache</pre></a></li>
+<li class="property private "><a href="#property_instance" title="$instance :: The singleton instance."><span class="description"></span><pre>$instance</pre></a></li>
+<li class="property private "><a href="#property_rules" title="$rules :: The inflector rules for singularisation, pluralisation and countability."><span class="description"></span><pre>$rules</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\String\Inflector"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.String.html">String</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.String.Inflector.html">Inflector</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Joomla Platform String Inflector Class</p>
+<div class="details">
+<div class="long_description"><p>The Inflector transforms words</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_addCountableRule"></a><div class="element clickable method public method_addCountableRule" data-toggle="collapse" data-target=".method_addCountableRule .collapse">
+<h2>Adds a countable word.</h2>
+<pre>addCountableRule(mixed $data) : <a href="../classes/Joomla.String.Inflector.html">\Joomla\String\Inflector</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>A string or an array of strings to add.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.String.Inflector.html">\Joomla\String\Inflector</a></code>Returns this object to support chaining.</div>
+</div></div>
+</div>
+<a id="method_addPluraliseRule"></a><div class="element clickable method public method_addPluraliseRule" data-toggle="collapse" data-target=".method_addPluraliseRule .collapse">
+<h2>Adds a pluralisation rule.</h2>
+<pre>addPluraliseRule(mixed $data) : <a href="../classes/Joomla.String.Inflector.html">\Joomla\String\Inflector</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>A string or an array of regex rules to add.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.String.Inflector.html">\Joomla\String\Inflector</a></code>Returns this object to support chaining.</div>
+</div></div>
+</div>
+<a id="method_addSingulariseRule"></a><div class="element clickable method public method_addSingulariseRule" data-toggle="collapse" data-target=".method_addSingulariseRule .collapse">
+<h2>Adds a singularisation rule.</h2>
+<pre>addSingulariseRule(mixed $data) : <a href="../classes/Joomla.String.Inflector.html">\Joomla\String\Inflector</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>A string or an array of regex rules to add.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.String.Inflector.html">\Joomla\String\Inflector</a></code>Returns this object to support chaining.</div>
+</div></div>
+</div>
+<a id="method_addWord"></a><div class="element clickable method public method_addWord" data-toggle="collapse" data-target=".method_addWord .collapse">
+<h2>Adds a specific singular-plural pair for a word.</h2>
+<pre>addWord(string $singular, string $plural) : <a href="../classes/Joomla.String.Inflector.html">\Joomla\String\Inflector</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$singular</h4>
+<code>string</code><p>The singular form of the word.</p></div>
+<div class="subelement argument">
+<h4>$plural</h4>
+<code>string</code><p>The plural form of the word. If omitted, it is assumed the singular and plural are identical.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Joomla.String.Inflector.html">\Joomla\String\Inflector</a></code>Returns this object to support chaining.</div>
+</div></div>
+</div>
+<a id="method_getInstance"></a><div class="element clickable method public method_getInstance" data-toggle="collapse" data-target=".method_getInstance .collapse">
+<h2>Gets an instance of the JStringInflector singleton.</h2>
+<pre>getInstance(boolean $new) : <a href="../classes/Joomla.String.Inflector.html">\Joomla\String\Inflector</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new</h4>
+<code>boolean</code><p>If true (default is false), returns a new instance regardless if one exists.
+                        This argument is mainly used for testing.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Joomla.String.Inflector.html">\Joomla\String\Inflector</a></code></div>
+</div></div>
+</div>
+<a id="method_isCountable"></a><div class="element clickable method public method_isCountable" data-toggle="collapse" data-target=".method_isCountable .collapse">
+<h2>Checks if a word is countable.</h2>
+<pre>isCountable(string $word) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$word</h4>
+<code>string</code><p>The string input.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if word is countable, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_isPlural"></a><div class="element clickable method public method_isPlural" data-toggle="collapse" data-target=".method_isPlural .collapse">
+<h2>Checks if a word is in a plural form.</h2>
+<pre>isPlural(string $word) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$word</h4>
+<code>string</code><p>The string input.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if word is plural, false if not.</div>
+</div></div>
+</div>
+<a id="method_isSingular"></a><div class="element clickable method public method_isSingular" data-toggle="collapse" data-target=".method_isSingular .collapse">
+<h2>Checks if a word is in a singular form.</h2>
+<pre>isSingular(string $word) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$word</h4>
+<code>string</code><p>The string input.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if word is singular, false if not.</div>
+</div></div>
+</div>
+<a id="method_toPlural"></a><div class="element clickable method public method_toPlural" data-toggle="collapse" data-target=".method_toPlural .collapse">
+<h2>Converts a word into its plural form.</h2>
+<pre>toPlural(string $word) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$word</h4>
+<code>string</code><p>The singular word to pluralise.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>An inflected string, or false if no rule could be applied.</div>
+</div></div>
+</div>
+<a id="method_toSingular"></a><div class="element clickable method public method_toSingular" data-toggle="collapse" data-target=".method_toSingular .collapse">
+<h2>Converts a word into its singular form.</h2>
+<pre>toSingular(string $word) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$word</h4>
+<code>string</code><p>The plural word to singularise.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>An inflected string, or false if no rule could be applied.</div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method protected method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Protected constructor.</h2>
+<pre>__construct() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_addRule"></a><div class="element clickable method private method_addRule" data-toggle="collapse" data-target=".method_addRule .collapse">
+<h2>Adds inflection regex rules to the inflector.</h2>
+<pre>addRule(mixed $data, string $ruleType) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>A string or an array of strings or regex rules to add.</p></div>
+<div class="subelement argument">
+<h4>$ruleType</h4>
+<code>string</code><p>The rule type: singular | plural | countable</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.invalidargumentexception.php">\InvalidArgumentException</a></code></th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getCachedPlural"></a><div class="element clickable method private method_getCachedPlural" data-toggle="collapse" data-target=".method_getCachedPlural .collapse">
+<h2>Gets an inflected word from the cache where the singular form is supplied.</h2>
+<pre>getCachedPlural(string $singular) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$singular</h4>
+<code>string</code><p>A singular form of a word.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The cached inflection or false if none found.</div>
+</div></div>
+</div>
+<a id="method_getCachedSingular"></a><div class="element clickable method private method_getCachedSingular" data-toggle="collapse" data-target=".method_getCachedSingular .collapse">
+<h2>Gets an inflected word from the cache where the plural form is supplied.</h2>
+<pre>getCachedSingular(string $plural) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$plural</h4>
+<code>string</code><p>A plural form of a word.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The cached inflection or false if none found.</div>
+</div></div>
+</div>
+<a id="method_matchRegexRule"></a><div class="element clickable method private method_matchRegexRule" data-toggle="collapse" data-target=".method_matchRegexRule .collapse">
+<h2>Execute a regex from rules.</h2>
+<pre>matchRegexRule(string $word, string $ruleType) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The 'plural' rule type expects a singular word.
+The 'singular' rule type expects a plural word.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$word</h4>
+<code>string</code><p>The string input.</p></div>
+<div class="subelement argument">
+<h4>$ruleType</h4>
+<code>string</code><p>String (eg, singular|plural)</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>An inflected string, or false if no rule could be applied.</div>
+</div></div>
+</div>
+<a id="method_setCache"></a><div class="element clickable method private method_setCache" data-toggle="collapse" data-target=".method_setCache .collapse">
+<h2>Sets an inflected word in the cache.</h2>
+<pre>setCache(string $singular, string $plural) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$singular</h4>
+<code>string</code><p>The singular form of the word.</p></div>
+<div class="subelement argument">
+<h4>$plural</h4>
+<code>string</code><p>The plural form of the word. If omitted, it is assumed the singular and plural are identical.</p></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_cache"> </a><div class="element clickable property private property_cache" data-toggle="collapse" data-target=".property_cache .collapse">
+<h2></h2>
+<pre>$cache : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The array is in the form [singular => plural]</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_instance"> </a><div class="element clickable property private property_instance" data-toggle="collapse" data-target=".property_instance .collapse">
+<h2></h2>
+<pre>$instance : <a href="../classes/Joomla.String.Inflector.html">\Joomla\String\Inflector</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_rules"> </a><div class="element clickable property private property_rules" data-toggle="collapse" data-target=".property_rules .collapse">
+<h2></h2>
+<pre>$rules : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:25-05:00.<br></footer></div>
+</div>
+</body>
+</html>

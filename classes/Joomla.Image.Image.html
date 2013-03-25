@@ -1,0 +1,842 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Image\Image</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Class constructor."><span class="description">Class constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___destruct" title="__destruct :: Method to call the destroy() method one last time
+to free any memory when the object is unset"><span class="description">Method to call the destroy() method one last time
+to free any memory when the object is unset</span><pre>__destruct()</pre></a></li>
+<li class="method public "><a href="#method_createThumbs" title="createThumbs :: Method to create thumbnails from the current image and save them to disk."><span class="description">Method to create thumbnails from the current image and save them to disk.</span><pre>createThumbs()</pre></a></li>
+<li class="method public "><a href="#method_crop" title="crop :: Method to crop the current image."><span class="description">Method to crop the current image.</span><pre>crop()</pre></a></li>
+<li class="method public "><a href="#method_destroy" title="destroy :: Method to destroy an image handle and
+free the memory associated with the handle"><span class="description">Method to destroy an image handle and
+free the memory associated with the handle</span><pre>destroy()</pre></a></li>
+<li class="method public "><a href="#method_filter" title="filter :: Method to apply a filter to the image by type."><span class="description">Method to apply a filter to the image by type.</span><pre>filter()</pre></a></li>
+<li class="method public "><a href="#method_generateThumbs" title="generateThumbs :: Method to generate thumbnails from the current image."><span class="description">Method to generate thumbnails from the current image.</span><pre>generateThumbs()</pre></a></li>
+<li class="method public "><a href="#method_getHeight" title="getHeight :: Method to get the height of the image in pixels."><span class="description">Method to get the height of the image in pixels.</span><pre>getHeight()</pre></a></li>
+<li class="method public "><a href="#method_getImageFileProperties" title="getImageFileProperties :: Method to return a properties object for an image given a filesystem path."><span class="description">Method to return a properties object for an image given a filesystem path.</span><pre>getImageFileProperties()</pre></a></li>
+<li class="method public "><a href="#method_getPath" title="getPath :: Method to return the path"><span class="description">Method to return the path</span><pre>getPath()</pre></a></li>
+<li class="method public "><a href="#method_getWidth" title="getWidth :: Method to get the width of the image in pixels."><span class="description">Method to get the width of the image in pixels.</span><pre>getWidth()</pre></a></li>
+<li class="method public "><a href="#method_isLoaded" title="isLoaded :: Method to determine whether or not an image has been loaded into the object."><span class="description">Method to determine whether or not an image has been loaded into the object.</span><pre>isLoaded()</pre></a></li>
+<li class="method public "><a href="#method_isTransparent" title="isTransparent :: Method to determine whether or not the image has transparency."><span class="description">Method to determine whether or not the image has transparency.</span><pre>isTransparent()</pre></a></li>
+<li class="method public "><a href="#method_loadFile" title="loadFile :: Method to load a file into the JImage object as the resource."><span class="description">Method to load a file into the JImage object as the resource.</span><pre>loadFile()</pre></a></li>
+<li class="method public "><a href="#method_resize" title="resize :: Method to resize the current image."><span class="description">Method to resize the current image.</span><pre>resize()</pre></a></li>
+<li class="method public "><a href="#method_rotate" title="rotate :: Method to rotate the current image."><span class="description">Method to rotate the current image.</span><pre>rotate()</pre></a></li>
+<li class="method public "><a href="#method_setLogger" title="setLogger :: Sets a logger instance on the object"><span class="description">Sets a logger instance on the object</span><pre>setLogger()</pre></a></li>
+<li class="method public "><a href="#method_toFile" title="toFile :: Method to write the current image out to a file."><span class="description">Method to write the current image out to a file.</span><pre>toFile()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_getFilterInstance" title="getFilterInstance :: Method to get an image filter instance of a specified type."><span class="description">Method to get an image filter instance of a specified type.</span><pre>getFilterInstance()</pre></a></li>
+<li class="method protected "><a href="#method_prepareDimensions" title="prepareDimensions :: Method to get the new dimensions for a resized image."><span class="description">Method to get the new dimensions for a resized image.</span><pre>prepareDimensions()</pre></a></li>
+<li class="method protected "><a href="#method_sanitizeHeight" title="sanitizeHeight :: Method to sanitize a height value."><span class="description">Method to sanitize a height value.</span><pre>sanitizeHeight()</pre></a></li>
+<li class="method protected "><a href="#method_sanitizeOffset" title="sanitizeOffset :: Method to sanitize an offset value like left or top."><span class="description">Method to sanitize an offset value like left or top.</span><pre>sanitizeOffset()</pre></a></li>
+<li class="method protected "><a href="#method_sanitizeWidth" title="sanitizeWidth :: Method to sanitize a width value."><span class="description">Method to sanitize a width value.</span><pre>sanitizeWidth()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_formats" title="$formats :: "><span class="description">Whether or not different image formats are supported.</span><pre>$formats</pre></a></li>
+<li class="property protected "><a href="#property_handle" title="$handle :: "><span class="description">The image resource handle.</span><pre>$handle</pre></a></li>
+<li class="property protected "><a href="#property_logger" title="$logger :: "><span class="description">Logger object</span><pre>$logger</pre></a></li>
+<li class="property protected "><a href="#property_path" title="$path :: "><span class="description">The source image path.</span><pre>$path</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_CROP" title="CROP :: "><span class="description">CROP</span><pre>CROP</pre></a></li>
+<li class="constant  "><a href="#constant_SCALE_FILL" title="SCALE_FILL :: "><span class="description">SCALE_FILL</span><pre>SCALE_FILL</pre></a></li>
+<li class="constant  "><a href="#constant_SCALE_INSIDE" title="SCALE_INSIDE :: "><span class="description">SCALE_INSIDE</span><pre>SCALE_INSIDE</pre></a></li>
+<li class="constant  "><a href="#constant_SCALE_OUTSIDE" title="SCALE_OUTSIDE :: "><span class="description">SCALE_OUTSIDE</span><pre>SCALE_OUTSIDE</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Image\Image"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Image.html">Image</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Image.Image.html">Image</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Class to manipulate an image.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Class constructor.</h2>
+<pre>__construct(mixed $source) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code>mixed</code><p>Either a file path for a source image or a GD resource handler for an image.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.runtimeexception.php">\RuntimeException</a></code></th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___destruct"></a><div class="element clickable method public method___destruct" data-toggle="collapse" data-target=".method___destruct .collapse">
+<h2>Method to call the destroy() method one last time
+to free any memory when the object is unset</h2>
+<pre>__destruct() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="Image.Image.html#%5CJoomla%5CImage%5CImage::destroy()">\Joomla\Image\Image::destroy()</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_createThumbs"></a><div class="element clickable method public method_createThumbs" data-toggle="collapse" data-target=".method_createThumbs .collapse">
+<h2>Method to create thumbnails from the current image and save them to disk.</h2>
+<pre>createThumbs(mixed $thumbSizes, integer $creationMethod, string $thumbsFolder) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>It allows creation by resizing
+or croppping the original image.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$thumbSizes</h4>
+<code>mixed</code><p>string or array of strings. Example: $thumbSizes = array('150x75','250x150');</p>
+</div>
+<div class="subelement argument">
+<h4>$creationMethod</h4>
+<code>integer</code><p>1-3 resize $scaleMethod | 4 create croppping</p>
+</div>
+<div class="subelement argument">
+<h4>$thumbsFolder</h4>
+<code>string</code><p>destination thumbs folder. null generates a thumbs folder in the image folder</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td></td>
+</tr>
+<tr>
+<th><code><a href="http://php.net/manual/en/class.invalidargumentexception.php">\InvalidArgumentException</a></code></th>
+<td></td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_crop"></a><div class="element clickable method public method_crop" data-toggle="collapse" data-target=".method_crop .collapse">
+<h2>Method to crop the current image.</h2>
+<pre>crop(mixed $width, mixed $height, integer $left, integer $top, boolean $createNew) : <a href="../classes/Joomla.Image.Image.html">\Joomla\Image\Image</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$width</h4>
+<code>mixed</code><p>The width of the image section to crop in pixels or a percentage.</p></div>
+<div class="subelement argument">
+<h4>$height</h4>
+<code>mixed</code><p>The height of the image section to crop in pixels or a percentage.</p></div>
+<div class="subelement argument">
+<h4>$left</h4>
+<code>integer</code><p>The number of pixels from the left to start cropping.</p></div>
+<div class="subelement argument">
+<h4>$top</h4>
+<code>integer</code><p>The number of pixels from the top to start cropping.</p></div>
+<div class="subelement argument">
+<h4>$createNew</h4>
+<code>boolean</code><p>If true the current image will be cloned, cropped and returned; else
+                              the current image will be cropped and returned.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Joomla.Image.Image.html">\Joomla\Image\Image</a></code></div>
+</div></div>
+</div>
+<a id="method_destroy"></a><div class="element clickable method public method_destroy" data-toggle="collapse" data-target=".method_destroy .collapse">
+<h2>Method to destroy an image handle and
+free the memory associated with the handle</h2>
+<pre>destroy() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success, false on failure or if no image is loaded</div>
+</div></div>
+</div>
+<a id="method_filter"></a><div class="element clickable method public method_filter" data-toggle="collapse" data-target=".method_filter .collapse">
+<h2>Method to apply a filter to the image by type.</h2>
+<pre>filter(string $type, array $options) : <a href="../classes/Joomla.Image.Image.html">\Joomla\Image\Image</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Two examples are: grayscale and sketchy.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="Image.Filter.html#%5CJoomla%5CImage%5CFilter">\Joomla\Image\Filter</a></td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The name of the image filter to apply.</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>An array of options for the filter.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Joomla.Image.Image.html">\Joomla\Image\Image</a></code></div>
+</div></div>
+</div>
+<a id="method_generateThumbs"></a><div class="element clickable method public method_generateThumbs" data-toggle="collapse" data-target=".method_generateThumbs .collapse">
+<h2>Method to generate thumbnails from the current image.</h2>
+<pre>generateThumbs(mixed $thumbSizes, integer $creationMethod) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>It allows creation by resizing
+or croppping the original image.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$thumbSizes</h4>
+<code>mixed</code><p>string or array of strings. Example: $thumbSizes = array('150x75','250x150');</p>
+</div>
+<div class="subelement argument">
+<h4>$creationMethod</h4>
+<code>integer</code><p>1-3 resize $scaleMethod | 4 create croppping</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td></td>
+</tr>
+<tr>
+<th><code><a href="http://php.net/manual/en/class.invalidargumentexception.php">\InvalidArgumentException</a></code></th>
+<td></td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getHeight"></a><div class="element clickable method public method_getHeight" data-toggle="collapse" data-target=".method_getHeight .collapse">
+<h2>Method to get the height of the image in pixels.</h2>
+<pre>getHeight() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_getImageFileProperties"></a><div class="element clickable method public method_getImageFileProperties" data-toggle="collapse" data-target=".method_getImageFileProperties .collapse">
+<h2>Method to return a properties object for an image given a filesystem path.</h2>
+<pre>getImageFileProperties(string $path) : <a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The
+result object has values for image width, height, type, attributes, mime type, bits,
+and channels.</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The filesystem path to the image for which to get properties.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="http://php.net/manual/en/class.invalidargumentexception.php">\InvalidArgumentException</a></code></th>
+<td></td>
+</tr>
+<tr>
+<th><code><a href="http://php.net/manual/en/class.runtimeexception.php">\RuntimeException</a></code></th>
+<td></td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></code></div>
+</div></div>
+</div>
+<a id="method_getPath"></a><div class="element clickable method public method_getPath" data-toggle="collapse" data-target=".method_getPath .collapse">
+<h2>Method to return the path</h2>
+<pre>getPath() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getWidth"></a><div class="element clickable method public method_getWidth" data-toggle="collapse" data-target=".method_getWidth .collapse">
+<h2>Method to get the width of the image in pixels.</h2>
+<pre>getWidth() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_isLoaded"></a><div class="element clickable method public method_isLoaded" data-toggle="collapse" data-target=".method_isLoaded .collapse">
+<h2>Method to determine whether or not an image has been loaded into the object.</h2>
+<pre>isLoaded() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_isTransparent"></a><div class="element clickable method public method_isTransparent" data-toggle="collapse" data-target=".method_isTransparent .collapse">
+<h2>Method to determine whether or not the image has transparency.</h2>
+<pre>isTransparent() : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
+<a id="method_loadFile"></a><div class="element clickable method public method_loadFile" data-toggle="collapse" data-target=".method_loadFile .collapse">
+<h2>Method to load a file into the JImage object as the resource.</h2>
+<pre>loadFile(string $path) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The filesystem path to load as an image.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="http://php.net/manual/en/class.invalidargumentexception.php">\InvalidArgumentException</a></code></th>
+<td></td>
+</tr>
+<tr>
+<th><code><a href="http://php.net/manual/en/class.runtimeexception.php">\RuntimeException</a></code></th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_resize"></a><div class="element clickable method public method_resize" data-toggle="collapse" data-target=".method_resize .collapse">
+<h2>Method to resize the current image.</h2>
+<pre>resize(mixed $width, mixed $height, boolean $createNew, integer $scaleMethod) : <a href="../classes/Joomla.Image.Image.html">\Joomla\Image\Image</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$width</h4>
+<code>mixed</code><p>The width of the resized image in pixels or a percentage.</p></div>
+<div class="subelement argument">
+<h4>$height</h4>
+<code>mixed</code><p>The height of the resized image in pixels or a percentage.</p></div>
+<div class="subelement argument">
+<h4>$createNew</h4>
+<code>boolean</code><p>If true the current image will be cloned, resized and returned; else
+                                the current image will be resized and returned.</p></div>
+<div class="subelement argument">
+<h4>$scaleMethod</h4>
+<code>integer</code><p>Which method to use for scaling</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Joomla.Image.Image.html">\Joomla\Image\Image</a></code></div>
+</div></div>
+</div>
+<a id="method_rotate"></a><div class="element clickable method public method_rotate" data-toggle="collapse" data-target=".method_rotate .collapse">
+<h2>Method to rotate the current image.</h2>
+<pre>rotate(mixed $angle, integer $background, boolean $createNew) : <a href="../classes/Joomla.Image.Image.html">\Joomla\Image\Image</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$angle</h4>
+<code>mixed</code><p>The angle of rotation for the image</p></div>
+<div class="subelement argument">
+<h4>$background</h4>
+<code>integer</code><p>The background color to use when areas are added due to rotation</p></div>
+<div class="subelement argument">
+<h4>$createNew</h4>
+<code>boolean</code><p>If true the current image will be cloned, rotated and returned; else
+                               the current image will be rotated and returned.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Joomla.Image.Image.html">\Joomla\Image\Image</a></code></div>
+</div></div>
+</div>
+<a id="method_setLogger"></a><div class="element clickable method public method_setLogger" data-toggle="collapse" data-target=".method_setLogger .collapse">
+<h2>Sets a logger instance on the object</h2>
+<pre>setLogger(\Psr\Log\LoggerInterface $logger) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$logger</h4>
+<code>\Psr\Log\LoggerInterface</code><p>A PSR-3 compliant logger.</p>
+</div>
+</div></div>
+</div>
+<a id="method_toFile"></a><div class="element clickable method public method_toFile" data-toggle="collapse" data-target=".method_toFile .collapse">
+<h2>Method to write the current image out to a file.</h2>
+<pre>toFile(string $path, integer $type, array $options) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\Joomla\Image\http://www.php.net/manual/image.constants.php</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The filesystem path to save the image.</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>integer</code><p>The image type to save the file as.</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>The image type options to use in saving the file.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_getFilterInstance"></a><div class="element clickable method protected method_getFilterInstance" data-toggle="collapse" data-target=".method_getFilterInstance .collapse">
+<h2>Method to get an image filter instance of a specified type.</h2>
+<pre>getFilterInstance(string $type) : <a href="../classes/Joomla.Image.Filter.html">\Joomla\Image\Filter</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The image filter type to get.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.runtimeexception.php">\RuntimeException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Joomla.Image.Filter.html">\Joomla\Image\Filter</a></code></div>
+</div></div>
+</div>
+<a id="method_prepareDimensions"></a><div class="element clickable method protected method_prepareDimensions" data-toggle="collapse" data-target=".method_prepareDimensions .collapse">
+<h2>Method to get the new dimensions for a resized image.</h2>
+<pre>prepareDimensions(integer $width, integer $height, integer $scaleMethod) : <a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$width</h4>
+<code>integer</code><p>The width of the resized image in pixels.</p></div>
+<div class="subelement argument">
+<h4>$height</h4>
+<code>integer</code><p>The height of the resized image in pixels.</p></div>
+<div class="subelement argument">
+<h4>$scaleMethod</h4>
+<code>integer</code><p>The method to use for scaling</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.invalidargumentexception.php">\InvalidArgumentException</a></code></th>
+<td>If width, height or both given as zero</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></code></div>
+</div></div>
+</div>
+<a id="method_sanitizeHeight"></a><div class="element clickable method protected method_sanitizeHeight" data-toggle="collapse" data-target=".method_sanitizeHeight .collapse">
+<h2>Method to sanitize a height value.</h2>
+<pre>sanitizeHeight(mixed $height, mixed $width) : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$height</h4>
+<code>mixed</code><p>The input height value to sanitize.</p></div>
+<div class="subelement argument">
+<h4>$width</h4>
+<code>mixed</code><p>The input width value for reference.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_sanitizeOffset"></a><div class="element clickable method protected method_sanitizeOffset" data-toggle="collapse" data-target=".method_sanitizeOffset .collapse">
+<h2>Method to sanitize an offset value like left or top.</h2>
+<pre>sanitizeOffset(mixed $offset) : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>mixed</code><p>An offset value.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_sanitizeWidth"></a><div class="element clickable method protected method_sanitizeWidth" data-toggle="collapse" data-target=".method_sanitizeWidth .collapse">
+<h2>Method to sanitize a width value.</h2>
+<pre>sanitizeWidth(mixed $width, mixed $height) : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$width</h4>
+<code>mixed</code><p>The input width value to sanitize.</p></div>
+<div class="subelement argument">
+<h4>$height</h4>
+<code>mixed</code><p>The input height value for reference.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_formats"> </a><div class="element clickable property protected property_formats" data-toggle="collapse" data-target=".property_formats .collapse">
+<h2>Whether or not different image formats are supported.</h2>
+<pre>$formats : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_handle"> </a><div class="element clickable property protected property_handle" data-toggle="collapse" data-target=".property_handle .collapse">
+<h2>The image resource handle.</h2>
+<pre>$handle : resource</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_logger"> </a><div class="element clickable property protected property_logger" data-toggle="collapse" data-target=".property_logger .collapse">
+<h2>Logger object</h2>
+<pre>$logger : \Psr\Log\LoggerInterface</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_path"> </a><div class="element clickable property protected property_path" data-toggle="collapse" data-target=".property_path .collapse">
+<h2>The source image path.</h2>
+<pre>$path : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_CROP"> </a><div class="element clickable constant  constant_CROP" data-toggle="collapse" data-target=".constant_CROP .collapse">
+<h2>CROP</h2>
+<pre>CROP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>const</th>
+<td>integer</td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="constant_SCALE_FILL"> </a><div class="element clickable constant  constant_SCALE_FILL" data-toggle="collapse" data-target=".constant_SCALE_FILL .collapse">
+<h2>SCALE_FILL</h2>
+<pre>SCALE_FILL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>const</th>
+<td>integer</td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="constant_SCALE_INSIDE"> </a><div class="element clickable constant  constant_SCALE_INSIDE" data-toggle="collapse" data-target=".constant_SCALE_INSIDE .collapse">
+<h2>SCALE_INSIDE</h2>
+<pre>SCALE_INSIDE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>const</th>
+<td>integer</td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="constant_SCALE_OUTSIDE"> </a><div class="element clickable constant  constant_SCALE_OUTSIDE" data-toggle="collapse" data-target=".constant_SCALE_OUTSIDE .collapse">
+<h2>SCALE_OUTSIDE</h2>
+<pre>SCALE_OUTSIDE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>const</th>
+<td>integer</td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:24-05:00.<br></footer></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,591 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Joomla Framework API » \Joomla\Date\Date</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Joomla Framework API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Joomla.html"><i class="icon-th"></i> Joomla</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">25</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Constructor."><span class="description">Constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___get" title="__get :: Magic method to access properties of the date given by class to the format method."><span class="description">Magic method to access properties of the date given by class to the format method.</span><pre>__get()</pre></a></li>
+<li class="method public "><a href="#method___toString" title="__toString :: Magic method to render the date object in the format specified in the public
+static member JDate::$format."><span class="description">Magic method to render the date object in the format specified in the public
+static member JDate::$format.</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_format" title="format :: Gets the date as a formatted string."><span class="description">Gets the date as a formatted string.</span><pre>format()</pre></a></li>
+<li class="method public "><a href="#method_getOffsetFromGMT" title="getOffsetFromGMT :: Get the time offset from GMT in hours or seconds."><span class="description">Get the time offset from GMT in hours or seconds.</span><pre>getOffsetFromGMT()</pre></a></li>
+<li class="method public "><a href="#method_setTimezone" title="setTimezone :: Method to wrap the setTimezone() function and set the internal time zone object."><span class="description">Method to wrap the setTimezone() function and set the internal time zone object.</span><pre>setTimezone()</pre></a></li>
+<li class="method public "><a href="#method_toISO8601" title="toISO8601 :: Gets the date as an ISO 8601 string."><span class="description">Gets the date as an ISO 8601 string.</span><pre>toISO8601()</pre></a></li>
+<li class="method public "><a href="#method_toRFC822" title="toRFC822 :: Gets the date as an RFC 822 string."><span class="description">Gets the date as an RFC 822 string.</span><pre>toRFC822()</pre></a></li>
+<li class="method public "><a href="#method_toUnix" title="toUnix :: Gets the date as UNIX time stamp."><span class="description">Gets the date as UNIX time stamp.</span><pre>toUnix()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul>
+<li class="property public "><a href="#property_day" title="$day :: d - Day of the month, 2 digits with leading zeros."><span class="description"></span><pre>$day</pre></a></li>
+<li class="property public "><a href="#property_dayofweek" title="$dayofweek :: N - ISO-8601 numeric representation of the day of the week."><span class="description"></span><pre>$dayofweek</pre></a></li>
+<li class="property public "><a href="#property_dayofyear" title="$dayofyear :: z - The day of the year (starting from 0)."><span class="description"></span><pre>$dayofyear</pre></a></li>
+<li class="property public "><a href="#property_daysinmonth" title="$daysinmonth :: t - Number of days in the given month."><span class="description"></span><pre>$daysinmonth</pre></a></li>
+<li class="property public "><a href="#property_format" title="$format :: The format string to be applied when using the __toString() magic method."><span class="description"></span><pre>$format</pre></a></li>
+<li class="property public "><a href="#property_hour" title="$hour :: H - 24-hour format of an hour with leading zeros."><span class="description"></span><pre>$hour</pre></a></li>
+<li class="property public "><a href="#property_isleapyear" title="$isleapyear :: L - Whether it's a leap year."><span class="description"></span><pre>$isleapyear</pre></a></li>
+<li class="property public "><a href="#property_minute" title="$minute :: i - Minutes with leading zeros."><span class="description"></span><pre>$minute</pre></a></li>
+<li class="property public "><a href="#property_month" title="$month :: m - Numeric representation of a month, with leading zeros."><span class="description"></span><pre>$month</pre></a></li>
+<li class="property public "><a href="#property_ordinal" title="$ordinal :: S - English ordinal suffix for the day of the month, 2 characters."><span class="description"></span><pre>$ordinal</pre></a></li>
+<li class="property public "><a href="#property_second" title="$second :: s - Seconds with leading zeros."><span class="description"></span><pre>$second</pre></a></li>
+<li class="property public "><a href="#property_week" title="$week :: W - Numeric representation of the day of the week."><span class="description"></span><pre>$week</pre></a></li>
+<li class="property public "><a href="#property_year" title="$year :: Y - A full numeric representation of a year, 4 digits."><span class="description"></span><pre>$year</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_gmt" title="$gmt :: Placeholder for a DateTimeZone object with GMT as the time zone."><span class="description"></span><pre>$gmt</pre></a></li>
+<li class="property protected "><a href="#property_stz" title="$stz :: Placeholder for a DateTimeZone object with the default server
+time zone as the time zone."><span class="description"></span><pre>$stz</pre></a></li>
+<li class="property protected "><a href="#property_tz" title="$tz :: The DateTimeZone object for usage in rending dates as strings."><span class="description"></span><pre>$tz</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Joomla\Date\Date"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Joomla.html">Joomla</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Joomla.Date.html">Date</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Joomla.Date.Date.html">Date</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">JDate is a class that stores a date and provides logic to manipulate
+and render that date in a variety of formats.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructor.</h2>
+<pre>__construct(string $date, mixed $tz) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$date</h4>
+<code>string</code><p>String in a format accepted by strtotime(), defaults to "now".</p>
+</div>
+<div class="subelement argument">
+<h4>$tz</h4>
+<code>mixed</code><p>Time zone to be used for the date. Might be a string or a DateTimeZone object.</p></div>
+</div></div>
+</div>
+<a id="method___get"></a><div class="element clickable method public method___get" data-toggle="collapse" data-target=".method___get .collapse">
+<h2>Magic method to access properties of the date given by class to the format method.</h2>
+<pre>__get(string $name) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the property.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>A value if the property name is valid, null otherwise.</div>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
+<h2>Magic method to render the date object in the format specified in the public
+static member JDate::$format.</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The date as a formatted string.</div>
+</div></div>
+</div>
+<a id="method_format"></a><div class="element clickable method public method_format" data-toggle="collapse" data-target=".method_format .collapse">
+<h2>Gets the date as a formatted string.</h2>
+<pre>format(string $format, boolean $local) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$format</h4>
+<code>string</code><p>The date format specification string (see {@link PHP_MANUAL#date})</p>
+</div>
+<div class="subelement argument">
+<h4>$local</h4>
+<code>boolean</code><p>True to return the date string in the local time zone, false to return it in GMT.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The date string in the specified format format.</div>
+</div></div>
+</div>
+<a id="method_getOffsetFromGMT"></a><div class="element clickable method public method_getOffsetFromGMT" data-toggle="collapse" data-target=".method_getOffsetFromGMT .collapse">
+<h2>Get the time offset from GMT in hours or seconds.</h2>
+<pre>getOffsetFromGMT(boolean $hours) : float</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$hours</h4>
+<code>boolean</code><p>True to return the value in hours.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>float</code>The time offset from GMT either in hours or in seconds.</div>
+</div></div>
+</div>
+<a id="method_setTimezone"></a><div class="element clickable method public method_setTimezone" data-toggle="collapse" data-target=".method_setTimezone .collapse">
+<h2>Method to wrap the setTimezone() function and set the internal time zone object.</h2>
+<pre>setTimezone(<a href="http://php.net/manual/en/class.datetimezone.php">\DateTimeZone</a> $tz) : \Joomla\Date\JDate</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>note</th>
+<td>This method can't be type hinted due to a PHP bug: https://bugs.php.net/bug.php?id=61483</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$tz</h4>
+<code><a href="http://php.net/manual/en/class.datetimezone.php">\DateTimeZone</a></code><p>The new DateTimeZone object.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Joomla\Date\JDate</code></div>
+</div></div>
+</div>
+<a id="method_toISO8601"></a><div class="element clickable method public method_toISO8601" data-toggle="collapse" data-target=".method_toISO8601 .collapse">
+<h2>Gets the date as an ISO 8601 string.</h2>
+<pre>toISO8601(boolean $local) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>IETF RFC 3339 defines the ISO 8601 format
+and it can be found at the IETF Web site.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>link</th>
+<td><a href="http://www.ietf.org/rfc/rfc3339.txt">http://www.ietf.org/rfc/rfc3339.txt</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$local</h4>
+<code>boolean</code><p>True to return the date string in the local time zone, false to return it in GMT.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The date string in ISO 8601 format.</div>
+</div></div>
+</div>
+<a id="method_toRFC822"></a><div class="element clickable method public method_toRFC822" data-toggle="collapse" data-target=".method_toRFC822 .collapse">
+<h2>Gets the date as an RFC 822 string.</h2>
+<pre>toRFC822(boolean $local) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>IETF RFC 2822 supercedes RFC 822 and its definition
+can be found at the IETF Web site.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>link</th>
+<td><a href="http://www.ietf.org/rfc/rfc2822.txt">http://www.ietf.org/rfc/rfc2822.txt</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$local</h4>
+<code>boolean</code><p>True to return the date string in the local time zone, false to return it in GMT.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The date string in RFC 822 format.</div>
+</div></div>
+</div>
+<a id="method_toUnix"></a><div class="element clickable method public method_toUnix" data-toggle="collapse" data-target=".method_toUnix .collapse">
+<h2>Gets the date as UNIX time stamp.</h2>
+<pre>toUnix() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The date as a UNIX timestamp.</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_day"> </a><div class="element clickable property public property_day" data-toggle="collapse" data-target=".property_day .collapse">
+<h2></h2>
+<pre>$day : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>d - Day of the month, 2 digits with leading zeros.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_dayofweek"> </a><div class="element clickable property public property_dayofweek" data-toggle="collapse" data-target=".property_dayofweek .collapse">
+<h2></h2>
+<pre>$dayofweek : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>N - ISO-8601 numeric representation of the day of the week.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_dayofyear"> </a><div class="element clickable property public property_dayofyear" data-toggle="collapse" data-target=".property_dayofyear .collapse">
+<h2></h2>
+<pre>$dayofyear : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>z - The day of the year (starting from 0).</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_daysinmonth"> </a><div class="element clickable property public property_daysinmonth" data-toggle="collapse" data-target=".property_daysinmonth .collapse">
+<h2></h2>
+<pre>$daysinmonth : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>t - Number of days in the given month.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_format"> </a><div class="element clickable property public property_format" data-toggle="collapse" data-target=".property_format .collapse">
+<h2></h2>
+<pre>$format : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_hour"> </a><div class="element clickable property public property_hour" data-toggle="collapse" data-target=".property_hour .collapse">
+<h2></h2>
+<pre>$hour : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>H - 24-hour format of an hour with leading zeros.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_isleapyear"> </a><div class="element clickable property public property_isleapyear" data-toggle="collapse" data-target=".property_isleapyear .collapse">
+<h2></h2>
+<pre>$isleapyear : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>L - Whether it's a leap year.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_minute"> </a><div class="element clickable property public property_minute" data-toggle="collapse" data-target=".property_minute .collapse">
+<h2></h2>
+<pre>$minute : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>i - Minutes with leading zeros.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_month"> </a><div class="element clickable property public property_month" data-toggle="collapse" data-target=".property_month .collapse">
+<h2></h2>
+<pre>$month : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>m - Numeric representation of a month, with leading zeros.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_ordinal"> </a><div class="element clickable property public property_ordinal" data-toggle="collapse" data-target=".property_ordinal .collapse">
+<h2></h2>
+<pre>$ordinal : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>S - English ordinal suffix for the day of the month, 2 characters.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_second"> </a><div class="element clickable property public property_second" data-toggle="collapse" data-target=".property_second .collapse">
+<h2></h2>
+<pre>$second : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>s - Seconds with leading zeros.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_week"> </a><div class="element clickable property public property_week" data-toggle="collapse" data-target=".property_week .collapse">
+<h2></h2>
+<pre>$week : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>W - Numeric representation of the day of the week.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_year"> </a><div class="element clickable property public property_year" data-toggle="collapse" data-target=".property_year .collapse">
+<h2></h2>
+<pre>$year : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property-read</th>
+<td>Y - A full numeric representation of a year, 4 digits.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_gmt"> </a><div class="element clickable property protected property_gmt" data-toggle="collapse" data-target=".property_gmt .collapse">
+<h2></h2>
+<pre>$gmt : <a href="http://php.net/manual/en/class.datetimezone.php">\DateTimeZone</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_stz"> </a><div class="element clickable property protected property_stz" data-toggle="collapse" data-target=".property_stz .collapse">
+<h2></h2>
+<pre>$stz : <a href="http://php.net/manual/en/class.datetimezone.php">\DateTimeZone</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_tz"> </a><div class="element clickable property protected property_tz" data-toggle="collapse" data-target=".property_tz .collapse">
+<h2></h2>
+<pre>$tz : <a href="http://php.net/manual/en/class.datetimezone.php">\DateTimeZone</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-25T01:40:20-05:00.<br></footer></div>
+</div>
+</body>
+</html>
